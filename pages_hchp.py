@@ -6,11 +6,11 @@ from build3 import L
 KWH_PER_NM3_CH4 = 9.94      # LHV
 EFF_E = 42.0                # % electrical, LHV
 EFF_H = 43.0                # % recoverable heat, LHV
-PRICE_RM_KW = 20000         # indicative budget price to Malaysia, RM/kW
+PRICE_RM_KW = 10000         # FOB price to Malaysia, RM/kW, installation excluded
 # (kW electrical, fuel input in 0.1 kW, indicative price RM)
 MODELS = [
-    (7.5, 179, 150000), (10, 238, 200000), (15, 357, 300000), (20, 476, 400000),
-    (30, 714, 600000), (50, 1190, 1000000), (75, 1786, 1500000), (100, 2381, 2000000),
+    (7.5, 179, 75000), (10, 238, 100000), (15, 357, 150000), (20, 476, 200000),
+    (30, 714, 300000), (50, 1190, 500000), (75, 1786, 750000), (100, 2381, 1000000),
 ]
 
 
@@ -41,9 +41,9 @@ def hydrogen(lang):
                "Methane reforming plus a fuel cell: the same architecture as Japan's household fuel-cell CHP, scaled to estate housing, resorts, mills and off-grid communities. 97% biomethane is reformed on site into hydrogen and converted to electricity and 60–70 °C hot water — no pipeline, no diesel, no flame at the point of use.",
                "Pembentukan semula metana dengan sel bahan api: seni bina yang sama seperti CHP sel bahan api rumah Jepun, diskalakan untuk perumahan ladang, resort, kilang dan komuniti luar grid. Biometana 97% dibentuk semula di tapak menjadi hidrogen dan ditukar kepada elektrik dan air panas 60–70 °C — tanpa saluran paip, tanpa diesel, tanpa api di tempat penggunaan.",
                "甲烷重整 + 燃料电池：与日本家用燃料电池热电联供同一架构，功率放大到种植园宿舍、度假村、厂区与离网社区。97% 生物天然气现场重整制氢，再转成电与 60–70 ℃ 热水——不用管网、不用柴油、用能端无明火。"),
-        k1=L(lang, "Indicative price to Malaysia", "Harga indikatif ke Malaysia", "出口马来西亚参考价"),
-        k2=L(lang, "Electrical efficiency (LHV)", "Kecekapan elektrik (LHV)", "发电效率（低热值）"),
-        k3=L(lang, "Recoverable heat (LHV)", "Haba boleh pulih (LHV)", "可回收余热（低热值）"),
+        k1=L(lang, "FOB price, installation excluded", "Harga FOB, pemasangan tidak termasuk", "FOB 价，不含安装"),
+        k2=L(lang, "Electrical efficiency, guaranteed (LHV)", "Kecekapan elektrik, dijamin (LHV)", "发电效率（厂家保证值·低热值）"),
+        k3=L(lang, "Recoverable heat, guaranteed (LHV)", "Haba boleh pulih, dijamin (LHV)", "可回收余热（厂家保证值）"),
         k4=L(lang, "Fuel per kWh sent out", "Bahan api per kWh dihantar", "每度电耗气"),
     )
     rows = _rows(lang)
@@ -59,7 +59,7 @@ def hydrogen(lang):
 <section>
   <div class="wrap">
     <div class="stats" style="margin-top:0">
-      <div class="stat"><b>RM 20,000</b><span>{s['k1']} · /kW</span></div>
+      <div class="stat"><b>RM 10,000</b><span>{s['k1']} · /kW</span></div>
       <div class="stat"><b>42%</b><span>{s['k2']}</span></div>
       <div class="stat"><b>43%</b><span>{s['k3']}</span></div>
       <div class="stat"><b>0.24 Nm³</b><span>{s['k4']}</span></div>
@@ -132,9 +132,9 @@ def hydrogen(lang):
       <p class="eyebrow">{L(lang,'Range','Julat','机型范围')}</p>
       <h2>{L(lang,'Eight models, 7.5 to 100 kW','Lapan model, 7.5 hingga 100 kW','八个机型，7.5 到 100 kW')}</h2>
       <p class="lead">{L(lang,
-        'Fuel figures are at rated output, 97% methane, LHV basis. Hot water is at a 50 K rise (20 → 70 °C). Prices are the indicative budget price to Malaysia at RM 20,000 per kW.',
-        'Angka bahan api pada output terkadar, 97% metana, asas LHV. Air panas pada kenaikan 50 K (20 → 70 °C). Harga ialah harga bajet indikatif ke Malaysia pada RM 20,000 per kW.',
-        '燃料数据为额定出力、97% 甲烷、低热值口径；热水量按温升 50 K（20 → 70 ℃）。价格为出口马来西亚参考预算价，每 kW 2 万马币。')}</p>
+        'Fuel figures are at rated output, 97% methane, LHV basis. Hot water is at a 50 K rise (20 → 70 °C). Prices are FOB to Malaysia at RM 10,000 per kW, installation excluded.',
+        'Angka bahan api pada output terkadar, 97% metana, asas LHV. Air panas pada kenaikan 50 K (20 → 70 °C). Harga ialah FOB ke Malaysia pada RM 10,000 per kW, pemasangan tidak termasuk.',
+        '燃料数据为额定出力、97% 甲烷、低热值口径；热水量按温升 50 K（20 → 70 ℃）。价格为出口马来西亚 FOB 价，每 kW 1 万马币，不含安装。')}</p>
     </div>
     <div class="table-wrap">
       <table>
@@ -152,9 +152,9 @@ def hydrogen(lang):
       </table>
     </div>
     <p class="small" style="margin-top:14px">{L(lang,
-      'Basis: methane LHV 9.94 kWh/Nm³; 42% electrical and 43% heat recovery of fuel input; 85% combined. Price excludes SST, local installation, civils, cylinder storage, gas manifold and grid connection — those are quoted per site.',
-      'Asas: LHV metana 9.94 kWh/Nm³; 42% elektrik dan 43% pemulihan haba daripada input bahan api; 85% gabungan. Harga tidak termasuk SST, pemasangan tempatan, kerja awam, penyimpanan silinder, manifold gas dan sambungan grid.',
-      '口径：甲烷低热值 9.94 kWh/Nm³；发电 42%、余热回收 43%，综合 85%。价格不含 SST、本地安装、土建、气瓶间、汇流排与并网——这些按现场单独报价。')}</p>
+      'Basis: methane LHV 9.94 kWh/Nm³; manufacturer-guaranteed 42% electrical and 43% heat recovery at rated output (85% combined) — to be reconfirmed against the guarantee sheet for each model. Price is FOB Malaysia port; freight, insurance, SST, local installation, civils, cylinder storage, gas manifold and grid connection are excluded and quoted per site.',
+      'Asas: LHV metana 9.94 kWh/Nm³; 42% elektrik dan 43% pemulihan haba dijamin pengeluar pada output terkadar (85% gabungan) — akan disahkan semula dengan helaian jaminan setiap model. Harga FOB pelabuhan Malaysia; tambang, insurans, SST, pemasangan, kerja awam, stor silinder, manifold gas dan sambungan grid tidak termasuk.',
+      '口径：甲烷低热值 9.94 kWh/Nm³；发电 42%、余热回收 43% 为厂家保证值（额定出力、综合 85%）——最终以各机型保证书为准。价格为马来西亚港口 FOB，不含运费、保险、SST、安装、土建、气瓶间、汇流排与并网，均按现场单独报价。')}</p>
   </div>
 </section>
 
@@ -222,7 +222,7 @@ def hydrogen(lang):
       <div class="calc-form">
         <h3 style="margin-top:0">{L(lang,'C · Project economics','C · Ekonomi projek','C · 项目经济性')}</h3>
         <div class="field"><label for="h3_kw">{L(lang,'Unit size (kW)','Saiz unit (kW)','机组功率（kW）')}</label><input id="h3_kw" type="number" value="50" step="2.5" min="0"></div>
-        <div class="field"><label for="h3_capex">{L(lang,'Price (RM per kW)','Harga (RM per kW)','单价（马币/kW）')}</label><input id="h3_capex" type="number" value="20000" step="500" min="0"></div>
+        <div class="field"><label for="h3_capex">{L(lang,'Price (RM per kW)','Harga (RM per kW)','单价（马币/kW）')}</label><input id="h3_capex" type="number" value="10000" step="500" min="0"></div>
         <div class="field"><label for="h3_om">{L(lang,'O&amp;M (% of capex per year)','O&amp;M (% capex setahun)','运维（占投资 %/年）')}</label><input id="h3_om" type="number" value="3" step="0.5" min="0" max="12"><div class="hint">{L(lang,'Service contract plus stack provision. Stack replacement is the big item — 25–35% of unit price every 5–8 years.','Kontrak servis serta peruntukan stack. Penggantian stack ialah item besar — 25–35% harga unit setiap 5–8 tahun.','含服务合同与电堆计提。电堆更换是大项：每 5–8 年约机组价的 25–35%。')}</div></div>
         <div class="field"><label for="h3_gas">{L(lang,'Biomethane price (RM/Nm³)','Harga biometana (RM/Nm³)','生物天然气价（马币/Nm³）')}</label><input id="h3_gas" type="number" value="1.20" step="0.05" min="0"></div>
         <div class="field"><label for="h3_tariff">{L(lang,'Avoided electricity cost (RM/kWh)','Kos elektrik dielakkan (RM/kWh)','替代电价（马币/kWh）')}</label><input id="h3_tariff" type="number" value="0.45" step="0.05" min="0"><div class="hint">{L(lang,'Grid tariff 0.40–0.50; off-grid diesel 0.90–1.30. Use the cost you actually avoid.','Tarif grid 0.40–0.50; diesel luar grid 0.90–1.30. Guna kos yang benar-benar dielakkan.','电网 0.40–0.50；离网柴油 0.90–1.30。填你真实省下的成本。')}</div></div>
@@ -249,9 +249,9 @@ def hydrogen(lang):
         </div>
         <div class="warn" id="h3_warn"></div>
         <p class="note">{L(lang,
-          'CO₂ uses 0.60 t/MWh avoided grid emission factor and treats biomethane carbon as short-cycle. At RM 20,000/kW the unit is expensive per kW — it is built for high avoided cost or grant-supported sites, not for displacing a cheap grid tariff.',
-          'CO₂ menggunakan faktor pelepasan grid 0.60 t/MWh dan menganggap karbon biometana kitaran pendek. Pada RM 20,000/kW unit ini mahal per kW — ia untuk tapak kos dielakkan tinggi atau bersubsidi.',
-          '减排按替代电网 0.60 t/MWh 计，生物天然气碳按短周期处理。RM 20,000/kW 单价不低——它面向高替代成本或有补贴的场景，不是用来替代便宜的电网电价。')}</p>
+          'CO₂ uses 0.60 t/MWh avoided grid emission factor and treats biomethane carbon as short-cycle. At RM 10,000/kW FOB the unit is competitive where power costs RM 0.60/kWh or more, or where the heat replaces LPG or diesel. Against a subsidised grid tariff with bought gas it is still marginal — check the numbers rather than the brochure.',
+          'CO₂ menggunakan faktor pelepasan grid 0.60 t/MWh dan menganggap karbon biometana kitaran pendek. Pada RM 10,000/kW FOB unit ini berdaya saing jika kos kuasa RM 0.60/kWh atau lebih, atau jika haba menggantikan LPG atau diesel. Berbanding tarif grid bersubsidi dengan gas dibeli, ia masih marginal.',
+          '减排按替代电网 0.60 t/MWh 计，生物天然气碳按短周期处理。RM 10,000/kW FOB 这个价位，在电价 ≥0.60 马币/kWh，或余热替代 LPG/柴油的场合有竞争力；如果对着补贴电价、气还要外购，仍然只是勉强——看数字，别只看宣传册。')}</p>
       </div>
     </div>
   </div>
@@ -261,24 +261,24 @@ def hydrogen(lang):
   <div class="wrap">
     <div class="sec-head">
       <p class="eyebrow">{L(lang,'Worked cases','Kes contoh','测算示例')}</p>
-      <h2>{L(lang,'One where it pays, one where it does not','Satu yang berbaloi, satu yang tidak','一个划算，一个不划算')}</h2>
+      <h2>{L(lang,'One strong case, one marginal','Satu kes kukuh, satu marginal','一个很划算，一个刚刚够')}</h2>
     </div>
     <div class="grid-2">
       <article class="card">
         <p class="tag">{L(lang,'Case A · 10 kW, off-grid housing','Kes A · 10 kW, perumahan luar grid','案例 A · 10 kW，离网宿舍')}</p>
-        <h3>{L(lang,'Diesel replacement: about 3 years','Ganti diesel: kira-kira 3 tahun','替代柴油：约 3 年')}</h3>
+        <h3>{L(lang,'Diesel replacement: about 1.5 years','Ganti diesel: kira-kira 1.5 tahun','替代柴油：约 1.5 年')}</h3>
         <p>{L(lang,
-          '12 staff houses, 10 kW average, diesel at RM 1.20/kWh avoided. Investment RM 200,000; 68,000 kWh a year at 85% load; fuel 16,300 Nm³ at RM 1.20; O&amp;M RM 6,000. Net about RM 63,000 a year → payback 3.2 years, before any grant.',
-          '12 rumah kakitangan, 10 kW purata, diesel RM 1.20/kWh dielakkan. Pelaburan RM 200,000; 68,000 kWh setahun pada beban 85%; bahan api 16,300 Nm³ pada RM 1.20; O&amp;M RM 6,000. Bersih kira-kira RM 63,000 setahun → pulang 3.2 tahun.',
-          '12 间员工宿舍，平均 10 kW，替代柴油成本 RM 1.20/kWh。投资 RM 20 万；85% 负荷年发电 68,000 kWh；耗气 16,300 Nm³（RM 1.20）；运维 RM 6,000。年净约 RM 6.3 万 → 回收 3.2 年（未计补贴）。')}</p>
+          '12 staff houses, 10 kW average, diesel at RM 1.20/kWh avoided. Investment RM 100,000 FOB plus installation; 68,000 kWh a year at 85% load; fuel 16,300 Nm³ at RM 1.20; O&amp;M RM 3,000. Net about RM 66,000 a year → payback 1.5 years, before any grant.',
+          '12 rumah kakitangan, 10 kW purata, diesel RM 1.20/kWh dielakkan. Pelaburan RM 100,000 FOB serta pemasangan; 68,000 kWh setahun pada beban 85%; bahan api 16,300 Nm³ pada RM 1.20; O&amp;M RM 3,000. Bersih kira-kira RM 66,000 setahun → pulang 1.5 tahun.',
+          '12 间员工宿舍，平均 10 kW，替代柴油成本 RM 1.20/kWh。设备 FOB RM 10 万，另加安装；85% 负荷年发电 68,000 kWh；耗气 16,300 Nm³（RM 1.20）；运维 RM 3,000。年净约 RM 6.6 万 → 回收 1.5 年（未计补贴）。')}</p>
       </article>
       <article class="card">
         <p class="tag">{L(lang,'Case B · 50 kW, grid-connected','Kes B · 50 kW, sambung grid','案例 B · 50 kW，并网')}</p>
-        <h3>{L(lang,'Grid tariff: payback beyond the stack life','Tarif grid: pulang melebihi hayat stack','电网电价：回收期超过电堆寿命')}</h3>
+        <h3>{L(lang,'Grid tariff: about seven years','Tarif grid: kira-kira tujuh tahun','电网电价：约 7 年')}</h3>
         <p>{L(lang,
-          'Same unit against a RM 0.45/kWh grid tariff gives about RM 60,000 a year net on RM 1.0 million — 16 years, longer than the 5–8 year stack interval. This is the honest limit of the technology at this price; it needs a heat load with real value, a grant, or a much higher avoided cost.',
-          'Unit yang sama berbanding tarif grid RM 0.45/kWh memberi kira-kira RM 60,000 setahun bersih atas RM 1.0 juta — 16 tahun, lebih panjang daripada selang stack 5–8 tahun. Ini had jujur teknologi pada harga ini.',
-          '同样一台对标 RM 0.45/kWh 电网电价，投资 RM 100 万、年净约 RM 6 万——回收 16 年，比电堆 5–8 年的更换周期还长。这就是这个价位下的真实边界：要么有真正值钱的热负荷，要么有补贴，要么替代成本足够高。')}</p>
+          'Same 50 kW unit against a RM 0.45/kWh grid tariff: RM 500,000 FOB, about RM 75,000 a year net — 6.7 years, inside a 10-year life but only just clearing an 8% hurdle, and only if the 43% heat is genuinely used. Remove the heat revenue and it stops working.',
+          'Unit 50 kW yang sama berbanding tarif grid RM 0.45/kWh: RM 500,000 FOB, kira-kira RM 75,000 setahun bersih — 6.7 tahun, dalam hayat 10 tahun tetapi hanya hampir melepasi halangan 8%, dan hanya jika haba 43% benar-benar digunakan.',
+          '同样 50 kW 对标 RM 0.45/kWh 电网电价：FOB RM 50 万，年净约 RM 7.5 万——回收 6.7 年，在 10 年寿命内，但只是刚刚跨过 8% 的门槛，而且 43% 的余热必须真的用掉。余热收益一拿掉，这个账就不成立。')}</p>
       </article>
     </div>
   </div>
@@ -297,7 +297,7 @@ def hydrogen(lang):
         <tr><td><b>{L(lang,'Warranty','Waranti','质保')}</b></td><td>{L(lang,'24 months on the unit, 5 years or 25,000 h on the stack, whichever comes first','24 bulan unit, 5 tahun atau 25,000 j pada stack','整机 24 个月；电堆 5 年或 25,000 小时（先到为准）')}</td></tr>
         <tr><td><b>{L(lang,'Lead time','Masa penghantaran','交货期')}</b></td><td>{L(lang,'4–6 months from PO and gas analysis','4–6 bulan dari PO dan analisis gas','收到订单与气质分析后 4–6 个月')}</td></tr>
         <tr><td><b>{L(lang,'Fuel specification','Spesifikasi bahan api','燃料要求')}</b></td><td>{L(lang,'CH₄ ≥ 95%, H₂S &lt; 1 ppm, siloxanes &lt; 0.1 mg/Nm³, no condensate','CH₄ ≥ 95%, H₂S &lt; 1 ppm, siloksan &lt; 0.1 mg/Nm³, tiada kondensat','甲烷 ≥95%，H₂S <1 ppm，硅氧烷 <0.1 mg/Nm³，无冷凝水')}</td></tr>
-        <tr><td><b>{L(lang,'Price basis','Asas harga','价格口径')}</b></td><td>{L(lang,'Indicative RM 20,000/kW to Malaysia, valid 90 days, subject to gas analysis and site survey','Indikatif RM 20,000/kW ke Malaysia, sah 90 hari, tertakluk kepada analisis gas dan tinjauan tapak','出口马来西亚参考价 RM 20,000/kW，有效期 90 天，以气质分析与现场勘查为准')}</td></tr>
+        <tr><td><b>{L(lang,'Price basis','Asas harga','价格口径')}</b></td><td>{L(lang,'FOB RM 10,000/kW, installation excluded, valid 90 days, subject to gas analysis and site survey','FOB RM 10,000/kW, pemasangan tidak termasuk, sah 90 hari, tertakluk kepada analisis gas dan tinjauan tapak','FOB 价 RM 10,000/kW，不含安装，有效期 90 天，以气质分析与现场勘查为准')}</td></tr>
       </tbody></table></div>
       <div>
         <div class="table-wrap"><table style="min-width:0">
@@ -305,7 +305,7 @@ def hydrogen(lang):
           <tbody>
             <tr><td>{L(lang,'Diesel genset','Genset diesel','柴油机组')}</td><td class="num">—</td><td class="num">{L(lang,'none','tiada','无')}</td><td class="num">{L(lang,'high','tinggi','高')}</td><td class="num">800–1,500</td></tr>
             <tr><td>{L(lang,'Gas engine CHP','CHP enjin gas','燃气机热电联供')}</td><td class="num">35%</td><td class="num">43%</td><td class="num">{L(lang,'medium','sederhana','中')}</td><td class="num">1,800–2,600*</td></tr>
-            <tr><td><b>{L(lang,'H₂ fuel-cell CHP','CHP sel bahan api H₂','氢燃料电池热电联供')}</b></td><td class="num"><b>42%</b></td><td class="num"><b>43%</b></td><td class="num">{L(lang,'low','rendah','低')}</td><td class="num"><b>20,000</b></td></tr>
+            <tr><td><b>{L(lang,'H₂ fuel-cell CHP','CHP sel bahan api H₂','氢燃料电池热电联供')}</b></td><td class="num"><b>42%</b></td><td class="num"><b>43%</b></td><td class="num">{L(lang,'low','rendah','低')}</td><td class="num"><b>10,000</b></td></tr>
             <tr><td>{L(lang,'Solar + battery','Solar + bateri','光伏 + 储能')}</td><td class="num">—</td><td class="num">{L(lang,'none','tiada','无')}</td><td class="num">{L(lang,'none','tiada','无')}</td><td class="num">3,000–5,000</td></tr>
           </tbody>
         </table></div>

@@ -4,7 +4,7 @@
 
   var CH4_KWH = 9.94;          // kWh per Nm³ CH4, LHV
   var MODELS = [7.5, 10, 15, 20, 30, 50, 75, 100];
-  var PRICE_PER_KW = 20000;    // RM/kW, indicative to Malaysia
+  var PRICE_PER_KW = 10000;    // RM/kW FOB to Malaysia
   var GRID_EF = 0.60;          // t CO2 / MWh avoided, indicative Malaysia
 
   function $(id) { return document.getElementById(id); }
