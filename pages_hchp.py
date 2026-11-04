@@ -67,6 +67,45 @@ def hydrogen(lang):
   </div>
 </section>
 
+<section id="emissions">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">{L(lang,'Six zeros','Enam sifar','六个没有')}</p>
+      <h2>{L(lang,'Nothing leaves this unit but water.','Tiada apa keluar dari unit ini kecuali air.','这台机组排出来的，只有水。')}</h2>
+      <p class="lead">{L(lang,
+        'No burner, no engine, no flue in the usual sense. This is the strongest reason to choose reforming plus a fuel cell over a diesel or gas engine — and it is measurable at the fence line, not a marketing line.',
+        'Tiada pembakar, tiada enjin, tiada cerobong. Ini sebab terkuat memilih pembentukan semula serta sel bahan api berbanding enjin diesel atau gas — dan ia boleh diukur di pagar tapak.',
+        '没有燃烧器、没有发动机、没有传统意义的烟囱。这是选重整+燃料电池而不是柴油机或燃气机的最大理由——而且是在围墙外能测出来的，不是宣传话术。')}</p>
+    </div>
+    <div class="grid-3">
+      <article class="card"><p class="tag">01 · {L(lang,'No noise','Tiada bunyi','无噪音')}</p>
+        <h3>{L(lang,'No engine, no burner','Tiada enjin, tiada pembakar','没有发动机，也没有燃烧器')}</h3>
+        <p>{L(lang,'The only moving parts are a blower and pumps. About 55 dB(A) at one metre — quieter than a normal conversation, so the unit can stand beside staff housing.','Bahagian bergerak hanya blower dan pam. Kira-kira 55 dB(A) pada satu meter — lebih senyap daripada perbualan biasa.','唯一运动部件是风机和水泵。1 米处约 55 dB(A)，比正常交谈还轻，可以直接挨着宿舍放。')}</p></article>
+      <article class="card"><p class="tag">02 · {L(lang,'No nitrogen oxides','Tiada nitrogen oksida','无氮氧化物')}</p>
+        <h3>NOx = 0</h3>
+        <p>{L(lang,'A fuel cell runs at 60–200 °C. With no high-temperature flame, thermal NOx cannot form at all — it is below detection, not merely “low”.','Sel bahan api beroperasi pada 60–200 °C. Tanpa api bersuhu tinggi, NOx terma tidak terbentuk — di bawah pengesanan, bukan sekadar “rendah”.','燃料电池工作在 60–200 ℃，没有高温火焰，热力型 NOx 根本生成不了——是测不出，不是“低”。')}</p></article>
+      <article class="card"><p class="tag">03 · {L(lang,'No sulphur oxides','Tiada sulfur oksida','无硫氧化物')}</p>
+        <h3>SOx = 0</h3>
+        <p>{L(lang,'Gas is desulphurised to below 1 ppm before the reformer. No sulphur enters the process, so none can leave it — no SO₂, no acid smell, no corrosion downstream.','Gas dinyahsulfur di bawah 1 ppm sebelum reformer. Tiada sulfur masuk proses, jadi tiada yang keluar — tiada SO₂, tiada bau asid.','燃气进重整器前先脱硫到 1 ppm 以下。硫不进工艺，就不会从排气出去——没有 SO₂、没有酸味、下游不腐蚀。')}</p></article>
+      <article class="card"><p class="tag">04 · {L(lang,'No dust or particulates','Tiada habuk atau zarah','无粉尘颗粒物')}</p>
+        <h3>PM = 0</h3>
+        <p>{L(lang,'Gas fuel, sealed process, no combustion air and no flue: no particulates, no black smoke, no smell — unlike diesel exhaust, which is a known health hazard.','Bahan api gas, proses tertutup, tiada udara pembakaran dan tiada cerobong: tiada zarah, tiada asap hitam, tiada bau.','气体燃料、全封闭工艺、不引燃烧空气、没有烟囱——没有颗粒物、没有黑烟、没有异味。柴油尾气是公认的健康危害，这里没有。')}</p></article>
+      <article class="card"><p class="tag">05 · {L(lang,'Pure water only','Air tulen sahaja','只有纯净水')}</p>
+        <h3>H₂O</h3>
+        <p>{L(lang,'The electrochemical reaction produces water and heat. The water is clean enough to recover for washing or irrigation instead of discharging it.','Tindak balas elektrokimia menghasilkan air dan haba. Air itu cukup bersih untuk dipulihkan bagi cucian atau pengairan.','电化学反应只生成水和热。水干净到可以回收用于冲洗或灌溉，而不是当废水排掉。')}</p></article>
+      <article class="card"><p class="tag">06 · {L(lang,'Near-zero CO₂','CO₂ hampir sifar','少量 CO₂，接近零排放')}</p>
+        <h3>CO₂ ≈ 0</h3>
+        <p>{L(lang,'The carbon is short-cycle carbon from palm waste, and reforming gives a concentrated CO₂ stream that is far easier to capture than dilute flue gas. This is a path to zero, not just “lower”.','Karbon ialah karbon kitaran pendek daripada sisa sawit, dan pembentukan semula memberi aliran CO₂ pekat yang lebih mudah ditangkap.','碳来自棕榈废料的短周期碳；重整还把 CO₂ 富集成高浓度气流，比稀释烟气好捕集得多——这是通往零排放的路，不只是“更低”。')}</p></article>
+    </div>
+    <div class="band" style="margin-top:30px">
+      <div>
+        <h2>{L(lang,'You can hear the difference at the fence line.','Anda boleh dengar bezanya di pagar tapak.','站在围墙外，听得出来，也测得出来。')}</h2>
+        <p>{L(lang,'A diesel genset is the exact opposite on all six counts: 95–105 dB(A), NOx, SOx, black smoke and a fuel tank. Ask for the emissions sheet with the quotation.','Genset diesel adalah sebaliknya pada keenam-enam perkara: 95–105 dB(A), NOx, SOx, asap hitam dan tangki bahan api. Minta helaian pelepasan bersama sebut harga.','柴油机组在这六项上正好相反：95–105 dB(A)、NOx、SOx、黑烟，外加一个油罐。要排放清单，随报价一起给。')}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="alt">
   <div class="wrap">
     <div class="sec-head">
@@ -306,6 +345,7 @@ def hydrogen(lang):
             <tr><td>{L(lang,'Diesel genset','Genset diesel','柴油机组')}</td><td class="num">—</td><td class="num">{L(lang,'none','tiada','无')}</td><td class="num">{L(lang,'high','tinggi','高')}</td><td class="num">800–1,500</td></tr>
             <tr><td>{L(lang,'Gas engine CHP','CHP enjin gas','燃气机热电联供')}</td><td class="num">35%</td><td class="num">43%</td><td class="num">{L(lang,'medium','sederhana','中')}</td><td class="num">1,800–2,600*</td></tr>
             <tr><td><b>{L(lang,'H₂ fuel-cell CHP','CHP sel bahan api H₂','氢燃料电池热电联供')}</b></td><td class="num"><b>42%</b></td><td class="num"><b>43%</b></td><td class="num">{L(lang,'low','rendah','低')}</td><td class="num"><b>10,000</b></td></tr>
+            <tr><td><b>NOx · SOx · {L(lang,'dust','habuk','粉尘')}</b></td><td class="num">{L(lang,'high','tinggi','高')}</td><td class="num">{L(lang,'low','rendah','低')}</td><td class="num"><b>{L(lang,'none','tiada','无')}</b></td><td class="num">{L(lang,'none','tiada','无')}</td></tr>
             <tr><td>{L(lang,'Solar + battery','Solar + bateri','光伏 + 储能')}</td><td class="num">—</td><td class="num">{L(lang,'none','tiada','无')}</td><td class="num">{L(lang,'none','tiada','无')}</td><td class="num">3,000–5,000</td></tr>
           </tbody>
         </table></div>
