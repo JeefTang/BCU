@@ -612,6 +612,49 @@ def calculator(lang):
 
 <section>
   <div class="wrap">
+    <div class="sec-head"><p class="eyebrow">{L(lang,'Selection at a glance','Pemilihan sekilas pandang','选型速查')}</p><h2>{L(lang,'Pick the model from the gas you measured','Pilih model daripada gas yang anda ukur','用实测气量直接定机型')}</h2>
+      <p class="lead">{L(lang,
+        'Enter the raw biogas flow and methane content from your own measurement. The selector returns the largest unit that runs on that gas at full load, plus the gas it needs and what it generates in a year.',
+        'Masukkan aliran biogas mentah dan kandungan metana daripada pengukuran anda sendiri. Pemilih memberi unit terbesar yang boleh beroperasi pada gas itu dengan beban penuh, serta keperluan gas dan penjanaan setahun.',
+        '输入你现场实测的原沼气流量与甲烷含量，直接给出能满负荷运行的最大机型、对应需气量与年发电量。')}</p></div>
+    <div class="calc">
+      <div class="calc-form">
+        <div class="field"><label for="q_flow">{L(lang,'Measured raw biogas (Nm³/h)','Biogas mentah diukur (Nm³/j)','实测原沼气量（Nm³/h）')}</label><input id="q_flow" type="number" value="400" step="10" min="0"><div class="hint">{L(lang,'Average over one to two weeks, not a peak reading.','Purata satu hingga dua minggu, bukan bacaan puncak.','取一到两周平均值，不要用峰值。')}</div></div>
+        <div class="field"><label for="q_ch4">{L(lang,'Methane content (%)','Kandungan metana (%)','甲烷含量（%）')}</label><input id="q_ch4" type="number" value="60" step="0.5" min="40" max="99"><div class="hint">{L(lang,'Engine limit is 45% minimum.','Had enjin minimum 45%.','机组下限 45%。')}</div></div>
+        <div class="field"><label for="q_load">{L(lang,'Average load factor (%)','Faktor beban purata (%)','平均负荷率（%）')}</label><input id="q_load" type="number" value="90" step="1" min="50" max="100"><div class="hint">{L(lang,'Long-term output on variable biogas is 90–100%.','Output jangka panjang pada biogas berubah ialah 90–100%.','沼气波动下长期出力 90–100%。')}</div></div>
+      </div>
+      <div class="calc-out">
+        <div class="kv hl"><span>{L(lang,'Recommended model','Model disyorkan','推荐机型')}</span><b id="q_model">—</b></div>
+        <div class="kv hl"><span>{L(lang,'Output at full load','Output beban penuh','满负荷出力')}</span><b id="q_out">—</b></div>
+        <div class="kv"><span>{L(lang,'Pure methane required','Metana tulen diperlukan','需纯甲烷')}</span><b id="q_ch4">—</b></div>
+        <div class="kv"><span>{L(lang,'Raw biogas required at your CH₄','Biogas mentah diperlukan','对应原气量')}</span><b id="q_need">—</b></div>
+        <div class="kv"><span>{L(lang,'Share of measured gas used','Bahagian gas digunakan','气量利用率')}</span><b id="q_util">—</b></div>
+        <div class="kv"><span>{L(lang,'Annual generation (8,000 h × load)','Penjanaan tahunan (8,000 j × beban)','年发电量（8,000 h × 负荷）')}</span><b id="q_ann">—</b></div>
+        <div class="kv"><span>{L(lang,'Recoverable heat','Haba boleh pulih','可回收热量')}</span><b id="q_heat">—</b></div>
+      </div>
+    </div>
+    <div class="warn" id="q_warn"></div>
+    <div class="table-wrap" style="margin-top:26px">
+      <table>
+        <thead><tr><th>{L(lang,'Model','Model','机型')}</th><th>{L(lang,'CH₄ needed (Nm³/h)','CH₄ perlu (Nm³/j)','需纯甲烷（Nm³/h）')}</th><th>{L(lang,'Raw gas @45%','Gas mentah @45%','原气 @45%')}</th><th>{L(lang,'@55%','@55%','@55%')}</th><th>{L(lang,'@60%','@60%','@60%')}</th><th>{L(lang,'MWh/yr @90% load','MWh/tahun @90%','年发电 MWh @90%')}</th><th>{L(lang,'Heat (kW)','Haba (kW)','余热（kW）')}</th></tr></thead>
+        <tbody>
+          <tr><td class="num">500 kW</td><td class="num">142</td><td class="num">316</td><td class="num">258</td><td class="num">237</td><td class="num">3,600</td><td class="num">593</td></tr>
+          <tr><td class="num">600 kW</td><td class="num">172</td><td class="num">382</td><td class="num">313</td><td class="num">287</td><td class="num">4,320</td><td class="num">718</td></tr>
+          <tr><td class="num">700 kW</td><td class="num">200</td><td class="num">444</td><td class="num">364</td><td class="num">333</td><td class="num">5,040</td><td class="num">835</td></tr>
+          <tr><td class="num">800 kW</td><td class="num">229</td><td class="num">508</td><td class="num">416</td><td class="num">381</td><td class="num">5,760</td><td class="num">954</td></tr>
+          <tr><td class="num">1,000 kW</td><td class="num">286</td><td class="num">636</td><td class="num">520</td><td class="num">477</td><td class="num">7,200</td><td class="num">1,194</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="small" style="margin-top:14px">{L(lang,
+      'Based on manufacturer gas consumption (≈3.50 kWh per Nm³ CH₄), 8,000 operating hours and 90% load. Size on the 45% methane column when gas quality is uncertain — running out of gas costs more than buying one size larger.',
+      'Berdasarkan penggunaan gas pengeluar (≈3.50 kWh per Nm³ CH₄), 8,000 jam operasi dan beban 90%. Guna lajur metana 45% jika kualiti gas tidak pasti — kehabisan gas lebih mahal daripada beli satu saiz lebih besar.',
+      '厂口气耗 ≈3.50 kWh/Nm³ 甲烷，按 8,000 运行小时、90% 负荷。气质不确定时按 45% 那一列选型——气不够的代价高于买大一档。')}</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
     <div class="tabs" id="tabs">
       <button class="tab-btn active" data-tab="tool1">1 · {L(lang,'Gas to power &amp; heat','Gas ke kuasa &amp; haba','气量→电与热')}</button>
       <button class="tab-btn" data-tab="tool2">2 · {L(lang,'Capacity sizing','Saiz kapasiti','容量选型')}</button>

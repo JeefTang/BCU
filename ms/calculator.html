@@ -42,6 +42,43 @@
 
 <section>
   <div class="wrap">
+    <div class="sec-head"><p class="eyebrow">Pemilihan sekilas pandang</p><h2>Pilih model daripada gas yang anda ukur</h2>
+      <p class="lead">Masukkan aliran biogas mentah dan kandungan metana daripada pengukuran anda sendiri. Pemilih memberi unit terbesar yang boleh beroperasi pada gas itu dengan beban penuh, serta keperluan gas dan penjanaan setahun.</p></div>
+    <div class="calc">
+      <div class="calc-form">
+        <div class="field"><label for="q_flow">Biogas mentah diukur (Nm³/j)</label><input id="q_flow" type="number" value="400" step="10" min="0"><div class="hint">Purata satu hingga dua minggu, bukan bacaan puncak.</div></div>
+        <div class="field"><label for="q_ch4">Kandungan metana (%)</label><input id="q_ch4" type="number" value="60" step="0.5" min="40" max="99"><div class="hint">Had enjin minimum 45%.</div></div>
+        <div class="field"><label for="q_load">Faktor beban purata (%)</label><input id="q_load" type="number" value="90" step="1" min="50" max="100"><div class="hint">Output jangka panjang pada biogas berubah ialah 90–100%.</div></div>
+      </div>
+      <div class="calc-out">
+        <div class="kv hl"><span>Model disyorkan</span><b id="q_model">—</b></div>
+        <div class="kv hl"><span>Output beban penuh</span><b id="q_out">—</b></div>
+        <div class="kv"><span>Metana tulen diperlukan</span><b id="q_ch4">—</b></div>
+        <div class="kv"><span>Biogas mentah diperlukan</span><b id="q_need">—</b></div>
+        <div class="kv"><span>Bahagian gas digunakan</span><b id="q_util">—</b></div>
+        <div class="kv"><span>Penjanaan tahunan (8,000 j × beban)</span><b id="q_ann">—</b></div>
+        <div class="kv"><span>Haba boleh pulih</span><b id="q_heat">—</b></div>
+      </div>
+    </div>
+    <div class="warn" id="q_warn"></div>
+    <div class="table-wrap" style="margin-top:26px">
+      <table>
+        <thead><tr><th>Model</th><th>CH₄ perlu (Nm³/j)</th><th>Gas mentah @45%</th><th>@55%</th><th>@60%</th><th>MWh/tahun @90%</th><th>Haba (kW)</th></tr></thead>
+        <tbody>
+          <tr><td class="num">500 kW</td><td class="num">142</td><td class="num">316</td><td class="num">258</td><td class="num">237</td><td class="num">3,600</td><td class="num">593</td></tr>
+          <tr><td class="num">600 kW</td><td class="num">172</td><td class="num">382</td><td class="num">313</td><td class="num">287</td><td class="num">4,320</td><td class="num">718</td></tr>
+          <tr><td class="num">700 kW</td><td class="num">200</td><td class="num">444</td><td class="num">364</td><td class="num">333</td><td class="num">5,040</td><td class="num">835</td></tr>
+          <tr><td class="num">800 kW</td><td class="num">229</td><td class="num">508</td><td class="num">416</td><td class="num">381</td><td class="num">5,760</td><td class="num">954</td></tr>
+          <tr><td class="num">1,000 kW</td><td class="num">286</td><td class="num">636</td><td class="num">520</td><td class="num">477</td><td class="num">7,200</td><td class="num">1,194</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="small" style="margin-top:14px">Berdasarkan penggunaan gas pengeluar (≈3.50 kWh per Nm³ CH₄), 8,000 jam operasi dan beban 90%. Guna lajur metana 45% jika kualiti gas tidak pasti — kehabisan gas lebih mahal daripada beli satu saiz lebih besar.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
     <div class="tabs" id="tabs">
       <button class="tab-btn active" data-tab="tool1">1 · Gas ke kuasa &amp; haba</button>
       <button class="tab-btn" data-tab="tool2">2 · Saiz kapasiti</button>

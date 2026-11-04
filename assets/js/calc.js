@@ -188,8 +188,54 @@
     warn("t5_warn", msgs.join(" "));
   }
 
+  /* ---------------------------------------------------------- quick selector */
+  var MODELS = [
+    { kw: 500, ch4: 142 },
+    { kw: 600, ch4: 172 },
+    { kw: 700, ch4: 200 },
+    { kw: 800, ch4: 228.6 },
+    { kw: 1000, ch4: 286 }
+  ];
+
+  function quick() {
+    var flow = val("q_flow"), ch4 = val("q_ch4", 60), load = val("q_load", 90);
+    var eff = 0.352, heatFrac = 0.42;
+    var availCH4 = flow * ch4 / 100;
+    var pick = null;
+    for (var i = 0; i < MODELS.length; i++) {
+      if (MODELS[i].ch4 <= availCH4) pick = MODELS[i];
+    }
+
+    if (pick) {
+      var needRaw = ch4 > 0 ? pick.ch4 / (ch4 / 100) : 0;
+      var util = flow > 0 ? needRaw / flow * 100 : 0;
+      var fuelKW = pick.ch4 * CH4_KWH_PER_NM3;
+      set("q_model", pick.kw.toLocaleString("en-US") + " kW");
+      set("q_need", nf(needRaw, 0) + " Nm³/h");
+      set("q_util", nf(util, 0) + "%");
+      set("q_out", nf(pick.kw, 0) + " kW");
+      set("q_ann", nf(pick.kw * 8000 * load / 100 / 1000, 0) + " MWh/yr");
+      set("q_heat", nf(fuelKW * heatFrac, 0) + " kW");
+      set("q_ch4", nf(pick.ch4, 0) + " Nm³/h");
+    } else {
+      var kW = availCH4 * CH4_KWH_PER_NM3 * eff;
+      set("q_model", "< 500 kW");
+      set("q_need", nf(flow, 0) + " Nm³/h (all gas)");
+      set("q_util", "100%");
+      set("q_out", nf(kW, 0) + " kW");
+      set("q_ann", nf(kW * 8000 * load / 100 / 1000, 0) + " MWh/yr");
+      set("q_heat", nf(availCH4 * CH4_KWH_PER_NM3 * heatFrac, 0) + " kW");
+      set("q_ch4", nf(availCH4, 0) + " Nm³/h");
+    }
+
+    var msgs = [];
+    if (ch4 < 45) msgs.push("Methane below 45%: outside the engine fuel specification — the engine is derated and may not hold load.");
+    if (pick && flow > 0 && pick.ch4 / (ch4 / 100) / flow < 0.75) msgs.push("Less than 75% of the available gas is used. A smaller unit, or a second unit later, will run more efficiently than one oversized engine.");
+    warn("q_warn", msgs.join(" "));
+  }
+
   /* ---------------------------------------------------------- wiring */
-  var CALCS = { tool1: tool1, tool2: tool2, tool3: tool3, tool4: tool4, tool5: tool5 };
+  var CALCS = { quick: quick, tool1: tool1, tool2: tool2, tool3: tool3, tool4: tool4, tool5: tool5 };
 
   function runAll() { Object.keys(CALCS).forEach(function (k) { CALCS[k](); }); }
 

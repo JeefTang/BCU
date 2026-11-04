@@ -42,6 +42,43 @@
 
 <section>
   <div class="wrap">
+    <div class="sec-head"><p class="eyebrow">Selection at a glance</p><h2>Pick the model from the gas you measured</h2>
+      <p class="lead">Enter the raw biogas flow and methane content from your own measurement. The selector returns the largest unit that runs on that gas at full load, plus the gas it needs and what it generates in a year.</p></div>
+    <div class="calc">
+      <div class="calc-form">
+        <div class="field"><label for="q_flow">Measured raw biogas (Nm³/h)</label><input id="q_flow" type="number" value="400" step="10" min="0"><div class="hint">Average over one to two weeks, not a peak reading.</div></div>
+        <div class="field"><label for="q_ch4">Methane content (%)</label><input id="q_ch4" type="number" value="60" step="0.5" min="40" max="99"><div class="hint">Engine limit is 45% minimum.</div></div>
+        <div class="field"><label for="q_load">Average load factor (%)</label><input id="q_load" type="number" value="90" step="1" min="50" max="100"><div class="hint">Long-term output on variable biogas is 90–100%.</div></div>
+      </div>
+      <div class="calc-out">
+        <div class="kv hl"><span>Recommended model</span><b id="q_model">—</b></div>
+        <div class="kv hl"><span>Output at full load</span><b id="q_out">—</b></div>
+        <div class="kv"><span>Pure methane required</span><b id="q_ch4">—</b></div>
+        <div class="kv"><span>Raw biogas required at your CH₄</span><b id="q_need">—</b></div>
+        <div class="kv"><span>Share of measured gas used</span><b id="q_util">—</b></div>
+        <div class="kv"><span>Annual generation (8,000 h × load)</span><b id="q_ann">—</b></div>
+        <div class="kv"><span>Recoverable heat</span><b id="q_heat">—</b></div>
+      </div>
+    </div>
+    <div class="warn" id="q_warn"></div>
+    <div class="table-wrap" style="margin-top:26px">
+      <table>
+        <thead><tr><th>Model</th><th>CH₄ needed (Nm³/h)</th><th>Raw gas @45%</th><th>@55%</th><th>@60%</th><th>MWh/yr @90% load</th><th>Heat (kW)</th></tr></thead>
+        <tbody>
+          <tr><td class="num">500 kW</td><td class="num">142</td><td class="num">316</td><td class="num">258</td><td class="num">237</td><td class="num">3,600</td><td class="num">593</td></tr>
+          <tr><td class="num">600 kW</td><td class="num">172</td><td class="num">382</td><td class="num">313</td><td class="num">287</td><td class="num">4,320</td><td class="num">718</td></tr>
+          <tr><td class="num">700 kW</td><td class="num">200</td><td class="num">444</td><td class="num">364</td><td class="num">333</td><td class="num">5,040</td><td class="num">835</td></tr>
+          <tr><td class="num">800 kW</td><td class="num">229</td><td class="num">508</td><td class="num">416</td><td class="num">381</td><td class="num">5,760</td><td class="num">954</td></tr>
+          <tr><td class="num">1,000 kW</td><td class="num">286</td><td class="num">636</td><td class="num">520</td><td class="num">477</td><td class="num">7,200</td><td class="num">1,194</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="small" style="margin-top:14px">Based on manufacturer gas consumption (≈3.50 kWh per Nm³ CH₄), 8,000 operating hours and 90% load. Size on the 45% methane column when gas quality is uncertain — running out of gas costs more than buying one size larger.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
     <div class="tabs" id="tabs">
       <button class="tab-btn active" data-tab="tool1">1 · Gas to power &amp; heat</button>
       <button class="tab-btn" data-tab="tool2">2 · Capacity sizing</button>
