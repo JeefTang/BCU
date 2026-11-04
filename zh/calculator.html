@@ -178,14 +178,14 @@
       <div class="calc">
         <div class="calc-form">
           <div class="field"><label for="t5_kw">电站容量（kW）</label><input id="t5_kw" type="number" value="600" step="10" min="0"></div>
-          <div class="field"><label for="t5_capex">交钥匙投资（美元/kW）</label><input id="t5_capex" type="number" value="2200" step="50" min="0"><div class="hint">机组成套约 350–450 美元/kW；完整电站通常 1,500–2,500 美元/kW。</div></div>
+          <div class="field"><label for="t5_capex">交钥匙投资（美元/kW）</label><input id="t5_capex" type="number" value="2200" step="50" min="0"><div class="hint">机组成套 FOB 约 580–630 美元/kW（600–800 kW）；完整电站通常 1,800–2,600 美元/kW。</div></div>
           <div class="field"><label for="t5_cur">币种</label><select id="t5_cur"><option value="MYR">MYR (Malaysia)</option><option value="IDR">IDR (Indonesia)</option><option value="USD">USD</option></select></div>
           <div class="field"><label for="t5_tariff">电价价值（当地币/kWh）</label><input id="t5_tariff" type="number" value="0.65" step="0.01" min="0"><div class="hint">沙巴内陆柴油 RM 0.55–0.75；市电 RM 0.40–0.50；印尼 USD 0.07–0.10。</div></div>
           <div class="field"><label for="t5_use">替代外购电的比例（%）</label><input id="t5_use" type="number" value="75" step="5" min="0" max="100"><div class="hint">只有自用的电量才享受完整的替代价值。</div></div>
           <div class="field"><label for="t5_fx">汇率（当地币/美元）</label><input id="t5_fx" type="number" value="4.2" step="0.01" min="1"></div>
           <div class="field"><label for="t5_hours">年运行小时</label><input id="t5_hours" type="number" value="8000" step="100" min="0" max="8760"></div>
-          <div class="field"><label for="t5_om">可变运维（美元/kWh）</label><input id="t5_om" type="number" value="0.013" step="0.001" min="0"></div>
-          <div class="field"><label for="t5_omfix">固定运维（美元/年）</label><input id="t5_omfix" type="number" value="15000" step="1000" min="0"></div>
+          <div class="field"><label for="t5_om">可变运维（美元/kWh）</label><input id="t5_om" type="number" value="0.0169" step="0.0001" min="0"><div class="hint">全包运维（含大修）约 0.017 美元/kWh。</div></div>
+          <div class="field"><label for="t5_omfix">固定运维（美元/年）</label><input id="t5_omfix" type="number" value="0" step="1000" min="0"></div>
           <div class="field"><label for="t5_disc">折现率（%）</label><input id="t5_disc" type="number" value="8" step="0.5" min="0" max="30"></div>
         </div>
         <div class="calc-out">

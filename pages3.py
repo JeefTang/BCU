@@ -486,9 +486,9 @@ def equipment(lang):
   <div class="wrap">
     <div class="sec-head"><p class="eyebrow">{L(lang,'Gas engines','Enjin gas','燃气机组')}</p><h2>{L(lang,'Biogas gensets, 300 kW to 2 MW','Genset biogas, 300 kW hingga 2 MW','沼气发电机组 300 kW – 2 MW')}</h2>
       <p class="lead">{L(lang,
-        'Chinese-manufactured gas engines from a proven production line, configured for POME biogas, at roughly 40–45% of the landed price of a European equivalent.',
-        'Enjin gas buatan China daripada barisan pengeluaran yang terbukti, dikonfigurasi untuk biogas POME, pada kira-kira 40–45% harga rakan Eropah.',
-        '国产成熟产线燃气机，按 POME 沼气配置，到岸价约为同级欧洲机组的 40–45%。')}</p></div>
+        'Chinese-manufactured gas engines from a proven production line, configured for POME biogas, typically 25–35% below the landed price of a European equivalent for 600–800 kW units.',
+        'Enjin gas buatan China daripada barisan pengeluaran yang terbukti, dikonfigurasi untuk biogas POME, biasanya 25–35% lebih rendah daripada harga rakan Eropah bagi unit 600–800 kW.',
+        '国产成熟产线燃气机，按 POME 沼气配置，600–800 kW 机型到岸价通常比同级欧洲机组低 25–35%。')}</p></div>
     <div class="table-wrap">
       <table>
         <thead><tr><th>{L(lang,'Model class','Kelas model','机型')}</th><th>{L(lang,'Output','Output','功率')}</th><th>{L(lang,'Electrical efficiency','Kecekapan elektrik','发电效率')}</th><th>{L(lang,'Heat recovery','Pemulihan haba','余热回收')}</th><th>{L(lang,'Voltage','Voltan','电压')}</th></tr></thead>
@@ -701,14 +701,14 @@ def calculator(lang):
       <div class="calc">
         <div class="calc-form">
           <div class="field"><label for="t5_kw">{L(lang,'Plant capacity (kW)','Kapasiti loji (kW)','电站容量（kW）')}</label><input id="t5_kw" type="number" value="600" step="10" min="0"></div>
-          <div class="field"><label for="t5_capex">{L(lang,'Turnkey capex (USD per kW)','Capex turnkey (USD per kW)','交钥匙投资（美元/kW）')}</label><input id="t5_capex" type="number" value="2200" step="50" min="0"><div class="hint">{L(lang,'Engine package ≈ USD 350–450/kW; complete plant typically USD 1,500–2,500/kW.','Pakej enjin ≈ USD 350–450/kW; loji lengkap biasanya USD 1,500–2,500/kW.','机组成套约 350–450 美元/kW；完整电站通常 1,500–2,500 美元/kW。')}</div></div>
+          <div class="field"><label for="t5_capex">{L(lang,'Turnkey capex (USD per kW)','Capex turnkey (USD per kW)','交钥匙投资（美元/kW）')}</label><input id="t5_capex" type="number" value="2200" step="50" min="0"><div class="hint">{L(lang,'Engine package FOB ≈ USD 580–630/kW (600–800 kW); complete plant typically USD 1,800–2,600/kW.','Pakej enjin FOB ≈ USD 580–630/kW (600–800 kW); loji lengkap biasanya USD 1,800–2,600/kW.','机组成套 FOB 约 580–630 美元/kW（600–800 kW）；完整电站通常 1,800–2,600 美元/kW。')}</div></div>
           <div class="field"><label for="t5_cur">{L(lang,'Currency','Mata wang','币种')}</label><select id="t5_cur"><option value="MYR">MYR (Malaysia)</option><option value="IDR">IDR (Indonesia)</option><option value="USD">USD</option></select></div>
           <div class="field"><label for="t5_tariff">{L(lang,'Value of electricity (local/kWh)','Nilai elektrik (tempatan/kWh)','电价价值（当地币/kWh）')}</label><input id="t5_tariff" type="number" value="0.65" step="0.01" min="0"><div class="hint">{L(lang,'Inland Sabah diesel: RM 0.55–0.75. Grid import RM 0.40–0.50. Indonesia USD 0.07–0.10.','Diesel pedalaman Sabah: RM 0.55–0.75. Import grid RM 0.40–0.50. Indonesia USD 0.07–0.10.','沙巴内陆柴油 RM 0.55–0.75；市电 RM 0.40–0.50；印尼 USD 0.07–0.10。')}</div></div>
           <div class="field"><label for="t5_use">{L(lang,'Share of output displacing bought power (%)','Bahagian output mengganti kuasa beli (%)','替代外购电的比例（%）')}</label><input id="t5_use" type="number" value="75" step="5" min="0" max="100"><div class="hint">{L(lang,'Only self-consumed kWh carry the full displaced-fuel value.','Hanya kWh digunakan sendiri membawa nilai penuh.','只有自用的电量才享受完整的替代价值。')}</div></div>
           <div class="field"><label for="t5_fx">{L(lang,'Exchange rate (local per USD)','Kadar tukaran (tempatan per USD)','汇率（当地币/美元）')}</label><input id="t5_fx" type="number" value="4.2" step="0.01" min="1"></div>
           <div class="field"><label for="t5_hours">{L(lang,'Operating hours per year','Jam operasi setahun','年运行小时')}</label><input id="t5_hours" type="number" value="8000" step="100" min="0" max="8760"></div>
-          <div class="field"><label for="t5_om">{L(lang,'Variable O&amp;M (USD/kWh)','O&amp;M berubah (USD/kWh)','可变运维（美元/kWh）')}</label><input id="t5_om" type="number" value="0.013" step="0.001" min="0"></div>
-          <div class="field"><label for="t5_omfix">{L(lang,'Fixed O&amp;M (USD/year)','O&amp;M tetap (USD/tahun)','固定运维（美元/年）')}</label><input id="t5_omfix" type="number" value="15000" step="1000" min="0"></div>
+          <div class="field"><label for="t5_om">{L(lang,'Variable O&amp;M (USD/kWh)','O&amp;M berubah (USD/kWh)','可变运维（美元/kWh）')}</label><input id="t5_om" type="number" value="0.0169" step="0.0001" min="0"><div class="hint">{L(lang,'Full-service O&amp;M incl. overhauls ≈ USD 0.017/kWh.','O&amp;M perkhidmatan penuh termasuk baik pulih ≈ USD 0.017/kWh.','全包运维（含大修）约 0.017 美元/kWh。')}</div></div>
+          <div class="field"><label for="t5_omfix">{L(lang,'Fixed O&amp;M (USD/year)','O&amp;M tetap (USD/tahun)','固定运维（美元/年）')}</label><input id="t5_omfix" type="number" value="0" step="1000" min="0"></div>
           <div class="field"><label for="t5_disc">{L(lang,'Discount rate (%)','Kadar diskaun (%)','折现率（%）')}</label><input id="t5_disc" type="number" value="8" step="0.5" min="0" max="30"></div>
         </div>
         <div class="calc-out">
@@ -832,7 +832,7 @@ def about(lang):
     <div class="grid-3" style="margin-top:30px">
       <div class="card"><p class="tag">{L(lang,'Why it matters','Mengapa penting','为什么重要')}</p><h3>{L(lang,'One accountable chain','Satu rantaian bertanggungjawab','一条责任链')}</h3><p>{L(lang,'Gas quality, engine warranty and civil works meet at one interface.','Kualiti gas, waranti enjin dan kerja awam bertemu di satu antara muka.','气质、机组质保与土建在一个界面上对接。')}</p></div>
       <div class="card"><p class="tag">{L(lang,'Why it matters','Mengapa penting','为什么重要')}</p><h3>{L(lang,'Local statutory knowledge','Pengetahuan berkanun tempatan','本地法规经验')}</h3><p>{L(lang,'FMA 1967 inspections, DOSH and ECOS reporting handled by the design team.','Pemeriksaan FMA 1967, pelaporan DOSH dan ECOS dikendalikan pasukan reka bentuk.','FMA 1967 检验、DOSH 与 ECOS 报告由设计团队自己处理。')}</p></div>
-      <div class="card"><p class="tag">{L(lang,'Why it matters','Mengapa penting','为什么重要')}</p><h3>{L(lang,'Factory-backed pricing','Harga disokong kilang','工厂直供价格')}</h3><p>{L(lang,'Direct supply at roughly 40–45% of European equipment pricing.','Bekalan terus pada kira-kira 40–45% harga peralatan Eropah.','直供价格约为欧洲设备的 40–45%。')}</p></div>
+      <div class="card"><p class="tag">{L(lang,'Why it matters','Mengapa penting','为什么重要')}</p><h3>{L(lang,'Factory-backed pricing','Harga disokong kilang','工厂直供价格')}</h3><p>{L(lang,'Direct supply, typically 25–35% below European equipment pricing.','Bekalan terus, biasanya 25–35% lebih rendah daripada harga peralatan Eropah.','直供价格通常比欧洲设备低 25–35%。')}</p></div>
     </div>
   </div>
 </section>
