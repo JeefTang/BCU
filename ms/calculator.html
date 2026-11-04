@@ -59,10 +59,10 @@
         <div class="calc-form">
           <div class="field"><label for="t1_flow">Aliran biogas tersedia (Nm³/j)</label><input id="t1_flow" type="number" value="300" step="1" min="0"><div class="hint">Meter padu normal sejam pada 0 °C, 101.3 kPa.</div></div>
           <div class="field"><label for="t1_ch4">Kandungan metana (%)</label><input id="t1_ch4" type="number" value="60" step="0.5" min="40" max="99"><div class="hint">Biogas POME biasanya 55–65%.</div></div>
-          <div class="field"><label for="t1_eff">Kecekapan elektrik (%)</label><input id="t1_eff" type="number" value="38" step="0.5" min="20" max="45"><div class="hint">Enjin China 36–40%, Eropah premium 40–43%.</div></div>
+          <div class="field"><label for="t1_eff">Kecekapan elektrik (%)</label><input id="t1_eff" type="number" value="35.2" step="0.1" min="20" max="45"><div class="hint">Data gas pengeluar: ≈3.50 kWh per Nm³ CH₄ = 35.2%. Eropah premium 40–43%.</div></div>
           <div class="field"><label for="t1_heat">Haba boleh pulih (% bahan api)</label><input id="t1_heat" type="number" value="43" step="1" min="0" max="60"><div class="hint">Jaket + ekzos, biasanya 40–45%.</div></div>
           <div class="field"><label for="t1_hours">Jam operasi setahun</label><input id="t1_hours" type="number" value="8000" step="100" min="0" max="8760"></div>
-          <div class="field"><label for="t1_load">Faktor beban purata (%)</label><input id="t1_load" type="number" value="85" step="1" min="10" max="100"></div>
+          <div class="field"><label for="t1_load">Faktor beban purata (%)</label><input id="t1_load" type="number" value="90" step="1" min="10" max="100"><div class="hint">Pada biogas berubah, output jangka panjang ialah 90–100% daripada saiz.</div></div>
         </div>
         <div class="calc-out">
           <h3>Keputusan</h3>
@@ -91,7 +91,7 @@
         <div class="calc-form">
           <div class="field"><label for="t2_kw">Sasaran output elektrik (kW)</label><input id="t2_kw" type="number" value="600" step="10" min="0"></div>
           <div class="field"><label for="t2_ch4">Kandungan metana (%)</label><input id="t2_ch4" type="number" value="60" step="0.5" min="40" max="99"></div>
-          <div class="field"><label for="t2_eff">Kecekapan elektrik (%)</label><input id="t2_eff" type="number" value="38" step="0.5" min="20" max="45"></div>
+          <div class="field"><label for="t2_eff">Kecekapan elektrik (%)</label><input id="t2_eff" type="number" value="35.2" step="0.1" min="20" max="45"><div class="hint">≈3.50 kWh per Nm³ CH₄ daripada data pengeluar.</div></div>
           <div class="field"><label for="t2_load">Faktor beban purata (%)</label><input id="t2_load" type="number" value="85" step="1" min="10" max="100"><div class="hint">Keperluan dikira pada beban penuh; purata mengikut beban.</div></div>
         </div>
         <div class="calc-out">
@@ -122,7 +122,7 @@
           <div class="field"><label for="t3_yield">Hasil biogas (Nm³ per m³ POME)</label><input id="t3_yield" type="number" value="24" step="1" min="5" max="40"><div class="hint">Kolam bertutup 20–28; CSTR bercampur baik boleh 30+.</div></div>
           <div class="field"><label for="t3_ch4">Kandungan metana (%)</label><input id="t3_ch4" type="number" value="60" step="0.5" min="40" max="99"></div>
           <div class="field"><label for="t3_capture">Kecekapan tangkapan (%)</label><input id="t3_capture" type="number" value="85" step="1" min="30" max="100"><div class="hint">Bahagian gas dijana yang benar-benar dihantar.</div></div>
-          <div class="field"><label for="t3_eff">Kecekapan elektrik (%)</label><input id="t3_eff" type="number" value="38" step="0.5" min="20" max="45"></div>
+          <div class="field"><label for="t3_eff">Kecekapan elektrik (%)</label><input id="t3_eff" type="number" value="35.2" step="0.1" min="20" max="45"></div>
         </div>
         <div class="calc-out">
           <h3>Potensi biogas &amp; kuasa</h3>

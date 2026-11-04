@@ -59,10 +59,10 @@
         <div class="calc-form">
           <div class="field"><label for="t1_flow">可用沼气量（Nm³/h）</label><input id="t1_flow" type="number" value="300" step="1" min="0"><div class="hint">0°C、101.3 kPa 下的标方每小时。</div></div>
           <div class="field"><label for="t1_ch4">甲烷含量（%）</label><input id="t1_ch4" type="number" value="60" step="0.5" min="40" max="99"><div class="hint">POME 沼气通常 55–65%。</div></div>
-          <div class="field"><label for="t1_eff">发电效率（%）</label><input id="t1_eff" type="number" value="38" step="0.5" min="20" max="45"><div class="hint">国产机组 36–40%，欧洲高端 40–43%。</div></div>
+          <div class="field"><label for="t1_eff">发电效率（%）</label><input id="t1_eff" type="number" value="35.2" step="0.1" min="20" max="45"><div class="hint">厂家气耗口径：每方甲烷约 3.50 kWh 电 = 35.2%。（欧洲高端 40–43%）</div></div>
           <div class="field"><label for="t1_heat">可回收热量（占燃料能量）</label><input id="t1_heat" type="number" value="43" step="1" min="0" max="60"><div class="hint">缸套水＋烟气，通常 40–45%。</div></div>
           <div class="field"><label for="t1_hours">年运行小时</label><input id="t1_hours" type="number" value="8000" step="100" min="0" max="8760"></div>
-          <div class="field"><label for="t1_load">平均负荷率（%）</label><input id="t1_load" type="number" value="85" step="1" min="10" max="100"></div>
+          <div class="field"><label for="t1_load">平均负荷率（%）</label><input id="t1_load" type="number" value="90" step="1" min="10" max="100"><div class="hint">沼气波动下长期出力为额定值的 90–100%。</div></div>
         </div>
         <div class="calc-out">
           <h3>测算结果</h3>
@@ -91,7 +91,7 @@
         <div class="calc-form">
           <div class="field"><label for="t2_kw">目标发电功率（kW）</label><input id="t2_kw" type="number" value="600" step="10" min="0"></div>
           <div class="field"><label for="t2_ch4">甲烷含量（%）</label><input id="t2_ch4" type="number" value="60" step="0.5" min="40" max="99"></div>
-          <div class="field"><label for="t2_eff">发电效率（%）</label><input id="t2_eff" type="number" value="38" step="0.5" min="20" max="45"></div>
+          <div class="field"><label for="t2_eff">发电效率（%）</label><input id="t2_eff" type="number" value="35.2" step="0.1" min="20" max="45"><div class="hint">按厂家气耗，每方甲烷约 3.50 kWh 电。</div></div>
           <div class="field"><label for="t2_load">平均负荷率（%）</label><input id="t2_load" type="number" value="85" step="1" min="10" max="100"><div class="hint">按满负荷计算；平均耗气随负荷折算。</div></div>
         </div>
         <div class="calc-out">
@@ -122,7 +122,7 @@
           <div class="field"><label for="t3_yield">沼气产率（Nm³/m³ POME）</label><input id="t3_yield" type="number" value="24" step="1" min="5" max="40"><div class="hint">覆盖塘 20–28；充分搅拌的 CSTR 可达 30 以上。</div></div>
           <div class="field"><label for="t3_ch4">甲烷含量（%）</label><input id="t3_ch4" type="number" value="60" step="0.5" min="40" max="99"></div>
           <div class="field"><label for="t3_capture">收集效率（%）</label><input id="t3_capture" type="number" value="85" step="1" min="30" max="100"><div class="hint">实际送入机组的比例。</div></div>
-          <div class="field"><label for="t3_eff">发电效率（%）</label><input id="t3_eff" type="number" value="38" step="0.5" min="20" max="45"></div>
+          <div class="field"><label for="t3_eff">发电效率（%）</label><input id="t3_eff" type="number" value="35.2" step="0.1" min="20" max="45"></div>
         </div>
         <div class="calc-out">
           <h3>沼气与发电潜力</h3>

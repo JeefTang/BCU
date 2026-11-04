@@ -59,10 +59,10 @@
         <div class="calc-form">
           <div class="field"><label for="t1_flow">Biogas flow available (Nm³/h)</label><input id="t1_flow" type="number" value="300" step="1" min="0"><div class="hint">Normal cubic metres per hour at 0 °C, 101.3 kPa.</div></div>
           <div class="field"><label for="t1_ch4">Methane content (%)</label><input id="t1_ch4" type="number" value="60" step="0.5" min="40" max="99"><div class="hint">POME biogas is typically 55–65%.</div></div>
-          <div class="field"><label for="t1_eff">Electrical efficiency (%)</label><input id="t1_eff" type="number" value="38" step="0.5" min="20" max="45"><div class="hint">Chinese engines 36–40%, premium European 40–43%.</div></div>
+          <div class="field"><label for="t1_eff">Electrical efficiency (%)</label><input id="t1_eff" type="number" value="35.2" step="0.1" min="20" max="45"><div class="hint">Manufacturer gas data: ≈3.50 kWh per Nm³ CH₄ = 35.2%. Premium European 40–43%.</div></div>
           <div class="field"><label for="t1_heat">Recoverable heat (% of fuel)</label><input id="t1_heat" type="number" value="43" step="1" min="0" max="60"><div class="hint">Jacket + exhaust, typically 40–45%.</div></div>
           <div class="field"><label for="t1_hours">Operating hours per year</label><input id="t1_hours" type="number" value="8000" step="100" min="0" max="8760"></div>
-          <div class="field"><label for="t1_load">Average load factor (%)</label><input id="t1_load" type="number" value="85" step="1" min="10" max="100"></div>
+          <div class="field"><label for="t1_load">Average load factor (%)</label><input id="t1_load" type="number" value="90" step="1" min="10" max="100"><div class="hint">On variable biogas, long-term output is 90–100% of rating.</div></div>
         </div>
         <div class="calc-out">
           <h3>Results</h3>
@@ -91,7 +91,7 @@
         <div class="calc-form">
           <div class="field"><label for="t2_kw">Target electrical output (kW)</label><input id="t2_kw" type="number" value="600" step="10" min="0"></div>
           <div class="field"><label for="t2_ch4">Methane content (%)</label><input id="t2_ch4" type="number" value="60" step="0.5" min="40" max="99"></div>
-          <div class="field"><label for="t2_eff">Electrical efficiency (%)</label><input id="t2_eff" type="number" value="38" step="0.5" min="20" max="45"></div>
+          <div class="field"><label for="t2_eff">Electrical efficiency (%)</label><input id="t2_eff" type="number" value="35.2" step="0.1" min="20" max="45"><div class="hint">≈3.50 kWh per Nm³ CH₄ from manufacturer data.</div></div>
           <div class="field"><label for="t2_load">Average load factor (%)</label><input id="t2_load" type="number" value="85" step="1" min="10" max="100"><div class="hint">Demand is calculated at full load; average scales with load.</div></div>
         </div>
         <div class="calc-out">
@@ -122,7 +122,7 @@
           <div class="field"><label for="t3_yield">Biogas yield (Nm³ per m³ POME)</label><input id="t3_yield" type="number" value="24" step="1" min="5" max="40"><div class="hint">Covered lagoon 20–28; well-mixed CSTR can reach 30+.</div></div>
           <div class="field"><label for="t3_ch4">Methane content (%)</label><input id="t3_ch4" type="number" value="60" step="0.5" min="40" max="99"></div>
           <div class="field"><label for="t3_capture">Capture efficiency (%)</label><input id="t3_capture" type="number" value="85" step="1" min="30" max="100"><div class="hint">Share of generated gas actually delivered.</div></div>
-          <div class="field"><label for="t3_eff">Electrical efficiency (%)</label><input id="t3_eff" type="number" value="38" step="0.5" min="20" max="45"></div>
+          <div class="field"><label for="t3_eff">Electrical efficiency (%)</label><input id="t3_eff" type="number" value="35.2" step="0.1" min="20" max="45"></div>
         </div>
         <div class="calc-out">
           <h3>Biogas &amp; power potential</h3>

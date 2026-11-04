@@ -494,10 +494,11 @@ def equipment(lang):
         <thead><tr><th>{L(lang,'Model class','Kelas model','机型')}</th><th>{L(lang,'Output','Output','功率')}</th><th>{L(lang,'Electrical efficiency','Kecekapan elektrik','发电效率')}</th><th>{L(lang,'Heat recovery','Pemulihan haba','余热回收')}</th><th>{L(lang,'Voltage','Voltan','电压')}</th></tr></thead>
         <tbody>
           <tr><td class="num">300 kW</td><td class="num">300 kW / 375 kVA</td><td class="num">36–38%</td><td class="num">≈ 330 kW</td><td>415 V / 50 Hz</td></tr>
-          <tr><td class="num">500 kW</td><td class="num">500 kW / 625 kVA</td><td class="num">37–39%</td><td class="num">≈ 560 kW</td><td>415 V / 50 Hz</td></tr>
-          <tr><td class="num">600 kW</td><td class="num">600 kW / 750 kVA</td><td class="num">37–39%</td><td class="num">≈ 680 kW</td><td>415 V / 50 Hz</td></tr>
-          <tr><td class="num">800 kW</td><td class="num">800 kW / 1,000 kVA</td><td class="num">38–40%</td><td class="num">≈ 900 kW</td><td>415 V / 50 Hz</td></tr>
-          <tr><td class="num">1,000 kW</td><td class="num">1,000 kW / 1,250 kVA</td><td class="num">38–40%</td><td class="num">≈ 1,150 kW</td><td>415 V / 50 Hz</td></tr>
+          <tr><td class="num">500 kW</td><td class="num">500 kW / 625 kVA</td><td class="num">35.2%</td><td class="num">≈ 560 kW</td><td>415 V / 50 Hz</td></tr>
+          <tr><td class="num">600 kW</td><td class="num">600 kW / 750 kVA</td><td class="num">35.1%</td><td class="num">≈ 680 kW</td><td>415 V / 50 Hz</td></tr>
+          <tr><td class="num">700 kW</td><td class="num">700 kW / 875 kVA</td><td class="num">35.2%</td><td class="num">≈ 790 kW</td><td>415 V / 50 Hz</td></tr>
+          <tr><td class="num">800 kW</td><td class="num">800 kW / 1,000 kVA</td><td class="num">≈ 35.2%</td><td class="num">≈ 900 kW</td><td>415 V / 50 Hz</td></tr>
+          <tr><td class="num">1,000 kW</td><td class="num">1,000 kW / 1,250 kVA</td><td class="num">35.2%</td><td class="num">≈ 1,150 kW</td><td>415 V / 50 Hz</td></tr>
           <tr><td class="num">1,500 kW</td><td class="num">1,500 kW / 1,875 kVA</td><td class="num">39–41%</td><td class="num">≈ 1,700 kW</td><td>415 V / 50 Hz</td></tr>
           <tr><td class="num">2,000 kW</td><td class="num">2,000 kW / 2,500 kVA</td><td class="num">39–42%</td><td class="num">≈ 2,300 kW</td><td>11 kV {L(lang,'option','pilihan','可选')}</td></tr>
         </tbody>
@@ -507,6 +508,52 @@ def equipment(lang):
       'Indicative at full load with 60% CH₄. Final selection based on site gas data. Containerised from 300 kW to 1.5 MW.',
       'Indikatif pada beban penuh dengan 60% CH₄. Pemilihan akhir berdasarkan data gas tapak. Kontena dari 300 kW hingga 1.5 MW.',
       '60% 甲烷满负荷下的参考值，最终按现场气样选型。300 kW–1.5 MW 可做集装箱式。')}</p>
+    <p class="small" style="margin-top:8px">{L(lang,
+      'Electrical efficiency is taken from the manufacturer gas consumption data below (≈3.50 kWh per Nm³ CH₄), which is lower than the 38–40% sometimes quoted for Chinese units.',
+      'Kecekapan elektrik diambil daripada data penggunaan gas pengeluar di bawah (≈3.50 kWh per Nm³ CH₄), lebih rendah daripada 38–40% yang kadangkala disebut.',
+      '发电效率取自下方厂家实测气耗（≈3.50 kWh/Nm³ 甲烷），低于市面上常说的 38–40% 国产机组口径。')}</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head"><p class="eyebrow">{L(lang,'Fuel gas','Gas bahan api','气质与气耗')}</p><h2>{L(lang,'What the engine needs at the inlet flange','Apa yang enjin perlukan di flan masuk','机组进口法兰需要什么')}</h2>
+      <p class="lead">{L(lang,
+        'All values measured 1 m upstream of the gas pressure regulating valve. Outside these limits the engine is derated and warranty conditions change.',
+        'Semua nilai diukur 1 m di hadapan injap pengatur tekanan gas. Di luar had ini enjin akan dikurangkan kuasa dan syarat waranti berubah.',
+        '以下数值均在机组燃气调压阀前 1 m 处测量。超出限值会降功率并影响质保条款。')}</p></div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>{L(lang,'Parameter','Parameter','参数')}</th><th>{L(lang,'Requirement','Keperluan','要求')}</th><th>{L(lang,'Why','Sebab','原因')}</th></tr></thead>
+        <tbody>
+          <tr><td>{L(lang,'Gas temperature','Suhu gas','沼气温度')}</td><td class="num">10 – 35 °C</td><td>{L(lang,'Condensation and knock control','Kawalan kondensasi dan ketukan','防冷凝与爆震')}</td></tr>
+          <tr><td>{L(lang,'Gas pressure','Tekanan gas','进气压力')}</td><td class="num">3 – 10 kPa(g); ramp ≤ 1 kPa/min</td><td>{L(lang,'Stable mixing at the gas train','Pencampuran stabil pada kereta gas','燃气混合稳定')}</td></tr>
+          <tr><td>{L(lang,'Dust','Habuk','粉尘')}</td><td class="num">≤ 5 μm; ≤ 10 mg/Nm³</td><td>{L(lang,'Valve and piston ring wear','Kehausan injap dan cincin piston','阀门与活塞环磨损')}</td></tr>
+          <tr><td>H₂S</td><td class="num">≤ 50 mg/Nm³</td><td>{L(lang,'Acid corrosion of lube oil and liners','Kakisan asid pada minyak pelincir dan liner','润滑油与缸套酸腐蚀')}</td></tr>
+          <tr><td>{L(lang,'Gas humidity','Kelembapan gas','气体湿度')}</td><td class="num">≤ 70% RH</td><td>{L(lang,'No free water in the gas train','Tiada air bebas dalam kereta gas','燃气系统不析水')}</td></tr>
+          <tr><td>{L(lang,'Condensate','Kondensat','冷凝水')}</td><td>{L(lang,'None at lowest ambient temperature','Tiada pada suhu ambien terendah','最低环境温度下不产生')}</td><td>{L(lang,'Cold-start and winter operation','Mula sejuk dan operasi musim hujan','冷启动与低温工况')}</td></tr>
+          <tr><td>NH₃</td><td class="num">≤ 40 mg/Nm³</td><td>{L(lang,'Formation of ammonium sulphates','Pembentukan ammonium sulfat','生成硫酸铵盐')}</td></tr>
+          <tr><td>{L(lang,'Siloxanes','Siloksan','硅氧烷')}</td><td class="num">≤ 10 mg/Nm³</td><td>{L(lang,'Abrasive silica deposits on valves and plugs','Mendapan silika pada injap dan palam','阀件与火花塞积二氧化硅')}</td></tr>
+          <tr><td>CH₄</td><td class="num">≥ 45% by volume; ramp ≤ 2%/min</td><td>{L(lang,'Stable combustion, no lean-burn trips','Pembakaran stabil, tiada hentian lean-burn','燃烧稳定，避免稀薄燃烧停机')}</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="sec-head" style="margin-top:44px"><p class="eyebrow">{L(lang,'Gas consumption','Penggunaan gas','气耗')}</p><h3>{L(lang,'Pure methane demand by rating','Permintaan metana tulen mengikut saiz','各功率段纯甲烷耗量')}</h3></div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>{L(lang,'Rating','Saiz','功率')}</th><th>{L(lang,'CH₄ (Nm³/h)','CH₄ (Nm³/j)','纯甲烷（Nm³/h）')}</th><th>{L(lang,'Raw biogas at 45%','Biogas mentah pada 45%','原气 @45%')}</th><th>{L(lang,'at 55%','pada 55%','@55%')}</th><th>{L(lang,'at 60%','pada 60%','@60%')}</th><th>{L(lang,'kWh per Nm³ CH₄','kWh per Nm³ CH₄','每方甲烷发电')}</th></tr></thead>
+        <tbody>
+          <tr><td class="num">500 kW</td><td class="num">142</td><td class="num">316 Nm³/h</td><td class="num">258 Nm³/h</td><td class="num">237 Nm³/h</td><td class="num">3.52 kWh</td></tr>
+          <tr><td class="num">600 kW</td><td class="num">172</td><td class="num">382 Nm³/h</td><td class="num">313 Nm³/h</td><td class="num">287 Nm³/h</td><td class="num">3.49 kWh</td></tr>
+          <tr><td class="num">700 kW</td><td class="num">200</td><td class="num">444 Nm³/h</td><td class="num">364 Nm³/h</td><td class="num">333 Nm³/h</td><td class="num">3.50 kWh</td></tr>
+          <tr><td class="num">1,000 kW</td><td class="num">286</td><td class="num">636 Nm³/h</td><td class="num">520 Nm³/h</td><td class="num">477 Nm³/h</td><td class="num">3.50 kWh</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="small" style="margin-top:14px">{L(lang,
+      'Manufacturer data: 142 / 172 / 200 / 286 Nm³ CH₄ per hour for 500 / 600 / 700 / 1,000 kW, i.e. ≈ 0.286 Nm³ CH₄ per kWh. Long-term output on variable biogas runs at 90–100% of rating, so annual energy should be modelled at 90% load.',
+      'Data pengeluar: 142 / 172 / 200 / 286 Nm³ CH₄ sejam bagi 500 / 600 / 700 / 1,000 kW, iaitu ≈ 0.286 Nm³ CH₄ per kWh. Output jangka panjang pada biogas berubah ialah 90–100% daripada saiz, jadi tenaga tahunan patut dimodelkan pada beban 90%.',
+      '厂家实测：500 / 600 / 700 / 1,000 kW 分别对应 142 / 172 / 200 / 286 Nm³ 纯甲烷每小时，即每度电约 0.286 Nm³ 甲烷。沼气波动下长期出力为额定值的 90–100%，年发电量宜按 90% 负荷建模。')}</p>
   </div>
 </section>
 
@@ -582,10 +629,10 @@ def calculator(lang):
         <div class="calc-form">
           <div class="field"><label for="t1_flow">{L(lang,'Biogas flow available (Nm³/h)','Aliran biogas tersedia (Nm³/j)','可用沼气量（Nm³/h）')}</label><input id="t1_flow" type="number" value="300" step="1" min="0"><div class="hint">{L(lang,'Normal cubic metres per hour at 0 °C, 101.3 kPa.','Meter padu normal sejam pada 0 °C, 101.3 kPa.','0°C、101.3 kPa 下的标方每小时。')}</div></div>
           <div class="field"><label for="t1_ch4">{L(lang,'Methane content (%)','Kandungan metana (%)','甲烷含量（%）')}</label><input id="t1_ch4" type="number" value="60" step="0.5" min="40" max="99"><div class="hint">{L(lang,'POME biogas is typically 55–65%.','Biogas POME biasanya 55–65%.','POME 沼气通常 55–65%。')}</div></div>
-          <div class="field"><label for="t1_eff">{L(lang,'Electrical efficiency (%)','Kecekapan elektrik (%)','发电效率（%）')}</label><input id="t1_eff" type="number" value="38" step="0.5" min="20" max="45"><div class="hint">{L(lang,'Chinese engines 36–40%, premium European 40–43%.','Enjin China 36–40%, Eropah premium 40–43%.','国产机组 36–40%，欧洲高端 40–43%。')}</div></div>
+          <div class="field"><label for="t1_eff">{L(lang,'Electrical efficiency (%)','Kecekapan elektrik (%)','发电效率（%）')}</label><input id="t1_eff" type="number" value="35.2" step="0.1" min="20" max="45"><div class="hint">{L(lang,'Manufacturer gas data: ≈3.50 kWh per Nm³ CH₄ = 35.2%. Premium European 40–43%.','Data gas pengeluar: ≈3.50 kWh per Nm³ CH₄ = 35.2%. Eropah premium 40–43%.','厂家气耗口径：每方甲烷约 3.50 kWh 电 = 35.2%。（欧洲高端 40–43%）')}</div></div>
           <div class="field"><label for="t1_heat">{L(lang,'Recoverable heat (% of fuel)','Haba boleh pulih (% bahan api)','可回收热量（占燃料能量）')}</label><input id="t1_heat" type="number" value="43" step="1" min="0" max="60"><div class="hint">{L(lang,'Jacket + exhaust, typically 40–45%.','Jaket + ekzos, biasanya 40–45%.','缸套水＋烟气，通常 40–45%。')}</div></div>
           <div class="field"><label for="t1_hours">{L(lang,'Operating hours per year','Jam operasi setahun','年运行小时')}</label><input id="t1_hours" type="number" value="8000" step="100" min="0" max="8760"></div>
-          <div class="field"><label for="t1_load">{L(lang,'Average load factor (%)','Faktor beban purata (%)','平均负荷率（%）')}</label><input id="t1_load" type="number" value="85" step="1" min="10" max="100"></div>
+          <div class="field"><label for="t1_load">{L(lang,'Average load factor (%)','Faktor beban purata (%)','平均负荷率（%）')}</label><input id="t1_load" type="number" value="90" step="1" min="10" max="100"><div class="hint">{L(lang,'On variable biogas, long-term output is 90–100% of rating.','Pada biogas berubah, output jangka panjang ialah 90–100% daripada saiz.','沼气波动下长期出力为额定值的 90–100%。')}</div></div>
         </div>
         <div class="calc-out">
           <h3>{L(lang,'Results','Keputusan','测算结果')}</h3>
@@ -614,7 +661,7 @@ def calculator(lang):
         <div class="calc-form">
           <div class="field"><label for="t2_kw">{L(lang,'Target electrical output (kW)','Sasaran output elektrik (kW)','目标发电功率（kW）')}</label><input id="t2_kw" type="number" value="600" step="10" min="0"></div>
           <div class="field"><label for="t2_ch4">{L(lang,'Methane content (%)','Kandungan metana (%)','甲烷含量（%）')}</label><input id="t2_ch4" type="number" value="60" step="0.5" min="40" max="99"></div>
-          <div class="field"><label for="t2_eff">{L(lang,'Electrical efficiency (%)','Kecekapan elektrik (%)','发电效率（%）')}</label><input id="t2_eff" type="number" value="38" step="0.5" min="20" max="45"></div>
+          <div class="field"><label for="t2_eff">{L(lang,'Electrical efficiency (%)','Kecekapan elektrik (%)','发电效率（%）')}</label><input id="t2_eff" type="number" value="35.2" step="0.1" min="20" max="45"><div class="hint">{L(lang,'≈3.50 kWh per Nm³ CH₄ from manufacturer data.','≈3.50 kWh per Nm³ CH₄ daripada data pengeluar.','按厂家气耗，每方甲烷约 3.50 kWh 电。')}</div></div>
           <div class="field"><label for="t2_load">{L(lang,'Average load factor (%)','Faktor beban purata (%)','平均负荷率（%）')}</label><input id="t2_load" type="number" value="85" step="1" min="10" max="100"><div class="hint">{L(lang,'Demand is calculated at full load; average scales with load.','Keperluan dikira pada beban penuh; purata mengikut beban.','按满负荷计算；平均耗气随负荷折算。')}</div></div>
         </div>
         <div class="calc-out">
@@ -645,7 +692,7 @@ def calculator(lang):
           <div class="field"><label for="t3_yield">{L(lang,'Biogas yield (Nm³ per m³ POME)','Hasil biogas (Nm³ per m³ POME)','沼气产率（Nm³/m³ POME）')}</label><input id="t3_yield" type="number" value="24" step="1" min="5" max="40"><div class="hint">{L(lang,'Covered lagoon 20–28; well-mixed CSTR can reach 30+.','Kolam bertutup 20–28; CSTR bercampur baik boleh 30+.','覆盖塘 20–28；充分搅拌的 CSTR 可达 30 以上。')}</div></div>
           <div class="field"><label for="t3_ch4">{L(lang,'Methane content (%)','Kandungan metana (%)','甲烷含量（%）')}</label><input id="t3_ch4" type="number" value="60" step="0.5" min="40" max="99"></div>
           <div class="field"><label for="t3_capture">{L(lang,'Capture efficiency (%)','Kecekapan tangkapan (%)','收集效率（%）')}</label><input id="t3_capture" type="number" value="85" step="1" min="30" max="100"><div class="hint">{L(lang,'Share of generated gas actually delivered.','Bahagian gas dijana yang benar-benar dihantar.','实际送入机组的比例。')}</div></div>
-          <div class="field"><label for="t3_eff">{L(lang,'Electrical efficiency (%)','Kecekapan elektrik (%)','发电效率（%）')}</label><input id="t3_eff" type="number" value="38" step="0.5" min="20" max="45"></div>
+          <div class="field"><label for="t3_eff">{L(lang,'Electrical efficiency (%)','Kecekapan elektrik (%)','发电效率（%）')}</label><input id="t3_eff" type="number" value="35.2" step="0.1" min="20" max="45"></div>
         </div>
         <div class="calc-out">
           <h3>{L(lang,'Biogas &amp; power potential','Potensi biogas &amp; kuasa','沼气与发电潜力')}</h3>
