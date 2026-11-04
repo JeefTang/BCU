@@ -53,7 +53,7 @@
     set("t1_diesel", nf(dieselL, 0) + " L/yr · " + nf(co2t, 0) + " t CO₂");
 
     var msgs = [];
-    if (ch4 < 50) msgs.push("Methane below 50%: most gas engines will need derating or a richer gas blend.");
+    if (ch4 < 45) msgs.push("Methane below 45%: outside the engine fuel specification — output is derated per the manufacturer's curve, and combustion becomes unstable.");
     if (load < 70) msgs.push("Average load below 70%: expect carbon build-up and a shorter overhaul interval. Consider a smaller unit or two units.");
     if (heat + eff > 92) msgs.push("Combined efficiency above 92% is not achievable — check the heat recovery assumption.");
     warn("t1_warn", msgs.join(" "));
@@ -77,7 +77,7 @@
     set("t2_year", nf(year / 1000000, 2) + " million Nm³/yr");
 
     var msgs = [];
-    if (ch4 < 50) msgs.push("At this methane content the engine will be derated: check the manufacturer's derating curve.");
+    if (ch4 < 45) msgs.push("At this methane content the engine is outside its fuel specification: check the manufacturer's derating curve.");
     if (eff > 42) msgs.push("Efficiency above 42% is at the top of the range for gas engines — verify it is not a lower-heating-value claim.");
     warn("t2_warn", msgs.join(" "));
   }
