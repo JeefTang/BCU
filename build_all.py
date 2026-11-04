@@ -2,6 +2,7 @@
 import os
 from build3 import write_page, LANGS, SITE
 import pages3
+import pages_hchp
 
 PAGES = [
     ("index.html", pages3.index,
@@ -25,6 +26,13 @@ PAGES = [
      {"en": "Upgrade POME biogas to ≥97% methane for boiler fuel or bio-CNG. PSA, water scrubbing and membrane comparison.",
       "ms": "Tingkatkan biogas POME ke ≥97% metana untuk bahan api dandang atau bio-CNG. Perbandingan PSA, scrubber air dan membran.",
       "zh": "把 POME 沼气提纯至 ≥97% 甲烷，供锅炉或 Bio-CNG。PSA、水洗、膜分离路线对比。"}),
+    ("hydrogen-chp.html", pages_hchp.hydrogen,
+     {"en": "Hydrogen CHP 7.5–100 kW — Methane Reforming Fuel Cell Cogeneration | KSTS",
+      "ms": "CHP Hidrogen 7.5–100 kW — Sel Bahan Api Pembentukan Semula Metana | KSTS",
+      "zh": "氢能热电联供 7.5–100 kW — 甲烷重整燃料电池 | KSTS"},
+     {"en": "Bottled 97% biomethane reformed to hydrogen on site, converted to power and 60–70 °C hot water by a fuel cell. 7.5–100 kW, indicative RM 20,000/kW to Malaysia.",
+      "ms": "Biometana 97% dalam botol dibentuk semula menjadi hidrogen di tapak, ditukar kepada kuasa dan air panas 60–70 °C oleh sel bahan api. 7.5–100 kW, indikatif RM 20,000/kW.",
+      "zh": "97% 瓶装生物天然气现场重整制氢，燃料电池同时供电与 60–70 ℃ 热水。7.5–100 kW，出口马来西亚参考价 RM 20,000/kW。"}),
     ("equipment.html", pages3.equipment,
      {"en": "Equipment &amp; Scope — Gas Engines, Desulfurisation, Upgrading | KSTS",
       "ms": "Peralatan &amp; Skop — Enjin Gas, Nyahsulfur, Peningkatan | KSTS",
@@ -65,7 +73,11 @@ for lang, prefix, _ in LANGS:
     body = ('<section class="page-head"><div class="wrap"><p class="eyebrow">404</p>'
             + "<h1>" + L(lang, "Page not found", "Halaman tidak dijumpai", "页面不存在") + "</h1>"
             + '<p class="lead">' + L(lang, "The page you asked for does not exist.", "Halaman yang diminta tidak wujud.", "你访问的页面不存在。") + "</p>"
-            + '<p style="margin-top:22px"><a class="btn" href="index.html">' + L(lang, "Back to home", "Kembali ke utama", "返回首页") + "</a></p></div></section>")
+            + '<p style="margin-top:22px"><a class="btn" href="index.html">' + L(lang, "Back to home", "Kembali ke utama", "返回首页") + "</a>"
+            + ' <a class="btn ghost" href="../index.html" style="margin-left:8px">English</a>'
+            + ' <a class="btn ghost" href="../ms/index.html" style="margin-left:8px">Bahasa Melayu</a>'
+            + ' <a class="btn ghost" href="../zh/index.html" style="margin-left:8px">中文</a></p>'
+            + '<p class="small" style="margin-top:18px">' + L(lang, "Check the address — our site lives at jeeftang.github.io/BCU/ (capital letters).", "Semak alamat — laman kami di jeeftang.github.io/BCU/ (huruf besar).", "请检查网址——本站地址为 jeeftang.github.io/BCU/（注意大写）。") + "</p></div></section>")
     write_page(lang, "404.html", "404 | KSTS", "404", body)
 
 # sitemap with hreflang alternates

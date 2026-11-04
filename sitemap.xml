@@ -64,6 +64,27 @@
     <changefreq>monthly</changefreq><priority>0.8</priority>
   </url>
   <url>
+    <loc>https://jeeftang.github.io/BCU/hydrogen-chp.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jeeftang.github.io/BCU/hydrogen-chp.html"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://jeeftang.github.io/BCU/ms/hydrogen-chp.html"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://jeeftang.github.io/BCU/zh/hydrogen-chp.html"/>
+    <changefreq>monthly</changefreq><priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://jeeftang.github.io/BCU/ms/hydrogen-chp.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jeeftang.github.io/BCU/hydrogen-chp.html"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://jeeftang.github.io/BCU/ms/hydrogen-chp.html"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://jeeftang.github.io/BCU/zh/hydrogen-chp.html"/>
+    <changefreq>monthly</changefreq><priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://jeeftang.github.io/BCU/zh/hydrogen-chp.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jeeftang.github.io/BCU/hydrogen-chp.html"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://jeeftang.github.io/BCU/ms/hydrogen-chp.html"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://jeeftang.github.io/BCU/zh/hydrogen-chp.html"/>
+    <changefreq>monthly</changefreq><priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://jeeftang.github.io/BCU/equipment.html</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://jeeftang.github.io/BCU/equipment.html"/>
     <xhtml:link rel="alternate" hreflang="ms" href="https://jeeftang.github.io/BCU/ms/equipment.html"/>

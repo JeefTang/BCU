@@ -8,15 +8,21 @@ ROOT = os.path.dirname(os.path.abspath(__file__))
 
 LANGS = [("en", "", "English"), ("ms", "ms/", "Bahasa Melayu"), ("zh", "zh/", "中文")]
 
+# short labels used when the header gets tight (default) — full labels only on very wide screens
+SHORT = {"en": "EN", "ms": "BM", "zh": "中文"}
+
 NAV = {
     "en": [("index.html", "Home"), ("biogas-to-power.html", "Biogas to Power"),
-           ("biomethane.html", "Biomethane &amp; Bio-CNG"), ("equipment.html", "Equipment"),
+           ("biomethane.html", "Biomethane"), ("hydrogen-chp.html", "Hydrogen CHP"),
+           ("equipment.html", "Equipment"),
            ("calculator.html", "Engineering Tools"), ("about.html", "About KSTS")],
     "ms": [("index.html", "Utama"), ("biogas-to-power.html", "Biogas ke Kuasa"),
-           ("biomethane.html", "Biometana &amp; Bio-CNG"), ("equipment.html", "Peralatan"),
+           ("biomethane.html", "Biometana"), ("hydrogen-chp.html", "CHP Hidrogen"),
+           ("equipment.html", "Peralatan"),
            ("calculator.html", "Alat Kejuruteraan"), ("about.html", "Tentang KSTS")],
     "zh": [("index.html", "首页"), ("biogas-to-power.html", "沼气发电"),
-           ("biomethane.html", "生物天然气 / Bio-CNG"), ("equipment.html", "设备与范围"),
+           ("biomethane.html", "生物天然气"), ("hydrogen-chp.html", "氢能热电联供"),
+           ("equipment.html", "设备与范围"),
            ("calculator.html", "工程测算工具"), ("about.html", "关于 KSTS")],
 }
 
@@ -60,8 +66,9 @@ def head(lang, page, title, desc):
             return "../" + fname
         return "../" + tgt_pre + fname
     langs_html = "".join(
-        '<a href="%s"%s>%s</a>' % (lang_link(prefix, pre, page),
-                                    ' class="on"' if code == lang else "", label)
+        '<a href="%s"%s title="%s" hreflang="%s"><span class="lg-full">%s</span><span class="lg-short">%s</span></a>' % (
+            lang_link(prefix, pre, page),
+            ' class="on"' if code == lang else "", label, code, label, SHORT[code])
         for code, pre, label in LANGS)
     return """<!doctype html>
 <html lang="%s">
@@ -86,15 +93,15 @@ def head(lang, page, title, desc):
 <header class="site">
   <div class="wrap nav">
     <a class="brand" href="index.html">%s<span>KSTS<small>%s</small></span></a>
+    <div class="lang" role="group" aria-label="Language / Bahasa / 语言">%s</div>
     <button class="menu-toggle" id="menuToggle" aria-label="Menu" aria-expanded="false">&#9776;</button>
     <ul id="navList">%s</ul>
-    <div class="lang">%s</div>
     <a class="btn cta" href="contact.html">%s</a>
   </div>
 </header>
 """ % ({"en": "en", "ms": "ms", "zh": "zh"}[lang], title, desc, SITE, prefix,
        page if page != "index.html" else "", alts, title, desc, asset, FAVICON, asset,
-       SITE, LOGO, BRAND_SUB[lang], nav, langs_html, CTA[lang])
+       SITE, LOGO, BRAND_SUB[lang], langs_html, nav, CTA[lang])
 
 
 def footer(lang):
@@ -102,28 +109,31 @@ def footer(lang):
     asset = "../" if prefix else ""
     f = {
         "en": {
-            "blurb": "Biogas power, biomethane upgrading and bio-CNG for palm oil mills and agro-industry in Sabah and Sarawak. Technology partner: ZERO CARBON ASSISTANT, Shanghai.",
+            "blurb": "Biogas power, biomethane upgrading and bio-CNG for palm oil mills and agro-industry in Sabah and Sarawak. Technology partner: SINOPEC Dalian Research Institute of Petroleum and Petrochemicals; engineering by a Tsinghua University PhD team.",
             "h_sol": "Solutions", "h_co": "Company", "h_ct": "Contact",
             "l1": "POME biogas to power", "l2": "Biomethane &amp; bio-CNG",
             "l3": "Equipment &amp; scope", "l4": "Engineering tools",
+            "l5": "Hydrogen CHP",
             "c1": "About KSTS", "c2": "Local partner profile", "c3": "Contact",
             "copy": "&copy; 2026 KSTS K. S. Technical Services. All rights reserved.",
             "disc": "Figures on this site are indicative and subject to site data and formal quotation.",
         },
         "ms": {
-            "blurb": "Kuasa biogas, peningkatan biometana dan bio-CNG untuk kilang kelapa sawit dan industri pertanian di Sabah dan Sarawak. Rakan teknologi: ZERO CARBON ASSISTANT, Shanghai.",
+            "blurb": "Kuasa biogas, peningkatan biometana dan bio-CNG untuk kilang kelapa sawit dan industri pertanian di Sabah dan Sarawak. Rakan teknologi: Institut Penyelidikan Petroleum dan Petrokimia Dalian SINOPEC; kejuruteraan oleh pasukan PhD Universiti Tsinghua.",
             "h_sol": "Penyelesaian", "h_co": "Syarikat", "h_ct": "Hubungi",
             "l1": "Biogas POME ke kuasa", "l2": "Biometana &amp; bio-CNG",
             "l3": "Peralatan &amp; skop", "l4": "Alat kejuruteraan",
+            "l5": "CHP hidrogen",
             "c1": "Tentang KSTS", "c2": "Profil rakan tempatan", "c3": "Hubungi",
             "copy": "&copy; 2026 KSTS K. S. Technical Services. Hak cipta terpelihara.",
             "disc": "Angka di laman ini adalah indikatif dan tertakluk kepada data tapak dan sebut harga rasmi.",
         },
         "zh": {
-            "blurb": "面向沙巴与砂拉越棕榈油厂及农产加工业的沼气发电、生物天然气提纯与 Bio-CNG。技术伙伴：ZERO CARBON ASSISTANT（上海）。",
+            "blurb": "面向沙巴与砂拉越棕榈油厂及农产加工业的沼气发电、生物天然气提纯与 Bio-CNG。技术伙伴：中国石化大连研究院（清华大学博士团队）。",
             "h_sol": "解决方案", "h_co": "公司", "h_ct": "联系",
             "l1": "POME 沼气发电", "l2": "生物天然气 / Bio-CNG",
             "l3": "设备与供货范围", "l4": "工程测算工具",
+            "l5": "氢能热电联供",
             "c1": "关于 KSTS", "c2": "本地伙伴简介", "c3": "联系我们",
             "copy": "&copy; 2026 KSTS K. S. Technical Services. 版权所有。",
             "disc": "本页数据均为测算参考值，实际以现场实测数据与正式报价为准。",
@@ -139,6 +149,7 @@ def footer(lang):
       <div><h4>%s</h4><ul>
         <li><a href="biogas-to-power.html">%s</a></li>
         <li><a href="biomethane.html">%s</a></li>
+        <li><a href="hydrogen-chp.html">%s</a></li>
         <li><a href="equipment.html">%s</a></li>
         <li><a href="calculator.html">%s</a></li>
       </ul></div>
@@ -159,7 +170,7 @@ def footer(lang):
 </footer>
 </body>
 </html>
-""" % (LOGO, BRAND_SUB[lang], f["blurb"], f["h_sol"], f["l1"], f["l2"], f["l3"], f["l4"],
+""" % (LOGO, BRAND_SUB[lang], f["blurb"], f["h_sol"], f["l1"], f["l2"], f["l5"], f["l3"], f["l4"],
        f["h_co"], f["c1"], f["c2"], f["c3"], f["h_ct"], f["copy"], f["disc"])
 
 

@@ -4,6 +4,7 @@ from build3 import L
 
 
 def index(lang):
+    asset = "../" if lang != "en" else ""
     s = dict(
         badge=L(lang,
                 "POME biogas · palm biomass · biomethane · Sabah &amp; Sarawak",
@@ -14,9 +15,9 @@ def index(lang):
              "Sisa kilang kelapa sawit, menjadi kuasa 24 jam.",
              "把棕榈油厂的废料，变成 24 小时稳定电力。"),
         lead=L(lang,
-               "KSTS designs, builds and supports biogas power plants and biomethane upgrading systems for palm oil mills across Sabah and Sarawak — with our technology partner ZERO CARBON ASSISTANT in Shanghai.",
-               "KSTS merekabentuk, membina dan menyokong loji kuasa biogas serta sistem peningkatan biometana untuk kilang kelapa sawit di Sabah dan Sarawak — bersama rakan teknologi kami ZERO CARBON ASSISTANT di Shanghai.",
-               "KSTS 为沙巴与砂拉越的棕榈油厂设计、建设并运维沼气发电站与生物天然气提纯系统，技术伙伴为上海的 ZERO CARBON ASSISTANT。"),
+               "KSTS designs, builds and supports biogas power plants and biomethane upgrading systems for palm oil mills across Sabah and Sarawak — with technology from SINOPEC Dalian Research Institute of Petroleum and Petrochemicals, and engineers from a Tsinghua University PhD team.",
+               "KSTS merekabentuk, membina dan menyokong loji kuasa biogas serta sistem peningkatan biometana untuk kilang kelapa sawit di Sabah dan Sarawak — dengan teknologi daripada Institut Penyelidikan Petroleum dan Petrokimia Dalian SINOPEC, dan jurutera daripada pasukan PhD Universiti Tsinghua.",
+               "KSTS 为沙巴与砂拉越的棕榈油厂设计、建设并运维沼气发电站与生物天然气提纯系统，技术伙伴为中国石化大连研究院，技术工程师来自清华大学博士团队。"),
         b1=L(lang, "Size your plant in 30 seconds", "Kira kapasiti loji dalam 30 saat", "30 秒算出你的电站规模"),
         b2=L(lang, "Send your mill data", "Hantar data kilang", "提交油厂数据"),
         s1=L(lang, "Nm³/h biogas for a 600 kW set at 60% CH₄", "Nm³/j biogas untuk set 600 kW pada 60% CH₄", "600 kW 机组所需沼气量（60% 甲烷）"),
@@ -203,6 +204,34 @@ def index(lang):
           </tbody></table>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap grid-2" style="gap:44px;align-items:center">
+    <figure style="margin:0">
+      <img src="{asset}assets/img/press-iem-sabah-cpd-2026.jpg" alt="Report on the IEM Sabah Branch CPD talk on palm oil mill biomass presented by Alvin Leong" loading="lazy" style="border:1px solid var(--line);border-radius:12px;box-shadow:0 10px 30px rgba(12,26,38,.10)">
+      <figcaption class="small" style="margin-top:12px">{L(lang,
+        'Report on the IEM Sabah Branch CPD talk, Kota Kinabalu.',
+        'Laporan ceramah CPD IEM Cawangan Sabah, Kota Kinabalu.',
+        'IEM 沙巴分会 CPD 讲座报道，亚庇。')}</figcaption>
+    </figure>
+    <div>
+      <p class="eyebrow">{L(lang,'In the news','Dalam berita','媒体报道')}</p>
+      <h2>{L(lang,
+        'Invited to speak at the Institution of Engineers Malaysia, Sabah Branch',
+        'Dijemput berucap di Institution of Engineers Malaysia, Cawangan Sabah',
+        '受邀在马来西亚工程师学会沙巴分会主讲')}</h2>
+      <p>{L(lang,
+        'Alvin Leong presented “Transforming Palm Oil Mill Biomass Wastes” at the IEM Sabah Branch CPD talk in Kota Kinabalu — cogeneration and Bio-CNG from palm kernel shells, palm fibre and POME.',
+        'Alvin Leong membentangkan “Transforming Palm Oil Mill Biomass Wastes” pada ceramah CPD IEM Cawangan Sabah di Kota Kinabalu — kogenerasi dan Bio-CNG daripada tempurung isirung sawit, gentian sawit dan POME.',
+        'Alvin Leong 在亚庇的 IEM 沙巴分会 CPD 讲座主讲《Transforming Palm Oil Mill Biomass Wastes》——棕仁壳、棕纤维与 POME 的热电联产与 Bio-CNG。')}</p>
+      <p>{L(lang,
+        'Sabah has 129 active palm oil mills producing an estimated 25.75 million tonnes of biomass a year.',
+        'Sabah mempunyai 129 kilang kelapa sawit aktif yang menghasilkan kira-kira 25.75 juta tan biomas setahun.',
+        '沙巴现有 129 家运营中的棕榈油厂，每年产生约 2,575 万吨生物质。')}</p>
+      <a class="btn ghost sm" href="about.html#press">{L(lang,'Read more','Baca lagi','了解更多')}</a>
     </div>
   </div>
 </section>
@@ -839,6 +868,7 @@ def calculator(lang):
 
 
 def about(lang):
+    asset = "../" if lang != "en" else ""
     return f"""
 <section class="page-head">
   <div class="wrap">
@@ -898,17 +928,44 @@ def about(lang):
   </div>
 </section>
 
+<section id="press">
+  <div class="wrap grid-2" style="gap:44px;align-items:center">
+    <figure style="margin:0">
+      <img src="{asset}assets/img/press-iem-sabah-cpd-2026.jpg" alt="Report on the IEM Sabah Branch CPD talk on palm oil mill biomass presented by Alvin Leong" loading="lazy" style="border:1px solid var(--line);border-radius:12px;box-shadow:0 10px 30px rgba(12,26,38,.10)">
+      <figcaption class="small" style="margin-top:12px">{L(lang,
+        'Report on the IEM Sabah Branch CPD talk, Kota Kinabalu.',
+        'Laporan ceramah CPD IEM Cawangan Sabah, Kota Kinabalu.',
+        'IEM 沙巴分会 CPD 讲座报道，亚庇。')}</figcaption>
+    </figure>
+    <div>
+      <p class="eyebrow">{L(lang,'In the news','Dalam berita','媒体报道')}</p>
+      <h2>{L(lang,
+        'Invited to speak at the Institution of Engineers Malaysia, Sabah Branch',
+        'Dijemput berucap di Institution of Engineers Malaysia, Cawangan Sabah',
+        '受邀在马来西亚工程师学会沙巴分会主讲')}</h2>
+      <p>{L(lang,
+        'Alvin Leong was the speaker at the IEM Sabah Branch Continuing Professional Development talk, “Transforming Palm Oil Mill Biomass Wastes”, in Kota Kinabalu. The session covered cogeneration and Bio-CNG from palm kernel shells, palm fibre and POME, and the three constraints that decide whether a project actually gets built: securing a reliable biomass supply, the capital cost, and a long-term commercial arrangement.',
+        'Alvin Leong ialah penceramah dalam ceramah Pembangunan Profesional Berterusan IEM Cawangan Sabah, “Transforming Palm Oil Mill Biomass Wastes”, di Kota Kinabalu. Sesi itu merangkumi kogenerasi dan Bio-CNG daripada tempurung isirung sawit, gentian sawit dan POME, serta tiga kekangan yang menentukan sama ada projek benar-benar dibina: bekalan biomas yang boleh dipercayai, kos modal, dan pengaturan komersial jangka panjang.',
+        'Alvin Leong 在亚庇举行的 IEM（马来西亚工程师学会）沙巴分会持续专业发展（CPD）讲座担任主讲，题目为《Transforming Palm Oil Mill Biomass Wastes》。内容涵盖棕仁壳、棕纤维与 POME 的热电联产与 Bio-CNG 路线，以及决定项目能否落地的三项硬约束：生物质稳定供应、初始投资与长期商业安排。')}</p>
+      <p>{L(lang,
+        'Sabah has 129 active palm oil mills producing an estimated 25.75 million tonnes of biomass a year — the resource base behind every capacity we size.',
+        'Sabah mempunyai 129 kilang kelapa sawit aktif yang menghasilkan kira-kira 25.75 juta tan biomas setahun — asas sumber bagi setiap kapasiti yang kami kira.',
+        '沙巴现有 129 家运营中的棕榈油厂，每年产生约 2,575 万吨生物质——这就是我们做容量测算的资源底盘。')}</p>
+    </div>
+  </div>
+</section>
+
 <section class="alt" id="partner">
   <div class="wrap">
     <div class="sec-head"><p class="eyebrow">{L(lang,'Technology partner','Rakan teknologi','技术伙伴')}</p>
-      <h2>ZERO CARBON ASSISTANT, Shanghai</h2>
+      <h2>{L(lang,'SINOPEC Dalian Research Institute of Petroleum and Petrochemicals','Institut Penyelidikan Petroleum dan Petrokimia Dalian SINOPEC','中国石化大连研究院')}</h2>
       <p class="lead">{L(lang,
         'Engineering, gas engines and upgrading equipment come from a Chinese manufacturer with an export track record. KSTS is the in-country partner: site data, permitting, civil works, installation, statutory inspection and operations.',
         'Kejuruteraan, enjin gas dan peralatan peningkatan datang dari pengeluar China dengan rekod eksport. KSTS ialah rakan dalam negara: data tapak, kebenaran, kerja awam, pemasangan, pemeriksaan berkanun dan operasi.',
         '工程、燃气机组与提纯设备来自有出口业绩的中国制造商。KSTS 是本地伙伴：现场数据、审批、土建、安装、法定检验与运维。')}</p></div>
     <div class="table-wrap">
       <table>
-        <thead><tr><th>{L(lang,'Function','Fungsi','职能')}</th><th>KSTS (Malaysia)</th><th>ZERO CARBON (China)</th></tr></thead>
+        <thead><tr><th>{L(lang,'Function','Fungsi','职能')}</th><th>KSTS (Malaysia)</th><th>{L(lang,'Technology partner (China)','Rakan teknologi (China)','技术伙伴（中国）')}</th></tr></thead>
         <tbody>
           <tr><td>{L(lang,'Site survey &amp; gas measurement','Tinjauan tapak &amp; pengukuran gas','现场勘察与气量实测')}</td><td>{L(lang,'Yes','Ya','是')}</td><td>{L(lang,'Protocol and interpretation','Protokol dan tafsiran','测试方案与解读')}</td></tr>
           <tr><td>{L(lang,'Process design &amp; gas balance','Reka proses &amp; imbangan gas','工艺设计与气量平衡')}</td><td>{L(lang,'Review','Semakan','审核')}</td><td>{L(lang,'Yes','Ya','是')}</td></tr>
