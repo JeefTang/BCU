@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="ms">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kalkulator Kejuruteraan — Biogas ke Kuasa, Saiz, Biometana, Ekonomi | KSTS</title>
+<meta name="description" content="Lima kalkulator kejuruteraan percuma: biogas ke elektrik dan haba, saiz kapasiti, kemampuan kilang ke biogas, hasil peningkatan dan ekonomi projek.">
+<link rel="canonical" href="https://jeeftang.github.io/BCU/ms/calculator.html">
+<link rel="alternate" hreflang="en" href="https://jeeftang.github.io/BCU/calculator.html"><link rel="alternate" hreflang="ms" href="https://jeeftang.github.io/BCU/ms/calculator.html"><link rel="alternate" hreflang="zh" href="https://jeeftang.github.io/BCU/zh/calculator.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="KSTS K. S. Technical Services — Biogas &amp; Bioenergy">
+<meta property="og:title" content="Kalkulator Kejuruteraan — Biogas ke Kuasa, Saiz, Biometana, Ekonomi | KSTS">
+<meta property="og:description" content="Lima kalkulator kejuruteraan percuma: biogas ke elektrik dan haba, saiz kapasiti, kemampuan kilang ke biogas, hasil peningkatan dan ekonomi projek.">
+<meta name="theme-color" content="#0c1a26">
+<link rel="stylesheet" href="../assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 34 34'><rect width='34' height='34' rx='9' fill='%230c1a26'/><path d='M17 6.5c3.6 2.4 6 6.2 6 10.2 0 3.3-2.7 6-6 6s-6-2.7-6-6c0-4 2.4-7.8 6-10.2Z' fill='%230f7a52'/></svg>">
+<script src="../assets/js/site.js" defer></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"KSTS K. S. Technical Services","url":"https://jeeftang.github.io/BCU/","address":{"@type":"PostalAddress","streetAddress":"Kg. Nangoh, NT 083017181 (Lot 2), 34 km Off Jalan Simpang Sapi Nangoh, Labuk-Sugut","addressLocality":"Telupid","addressRegion":"Sabah","addressCountry":"MY"},"contactPoint":{"@type":"ContactPoint","telephone":"+60 13-883 3833","email":"k.s.t.s_sabah@hotmail.com","contactType":"sales"}}</script>
+</head>
+<body>
+<header class="site">
+  <div class="wrap nav">
+    <a class="brand" href="index.html"><svg width="34" height="34" viewBox="0 0 34 34" fill="none" aria-hidden="true">
+<rect width="34" height="34" rx="9" fill="#0c1a26"/>
+<path d="M17 6.5c3.6 2.4 6 6.2 6 10.2 0 3.3-2.7 6-6 6s-6-2.7-6-6c0-4 2.4-7.8 6-10.2Z" fill="#0f7a52"/>
+<path d="M17 22.7v4.8M11 14.5h12" stroke="#fff" stroke-width="1.6" stroke-linecap="round" opacity=".85"/>
+</svg><span>KSTS<small>Biogas &amp; Biotenaga</small></span></a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Menu" aria-expanded="false">&#9776;</button>
+    <ul id="navList"><li><a href="index.html">Utama</a></li><li><a href="biogas-to-power.html">Biogas ke Kuasa</a></li><li><a href="biomethane.html">Biometana &amp; Bio-CNG</a></li><li><a href="equipment.html">Peralatan</a></li><li><a href="calculator.html" aria-current="page">Alat Kejuruteraan</a></li><li><a href="about.html">Tentang KSTS</a></li></ul>
+    <div class="lang"><a href="../calculator.html">English</a><a href="calculator.html" class="on">Bahasa Melayu</a><a href="../zh/calculator.html">中文</a></div>
+    <a class="btn cta" href="contact.html">Minta kajian</a>
+  </div>
+</header>
+
+<section class="page-head">
+  <div class="wrap">
+    <p class="eyebrow">Alat kejuruteraan</p>
+    <h1>Lima kalkulator, tanpa pendaftaran</h1>
+    <p class="lead">Ini formula yang kami gunakan dalam kerja pra-kelayakan. Ia sengaja telus: setiap andaian dipaparkan dan boleh diubah. Gunakan untuk menyemak angka pembekal — termasuk kami.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="tabs" id="tabs">
+      <button class="tab-btn active" data-tab="tool1">1 · Gas ke kuasa &amp; haba</button>
+      <button class="tab-btn" data-tab="tool2">2 · Saiz kapasiti</button>
+      <button class="tab-btn" data-tab="tool3">3 · Kilang ke biogas</button>
+      <button class="tab-btn" data-tab="tool4">4 · Hasil peningkatan</button>
+      <button class="tab-btn" data-tab="tool5">5 · Ekonomi projek</button>
+    </div>
+
+    <div class="tab-panel active" id="tool1">
+      <div class="tool-head">
+        <div><p class="eyebrow">Alat 01</p><h2>Aliran biogas → elektrik dan haba</h2></div>
+        <div class="tool-actions"><button class="btn ghost sm" onclick="window.print()">Cetak / simpan PDF</button><button class="btn sm" onclick="copySummary('tool1')">Salin ringkasan</button></div>
+      </div>
+      <div class="calc">
+        <div class="calc-form">
+          <div class="field"><label for="t1_flow">Aliran biogas tersedia (Nm³/j)</label><input id="t1_flow" type="number" value="300" step="1" min="0"><div class="hint">Meter padu normal sejam pada 0 °C, 101.3 kPa.</div></div>
+          <div class="field"><label for="t1_ch4">Kandungan metana (%)</label><input id="t1_ch4" type="number" value="60" step="0.5" min="40" max="99"><div class="hint">Biogas POME biasanya 55–65%.</div></div>
+          <div class="field"><label for="t1_eff">Kecekapan elektrik (%)</label><input id="t1_eff" type="number" value="38" step="0.5" min="20" max="45"><div class="hint">Enjin China 36–40%, Eropah premium 40–43%.</div></div>
+          <div class="field"><label for="t1_heat">Haba boleh pulih (% bahan api)</label><input id="t1_heat" type="number" value="43" step="1" min="0" max="60"><div class="hint">Jaket + ekzos, biasanya 40–45%.</div></div>
+          <div class="field"><label for="t1_hours">Jam operasi setahun</label><input id="t1_hours" type="number" value="8000" step="100" min="0" max="8760"></div>
+          <div class="field"><label for="t1_load">Faktor beban purata (%)</label><input id="t1_load" type="number" value="85" step="1" min="10" max="100"></div>
+        </div>
+        <div class="calc-out">
+          <h3>Keputusan</h3>
+          <div class="out-grid">
+            <div class="kv hl"><span>Output elektrik beban penuh</span><b id="t1_kw">—</b></div>
+            <div class="kv hl"><span>Haba boleh pulih</span><b id="t1_heatkw">—</b></div>
+            <div class="kv"><span>Tenaga bahan api masuk</span><b id="t1_energy">—</b></div>
+            <div class="kv"><span>Jumlah kecekapan (kuasa + haba)</span><b id="t1_total">—</b></div>
+            <div class="kv"><span>Biogas per kWh dijana</span><b id="t1_gas_kwh">—</b></div>
+            <div class="kv"><span>Penjanaan tahunan</span><b id="t1_year_kwh">—</b></div>
+            <div class="kv"><span>Haba tahunan</span><b id="t1_year_heat">—</b></div>
+            <div class="kv"><span>Diesel dielak</span><b id="t1_diesel">—</b></div>
+          </div>
+          <div class="warn" id="t1_warn"></div>
+          <p class="note">LHV metana 9.94 kWh/Nm³ (35.8 MJ/Nm³). Genset diesel pada kecekapan 35% dan 2.68 kg CO₂/liter untuk angka pengelakan.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-panel" id="tool2">
+      <div class="tool-head">
+        <div><p class="eyebrow">Alat 02</p><h2>Sasaran output → keperluan gas</h2></div>
+        <div class="tool-actions"><button class="btn ghost sm" onclick="window.print()">Cetak / simpan PDF</button><button class="btn sm" onclick="copySummary('tool2')">Salin ringkasan</button></div>
+      </div>
+      <div class="calc">
+        <div class="calc-form">
+          <div class="field"><label for="t2_kw">Sasaran output elektrik (kW)</label><input id="t2_kw" type="number" value="600" step="10" min="0"></div>
+          <div class="field"><label for="t2_ch4">Kandungan metana (%)</label><input id="t2_ch4" type="number" value="60" step="0.5" min="40" max="99"></div>
+          <div class="field"><label for="t2_eff">Kecekapan elektrik (%)</label><input id="t2_eff" type="number" value="38" step="0.5" min="20" max="45"></div>
+          <div class="field"><label for="t2_load">Faktor beban purata (%)</label><input id="t2_load" type="number" value="85" step="1" min="10" max="100"><div class="hint">Keperluan dikira pada beban penuh; purata mengikut beban.</div></div>
+        </div>
+        <div class="calc-out">
+          <h3>Keperluan gas</h3>
+          <div class="out-grid">
+            <div class="kv hl"><span>Biogas beban penuh</span><b id="t2_flow">—</b></div>
+            <div class="kv hl"><span>Biogas sehari beban penuh</span><b id="t2_day">—</b></div>
+            <div class="kv"><span>Purata pada faktor beban</span><b id="t2_avg">—</b></div>
+            <div class="kv"><span>Aliran metana</span><b id="t2_ch4flow">—</b></div>
+            <div class="kv"><span>Tenaga bahan api</span><b id="t2_energy">—</b></div>
+            <div class="kv"><span>Biogas tahunan</span><b id="t2_year">—</b></div>
+          </div>
+          <div class="warn" id="t2_warn"></div>
+          <p class="note">Gunakan untuk menguji sama ada enjin yang ditawarkan sepadan dengan aliran gas anda.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-panel" id="tool3">
+      <div class="tool-head">
+        <div><p class="eyebrow">Alat 03</p><h2>Kemampuan kilang → potensi biogas</h2></div>
+        <div class="tool-actions"><button class="btn ghost sm" onclick="window.print()">Cetak / simpan PDF</button><button class="btn sm" onclick="copySummary('tool3')">Salin ringkasan</button></div>
+      </div>
+      <div class="calc">
+        <div class="calc-form">
+          <div class="field"><label for="t3_ffb">Kemampuan FFB (t/j)</label><input id="t3_ffb" type="number" value="60" step="1" min="0"></div>
+          <div class="field"><label for="t3_pome">POME dijana (m³ per t FFB)</label><input id="t3_pome" type="number" value="0.65" step="0.05" min="0.2" max="1.2"></div>
+          <div class="field"><label for="t3_yield">Hasil biogas (Nm³ per m³ POME)</label><input id="t3_yield" type="number" value="24" step="1" min="5" max="40"><div class="hint">Kolam bertutup 20–28; CSTR bercampur baik boleh 30+.</div></div>
+          <div class="field"><label for="t3_ch4">Kandungan metana (%)</label><input id="t3_ch4" type="number" value="60" step="0.5" min="40" max="99"></div>
+          <div class="field"><label for="t3_capture">Kecekapan tangkapan (%)</label><input id="t3_capture" type="number" value="85" step="1" min="30" max="100"><div class="hint">Bahagian gas dijana yang benar-benar dihantar.</div></div>
+          <div class="field"><label for="t3_eff">Kecekapan elektrik (%)</label><input id="t3_eff" type="number" value="38" step="0.5" min="20" max="45"></div>
+        </div>
+        <div class="calc-out">
+          <h3>Potensi biogas &amp; kuasa</h3>
+          <div class="out-grid">
+            <div class="kv"><span>POME dijana</span><b id="t3_pome_day">—</b></div>
+            <div class="kv hl"><span>Biogas dijana</span><b id="t3_gas_day">—</b></div>
+            <div class="kv hl"><span>Biogas ke enjin</span><b id="t3_gas_h">—</b></div>
+            <div class="kv"><span>Metana tersedia</span><b id="t3_ch4_h">—</b></div>
+            <div class="kv"><span>Potensi elektrik</span><b id="t3_kw">—</b></div>
+            <div class="kv"><span>Penjanaan tahunan (8,000 j)</span><b id="t3_mwh">—</b></div>
+          </div>
+          <div class="warn" id="t3_warn"></div>
+          <p class="note">Menganggap pengeluaran POME 24 jam berterusan. Kilang sebenar ada syif dan henti — guna data masuk sebenar jika ada. Untuk saringan sahaja.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-panel" id="tool4">
+      <div class="tool-head">
+        <div><p class="eyebrow">Alat 04</p><h2>Biogas mentah → hasil biometana</h2></div>
+        <div class="tool-actions"><button class="btn ghost sm" onclick="window.print()">Cetak / simpan PDF</button><button class="btn sm" onclick="copySummary('tool4')">Salin ringkasan</button></div>
+      </div>
+      <div class="calc">
+        <div class="calc-form">
+          <div class="field"><label for="t4_flow">Aliran biogas mentah (Nm³/j)</label><input id="t4_flow" type="number" value="500" step="10" min="0"></div>
+          <div class="field"><label for="t4_ch4">Kandungan metana masuk (%)</label><input id="t4_ch4" type="number" value="60" step="0.5" min="40" max="80"></div>
+          <div class="field"><label for="t4_rec">Pemulihan metana (%)</label><input id="t4_rec" type="number" value="97" step="0.5" min="80" max="100"><div class="hint">PSA 95–98, membran 96–99, scrubber air 98–99.</div></div>
+          <div class="field"><label for="t4_purity">Ketulenan produk (% CH₄)</label><input id="t4_purity" type="number" value="97" step="0.5" min="90" max="99.9"></div>
+          <div class="field"><label for="t4_power">Kuasa peningkatan (kWh/Nm³ mentah)</label><input id="t4_power" type="number" value="0.27" step="0.01" min="0.05" max="0.6"></div>
+        </div>
+        <div class="calc-out">
+          <h3>Output peningkatan</h3>
+          <div class="out-grid">
+            <div class="kv"><span>Metana masuk</span><b id="t4_ch4in">—</b></div>
+            <div class="kv hl"><span>Produk biometana</span><b id="t4_product">—</b></div>
+            <div class="kv"><span>Metana dalam produk</span><b id="t4_ch4out">—</b></div>
+            <div class="kv"><span>Kehilangan metana</span><b id="t4_loss">—</b></div>
+            <div class="kv"><span>CO₂ dibuang</span><b id="t4_co2">—</b></div>
+            <div class="kv hl"><span>Tenaga produk (LHV)</span><b id="t4_mw">—</b></div>
+            <div class="kv"><span>Keperluan kuasa peningkatan</span><b id="t4_kw">—</b></div>
+            <div class="kv"><span>Setara diesel</span><b id="t4_diesel">—</b></div>
+          </div>
+          <p class="note">Produk = CH₄ masuk × pemulihan ÷ ketulenan. Setara diesel pada 35.8 MJ/L LHV.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-panel" id="tool5">
+      <div class="tool-head">
+        <div><p class="eyebrow">Alat 05</p><h2>Ekonomi projek</h2></div>
+        <div class="tool-actions"><button class="btn ghost sm" onclick="window.print()">Cetak / simpan PDF</button><button class="btn sm" onclick="copySummary('tool5')">Salin ringkasan</button></div>
+      </div>
+      <div class="calc">
+        <div class="calc-form">
+          <div class="field"><label for="t5_kw">Kapasiti loji (kW)</label><input id="t5_kw" type="number" value="600" step="10" min="0"></div>
+          <div class="field"><label for="t5_capex">Capex turnkey (USD per kW)</label><input id="t5_capex" type="number" value="2200" step="50" min="0"><div class="hint">Pakej enjin ≈ USD 350–450/kW; loji lengkap biasanya USD 1,500–2,500/kW.</div></div>
+          <div class="field"><label for="t5_cur">Mata wang</label><select id="t5_cur"><option value="MYR">MYR (Malaysia)</option><option value="IDR">IDR (Indonesia)</option><option value="USD">USD</option></select></div>
+          <div class="field"><label for="t5_tariff">Nilai elektrik (tempatan/kWh)</label><input id="t5_tariff" type="number" value="0.65" step="0.01" min="0"><div class="hint">Diesel pedalaman Sabah: RM 0.55–0.75. Import grid RM 0.40–0.50. Indonesia USD 0.07–0.10.</div></div>
+          <div class="field"><label for="t5_use">Bahagian output mengganti kuasa beli (%)</label><input id="t5_use" type="number" value="75" step="5" min="0" max="100"><div class="hint">Hanya kWh digunakan sendiri membawa nilai penuh.</div></div>
+          <div class="field"><label for="t5_fx">Kadar tukaran (tempatan per USD)</label><input id="t5_fx" type="number" value="4.2" step="0.01" min="1"></div>
+          <div class="field"><label for="t5_hours">Jam operasi setahun</label><input id="t5_hours" type="number" value="8000" step="100" min="0" max="8760"></div>
+          <div class="field"><label for="t5_om">O&amp;M berubah (USD/kWh)</label><input id="t5_om" type="number" value="0.013" step="0.001" min="0"></div>
+          <div class="field"><label for="t5_omfix">O&amp;M tetap (USD/tahun)</label><input id="t5_omfix" type="number" value="15000" step="1000" min="0"></div>
+          <div class="field"><label for="t5_disc">Kadar diskaun (%)</label><input id="t5_disc" type="number" value="8" step="0.5" min="0" max="30"></div>
+        </div>
+        <div class="calc-out">
+          <h3>Ringkasan kewangan</h3>
+          <div class="out-grid">
+            <div class="kv"><span>Jumlah capex</span><b id="t5_total_capex">—</b></div>
+            <div class="kv"><span>Penjanaan tahunan</span><b id="t5_gen">—</b></div>
+            <div class="kv hl"><span>Hasil tahunan</span><b id="t5_rev">—</b></div>
+            <div class="kv"><span>O&amp;M tahunan</span><b id="t5_opex">—</b></div>
+            <div class="kv hl"><span>Aliran tunai bersih tahunan</span><b id="t5_net">—</b></div>
+            <div class="kv hl"><span>Tempoh pulang mudah</span><b id="t5_payback">—</b></div>
+            <div class="kv"><span>Bersih 10 tahun (tanpa diskaun)</span><b id="t5_cum10">—</b></div>
+            <div class="kv"><span>NPV</span><b id="t5_npv">—</b></div>
+            <div class="kv"><span>IRR (10 tahun)</span><b id="t5_irr">—</b></div>
+            <div class="kv"><span>LCOE</span><b id="t5_lcoe">—</b></div>
+          </div>
+          <div class="warn" id="t5_warn"></div>
+          <p class="note">Hasil menganggap nilai dinyatakan bagi setiap kWh dinilai. Tidak termasuk pembiayaan, tanah dan naik taraf grid. Model saringan, bukan bankable.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="assume" style="margin-top:28px">
+      <b>Kaedah &amp; pemalar.</b> LHV metana 35.8 MJ/Nm³ = 9.94 kWh/Nm³. Tenaga biogas = aliran × pecahan CH₄ × 9.94. Output elektrik = tenaga bahan api × kecekapan. Haba boleh pulih = tenaga bahan api × pecahan haba. Semua keputusan indikatif; jaminan hanya berdasarkan data tapak yang diukur.
+      <br><br>
+      <b>Mengapa kami terbitkan formula.</b> Kebanyakan kalkulator pembekal menyembunyikan andaian. Projek biogas ditentukan oleh kualiti gas dan jam operasi, bukan angka yang digilap.
+    </div>
+  </div>
+</section>
+<script src="../assets/js/calc.js"></script>
+<footer class="site">
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <a class="brand" href="index.html" style="color:#fff"><svg width="34" height="34" viewBox="0 0 34 34" fill="none" aria-hidden="true">
+<rect width="34" height="34" rx="9" fill="#0c1a26"/>
+<path d="M17 6.5c3.6 2.4 6 6.2 6 10.2 0 3.3-2.7 6-6 6s-6-2.7-6-6c0-4 2.4-7.8 6-10.2Z" fill="#0f7a52"/>
+<path d="M17 22.7v4.8M11 14.5h12" stroke="#fff" stroke-width="1.6" stroke-linecap="round" opacity=".85"/>
+</svg><span>KSTS<small style="color:#9fb4c0">Biogas &amp; Biotenaga</small></span></a>
+        <p class="small" style="color:#9fb4c0;margin-top:14px">Kuasa biogas, peningkatan biometana dan bio-CNG untuk kilang kelapa sawit dan industri pertanian di Sabah dan Sarawak. Rakan teknologi: ZERO CARBON ASSISTANT, Shanghai.</p>
+      </div>
+      <div><h4>Penyelesaian</h4><ul>
+        <li><a href="biogas-to-power.html">Biogas POME ke kuasa</a></li>
+        <li><a href="biomethane.html">Biometana &amp; bio-CNG</a></li>
+        <li><a href="equipment.html">Peralatan &amp; skop</a></li>
+        <li><a href="calculator.html">Alat kejuruteraan</a></li>
+      </ul></div>
+      <div><h4>Syarikat</h4><ul>
+        <li><a href="about.html">Tentang KSTS</a></li>
+        <li><a href="about.html#partner">Profil rakan tempatan</a></li>
+        <li><a href="contact.html">Hubungi</a></li>
+      </ul></div>
+      <div><h4>Hubungi</h4><ul>
+        <li>KSTS K. S. Technical Services<br><span class="small">MPS: R14722/2009</span></li>
+        <li>Kg. Nangoh, NT 083017181 (Lot 2),<br>34 km Off Jalan Simpang Sapi Nangoh,<br>Labuk&ndash;Sugut, Telupid, Sabah, Malaysia</li>
+        <li><a href="mailto:k.s.t.s_sabah@hotmail.com">k.s.t.s_sabah@hotmail.com</a></li>
+        <li><a href="tel:+60138833833">+60 13-883 3833</a></li>
+      </ul></div>
+    </div>
+    <div class="copy"><span>&copy; 2026 KSTS K. S. Technical Services. Hak cipta terpelihara.</span><span>Angka di laman ini adalah indikatif dan tertakluk kepada data tapak dan sebut harga rasmi.</span></div>
+  </div>
+</footer>
+</body>
+</html>
