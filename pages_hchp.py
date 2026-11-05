@@ -38,9 +38,9 @@ def hydrogen(lang):
              "Biometana dalam botol masuk, kuasa dan air panas keluar.",
              "瓶装生物天然气进去，电和热水出来。"),
         lead=L(lang,
-               "Methane reforming plus a fuel cell: the same architecture as Japan's household fuel-cell CHP, scaled to estate housing, resorts, mills and off-grid communities. 97% biomethane is reformed on site into hydrogen and converted to electricity and 60–70 °C hot water — no pipeline, no diesel, no flame at the point of use.",
-               "Pembentukan semula metana dengan sel bahan api: seni bina yang sama seperti CHP sel bahan api rumah Jepun, diskalakan untuk perumahan ladang, resort, kilang dan komuniti luar grid. Biometana 97% dibentuk semula di tapak menjadi hidrogen dan ditukar kepada elektrik dan air panas 60–70 °C — tanpa saluran paip, tanpa diesel, tanpa api di tempat penggunaan.",
-               "甲烷重整 + 燃料电池：与日本家用燃料电池热电联供同一架构，功率放大到种植园宿舍、度假村、厂区与离网社区。97% 生物天然气现场重整制氢，再转成电与 60–70 ℃ 热水——不用管网、不用柴油、用能端无明火。"),
+               "Methane reforming plus a fuel cell: the same architecture as Japan's household fuel-cell CHP, scaled to estate housing, resorts, mills and off-grid communities. Two feeds work: bottled 97% biomethane, or raw 60% biogas taken straight from the mill with an integrated purification front end. Either way the methane is reformed on site into hydrogen and converted to electricity and 60–70 °C hot water — no pipeline, no diesel, no flame at the point of use.",
+               "Pembentukan semula metana dengan sel bahan api: seni bina yang sama seperti CHP sel bahan api rumah Jepun, diskalakan untuk perumahan ladang, resort, kilang dan komuniti luar grid. Dua suapan boleh digunakan: biometana 97% dalam botol, atau biogas mentah 60% terus dari kilang dengan bahagian penulenan bersepadu di hadapan. Sama ada cara, metana dibentuk semula di tapak menjadi hidrogen dan ditukar kepada elektrik dan air panas 60–70 °C — tanpa saluran paip, tanpa diesel, tanpa api di tempat penggunaan.",
+               "甲烷重整 + 燃料电池：与日本家用燃料电池热电联供同一架构，功率放大到种植园宿舍、度假村、厂区与离网社区。两种进气都能用：瓶装 97% 生物天然气，或者直接从油厂取 60% 原沼气、前端配一体化净化装置。无论哪种，都是现场重整制氢，再转成电与 60–70 ℃ 热水——不用管网、不用柴油、用能端无明火。"),
         k1=L(lang, "FOB price, installation excluded", "Harga FOB, pemasangan tidak termasuk", "FOB 价，不含安装"),
         k2=L(lang, "Electrical efficiency, guaranteed (LHV)", "Kecekapan elektrik, dijamin (LHV)", "发电效率（厂家保证值·低热值）"),
         k3=L(lang, "Recoverable heat, guaranteed (LHV)", "Haba boleh pulih, dijamin (LHV)", "可回收余热（厂家保证值）"),
@@ -148,11 +148,46 @@ def hydrogen(lang):
 <section>
   <div class="wrap">
     <div class="sec-head">
+      <p class="eyebrow">{L(lang,'Two feed options','Dua pilihan suapan','两种进气方案')}</p>
+      <h2>{L(lang,'Bottled gas, or raw biogas straight from the mill','Gas botol, atau biogas mentah terus dari kilang','瓶装气，或者直接从油厂取原沼气')}</h2>
+      <p class="lead">{L(lang,
+        'The reformer and fuel cell are the same in both cases. Only the front end changes — and it is built into the same package, not bought as a separate upgrading plant.',
+        'Reformer dan sel bahan api sama dalam kedua-dua kes. Hanya bahagian hadapan berubah — dan ia dibina dalam pakej yang sama, bukan dibeli sebagai loji peningkatan berasingan.',
+        '两种情况里，重整器和燃料电池是同一套；变的只是前端——而且前端净化就做在同一个机组里，不是另买一套提纯站。')}</p>
+    </div>
+    <div class="grid-2">
+      <article class="card prod-card"><div>
+        <p class="tag">A · {L(lang,'Bottled 97% biomethane','Biometana 97% dalam botol','瓶装 97% 生物天然气')}</p>
+        <h3>{L(lang,'Lowest investment, fuel bought by the cylinder','Pelaburan terendah, bahan api dibeli ikut silinder','投资最低，燃料按瓶买')}</h3>
+        <p>{L(lang,
+          'Standard specification. The gas arrives at 200 bar already at 97% methane, so the unit only needs desulphurisation and filtration before the reformer. Nothing to build, nothing to operate upstream — but you pay the bottled-gas price for every Nm³, and you depend on the cylinder supply chain.',
+          'Spesifikasi standard. Gas tiba pada 200 bar dan sudah 97% metana, jadi unit hanya perlu nyahsulfur dan penapisan sebelum reformer. Tiada yang perlu dibina atau dikendalikan di huluan — tetapi anda membayar harga gas botol bagi setiap Nm³ dan bergantung pada rantaian bekalan silinder.',
+          '标准配置。气到现场就是 200 bar、97% 甲烷，机组只需脱硫和过滤就能进重整器。上游不用建、不用运行——但每一方气都要按瓶装气价付钱，而且依赖钢瓶供应链。')}</p>
+      </div></article>
+      <article class="card prod-card"><div>
+        <p class="tag">B · {L(lang,'Raw biogas, about 60% CH₄','Biogas mentah, kira-kira 60% CH₄','原沼气，约 60% 甲烷')}</p>
+        <h3>{L(lang,'Straight from the palm oil mill — purification built in','Terus dari kilang sawit — penulenan terbina dalam','直接从棕油厂取气——净化装置随机一体化')}</h3>
+        <p>{L(lang,
+          'Take the biogas directly off the mill pond and skip upgrading, bottling and trucking altogether. An integrated front-end purification module — desulphurisation, CO₂ removal, drying and compression — is supplied as part of our unit and lifts the gas to the ≥95% methane the reformer needs. Higher investment than option A, but the fuel is the mill’s own biogas instead of bought cylinders, and there is no separate upgrading plant to pay for.',
+          'Ambil biogas terus dari kolam kilang dan langkaui peningkatan, pembotolan serta pengangkutan. Modul penulenan bersepadu di hadapan — nyahsulfur, penyingkiran CO₂, pengeringan dan pemampatan — dibekalkan sebagai sebahagian unit kami dan menaikkan gas ke ≥95% metana yang diperlukan reformer. Pelaburan lebih tinggi daripada pilihan A, tetapi bahan api ialah biogas kilang sendiri, bukan silinder yang dibeli, dan tiada loji peningkatan berasingan.',
+          '直接把油厂厌氧塘的沼气接过来，省掉提纯、装瓶、运输整条链。前端一体化净化模块——脱硫、脱 CO₂、干燥、增压——随我们的机组一起供货，把气质提到重整器需要的 ≥95% 甲烷。投资比方案 A 高，但烧的是油厂自己的沼气，不是买来的瓶装气，也不用另建提纯站。')}</p>
+      </div></article>
+    </div>
+    <p class="note">{L(lang,
+      'Both options use the same reformer and fuel cell; option B simply adds the purification front end inside the same enclosure or skid. The added cost depends on gas flow, H₂S and CO₂ content, so it is quoted per site after a gas analysis — send us your measured flow, methane content and H₂S and we will price both versions side by side.',
+      'Kedua-dua pilihan menggunakan reformer dan sel bahan api yang sama; pilihan B hanya menambah bahagian penulenan di hadapan dalam selongsong atau skid yang sama. Kos tambahan bergantung pada aliran gas, kandungan H₂S dan CO₂, jadi ia disebut harga mengikut tapak selepas analisis gas — hantar aliran, kandungan metana dan H₂S yang diukur dan kami akan harga kedua-dua versi bersebelahan.',
+      '两种方案的重整器与燃料电池完全一样，方案 B 只是把净化前端做进同一个机柜或撬块。增加多少投资取决于气量、硫化氢和二氧化碳含量，需按气质分析后逐点报价——把实测流量、甲烷含量、硫化氢给我们，两个版本可以并排报价。')}</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
       <p class="eyebrow">{L(lang,'Process','Proses','工艺')}</p>
       <h2>{L(lang,'From methane to electrons in five steps','Dari metana ke elektron dalam lima langkah','五步从甲烷到电')}</h2>
     </div>
     <div class="steps" style="grid-template-columns:repeat(5,1fr)">
-      <div class="step"><b>{L(lang,'Condition','Kondisi','净化')}</b><span>{L(lang,'Desulphurisation to below 1 ppm H₂S, plus filtration. The reformer catalyst is poisoned by sulphur.','Nyahsulfur di bawah 1 ppm H₂S, serta penapisan. Pemangkin reformer diracuni sulfur.','脱硫到 H₂S 低于 1 ppm，再加过滤。重整催化剂最怕硫。')}</span></div>
+      <div class="step"><b>{L(lang,'Condition','Kondisi','净化')}</b><span>{L(lang,'Desulphurisation to below 1 ppm H₂S, plus filtration. The reformer catalyst is poisoned by sulphur. On raw 60% biogas the same integrated module also strips CO₂ and water.','Nyahsulfur di bawah 1 ppm H₂S, serta penapisan. Pemangkin reformer diracuni sulfur. Pada biogas mentah 60%, modul bersepadu yang sama juga menyingkirkan CO₂ dan air.','脱硫到 H₂S 低于 1 ppm，再加过滤。重整催化剂最怕硫；走 60% 原沼气时，同一个一体化模块还要脱 CO₂ 和脱水。')}</span></div>
       <div class="step"><b>{L(lang,'Reform','Bentuk semula','重整')}</b><span>{L(lang,'Steam reforming at 650–800 °C: CH₄ + H₂O → CO + 3H₂, followed by water-gas shift.','Pembentukan semula stim pada 650–800 °C: CH₄ + H₂O → CO + 3H₂, diikuti anjakan gas air.','650–800 ℃ 蒸汽重整：CH₄ + H₂O → CO + 3H₂，再经水煤气变换。')}</span></div>
       <div class="step"><b>{L(lang,'Purify','Tulenkan','提纯')}</b><span>{L(lang,'PSA or membrane to 99.9% H₂; the off-gas is burned to heat the reformer, which is why efficiency holds.','PSA atau membran ke 99.9% H₂; gas sisa dibakar untuk memanaskan reformer.','PSA 或膜提纯到 99.9% 氢；尾气回烧给重整器供热，效率才守得住。')}</span></div>
       <div class="step"><b>{L(lang,'Convert','Tukar','发电')}</b><span>{L(lang,'PEM fuel cell at 65–75 °C, or PAFC at 160–200 °C for higher-grade heat.','Sel bahan api PEM pada 65–75 °C, atau PAFC pada 160–200 °C untuk haba gred lebih tinggi.','PEM 燃料电池 65–75 ℃；要更高品位余热可选 PAFC（160–200 ℃）。')}</span></div>
@@ -191,9 +226,9 @@ def hydrogen(lang):
       </table>
     </div>
     <p class="small" style="margin-top:14px">{L(lang,
-      'Basis: methane LHV 9.94 kWh/Nm³; manufacturer-guaranteed 42% electrical and 43% heat recovery at rated output (85% combined) — to be reconfirmed against the guarantee sheet for each model. Price is FOB Malaysia port; freight, insurance, SST, local installation, civils, cylinder storage, gas manifold and grid connection are excluded and quoted per site.',
-      'Asas: LHV metana 9.94 kWh/Nm³; 42% elektrik dan 43% pemulihan haba dijamin pengeluar pada output terkadar (85% gabungan) — akan disahkan semula dengan helaian jaminan setiap model. Harga FOB pelabuhan Malaysia; tambang, insurans, SST, pemasangan, kerja awam, stor silinder, manifold gas dan sambungan grid tidak termasuk.',
-      '口径：甲烷低热值 9.94 kWh/Nm³；发电 42%、余热回收 43% 为厂家保证值（额定出力、综合 85%）——最终以各机型保证书为准。价格为马来西亚港口 FOB，不含运费、保险、SST、安装、土建、气瓶间、汇流排与并网，均按现场单独报价。')}</p>
+      'Basis: methane LHV 9.94 kWh/Nm³; manufacturer-guaranteed 42% electrical and 43% heat recovery at rated output (85% combined) — to be reconfirmed against the guarantee sheet for each model. On raw biogas at 60% CH₄ the raw gas flow is about 1.67× the CH₄ figure, and the integrated purification module is sized to that flow. Price is FOB Malaysia port; freight, insurance, SST, local installation, civils, cylinder storage, gas manifold and grid connection are excluded and quoted per site. The raw-biogas version with the integrated purification front end is quoted separately.',
+      'Asas: LHV metana 9.94 kWh/Nm³; 42% elektrik dan 43% pemulihan haba dijamin pengeluar pada output terkadar (85% gabungan) — akan disahkan semula dengan helaian jaminan setiap model. Pada biogas mentah 60% CH₄, aliran gas mentah kira-kira 1.67× angka CH₄, dan modul penulenan bersepadu disaiz mengikut aliran itu. Harga FOB pelabuhan Malaysia; tambang, insurans, SST, pemasangan, kerja awam, stor silinder, manifold gas dan sambungan grid tidak termasuk. Versi biogas mentah dengan penulenan bersepadu disebut harga berasingan.',
+      '口径：甲烷低热值 9.94 kWh/Nm³；发电 42%、余热回收 43% 为厂家保证值（额定出力、综合 85%）——最终以各机型保证书为准。烧 60% 原沼气时，原气量约为表中甲烷量的 1.67 倍，一体化净化模块按该气量选型。价格为马来西亚港口 FOB，不含运费、保险、SST、安装、土建、气瓶间、汇流排与并网，均按现场单独报价；带前端净化的一体化原沼气版本另行报价。')}</p>
   </div>
 </section>
 
@@ -332,11 +367,12 @@ def hydrogen(lang):
     <div class="grid-2">
       <div class="table-wrap"><table style="min-width:0"><tbody>
         <tr><td><b>{L(lang,'Included','Termasuk','包含')}</b></td><td>{L(lang,'Reformer, shift reactor, H₂ purification, fuel-cell stack, inverter, heat exchanger, controls, enclosure','Reformer, reaktor anjakan, penulenan H₂, stack sel bahan api, penyongsang, penukar haba, kawalan, selongsong','重整器、变换反应器、氢气提纯、电堆、逆变器、换热器、控制系统、机柜')}</td></tr>
+        <tr><td><b>{L(lang,'Optional','Pilihan','选配')}</b></td><td>{L(lang,'Integrated front-end purification for raw biogas feed — desulphurisation, CO₂ removal, drying and compression inside the same package, priced per site','Penulenan bersepadu di hadapan untuk suapan biogas mentah — nyahsulfur, penyingkiran CO₂, pengeringan dan pemampatan dalam pakej yang sama, harga mengikut tapak','原沼气进气用的一体化前端净化——脱硫、脱 CO₂、干燥、增压做进同一机组，按现场单独报价')}</td></tr>
         <tr><td><b>{L(lang,'Excluded','Tidak termasuk','不含')}</b></td><td>{L(lang,'SST, freight beyond Malaysian port, civils, cylinder store and manifold, installation, grid connection, permits','SST, tambang melebihi pelabuhan Malaysia, kerja awam, stor silinder dan manifold, pemasangan, sambungan grid, permit','SST、马来西亚港口以外运费、土建、气瓶间与汇流排、安装、并网、许可')}</td></tr>
         <tr><td><b>{L(lang,'Warranty','Waranti','质保')}</b></td><td>{L(lang,'24 months on the unit, 5 years or 25,000 h on the stack, whichever comes first','24 bulan unit, 5 tahun atau 25,000 j pada stack','整机 24 个月；电堆 5 年或 25,000 小时（先到为准）')}</td></tr>
         <tr><td><b>{L(lang,'Lead time','Masa penghantaran','交货期')}</b></td><td>{L(lang,'4–6 months from PO and gas analysis','4–6 bulan dari PO dan analisis gas','收到订单与气质分析后 4–6 个月')}</td></tr>
         <tr><td><b>{L(lang,'Fuel specification','Spesifikasi bahan api','燃料要求')}</b></td><td>{L(lang,'CH₄ ≥ 95%, H₂S &lt; 1 ppm, siloxanes &lt; 0.1 mg/Nm³, no condensate','CH₄ ≥ 95%, H₂S &lt; 1 ppm, siloksan &lt; 0.1 mg/Nm³, tiada kondensat','甲烷 ≥95%，H₂S <1 ppm，硅氧烷 <0.1 mg/Nm³，无冷凝水')}</td></tr>
-        <tr><td><b>{L(lang,'Price basis','Asas harga','价格口径')}</b></td><td>{L(lang,'FOB RM 10,000/kW, installation excluded, valid 90 days, subject to gas analysis and site survey','FOB RM 10,000/kW, pemasangan tidak termasuk, sah 90 hari, tertakluk kepada analisis gas dan tinjauan tapak','FOB 价 RM 10,000/kW，不含安装，有效期 90 天，以气质分析与现场勘查为准')}</td></tr>
+        <tr><td><b>{L(lang,'Price basis','Asas harga','价格口径')}</b></td><td>{L(lang,'Bottled-gas version: FOB RM 10,000/kW, installation excluded, valid 90 days. Raw-biogas version with the integrated purification front end: quoted per site. Both subject to gas analysis and site survey.','Versi gas botol: FOB RM 10,000/kW, pemasangan tidak termasuk, sah 90 hari. Versi biogas mentah dengan penulenan bersepadu: disebut harga mengikut tapak. Kedua-duanya tertakluk kepada analisis gas dan tinjauan tapak.','瓶装气版：FOB 价 RM 10,000/kW，不含安装，有效期 90 天；带前端净化的一体化原沼气版：按现场单独报价。两者均以气质分析与现场勘查为准。')}</td></tr>
       </tbody></table></div>
       <div>
         <div class="table-wrap"><table style="min-width:0">
@@ -362,7 +398,7 @@ def hydrogen(lang):
   <div class="wrap">
     <div class="sec-head"><p class="eyebrow">FAQ</p><h2>{L(lang,'Questions we get asked','Soalan yang sering ditanya','常被问到的问题')}</h2></div>
     <div class="grid-2">
-      <article class="card"><h3>{L(lang,'Can it run on raw biogas?','Boleh guna biogas mentah?','能直接烧原沼气吗？')}</h3><p>{L(lang,'No. The reformer catalyst needs methane at 95% or better. Raw POME biogas at 55–65% must be upgraded first — which is the same upgrading step that produces the bottled gas.','Tidak. Pemangkin reformer perlukan metana 95% atau lebih. Biogas POME mentah 55–65% mesti ditingkatkan dahulu.','不能。重整催化剂要求甲烷 95% 以上，55–65% 的原沼气必须先提纯——也就是做瓶装气那一步。')}</p></article>
+      <article class="card"><h3>{L(lang,'Can it run on raw biogas?','Boleh guna biogas mentah?','能直接烧原沼气吗？')}</h3><p>{L(lang,'Yes — with the integrated purification front end. Raw POME biogas at about 60% methane is desulphurised, stripped of CO₂, dried and compressed inside the same package, then fed to the reformer at ≥95% CH₄. The reformer itself still needs concentrated methane; what changes is that we do the upgrading in the unit instead of you buying bottled gas. Investment is higher than the bottled-gas version and is quoted per site on gas flow, H₂S and CO₂.','Ya — dengan bahagian penulenan bersepadu di hadapan. Biogas POME mentah kira-kira 60% metana dinyahsulfur, disingkirkan CO₂, dikeringkan dan dimampatkan dalam pakej yang sama, kemudian disuap ke reformer pada ≥95% CH₄. Reformer tetap perlukan metana pekat; bezanya kita buat peningkatan dalam unit, bukan anda membeli gas botol. Pelaburan lebih tinggi daripada versi gas botol dan disebut harga mengikut tapak berdasarkan aliran gas, H₂S dan CO₂.','能——但要配前端一体化净化装置。约 60% 甲烷的 POME 原沼气，在同一机组内完成脱硫、脱 CO₂、干燥和增压，再以 ≥95% 甲烷送进重整器。重整器本身仍然要浓甲烷，变的是：提纯在我们机组里做，而不是你去买瓶装气。投资比瓶装气版本高，具体按气量、硫化氢和二氧化碳逐点报价。')}</p></article>
       <article class="card"><h3>{L(lang,'Is hydrogen stored on site?','Adakah hidrogen disimpan?','现场储氢吗？')}</h3><p>{L(lang,'No. Hydrogen is produced on demand and consumed inside the unit within seconds. There is no hydrogen vessel, no high-pressure storage and no delivery of hydrogen.','Tidak. Hidrogen dihasilkan atas permintaan dan digunakan dalam unit.','不储。氢气按需产生、机内秒级用完，没有储氢罐、没有高压储氢、也不需要外购氢。')}</p></article>
       <article class="card"><h3>{L(lang,'What maintenance does it need?','Penyelenggaraan apa?','维护要做什么？')}</h3><p>{L(lang,'Annual service, reformer catalyst every 3–5 years, fuel-cell stack every 5–8 years (25–35% of unit price). Budget 3% of capex a year and you will not be surprised.','Servis tahunan, pemangkin reformer setiap 3–5 tahun, stack setiap 5–8 tahun (25–35% harga unit). Belanjawan 3% capex setahun.','年度保养；重整催化剂 3–5 年一换；电堆 5–8 年一换（机组价 25–35%）。按投资 3%/年计提就不会被吓到。')}</p></article>
       <article class="card"><h3>{L(lang,'Can several units run together?','Boleh beberapa unit bersama?','能多台并联吗？')}</h3><p>{L(lang,'Yes. Units parallel on the AC side up to 1 MW, and a failed unit only takes its share of the load offline — which is why we prefer 2 × 50 kW to 1 × 100 kW where the budget allows.','Boleh. Unit selari di sebelah AC hingga 1 MW.','可以。交流侧可并机到 1 MW；单台故障只掉它那一份负荷——所以预算允许时我们更愿意 2×50 kW 而不是 1×100 kW。')}</p></article>
