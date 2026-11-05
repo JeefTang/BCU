@@ -26,6 +26,18 @@ def index(lang):
         s4=L(lang, "Design operating hours per year", "Jam operasi reka bentuk setahun", "年设计运行小时"),
     )
     return f"""
+<section class="press-top" style="padding:22px 0 6px">
+  <div class="wrap">
+    <figure style="margin:0">
+      <img src="{asset}assets/img/press-iem-sabah-cpd-2026-zh.jpg" alt="Chinese-language press report on the IEM Sabah Branch CPD talk on palm oil mill biomass, Asia Times Sabah edition, 23 August 2026" loading="eager" style="width:100%;max-width:900px;margin:0 auto;border:1px solid var(--line);border-radius:12px;box-shadow:0 10px 30px rgba(12,26,38,.10)">
+      <figcaption class="small" style="max-width:900px;margin:10px auto 0;text-align:center">{L(lang,
+        'In the news — Asia Times (Sabah edition), 23 August 2026: palm oil mill waste turned into green energy.',
+        'Dalam berita — Asia Times (edisi Sabah), 23 Ogos 2026: sisa kilang kelapa sawit menjadi tenaga hijau.',
+        '媒体报道：《亚洲时报》沙巴新闻 A10 版，2026 年 8 月 23 日——《棕油废料变绿能》。')}</figcaption>
+    </figure>
+  </div>
+</section>
+
 <section class="hero">
   <div class="wrap">
     <div class="badge"><i></i> {s['badge']}</div>
@@ -181,10 +193,13 @@ def index(lang):
         <h3>Sdr. Leong Kian Sheng (Alvin)</h3>
         <p class="small" style="margin-bottom:14px">B.Eng. Tech (Aust), TMIEAust, InclEM, MMOSTA</p>
         <ul class="checks">
-          <li>{L(lang,'D.O.S.H Registered Steam &amp; I.C.E. Engineer','Jurutera Stim &amp; I.C.E. Berdaftar D.O.S.H','DOSH 注册蒸汽与内燃机工程师')}</li>
-          <li>{L(lang,'D.O.S.H Registered OSH Coordinator','Penyelaras OSH Berdaftar D.O.S.H','DOSH 注册职业安全健康协调员')}</li>
+          <li>{L(lang,'DOSH Registered 2nd Grade Steam Engineer','Jurutera Stim Gred 2 Berdaftar DOSH','DOSH 注册二级蒸汽工程师')}</li>
+          <li>{L(lang,'DOSH Registered 2nd Grade I.C.E. Engineer','Jurutera I.C.E. Gred 2 Berdaftar DOSH','DOSH 注册二级内燃机工程师')}</li>
+          <li>{L(lang,'DOSH Certified OSH Coordinator','Penyelaras OSH Bertauliah DOSH','DOSH 认证职业安全健康协调员')}</li>
           <li>{L(lang,'ECOS Registered Electrical Energy Manager','Pengurus Tenaga Elektrik Berdaftar ECOS','ECOS 注册电能管理师')}</li>
-          <li>{L(lang,'BEM Registered Engineering Technologist','Teknolog Kejuruteraan Berdaftar BEM','BEM 注册工程技术专家')}</li>
+          <li>{L(lang,'BEM Registered Engineering Technologist (Manufacturing)','Teknolog Kejuruteraan Berdaftar BEM (Pembuatan)','BEM 注册工程技术师（制造）')}</li>
+          <li>{L(lang,'AER Registered ASEAN Engineering Technologist','Teknolog Kejuruteraan ASEAN Berdaftar AER','AER 注册东盟工程技术师')}</li>
+          <li>{L(lang,'CIDB Green Card Holder · IRWS Professional Engineer','Pemegang Kad Hijau CIDB · Jurutera Profesional IRWS','CIDB 绿卡 · IRWS 专业工程师')}</li>
           <li>{L(lang,'CIDB Registered Contractor · Bumiputera Sabah','Kontraktor Berdaftar CIDB · Bumiputera Sabah','CIDB 注册承包商 · 沙巴土著企业')}</li>
         </ul>
         <a class="btn ghost sm" href="about.html" style="margin-top:8px">{L(lang,'Full profile','Profil penuh','完整简介')}</a>
@@ -216,6 +231,11 @@ def index(lang):
         'Report on the IEM Sabah Branch CPD talk, Kota Kinabalu.',
         'Laporan ceramah CPD IEM Cawangan Sabah, Kota Kinabalu.',
         'IEM 沙巴分会 CPD 讲座报道，亚庇。')}</figcaption>
+      <img src="{asset}assets/img/press-iem-sabah-cpd-2026-zh.jpg" alt="Chinese-language report on the IEM Sabah Branch CPD talk, Asia Times Sabah edition, 23 August 2026" loading="lazy" style="margin-top:22px;border:1px solid var(--line);border-radius:12px;box-shadow:0 10px 30px rgba(12,26,38,.10)">
+      <figcaption class="small" style="margin-top:12px">{L(lang,
+        'Chinese-language report, Asia Times (Sabah edition), 23 August 2026.',
+        'Laporan bahasa Cina, Asia Times (edisi Sabah), 23 Ogos 2026.',
+        '中文报道：《亚洲时报》沙巴新闻 A10 版，2026 年 8 月 23 日。')}</figcaption>
     </figure>
     <div>
       <p class="eyebrow">{L(lang,'In the news','Dalam berita','媒体报道')}</p>
@@ -602,7 +622,7 @@ def equipment(lang):
 
 <section>
   <div class="wrap">
-    <div class="sec-head"><p class="eyebrow">{L(lang,'Scope matrix','Matriks skop','范围矩阵')}</p><h2>{L(lang,'Who does what','Siapa buat apa','谁做什么')}</h2></div>
+    <div class="sec-head"><p class="eyebrow">{L(lang,'Scope matrix · biogas plant &amp; upgrading','Matriks skop · loji biogas &amp; peningkatan','范围矩阵 · 沼气电站与提纯站')}</p><h2>{L(lang,'Who does what','Siapa buat apa','谁做什么')}</h2></div>
     <div class="table-wrap">
       <table>
         <thead><tr><th>{L(lang,'Work package','Pakej kerja','工作包')}</th><th>KSTS / {L(lang,'technology partner','rakan teknologi','技术方')}</th><th>{L(lang,'Client','Pelanggan','客户')}</th><th>{L(lang,'Notes','Nota','说明')}</th></tr></thead>
@@ -615,6 +635,87 @@ def equipment(lang):
           <tr><td>{L(lang,'Electrical reticulation','Rangkaian elektrik','电气敷设')}</td><td>{L(lang,'Execution','Pelaksanaan','施工')}</td><td>{L(lang,'Transformer / grid','Transformer / grid','变压器与并网')}</td><td>415 V; HV {L(lang,'by utility','oleh utiliti','由供电局')}</td></tr>
           <tr><td>{L(lang,'Erection &amp; commissioning','Pemasangan &amp; pentauliahan','安装与调试')}</td><td>{L(lang,'Yes','Ya','是')}</td><td>{L(lang,'Utilities','Utiliti','水电')}</td><td>{L(lang,'DOSH witness','Saksi DOSH','DOSH 见证')}</td></tr>
           <tr><td>O&amp;M</td><td>{L(lang,'Option','Pilihan','可选')}</td><td>{L(lang,'Site crew','Krew tapak','现场班组')}</td><td>{L(lang,'Full contract or advisory','Kontrak penuh atau nasihat','全包或顾问')}</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head"><p class="eyebrow">{L(lang,'Hydrogen CHP','CHP Hidrogen','氢能热电联供')}</p><h2>{L(lang,'Methane-reforming fuel cell CHP, 7.5 kW to 100 kW','CHP sel bahan api pembentukan semula metana, 7.5 kW hingga 100 kW','甲烷重整制氢热电联供 7.5 kW – 100 kW')}</h2>
+      <p class="lead">{L(lang,
+        'Bottled 97% biomethane is reformed to hydrogen on site, then converted by a fuel cell into power and 60–70 °C hot water: no flame, no NOx, no SOx, no particulates. Water is the only by-product. FOB RM 10,000/kW, installation excluded.',
+        'Biometana 97% dalam botol dibentuk semula kepada hidrogen di tapak, kemudian ditukar oleh sel bahan api kepada kuasa dan air panas 60–70 °C: tiada api, tiada NOx, tiada SOx, tiada zarah. Air ialah satu-satunya hasil sampingan. FOB RM 10,000/kW, tidak termasuk pemasangan.',
+        '97% 瓶装生物天然气现场重整制氢，燃料电池同时供电与 60–70 ℃ 热水：无明火、无氮氧化物、无硫氧化物、无粉尘，唯一副产物是水。FOB 价 RM 10,000/kW，不含安装。')}</p></div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>{L(lang,'Model','Model','机型')}</th><th>{L(lang,'Fuel input (kW)','Input bahan api (kW)','燃料输入（kW）')}</th><th>{L(lang,'CH₄ (Nm³/h)','CH₄ (Nm³/j)','甲烷（Nm³/h）')}</th><th>{L(lang,'Heat recovery (kW)','Pemulihan haba (kW)','余热（kW）')}</th><th>{L(lang,'Hot water, 50 K rise (L/h)','Air panas, kenaikan 50 K (L/j)','热水 50 K（L/h）')}</th><th>{L(lang,'Indicative price','Harga indikatif','参考价')}</th></tr></thead>
+        <tbody>
+          <tr><td class="num">7.5 kW</td><td class="num">17.9</td><td class="num">1.80</td><td class="num">7.7</td><td class="num">132</td><td class="num">RM 75,000</td></tr>
+          <tr><td class="num">10 kW</td><td class="num">23.8</td><td class="num">2.39</td><td class="num">10.2</td><td class="num">176</td><td class="num">RM 100,000</td></tr>
+          <tr><td class="num">15 kW</td><td class="num">35.7</td><td class="num">3.59</td><td class="num">15.4</td><td class="num">265</td><td class="num">RM 150,000</td></tr>
+          <tr><td class="num">20 kW</td><td class="num">47.6</td><td class="num">4.79</td><td class="num">20.5</td><td class="num">353</td><td class="num">RM 200,000</td></tr>
+          <tr><td class="num">30 kW</td><td class="num">71.4</td><td class="num">7.18</td><td class="num">30.7</td><td class="num">529</td><td class="num">RM 300,000</td></tr>
+          <tr><td class="num">50 kW</td><td class="num">119.0</td><td class="num">11.97</td><td class="num">51.2</td><td class="num">882</td><td class="num">RM 500,000</td></tr>
+          <tr><td class="num">75 kW</td><td class="num">178.6</td><td class="num">17.97</td><td class="num">76.8</td><td class="num">1,323</td><td class="num">RM 750,000</td></tr>
+          <tr><td class="num">100 kW</td><td class="num">238.1</td><td class="num">23.95</td><td class="num">102.4</td><td class="num">1,763</td><td class="num">RM 1,000,000</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="small" style="margin-top:14px">{L(lang,
+      'Basis: methane LHV 9.94 kWh/Nm³; 42% electrical and 43% recoverable heat are manufacturer guaranteed values at rated output (85% overall). Indicative FOB price to a Malaysian port, excluding freight, insurance, SST, installation, civil works, cylinder room, manifold and grid connection.',
+      'Asas: LHV metana 9.94 kWh/Nm³; 42% elektrik dan 43% haba boleh pulih ialah nilai dijamin pengeluar pada output terkadar (85% keseluruhan). Harga FOB indikatif ke pelabuhan Malaysia, tidak termasuk tambang, insurans, SST, pemasangan, kerja awam, bilik silinder, manifold dan sambungan grid.',
+      '口径：甲烷低热值 9.94 kWh/Nm³；发电 42%、余热回收 43% 为厂家保证值（额定出力、综合 85%）。参考价为马来西亚港口 FOB，不含运费、保险、SST、安装、土建、气瓶间、汇流排与并网。')}</p>
+    <div class="sec-head" style="margin-top:44px"><p class="eyebrow">{L(lang,'Feed gas','Gas suapan','进气条件')}</p><h3>{L(lang,'What the reformer needs','Apa yang pemangkin pembentukan perlukan','重整器进口需要什么')}</h3></div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>{L(lang,'Parameter','Parameter','参数')}</th><th>{L(lang,'Requirement','Keperluan','要求')}</th><th>{L(lang,'Why','Sebab','原因')}</th></tr></thead>
+        <tbody>
+          <tr><td>CH₄</td><td class="num">≥ 95% by volume</td><td>{L(lang,'Reforming catalyst needs a concentrated methane feed','Pemangkin pembentukan perlukan suapan metana pekat','重整催化剂要求甲烷浓度')}</td></tr>
+          <tr><td>H₂S</td><td class="num">&lt; 1 ppm</td><td>{L(lang,'Sulphur poisons the reforming catalyst and the stack','Sulfur meracuni pemangkin dan sel','硫使重整催化剂与电堆中毒')}</td></tr>
+          <tr><td>{L(lang,'Siloxanes','Siloksan','硅氧烷')}</td><td class="num">&lt; 0.1 mg/Nm³</td><td>{L(lang,'Silica deposits on catalyst and electrodes','Mendapan silika pada pemangkin dan elektrod','二氧化硅沉积在催化剂与电极上')}</td></tr>
+          <tr><td>{L(lang,'Condensate','Kondensat','冷凝水')}</td><td>{L(lang,'None','Tiada','无')}</td><td>{L(lang,'Free water damages the catalyst bed','Air bebas merosakkan katil pemangkin','游离水损坏催化剂床层')}</td></tr>
+          <tr><td>{L(lang,'Supply','Bekalan','供气方式')}</td><td>{L(lang,'200 bar cylinders, reduced at a manifold','Silinder 200 bar, diturunkan pada manifold','200 bar 钢瓶，经汇流排减压')}</td><td>{L(lang,'No pipeline and no on-site hydrogen storage','Tiada saluran paip dan tiada penyimpanan hidrogen di tapak','不用管网，现场不储氢')}</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <div class="sec-head"><p class="eyebrow">{L(lang,'Supply scope','Skop bekalan','供货范围')}</p><h2>{L(lang,'What the CHP price includes','Apa yang termasuk dalam harga CHP','热电联供的价格包含什么')}</h2></div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>{L(lang,'Item','Item','项目')}</th><th>{L(lang,'Content','Kandungan','内容')}</th></tr></thead>
+        <tbody>
+          <tr><td><b>{L(lang,'Included','Termasuk','包含')}</b></td><td>{L(lang,'Reformer, shift reactor, hydrogen purification, fuel cell stack, inverter, heat exchangers, control system, enclosure','Pembentuk semula, reaktor shift, penulenan hidrogen, timbunan sel bahan api, penyongsang, penukar haba, sistem kawalan, selongsong','重整器、变换反应器、氢气提纯、电堆、逆变器、换热器、控制系统、机柜')}</td></tr>
+          <tr><td><b>{L(lang,'Excluded','Tidak termasuk','不含')}</b></td><td>{L(lang,'SST, freight beyond a Malaysian port, civil works, cylinder room and manifold, installation, grid connection, permits','SST, tambang melebihi pelabuhan Malaysia, kerja awam, bilik silinder dan manifold, pemasangan, sambungan grid, permit','SST、马来西亚港口以外运费、土建、气瓶间与汇流排、安装、并网、许可')}</td></tr>
+          <tr><td><b>{L(lang,'Warranty','Waranti','质保')}</b></td><td>{L(lang,'24 months on the unit; stack 5 years or 25,000 hours, whichever comes first','24 bulan untuk unit; timbunan 5 tahun atau 25,000 jam, mana yang dahulu','整机 24 个月；电堆 5 年或 25,000 小时（先到为准）')}</td></tr>
+          <tr><td><b>{L(lang,'Delivery','Penghantaran','交货期')}</b></td><td>{L(lang,'4–6 months from order and gas analysis','4–6 bulan dari pesanan dan analisis gas','收到订单与气质分析后 4–6 个月')}</td></tr>
+          <tr><td><b>{L(lang,'Price basis','Asas harga','价格口径')}</b></td><td>{L(lang,'FOB RM 10,000/kW, valid 90 days, subject to gas analysis and site survey','FOB RM 10,000/kW, sah 90 hari, tertakluk kepada analisis gas dan tinjauan tapak','FOB 价 RM 10,000/kW，有效期 90 天，以气质分析与现场勘查为准')}</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head"><p class="eyebrow">{L(lang,'Scope matrix · hydrogen CHP','Matriks skop · CHP hidrogen','范围矩阵 · 氢能热电联供')}</p><h2>{L(lang,'Who does what','Siapa buat apa','谁做什么')}</h2></div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>{L(lang,'Work package','Pakej kerja','工作包')}</th><th>KSTS / {L(lang,'technology partner','rakan teknologi','技术方')}</th><th>{L(lang,'Client','Pelanggan','客户')}</th><th>{L(lang,'Notes','Nota','说明')}</th></tr></thead>
+        <tbody>
+          <tr><td>{L(lang,'Sizing &amp; load matching','Saiz &amp; padanan beban','选型与负荷匹配')}</td><td>{L(lang,'Yes','Ya','是')}</td><td>{L(lang,'Load profile','Profil beban','负荷曲线')}</td><td>{L(lang,'Sized on the heat and power demand','Mengikut permintaan haba dan kuasa','按热电需求定容')}</td></tr>
+          <tr><td>{L(lang,'Fuel chain: upgrading, bottling, manifold','Rantaian bahan api: peningkatan, pembotolan, manifold','燃料链：提纯、装瓶、汇流排')}</td><td>{L(lang,'Design &amp; supply','Reka &amp; bekal','设计供货')}</td><td>{L(lang,'Cylinder yard','Halaman silinder','瓶组场地')}</td><td>CH₄ ≥ 95%, H₂S &lt; 1 ppm</td></tr>
+          <tr><td>{L(lang,'CHP unit &amp; control panel','Unit CHP &amp; panel kawalan','机组与控制柜')}</td><td>{L(lang,'Yes','Ya','是')}</td><td>—</td><td>{L(lang,'Battery limit: gas inlet and AC terminals','Had: salur masuk gas dan terminal AC','界限：燃气接口与交流出线端子')}</td></tr>
+          <tr><td>{L(lang,'Civil foundations &amp; enclosure','Asas awam &amp; selongsong','土建基础与机房')}</td><td>{L(lang,'Execution (CIDB)','Pelaksanaan (CIDB)','施工（CIDB）')}</td><td>{L(lang,'Approvals','Kelulusan','审批')}</td><td>{L(lang,'Local subcontractors','Subkontraktor tempatan','本地分包')}</td></tr>
+          <tr><td>{L(lang,'Electrical &amp; grid connection','Elektrik &amp; sambungan grid','电气与并网')}</td><td>{L(lang,'Execution','Pelaksanaan','施工')}</td><td>{L(lang,'Transformer / utility','Transformer / utiliti','变压器与供电局')}</td><td>230/400 V; {L(lang,'HV by utility','HV oleh utiliti','高压由供电局')}</td></tr>
+          <tr><td>{L(lang,'Erection &amp; commissioning','Pemasangan &amp; pentauliahan','安装与调试')}</td><td>{L(lang,'Separate quotation','Sebut harga berasingan','另行报价')}</td><td>{L(lang,'Utilities &amp; access','Utiliti &amp; akses','水电与场地')}</td><td>{L(lang,'Not included in the FOB price','Tidak termasuk dalam harga FOB','不含在 FOB 价内')}</td></tr>
+          <tr><td>O&amp;M</td><td>{L(lang,'Option','Pilihan','可选')}</td><td>{L(lang,'Site crew','Krew tapak','现场班组')}</td><td>{L(lang,'Includes stack replacement planning','Termasuk perancangan penggantian timbunan','含电堆更换计划')}</td></tr>
+          <tr><td>{L(lang,'Permits &amp; SST','Permit &amp; SST','许可与 SST')}</td><td>{L(lang,'Assist','Bantu','协助')}</td><td>{L(lang,'Applicant of record','Pemohon berdaftar','申报主体')}</td><td>{L(lang,'Per Malaysian regulations','Mengikut peraturan Malaysia','按马来西亚法规')}</td></tr>
         </tbody>
       </table>
     </div>
@@ -910,19 +1011,21 @@ def about(lang):
       <h2>Sdr. Leong Kian Sheng</h2>
       <p class="small" style="margin-bottom:16px">{L(lang,'Known as Alvin · B.Eng. Tech (Aust), TMIEAust, InclEM, MMOSTA','Dikenali sebagai Alvin · B.Eng. Tech (Aust), TMIEAust, InclEM, MMOSTA','通称 Alvin · B.Eng. Tech (Aust), TMIEAust, InclEM, MMOSTA')}</p>
       <p>{L(lang,
-        'Alvin is a mechanical engineering technologist who has spent his career on the plant floor of the palm oil and process industries — inspection, energy management and project delivery. He signs off that a plant is safe to operate, not just that it was delivered.',
-        'Alvin ialah teknolog kejuruteraan mekanikal yang menghabiskan kerjayanya di lantai loji industri kelapa sawit dan proses — pemeriksaan, pengurusan tenaga dan pelaksanaan projek. Beliau mengesahkan loji selamat beroperasi, bukan sekadar telah dihantar.',
-        'Alvin 是机械工程技术专家，职业生涯都在棕榈油与流程工业的车间里——检验、能源管理与项目交付。他签字确认的是“能安全运行”，而不只是“已交货”。')}</p>
+        'Alvin Leong had spent 2 decades in the Sabah Palm Oil Milling &amp; plantation industry operating Palm based biomass watertube Steam Boiler operations for CHP generations and Green Technology development projects involving Palm based biomass composting for pelletised fertiliser manufacturing, 3 Field ESP for Air Pollution control system and conducting feasible studies for POME Biogas power generations.',
+        'Alvin Leong telah menempuh 2 dekad dalam industri Pengilangan Kelapa Sawit &amp; ladang di Sabah, mengendalikan operasi Dandang Stim tiub air biomas berasaskan sawit untuk penjanaan CHP dan projek pembangunan Teknologi Hijau yang melibatkan pengkomposan biomas berasaskan sawit untuk pembuatan baja berbutir, 3 ESP Lapangan untuk sistem kawalan pencemaran udara dan menjalankan kajian kemungkinan untuk penjanaan kuasa Biogas POME.',
+        'Alvin Leong 在沙巴棕榈油压榨与种植业深耕 2 个十年，运营棕榈基生物质水管蒸汽锅炉用于 CHP 发电，并参与绿色技术开发项目，涉及棕榈基生物质堆肥制颗粒肥、3 套现场 ESP 大气污染控制系统，以及 POME 沼气发电的可行性研究。')}</p>
       <div class="card" style="margin-top:18px">
-        <h3 style="font-size:17px">{L(lang,'Registrations','Pendaftaran','资质')}</h3>
+        <h3 style="font-size:17px">{L(lang,'Registrations','Pendaftaran','法定资质')}</h3>
         <ul class="checks" style="margin-bottom:0">
-          <li>D.O.S.H Registered Steam &amp; I.C.E. Engineer</li>
-          <li>D.O.S.H Registered OSH Coordinator</li>
-          <li>BEM Registered Engineering Technologist</li>
-          <li>ASEAN Engineering Technologist</li>
-          <li>ECOS Registered Electrical Energy Manager</li>
-          <li>CAAM Certified Remote Pilot (B) &amp; AGRI (2)</li>
+          <li>{L(lang,'ECOS Registered Electrical Energy Manager','Pengurus Tenaga Elektrik Berdaftar ECOS','ECOS 注册电能管理师')} <span class="small">EREEM-00016-2025</span></li>
+          <li>{L(lang,'DOSH Registered 2nd Grade Internal Combustion Engine Engineer','Jurutera Enjin Pembakaran Dalam Gred 2 Berdaftar DOSH','DOSH 注册二级内燃机工程师')} <span class="small">JKKP/2024/EPD02/1322</span></li>
+          <li>{L(lang,'DOSH Registered 2nd Grade Steam Engineer','Jurutera Stim Gred 2 Berdaftar DOSH','DOSH 注册二级蒸汽工程师')} <span class="small">JKKP/2024/JS02/1113</span></li>
+          <li>{L(lang,'DOSH Certified OSH Coordinator','Penyelaras OSH Bertauliah DOSH','DOSH 认证职业安全健康协调员')} <span class="small">SB/21/OSHC/02/00512</span></li>
+          <li>{L(lang,'BEM Registered Engineering Technologist (Manufacturing)','Teknolog Kejuruteraan Berdaftar BEM (Pembuatan)','BEM 注册工程技术师（制造）')} <span class="small">T10283</span></li>
+          <li>{L(lang,'AER Registered ASEAN Engineering Technologist','Teknolog Kejuruteraan ASEAN Berdaftar AER','AER 注册东盟工程技术师')} <span class="small">AET0192</span></li>
+          <li>{L(lang,'CIDB Registered Green Card Holder · ADMS Management &amp; IRWS Professional Engineer','Pemegang Kad Hijau Berdaftar CIDB · ADMS Management &amp; IRWS Professional Engineer','CIDB 注册绿卡 · ADMS 管理与 IRWS 专业工程师')}</li>
         </ul>
+        <p class="small" style="margin:14px 0 0">{L(lang,'Drone operations: CAAM Certified Remote Pilot (B) &amp; AGRI (2).','Operasi dron: Juruterbang Dron Bertauliah CAAM (B) &amp; AGRI (2).','无人机作业：CAAM 认证驾驶员（B 类）与农业植保（2 类）。')}</p>
       </div>
     </div>
   </div>
@@ -936,6 +1039,11 @@ def about(lang):
         'Report on the IEM Sabah Branch CPD talk, Kota Kinabalu.',
         'Laporan ceramah CPD IEM Cawangan Sabah, Kota Kinabalu.',
         'IEM 沙巴分会 CPD 讲座报道，亚庇。')}</figcaption>
+      <img src="{asset}assets/img/press-iem-sabah-cpd-2026-zh.jpg" alt="Chinese-language report on the IEM Sabah Branch CPD talk, Asia Times Sabah edition, 23 August 2026" loading="lazy" style="margin-top:22px;border:1px solid var(--line);border-radius:12px;box-shadow:0 10px 30px rgba(12,26,38,.10)">
+      <figcaption class="small" style="margin-top:12px">{L(lang,
+        'Chinese-language report, Asia Times (Sabah edition), 23 August 2026.',
+        'Laporan bahasa Cina, Asia Times (edisi Sabah), 23 Ogos 2026.',
+        '中文报道：《亚洲时报》沙巴新闻 A10 版，2026 年 8 月 23 日。')}</figcaption>
     </figure>
     <div>
       <p class="eyebrow">{L(lang,'In the news','Dalam berita','媒体报道')}</p>
