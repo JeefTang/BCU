@@ -7,6 +7,7 @@ KWH_PER_NM3_CH4 = 9.94      # LHV
 EFF_E = 42.0                # % electrical, LHV
 EFF_H = 43.0                # % recoverable heat, LHV
 PRICE_RM_KW = 10000         # FOB price to Malaysia, RM/kW, installation excluded
+PRICE_RM_KW_RAW = 19500     # same, with integrated front-end purification for raw 60% biogas
 # (kW electrical, fuel input in 0.1 kW, indicative price RM)
 MODELS = [
     (7.5, 179, 75000), (10, 238, 100000), (15, 357, 150000), (20, 476, 200000),
@@ -24,8 +25,10 @@ def _rows(lang):
         label = ("7.5 kW" if kw == 7.5 else "%d kW" % kw)
         out.append(
             "<tr><td><b>%s</b></td><td class=\"num\">%.1f</td><td class=\"num\">%.2f</td>"
-            "<td class=\"num\">%.1f</td><td class=\"num\">%s</td><td class=\"num\">RM %s</td></tr>"
-            % (label, fuel_kw, ch4, heat, "{:,.0f}".format(hot), "{:,.0f}".format(price)))
+            "<td class=\"num\">%.1f</td><td class=\"num\">%s</td><td class=\"num\">RM %s</td>"
+            "<td class=\"num\">RM %s</td></tr>"
+            % (label, fuel_kw, ch4, heat, "{:,.0f}".format(hot), "{:,.0f}".format(price),
+               "{:,.0f}".format(kw * PRICE_RM_KW_RAW)))
     return "\n".join(out)
 
 
@@ -41,7 +44,7 @@ def hydrogen(lang):
                "Methane reforming plus a fuel cell: the same architecture as Japan's household fuel-cell CHP, scaled to estate housing, resorts, mills and off-grid communities. Two feeds work: bottled 97% biomethane, or raw 60% biogas taken straight from the mill with an integrated purification front end. Either way the methane is reformed on site into hydrogen and converted to electricity and 60–70 °C hot water — no pipeline, no diesel, no flame at the point of use.",
                "Pembentukan semula metana dengan sel bahan api: seni bina yang sama seperti CHP sel bahan api rumah Jepun, diskalakan untuk perumahan ladang, resort, kilang dan komuniti luar grid. Dua suapan boleh digunakan: biometana 97% dalam botol, atau biogas mentah 60% terus dari kilang dengan bahagian penulenan bersepadu di hadapan. Sama ada cara, metana dibentuk semula di tapak menjadi hidrogen dan ditukar kepada elektrik dan air panas 60–70 °C — tanpa saluran paip, tanpa diesel, tanpa api di tempat penggunaan.",
                "甲烷重整 + 燃料电池：与日本家用燃料电池热电联供同一架构，功率放大到种植园宿舍、度假村、厂区与离网社区。两种进气都能用：瓶装 97% 生物天然气，或者直接从油厂取 60% 原沼气、前端配一体化净化装置。无论哪种，都是现场重整制氢，再转成电与 60–70 ℃ 热水——不用管网、不用柴油、用能端无明火。"),
-        k1=L(lang, "FOB price, installation excluded", "Harga FOB, pemasangan tidak termasuk", "FOB 价，不含安装"),
+        k1=L(lang, "FOB price per kW: bottled 97% gas / raw biogas with integrated purification", "Harga FOB per kW: gas botol 97% / biogas mentah dengan penulenan bersepadu", "FOB 单价：瓶装 97% 气 / 带一体化净化的原沼气"),
         k2=L(lang, "Electrical efficiency, guaranteed (LHV)", "Kecekapan elektrik, dijamin (LHV)", "发电效率（厂家保证值·低热值）"),
         k3=L(lang, "Recoverable heat, guaranteed (LHV)", "Haba boleh pulih, dijamin (LHV)", "可回收余热（厂家保证值）"),
         k4=L(lang, "Fuel per kWh sent out", "Bahan api per kWh dihantar", "每度电耗气"),
@@ -59,7 +62,7 @@ def hydrogen(lang):
 <section>
   <div class="wrap">
     <div class="stats" style="margin-top:0">
-      <div class="stat"><b>RM 10,000</b><span>{s['k1']} · /kW</span></div>
+      <div class="stat"><b>RM 10,000 / 19,500</b><span>{s['k1']} · /kW</span></div>
       <div class="stat"><b>42%</b><span>{s['k2']}</span></div>
       <div class="stat"><b>43%</b><span>{s['k3']}</span></div>
       <div class="stat"><b>0.24 Nm³</b><span>{s['k4']}</span></div>
@@ -163,6 +166,7 @@ def hydrogen(lang):
           'Standard specification. The gas arrives at 200 bar already at 97% methane, so the unit only needs desulphurisation and filtration before the reformer. Nothing to build, nothing to operate upstream — but you pay the bottled-gas price for every Nm³, and you depend on the cylinder supply chain.',
           'Spesifikasi standard. Gas tiba pada 200 bar dan sudah 97% metana, jadi unit hanya perlu nyahsulfur dan penapisan sebelum reformer. Tiada yang perlu dibina atau dikendalikan di huluan — tetapi anda membayar harga gas botol bagi setiap Nm³ dan bergantung pada rantaian bekalan silinder.',
           '标准配置。气到现场就是 200 bar、97% 甲烷，机组只需脱硫和过滤就能进重整器。上游不用建、不用运行——但每一方气都要按瓶装气价付钱，而且依赖钢瓶供应链。')}</p>
+        <p class="small"><b>RM 10,000/kW</b> · {L(lang,'FOB, installation excluded','FOB, pemasangan tidak termasuk','FOB 价，不含安装')}</p>
       </div></article>
       <article class="card prod-card"><div>
         <p class="tag">B · {L(lang,'Raw biogas, about 60% CH₄','Biogas mentah, kira-kira 60% CH₄','原沼气，约 60% 甲烷')}</p>
@@ -171,6 +175,7 @@ def hydrogen(lang):
           'Take the biogas directly off the mill pond and skip upgrading, bottling and trucking altogether. An integrated front-end purification module — desulphurisation, CO₂ removal, drying and compression — is supplied as part of our unit and lifts the gas to the ≥95% methane the reformer needs. Higher investment than option A, but the fuel is the mill’s own biogas instead of bought cylinders, and there is no separate upgrading plant to pay for.',
           'Ambil biogas terus dari kolam kilang dan langkaui peningkatan, pembotolan serta pengangkutan. Modul penulenan bersepadu di hadapan — nyahsulfur, penyingkiran CO₂, pengeringan dan pemampatan — dibekalkan sebagai sebahagian unit kami dan menaikkan gas ke ≥95% metana yang diperlukan reformer. Pelaburan lebih tinggi daripada pilihan A, tetapi bahan api ialah biogas kilang sendiri, bukan silinder yang dibeli, dan tiada loji peningkatan berasingan.',
           '直接把油厂厌氧塘的沼气接过来，省掉提纯、装瓶、运输整条链。前端一体化净化模块——脱硫、脱 CO₂、干燥、增压——随我们的机组一起供货，把气质提到重整器需要的 ≥95% 甲烷。投资比方案 A 高，但烧的是油厂自己的沼气，不是买来的瓶装气，也不用另建提纯站。')}</p>
+        <p class="small"><b>RM 19,500/kW</b> · {L(lang,'FOB, integrated purification included in the unit','FOB, penulenan bersepadu termasuk dalam unit','FOB 价，一体化净化已含在机组内')}</p>
       </div></article>
     </div>
     <p class="note">{L(lang,
@@ -218,7 +223,8 @@ def hydrogen(lang):
           <th>{L(lang,'CH₄ (Nm³/h)','CH₄ (Nm³/j)','甲烷（Nm³/h）')}</th>
           <th>{L(lang,'Heat (kW)','Haba (kW)','余热（kW）')}</th>
           <th>{L(lang,'Hot water 50 K (L/h)','Air panas 50 K (L/j)','热水 50 K（L/h）')}</th>
-          <th>{L(lang,'Indicative price','Harga indikatif','参考价')}</th>
+          <th>{L(lang,'Indicative price, bottled gas','Harga indikatif, gas botol','参考价（瓶装气）')}</th>
+          <th>{L(lang,'Price, raw biogas with purification','Harga, biogas mentah dengan penulenan','参考价（原沼气含净化）')}</th>
         </tr></thead>
         <tbody>
 {rows}
@@ -226,9 +232,9 @@ def hydrogen(lang):
       </table>
     </div>
     <p class="small" style="margin-top:14px">{L(lang,
-      'Basis: methane LHV 9.94 kWh/Nm³; manufacturer-guaranteed 42% electrical and 43% heat recovery at rated output (85% combined) — to be reconfirmed against the guarantee sheet for each model. On raw biogas at 60% CH₄ the raw gas flow is about 1.67× the CH₄ figure, and the integrated purification module is sized to that flow. Price is FOB Malaysia port; freight, insurance, SST, local installation, civils, cylinder storage, gas manifold and grid connection are excluded and quoted per site. The raw-biogas version with the integrated purification front end is quoted separately.',
-      'Asas: LHV metana 9.94 kWh/Nm³; 42% elektrik dan 43% pemulihan haba dijamin pengeluar pada output terkadar (85% gabungan) — akan disahkan semula dengan helaian jaminan setiap model. Pada biogas mentah 60% CH₄, aliran gas mentah kira-kira 1.67× angka CH₄, dan modul penulenan bersepadu disaiz mengikut aliran itu. Harga FOB pelabuhan Malaysia; tambang, insurans, SST, pemasangan, kerja awam, stor silinder, manifold gas dan sambungan grid tidak termasuk. Versi biogas mentah dengan penulenan bersepadu disebut harga berasingan.',
-      '口径：甲烷低热值 9.94 kWh/Nm³；发电 42%、余热回收 43% 为厂家保证值（额定出力、综合 85%）——最终以各机型保证书为准。烧 60% 原沼气时，原气量约为表中甲烷量的 1.67 倍，一体化净化模块按该气量选型。价格为马来西亚港口 FOB，不含运费、保险、SST、安装、土建、气瓶间、汇流排与并网，均按现场单独报价；带前端净化的一体化原沼气版本另行报价。')}</p>
+      'Basis: methane LHV 9.94 kWh/Nm³; manufacturer-guaranteed 42% electrical and 43% heat recovery at rated output (85% combined) — to be reconfirmed against the guarantee sheet for each model. On raw biogas at 60% CH₄ the raw gas flow is about 1.67× the CH₄ figure, and the integrated purification module is sized to that flow. Prices are FOB Malaysia port, installation excluded: bottled 97% gas at RM 10,000/kW, raw 60% biogas with the integrated purification front end at RM 19,500/kW. Freight, insurance, SST, local installation, civils, cylinder storage, gas manifold and grid connection are excluded and quoted per site.',
+      'Asas: LHV metana 9.94 kWh/Nm³; 42% elektrik dan 43% pemulihan haba dijamin pengeluar pada output terkadar (85% gabungan) — akan disahkan semula dengan helaian jaminan setiap model. Pada biogas mentah 60% CH₄, aliran gas mentah kira-kira 1.67× angka CH₄, dan modul penulenan bersepadu disaiz mengikut aliran itu. Harga FOB pelabuhan Malaysia, pemasangan tidak termasuk: gas botol 97% pada RM 10,000/kW, biogas mentah 60% dengan penulenan bersepadu pada RM 19,500/kW. Tambang, insurans, SST, pemasangan, kerja awam, stor silinder, manifold gas dan sambungan grid tidak termasuk.',
+      '口径：甲烷低热值 9.94 kWh/Nm³；发电 42%、余热回收 43% 为厂家保证值（额定出力、综合 85%）——最终以各机型保证书为准。烧 60% 原沼气时，原气量约为表中甲烷量的 1.67 倍，一体化净化模块按该气量选型。价格为马来西亚港口 FOB，不含安装：瓶装 97% 气 RM 10,000/kW，60% 原沼气配一体化前端净化 RM 19,500/kW。运费、保险、SST、安装、土建、气瓶间、汇流排与并网均不含，按现场单独报价。')}</p>
   </div>
 </section>
 
@@ -296,7 +302,7 @@ def hydrogen(lang):
       <div class="calc-form">
         <h3 style="margin-top:0">{L(lang,'C · Project economics','C · Ekonomi projek','C · 项目经济性')}</h3>
         <div class="field"><label for="h3_kw">{L(lang,'Unit size (kW)','Saiz unit (kW)','机组功率（kW）')}</label><input id="h3_kw" type="number" value="50" step="2.5" min="0"></div>
-        <div class="field"><label for="h3_capex">{L(lang,'Price (RM per kW)','Harga (RM per kW)','单价（马币/kW）')}</label><input id="h3_capex" type="number" value="10000" step="500" min="0"></div>
+        <div class="field"><label for="h3_capex">{L(lang,'Price (RM per kW)','Harga (RM per kW)','单价（马币/kW）')}</label><input id="h3_capex" type="number" value="10000" step="500" min="0"><div class="hint">{L(lang,'RM 10,000 for bottled 97% gas; RM 19,500 for raw 60% biogas with integrated purification.','RM 10,000 untuk gas botol 97%; RM 19,500 untuk biogas mentah 60% dengan penulenan bersepadu.','瓶装 97% 气用 10,000；60% 原沼气带一体化净化用 19,500。')}</div></div>
         <div class="field"><label for="h3_om">{L(lang,'O&amp;M (% of capex per year)','O&amp;M (% capex setahun)','运维（占投资 %/年）')}</label><input id="h3_om" type="number" value="3" step="0.5" min="0" max="12"><div class="hint">{L(lang,'Service contract plus stack provision. Stack replacement is the big item — 25–35% of unit price every 5–8 years.','Kontrak servis serta peruntukan stack. Penggantian stack ialah item besar — 25–35% harga unit setiap 5–8 tahun.','含服务合同与电堆计提。电堆更换是大项：每 5–8 年约机组价的 25–35%。')}</div></div>
         <div class="field"><label for="h3_gas">{L(lang,'Biomethane price (RM/Nm³)','Harga biometana (RM/Nm³)','生物天然气价（马币/Nm³）')}</label><input id="h3_gas" type="number" value="1.20" step="0.05" min="0"></div>
         <div class="field"><label for="h3_tariff">{L(lang,'Avoided electricity cost (RM/kWh)','Kos elektrik dielakkan (RM/kWh)','替代电价（马币/kWh）')}</label><input id="h3_tariff" type="number" value="0.45" step="0.05" min="0"><div class="hint">{L(lang,'Grid tariff 0.40–0.50; off-grid diesel 0.90–1.30. Use the cost you actually avoid.','Tarif grid 0.40–0.50; diesel luar grid 0.90–1.30. Guna kos yang benar-benar dielakkan.','电网 0.40–0.50；离网柴油 0.90–1.30。填你真实省下的成本。')}</div></div>
@@ -380,7 +386,7 @@ def hydrogen(lang):
           <tbody>
             <tr><td>{L(lang,'Diesel genset','Genset diesel','柴油机组')}</td><td class="num">—</td><td class="num">{L(lang,'none','tiada','无')}</td><td class="num">{L(lang,'high','tinggi','高')}</td><td class="num">800–1,500</td></tr>
             <tr><td>{L(lang,'Gas engine CHP','CHP enjin gas','燃气机热电联供')}</td><td class="num">35%</td><td class="num">43%</td><td class="num">{L(lang,'medium','sederhana','中')}</td><td class="num">1,800–2,600*</td></tr>
-            <tr><td><b>{L(lang,'H₂ fuel-cell CHP','CHP sel bahan api H₂','氢燃料电池热电联供')}</b></td><td class="num"><b>42%</b></td><td class="num"><b>43%</b></td><td class="num">{L(lang,'low','rendah','低')}</td><td class="num"><b>10,000</b></td></tr>
+            <tr><td><b>{L(lang,'H₂ fuel-cell CHP','CHP sel bahan api H₂','氢燃料电池热电联供')}</b></td><td class="num"><b>42%</b></td><td class="num"><b>43%</b></td><td class="num">{L(lang,'low','rendah','低')}</td><td class="num"><b>10,000 / 19,500</b></td></tr>
             <tr><td><b>NOx · SOx · {L(lang,'dust','habuk','粉尘')}</b></td><td class="num">{L(lang,'high','tinggi','高')}</td><td class="num">{L(lang,'low','rendah','低')}</td><td class="num"><b>{L(lang,'none','tiada','无')}</b></td><td class="num">{L(lang,'none','tiada','无')}</td></tr>
             <tr><td>{L(lang,'Solar + battery','Solar + bateri','光伏 + 储能')}</td><td class="num">—</td><td class="num">{L(lang,'none','tiada','无')}</td><td class="num">{L(lang,'none','tiada','无')}</td><td class="num">3,000–5,000</td></tr>
           </tbody>

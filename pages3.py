@@ -647,7 +647,7 @@ def equipment(lang):
       <p class="lead">{L(lang,
         'Bottled 97% biomethane — or raw 60% biogas taken straight from the mill with an integrated purification front end — is reformed to hydrogen on site, then converted by a fuel cell into power and 60–70 °C hot water: no flame, no NOx, no SOx, no particulates. Water is the only by-product. FOB RM 10,000/kW for the bottled-gas version, installation excluded; the raw-biogas version is quoted per site.',
         'Biometana 97% dalam botol — atau biogas mentah 60% terus dari kilang dengan penulenan bersepadu di hadapan — dibentuk semula kepada hidrogen di tapak, kemudian ditukar oleh sel bahan api kepada kuasa dan air panas 60–70 °C: tiada api, tiada NOx, tiada SOx, tiada zarah. Air ialah satu-satunya hasil sampingan. FOB RM 10,000/kW untuk versi gas botol, tidak termasuk pemasangan; versi biogas mentah disebut harga mengikut tapak.',
-        '瓶装 97% 生物天然气——或者直接从油厂取 60% 原沼气、前端配一体化净化装置——现场重整制氢，燃料电池同时供电与 60–70 ℃ 热水：无明火、无氮氧化物、无硫氧化物、无粉尘，唯一副产物是水。瓶装气版 FOB 价 RM 10,000/kW，不含安装；原沼气版按现场单独报价。')}</p></div>
+        '瓶装 97% 生物天然气——或者直接从油厂取 60% 原沼气、前端配一体化净化装置——现场重整制氢，燃料电池同时供电与 60–70 ℃ 热水：无明火、无氮氧化物、无硫氧化物、无粉尘，唯一副产物是水。瓶装气版 FOB 价 RM 10,000/kW；带一体化净化的原沼气版 FOB 价 RM 19,500/kW，均不含安装。')}</p></div>
     <div class="table-wrap">
       <table>
         <thead><tr><th>{L(lang,'Model','Model','机型')}</th><th>{L(lang,'Fuel input (kW)','Input bahan api (kW)','燃料输入（kW）')}</th><th>{L(lang,'CH₄ (Nm³/h)','CH₄ (Nm³/j)','甲烷（Nm³/h）')}</th><th>{L(lang,'Heat recovery (kW)','Pemulihan haba (kW)','余热（kW）')}</th><th>{L(lang,'Hot water, 50 K rise (L/h)','Air panas, kenaikan 50 K (L/j)','热水 50 K（L/h）')}</th><th>{L(lang,'Indicative price','Harga indikatif','参考价')}</th></tr></thead>
@@ -664,9 +664,9 @@ def equipment(lang):
       </table>
     </div>
     <p class="small" style="margin-top:14px">{L(lang,
-      'Basis: methane LHV 9.94 kWh/Nm³; 42% electrical and 43% recoverable heat are manufacturer guaranteed values at rated output (85% overall). Indicative FOB price to a Malaysian port, excluding freight, insurance, SST, installation, civil works, cylinder room, manifold and grid connection.',
-      'Asas: LHV metana 9.94 kWh/Nm³; 42% elektrik dan 43% haba boleh pulih ialah nilai dijamin pengeluar pada output terkadar (85% keseluruhan). Harga FOB indikatif ke pelabuhan Malaysia, tidak termasuk tambang, insurans, SST, pemasangan, kerja awam, bilik silinder, manifold dan sambungan grid.',
-      '口径：甲烷低热值 9.94 kWh/Nm³；发电 42%、余热回收 43% 为厂家保证值（额定出力、综合 85%）。参考价为马来西亚港口 FOB，不含运费、保险、SST、安装、土建、气瓶间、汇流排与并网。')}</p>
+      'Basis: methane LHV 9.94 kWh/Nm³; 42% electrical and 43% recoverable heat are manufacturer guaranteed values at rated output (85% overall). Indicative FOB price to a Malaysian port, excluding freight, insurance, SST, installation, civil works, cylinder room, manifold and grid connection: RM 10,000/kW on bottled 97% gas, RM 19,500/kW on raw 60% biogas with integrated purification.',
+      'Asas: LHV metana 9.94 kWh/Nm³; 42% elektrik dan 43% haba boleh pulih ialah nilai dijamin pengeluar pada output terkadar (85% keseluruhan). Harga FOB indikatif ke pelabuhan Malaysia, tidak termasuk tambang, insurans, SST, pemasangan, kerja awam, bilik silinder, manifold dan sambungan grid: RM 10,000/kW pada gas botol 97%, RM 19,500/kW pada biogas mentah 60% dengan penulenan bersepadu.',
+      '口径：甲烷低热值 9.94 kWh/Nm³；发电 42%、余热回收 43% 为厂家保证值（额定出力、综合 85%）。参考价为马来西亚港口 FOB，不含运费、保险、SST、安装、土建、气瓶间、汇流排与并网：瓶装 97% 气 RM 10,000/kW，60% 原沼气配一体化净化 RM 19,500/kW。')}</p>
     <div class="sec-head" style="margin-top:44px"><p class="eyebrow">{L(lang,'Feed gas','Gas suapan','进气条件')}</p><h3>{L(lang,'What the reformer needs','Apa yang pemangkin pembentukan perlukan','重整器进口需要什么')}</h3></div>
     <div class="table-wrap">
       <table>
@@ -696,7 +696,7 @@ def equipment(lang):
           <tr><td><b>{L(lang,'Excluded','Tidak termasuk','不含')}</b></td><td>{L(lang,'SST, freight beyond a Malaysian port, civil works, cylinder room and manifold, installation, grid connection, permits','SST, tambang melebihi pelabuhan Malaysia, kerja awam, bilik silinder dan manifold, pemasangan, sambungan grid, permit','SST、马来西亚港口以外运费、土建、气瓶间与汇流排、安装、并网、许可')}</td></tr>
           <tr><td><b>{L(lang,'Warranty','Waranti','质保')}</b></td><td>{L(lang,'24 months on the unit; stack 5 years or 25,000 hours, whichever comes first','24 bulan untuk unit; timbunan 5 tahun atau 25,000 jam, mana yang dahulu','整机 24 个月；电堆 5 年或 25,000 小时（先到为准）')}</td></tr>
           <tr><td><b>{L(lang,'Delivery','Penghantaran','交货期')}</b></td><td>{L(lang,'4–6 months from order and gas analysis','4–6 bulan dari pesanan dan analisis gas','收到订单与气质分析后 4–6 个月')}</td></tr>
-          <tr><td><b>{L(lang,'Price basis','Asas harga','价格口径')}</b></td><td>{L(lang,'Bottled-gas version FOB RM 10,000/kW, valid 90 days; raw-biogas version with integrated purification quoted per site. Both subject to gas analysis and site survey.','Versi gas botol FOB RM 10,000/kW, sah 90 hari; versi biogas mentah dengan penulenan bersepadu disebut harga mengikut tapak. Kedua-duanya tertakluk kepada analisis gas dan tinjauan tapak.','瓶装气版 FOB 价 RM 10,000/kW，有效期 90 天；带一体化净化的原沼气版按现场单独报价。两者均以气质分析与现场勘查为准。')}</td></tr>
+          <tr><td><b>{L(lang,'Price basis','Asas harga','价格口径')}</b></td><td>{L(lang,'Bottled-gas version FOB RM 10,000/kW; raw-biogas version with integrated purification FOB RM 19,500/kW. Both installation excluded, valid 90 days, subject to gas analysis and site survey.','Versi gas botol FOB RM 10,000/kW; versi biogas mentah dengan penulenan bersepadu FOB RM 19,500/kW. Kedua-duanya pemasangan tidak termasuk, sah 90 hari, tertakluk kepada analisis gas dan tinjauan tapak.','瓶装气版 FOB 价 RM 10,000/kW；带一体化净化的原沼气版 FOB 价 RM 19,500/kW。两者均不含安装，有效期 90 天，以气质分析与现场勘查为准。')}</td></tr>
         </tbody>
       </table>
     </div>
