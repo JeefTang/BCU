@@ -191,7 +191,7 @@ def index(lang):
       <div class="card">
         <p class="tag">{L(lang,'Managing Director','Pengarah Urusan','董事总经理')}</p>
         <h3>Sdr. Leong Kian Sheng (Alvin)</h3>
-        <p class="small" style="margin-bottom:14px">B.Eng. Tech (Aust), TMIEAust, InclEM, MMOSTA</p>
+        <p class="small" style="margin-bottom:14px">B.E.Tech (Mech) · Eng Tech (BEM) · MIEM · AMIMechE · MMOSTA</p>
         <ul class="checks">
           <li>{L(lang,'DOSH Registered 2nd Grade Steam Engineer','Jurutera Stim Gred 2 Berdaftar DOSH','DOSH 注册二级蒸汽工程师')}</li>
           <li>{L(lang,'DOSH Registered 2nd Grade I.C.E. Engineer','Jurutera I.C.E. Gred 2 Berdaftar DOSH','DOSH 注册二级内燃机工程师')}</li>
@@ -199,6 +199,7 @@ def index(lang):
           <li>{L(lang,'ECOS Registered Electrical Energy Manager','Pengurus Tenaga Elektrik Berdaftar ECOS','ECOS 注册电能管理师')}</li>
           <li>{L(lang,'BEM Registered Engineering Technologist (Manufacturing)','Teknolog Kejuruteraan Berdaftar BEM (Pembuatan)','BEM 注册工程技术师（制造）')}</li>
           <li>{L(lang,'AER Registered ASEAN Engineering Technologist','Teknolog Kejuruteraan ASEAN Berdaftar AER','AER 注册东盟工程技术师')}</li>
+          <li>{L(lang,'IEM Corporate Member No. 35532 · AMIMechE · MMOSTA','Ahli Korporat IEM No. 35532 · AMIMechE · MMOSTA','IEM 正式会员 35532 · AMIMechE · MMOSTA')}</li>
           <li>{L(lang,'CIDB Green Card Holder · IRWS Professional Engineer','Pemegang Kad Hijau CIDB · Jurutera Profesional IRWS','CIDB 绿卡 · IRWS 专业工程师')}</li>
           <li>{L(lang,'CIDB Registered Contractor · Bumiputera Sabah','Kontraktor Berdaftar CIDB · Bumiputera Sabah','CIDB 注册承包商 · 沙巴土著企业')}</li>
         </ul>
@@ -1011,15 +1012,15 @@ def about(lang):
     <div>
       <p class="eyebrow">{L(lang,'Managing Director','Pengarah Urusan','董事总经理')}</p>
       <h2>Sdr. Leong Kian Sheng</h2>
-      <p class="small" style="margin-bottom:16px">{L(lang,'Known as Alvin · B.Eng. Tech (Aust), TMIEAust, InclEM, MMOSTA','Dikenali sebagai Alvin · B.Eng. Tech (Aust), TMIEAust, InclEM, MMOSTA','通称 Alvin · B.Eng. Tech (Aust), TMIEAust, InclEM, MMOSTA')}</p>
+      <p class="small" style="margin-bottom:16px">{L(lang,'Known as Alvin · B.E.Tech (Mechanical, USQ) · Eng Tech (BEM) · MIEM · AMIMechE · MMOSTA','Dikenali sebagai Alvin · B.E.Tech (Kejuruteraan Mekanikal, USQ) · Eng Tech (BEM) · MIEM · AMIMechE · MMOSTA','通称 Alvin（梁健成）· B.E.Tech 机械工程（南昆士兰大学）· Eng Tech (BEM) · MIEM · AMIMechE · MMOSTA')}</p>
       <p>{L(lang,
-        'Alvin Leong had spent 2 decades in the Sabah Palm Oil Milling &amp; plantation industry operating Palm based biomass watertube Steam Boiler operations for CHP generations and Green Technology development projects involving Palm based biomass composting for pelletised fertiliser manufacturing, 3 Field ESP for Air Pollution control system and conducting feasible studies for POME Biogas power generations.',
-        'Alvin Leong telah menempuh 2 dekad dalam industri Pengilangan Kelapa Sawit &amp; ladang di Sabah, mengendalikan operasi Dandang Stim tiub air biomas berasaskan sawit untuk penjanaan CHP dan projek pembangunan Teknologi Hijau yang melibatkan pengkomposan biomas berasaskan sawit untuk pembuatan baja berbutir, 3 ESP Lapangan untuk sistem kawalan pencemaran udara dan menjalankan kajian kemungkinan untuk penjanaan kuasa Biogas POME.',
-        'Alvin Leong 在沙巴棕榈油压榨与种植业深耕 2 个十年，运营棕榈基生物质水管蒸汽锅炉用于 CHP 发电，并参与绿色技术开发项目，涉及棕榈基生物质堆肥制颗粒肥、3 套现场 ESP 大气污染控制系统，以及 POME 沼气发电的可行性研究。')}</p>
+        'Alvin Leong has spent 22 years in the Sabah palm oil milling and plantation industry. He built his career at a palm oil mill in Sandakan (Kilang Kelapa Sawit Fortuna Sdn Bhd), rising from Assistant Mill Manager &amp; Project Engineer to head of operations and development, and now serves as Managing Director of KSTS. His work covers palm-based biomass watertube steam boiler operations for CHP generation, green technology development projects including palm biomass composting for pelletised fertiliser, three field ESP installations for air pollution control, and feasibility studies for POME biogas power generation.',
+        'Alvin Leong telah menempuh 22 tahun dalam industri pengilangan kelapa sawit dan ladang di Sabah. Beliau membina kerjayanya di sebuah kilang kelapa sawit di Sandakan (Kilang Kelapa Sawit Fortuna Sdn Bhd), dari Penolong Pengurus Kilang &amp; Jurutera Projek sehingga mengetuai operasi dan pembangunan, dan kini berkhidmat sebagai Pengarah Urusan KSTS. Kerjanya merangkumi operasi dandang stim tiub air biomas berasaskan sawit untuk penjanaan CHP, projek pembangunan teknologi hijau termasuk pengkomposan biomas sawit untuk baja berbutir, tiga pemasangan ESP lapangan untuk kawalan pencemaran udara, dan kajian kemungkinan penjanaan kuasa biogas POME.',
+        'Alvin Leong 在沙巴棕榈油压榨与种植业深耕 22 年：职业生涯起步于山打根一油厂（Kilang Kelapa Sawit Fortuna Sdn Bhd），从副厂长兼项目工程师做到运营与发展负责人，现任 KSTS 董事总经理。其工作涵盖棕榈基生物质水管蒸汽锅炉的 CHP 运行、绿色技术开发（棕榈生物质堆肥制颗粒肥）、3 套现场 ESP 大气污染控制系统，以及 POME 沼气发电可行性研究。')}</p>
       <div class="card" style="margin-top:18px">
         <h3 style="font-size:17px">{L(lang,'Registrations','Pendaftaran','法定资质')}</h3>
         <ul class="checks" style="margin-bottom:0">
-          <li>{L(lang,'ECOS Registered Electrical Energy Manager','Pengurus Tenaga Elektrik Berdaftar ECOS','ECOS 注册电能管理师')} <span class="small">EREEM-00016-2025</span></li>
+          <li>{L(lang,'ECOS Certified Energy Manager (CEM) &amp; Registered Electrical Energy Manager (REEM)','Pengurus Tenaga Bertauliah ECOS (CEM) &amp; Pengurus Tenaga Elektrik Berdaftar (REEM)','ECOS 认证能源管理师（CEM）与注册电能管理师（REEM）')} <span class="small">EREEM-00016-2025</span></li>
           <li>{L(lang,'DOSH Registered 2nd Grade Internal Combustion Engine Engineer','Jurutera Enjin Pembakaran Dalam Gred 2 Berdaftar DOSH','DOSH 注册二级内燃机工程师')} <span class="small">JKKP/2024/EPD02/1322</span></li>
           <li>{L(lang,'DOSH Registered 2nd Grade Steam Engineer','Jurutera Stim Gred 2 Berdaftar DOSH','DOSH 注册二级蒸汽工程师')} <span class="small">JKKP/2024/JS02/1113</span></li>
           <li>{L(lang,'DOSH Certified OSH Coordinator','Penyelaras OSH Bertauliah DOSH','DOSH 认证职业安全健康协调员')} <span class="small">SB/21/OSHC/02/00512</span></li>
@@ -1028,6 +1029,20 @@ def about(lang):
           <li>{L(lang,'CIDB Registered Green Card Holder · ADMS Management &amp; IRWS Professional Engineer','Pemegang Kad Hijau Berdaftar CIDB · ADMS Management &amp; IRWS Professional Engineer','CIDB 注册绿卡 · ADMS 管理与 IRWS 专业工程师')}</li>
         </ul>
         <p class="small" style="margin:14px 0 0">{L(lang,'Drone operations: CAAM Certified Remote Pilot (B) &amp; AGRI (2).','Operasi dron: Juruterbang Dron Bertauliah CAAM (B) &amp; AGRI (2).','无人机作业：CAAM 认证驾驶员（B 类）与农业植保（2 类）。')}</p>
+      </div>
+      <div class="card" style="margin-top:18px">
+        <h3 style="font-size:17px">{L(lang,'Education','Pendidikan','教育背景')}</h3>
+        <div class="table-wrap"><table style="min-width:0"><tbody>
+          <tr><td>2004</td><td>{L(lang,'University of Southern Queensland (Australia) — B.E.Tech, Mechanical Engineering','Universiti Southern Queensland (Australia) — B.E.Tech, Kejuruteraan Mekanikal','南昆士兰大学（澳大利亚）— 机械工程 工程技术学士')}</td></tr>
+          <tr><td>2006</td><td>{L(lang,'Malaysian Palm Oil Board (MPOB) — Diploma, Palm Oil Mill Process &amp; Management','Lembaga Minyak Sawit Malaysia (MPOB) — Diploma, Proses &amp; Pengurusan Kilang Kelapa Sawit','马来西亚棕榈油局（MPOB）— 棕榈油厂工艺与管理文凭')}</td></tr>
+          <tr><td>&mdash;</td><td>{L(lang,'NIOSH Malaysia — Occupational Safety and Health training','NIOSH Malaysia — latihan Keselamatan dan Kesihatan Pekerjaan','NIOSH 马来西亚 — 职业安全与卫生培训')}</td></tr>
+        </tbody></table></div>
+        <h3 style="font-size:17px;margin-top:18px">{L(lang,'Memberships','Keahlian','学会会员')}</h3>
+        <ul class="checks" style="margin-bottom:0">
+          <li>{L(lang,'IEM — Corporate Member No. 35532 (Mechanical), Sabah Branch, since 2009','IEM — Ahli Korporat No. 35532 (Mekanikal), Cawangan Sabah, sejak 2009','IEM 马来西亚工程师学会 — 正式会员 35532（机械专业，沙巴分会，2009 年入会）')}</li>
+          <li>{L(lang,'AMIMechE — Associate Member, Institution of Mechanical Engineers (UK)','AMIMechE — Ahli Bersekutu, Institution of Mechanical Engineers (UK)','AMIMechE — 英国机械工程师学会准会员')}</li>
+          <li>{L(lang,'MMOSTA — Malaysian Oil Scientists and Technologists Association','MMOSTA — Persatuan Saintis dan Teknolog Minyak Malaysia','MMOSTA — 马来西亚油料科学家与技术专家协会')}</li>
+        </ul>
       </div>
     </div>
   </div>
