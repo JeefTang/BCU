@@ -191,7 +191,7 @@ def index(lang):
       <div class="card">
         <p class="tag">{L(lang,'Managing Director','Pengarah Urusan','董事总经理')}</p>
         <h3>Sdr. Leong Kian Sheng (Alvin)</h3>
-        <p class="small" style="margin-bottom:14px">B.E.Tech (Mech) · Eng Tech (BEM) · MIEM · AMIMechE · MMOSTA</p>
+        <p class="small" style="margin-bottom:14px">B.Eng.Tech(Mech Eng)(USQ)• Eng Tech (BEM)• ASEAN Eng Tech (AER)• IncIEM• MMOSTA• Grad Tech (MBOT)• TMIEAust</p>
         <ul class="checks">
           <li>{L(lang,'DOSH Registered 2nd Grade Steam Engineer','Jurutera Stim Gred 2 Berdaftar DOSH','DOSH 注册二级蒸汽工程师')}</li>
           <li>{L(lang,'DOSH Registered 2nd Grade I.C.E. Engineer','Jurutera I.C.E. Gred 2 Berdaftar DOSH','DOSH 注册二级内燃机工程师')}</li>
@@ -199,7 +199,7 @@ def index(lang):
           <li>{L(lang,'ECOS Registered Electrical Energy Manager','Pengurus Tenaga Elektrik Berdaftar ECOS','ECOS 注册电能管理师')}</li>
           <li>{L(lang,'BEM Registered Engineering Technologist (Manufacturing)','Teknolog Kejuruteraan Berdaftar BEM (Pembuatan)','BEM 注册工程技术师（制造）')}</li>
           <li>{L(lang,'AER Registered ASEAN Engineering Technologist','Teknolog Kejuruteraan ASEAN Berdaftar AER','AER 注册东盟工程技术师')}</li>
-          <li>{L(lang,'IEM Corporate Member No. 35532 · AMIMechE · MMOSTA','Ahli Korporat IEM No. 35532 · AMIMechE · MMOSTA','IEM 正式会员 35532 · AMIMechE · MMOSTA')}</li>
+          <li>{L(lang,'IEM (IncIEM) No. 35532 · ASEAN Eng Tech (AER) · MMOSTA · Grad Tech (MBOT) · TMIEAust','IEM (IncIEM) No. 35532 · ASEAN Eng Tech (AER) · MMOSTA · Grad Tech (MBOT) · TMIEAust','IEM (IncIEM) 会员 35532 · ASEAN Eng Tech (AER) · MMOSTA · Grad Tech (MBOT) · TMIEAust')}</li>
           <li>{L(lang,'CIDB Green Card Holder · IRWS Professional Engineer','Pemegang Kad Hijau CIDB · Jurutera Profesional IRWS','CIDB 绿卡 · IRWS 专业工程师')}</li>
           <li>{L(lang,'CIDB Registered Contractor · Bumiputera Sabah','Kontraktor Berdaftar CIDB · Bumiputera Sabah','CIDB 注册承包商 · 沙巴土著企业')}</li>
         </ul>
@@ -1012,7 +1012,7 @@ def about(lang):
     <div>
       <p class="eyebrow">{L(lang,'Managing Director','Pengarah Urusan','董事总经理')}</p>
       <h2>Sdr. Leong Kian Sheng</h2>
-      <p class="small" style="margin-bottom:16px">{L(lang,'Known as Alvin · B.E.Tech (Mechanical, USQ) · Eng Tech (BEM) · MIEM · AMIMechE · MMOSTA','Dikenali sebagai Alvin · B.E.Tech (Kejuruteraan Mekanikal, USQ) · Eng Tech (BEM) · MIEM · AMIMechE · MMOSTA','通称 Alvin（梁健成）· B.E.Tech 机械工程（南昆士兰大学）· Eng Tech (BEM) · MIEM · AMIMechE · MMOSTA')}</p>
+      <p class="small" style="margin-bottom:16px">{L(lang,'Known as Alvin · B.Eng.Tech(Mech Eng)(USQ)• Eng Tech (BEM)• ASEAN Eng Tech (AER)• IncIEM• MMOSTA• Grad Tech (MBOT)• TMIEAust','Dikenali sebagai Alvin · B.Eng.Tech(Mech Eng)(USQ)• Eng Tech (BEM)• ASEAN Eng Tech (AER)• IncIEM• MMOSTA• Grad Tech (MBOT)• TMIEAust','通称 Alvin（梁健成）· B.Eng.Tech(Mech Eng)(USQ)• Eng Tech (BEM)• ASEAN Eng Tech (AER)• IncIEM• MMOSTA• Grad Tech (MBOT)• TMIEAust')}</p>
       <p>{L(lang,
         'Alvin Leong has spent 22 years in the Sabah palm oil milling and plantation industry. He built his career at a palm oil mill in Sandakan (Kilang Kelapa Sawit Fortuna Sdn Bhd), rising from Assistant Mill Manager &amp; Project Engineer to head of operations and development, and now serves as Managing Director of KSTS. His work covers palm-based biomass watertube steam boiler operations for CHP generation, green technology development projects including palm biomass composting for pelletised fertiliser, three field ESP installations for air pollution control, and feasibility studies for POME biogas power generation.',
         'Alvin Leong telah menempuh 22 tahun dalam industri pengilangan kelapa sawit dan ladang di Sabah. Beliau membina kerjayanya di sebuah kilang kelapa sawit di Sandakan (Kilang Kelapa Sawit Fortuna Sdn Bhd), dari Penolong Pengurus Kilang &amp; Jurutera Projek sehingga mengetuai operasi dan pembangunan, dan kini berkhidmat sebagai Pengarah Urusan KSTS. Kerjanya merangkumi operasi dandang stim tiub air biomas berasaskan sawit untuk penjanaan CHP, projek pembangunan teknologi hijau termasuk pengkomposan biomas sawit untuk baja berbutir, tiga pemasangan ESP lapangan untuk kawalan pencemaran udara, dan kajian kemungkinan penjanaan kuasa biogas POME.',
@@ -1033,15 +1033,16 @@ def about(lang):
       <div class="card" style="margin-top:18px">
         <h3 style="font-size:17px">{L(lang,'Education','Pendidikan','教育背景')}</h3>
         <div class="table-wrap"><table style="min-width:0"><tbody>
-          <tr><td>2004</td><td>{L(lang,'University of Southern Queensland (Australia) — B.E.Tech, Mechanical Engineering','Universiti Southern Queensland (Australia) — B.E.Tech, Kejuruteraan Mekanikal','南昆士兰大学（澳大利亚）— 机械工程 工程技术学士')}</td></tr>
+          <tr><td>2004</td><td>{L(lang,'University of Southern Queensland (Australia) — B.Eng.Tech (Mech Eng)','Universiti Southern Queensland (Australia) — B.Eng.Tech (Kejuruteraan Mekanikal)','南昆士兰大学（澳大利亚）— 机械工程 工程技术学士 B.Eng.Tech')}</td></tr>
           <tr><td>2006</td><td>{L(lang,'Malaysian Palm Oil Board (MPOB) — Diploma, Palm Oil Mill Process &amp; Management','Lembaga Minyak Sawit Malaysia (MPOB) — Diploma, Proses &amp; Pengurusan Kilang Kelapa Sawit','马来西亚棕榈油局（MPOB）— 棕榈油厂工艺与管理文凭')}</td></tr>
           <tr><td>&mdash;</td><td>{L(lang,'NIOSH Malaysia — Occupational Safety and Health training','NIOSH Malaysia — latihan Keselamatan dan Kesihatan Pekerjaan','NIOSH 马来西亚 — 职业安全与卫生培训')}</td></tr>
         </tbody></table></div>
         <h3 style="font-size:17px;margin-top:18px">{L(lang,'Memberships','Keahlian','学会会员')}</h3>
         <ul class="checks" style="margin-bottom:0">
-          <li>{L(lang,'IEM — Corporate Member No. 35532 (Mechanical), Sabah Branch, since 2009','IEM — Ahli Korporat No. 35532 (Mekanikal), Cawangan Sabah, sejak 2009','IEM 马来西亚工程师学会 — 正式会员 35532（机械专业，沙巴分会，2009 年入会）')}</li>
-          <li>{L(lang,'AMIMechE — Associate Member, Institution of Mechanical Engineers (UK)','AMIMechE — Ahli Bersekutu, Institution of Mechanical Engineers (UK)','AMIMechE — 英国机械工程师学会准会员')}</li>
+          <li>{L(lang,'IncIEM — Institution of Engineers Malaysia, No. 35532 (Mechanical), Sabah Branch, since 2009','IncIEM — Institution of Engineers Malaysia, No. 35532 (Mekanikal), Cawangan Sabah, sejak 2009','IncIEM — 马来西亚工程师学会（IEM），会员号 35532（机械专业，沙巴分会，2009 年起）')}</li>
           <li>{L(lang,'MMOSTA — Malaysian Oil Scientists and Technologists Association','MMOSTA — Persatuan Saintis dan Teknolog Minyak Malaysia','MMOSTA — 马来西亚油料科学家与技术专家协会')}</li>
+          <li>{L(lang,'Grad Tech (MBOT) — Graduate Technologist, Malaysian Board of Technologists','Grad Tech (MBOT) — Teknolog Siswazah, Lembaga Teknolog Malaysia','Grad Tech (MBOT) — 马来西亚技术专家局（MBOT）毕业生技术师')}</li>
+          <li>{L(lang,'TMIEAust — Technical Member, Engineers Australia','TMIEAust — Ahli Teknikal, Engineers Australia','TMIEAust — 澳大利亚工程师学会（Engineers Australia）技术会员')}</li>
         </ul>
       </div>
     </div>
