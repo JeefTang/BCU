@@ -274,6 +274,41 @@ def index(lang):
 """
 
 
+# ---- Shengdong genset references in Malaysia (client-supplied reference list) ----
+REFS = [
+    (1,  "BELL Eco Power Sdn Bhd",                  "500GF1-1RZ",       500, 4, "2009"),
+    (2,  "Rompin Palm Oil Mill, Prosper Group",     "500GF1-1RZ",       500, 2, "2009-2010"),
+    (3,  "Kosfarm Palm Oil Mill, Prosper Group",    "500GF1-1RZ",       500, 1, "2010"),
+    (4,  "Wujud Palm Oil Mill, Prosper Group",      "500GF1-1RZ",       500, 1, "2011"),
+    (5,  "Prosper Palm Oil Mill, Prosper Group",    "500GF1-1RZ",       500, 2, "2012"),
+    (6,  "Cahaya Muda Palm Oil Mill",               "600GFZ1-RZ-ESM1",  600, 3, "2011"),
+    (7,  "Apas Balung Palm Oil Mill, Sawit",        "500GF1-1RZ",       500, 3, "2011"),
+    (8,  "KLK Group",                               "600GFZ1-RZ-ESM1",  600, 4, "2013"),
+    (9,  "Tee Teh Palm Oil Mill",                   "500GFZ1-RZ-ESM1",  500, 1, "inst"),
+    (10, "Sapi Palm Oil Mill, Wilmar",              "500GFZ1-PwZ-ESM1", 500, 1, "inst"),
+    (11, "Saremas 1 Palm Oil Mill, Wilmar",         "500GFZ1-PwZ-ESM1", 500, 1, "inst"),
+    (12, "Carotino Palm Oil Mill",                  "600GFZ1-RZ-ESM1",  600, 2, "inst"),
+    (13, "Biolermech Sdn Bhd, chicken farm biogas", "600GFZ1-RZ-ESM1",  600, 2, "may"),
+    (14, "Asia Palm Oil Mill",                      "600GFZ1-RZ-ESM1",  600, 3, "may"),
+]
+
+
+def _refs(lang):
+    inst = L(lang, "under installation", "dalam pemasangan", "在建")
+    may = L(lang, "delivered May", "dihantar Mei", "5 月交付")
+    unit = L(lang, "unit", "unit", "台")
+    out = []
+    for page, name, model, kw, qty, com in REFS:
+        status = inst if com == "inst" else (may if com == "may" else com)
+        out.append(
+            '<figure><img src="../assets/img/shengdong/site-%02d.jpg" alt="%s biogas genset">'
+            '<figcaption><b>%s</b>'
+            '<span>%s \u00b7 %d kW \u00d7 %d %s</span>'
+            '<span class="ref-yr">%s</span></figcaption></figure>'
+            % (page, name, name, model, kw, qty, unit, status))
+    return "\n".join(out)
+
+
 def power(lang):
     return f"""
 <section class="page-head">
@@ -373,6 +408,27 @@ def power(lang):
         'Julat RM 0.048–0.058/kWh (≈ USD 0.011–0.014/kWh). Kontrak O&M penuh termasuk baik pulih: RM 0.065–0.085/kWh. Tidak termasuk O&M kolam dan peningkatan gas.',
         '区间 RM 0.048–0.058/kWh（约 USD 0.011–0.014/kWh）。全包运维（含大修）RM 0.065–0.085/kWh。不含池塘运维与提纯段。')}</p>
     </div>
+  </div>
+</section>
+
+
+<section class="alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">{L(lang,'Malaysian references','Rujukan Malaysia','马来西亚业绩')}</p>
+      <h2>{L(lang,'Thirty gensets, fourteen mills, since 2009','Tiga puluh genset, empat belas kilang, sejak 2009','30 台机组、14 座油厂，2009 年起')}</h2>
+      <p class="lead">{L(lang,
+        'Shengdong biogas gensets already installed or in delivery in Malaysia: 16.4 MW across 30 units, 20 units running since 2009-2013 on POME biogas. Photos and site details from the manufacturer reference list.',
+        'Genset biogas Shengdong yang telah dipasang atau dalam penghantaran di Malaysia: 16.4 MW merentas 30 unit, 20 unit beroperasi sejak 2009-2013 dengan biogas POME. Foto dan butiran tapak daripada senarai rujukan pengeluar.',
+        '盛东沼气机组在马来西亚已投运或在交付的清单：30 台、合计 16.4 MW，其中 20 台自 2009-2013 年起以 POME 沼气连续运行。照片与项目信息来自厂家业绩清单。')}</p>
+    </div>
+    <div class="refs">
+{_refs(lang)}
+    </div>
+    <p class="small" style="margin-top:16px">{L(lang,
+      'Genset brand: Shengdong. Reference list supplied by the manufacturer, September 2026. “Under installation” and “delivered May” are not yet commissioned.',
+      'Jenama genset: Shengdong. Senarai rujukan dibekalkan oleh pengeluar. “Dalam pemasangan” dan “dihantar Mei” belum ditauliahkan.',
+      '机组品牌：盛东。清单由厂家提供（2026 年 9 月）。标注“在建”“5 月交付”的尚未投运。')}</p>
   </div>
 </section>
 
