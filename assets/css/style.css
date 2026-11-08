@@ -292,3 +292,10 @@ form.enquiry input,form.enquiry textarea,form.enquiry select{
 .refs figcaption .ref-yr{color:var(--accent);font-weight:700;margin-top:4px}
 @media(max-width:900px){.refs{grid-template-columns:1fr 1fr}}
 @media(max-width:600px){.refs{grid-template-columns:1fr}}
+
+/* hydrogen CHP unit galleries */
+.gal-2{grid-template-columns:1fr 1fr}
+.gal-3{grid-template-columns:repeat(3,1fr)}
+.gal figure.diag img{aspect-ratio:auto;object-fit:contain;background:#fff;padding:10px}
+@media(max-width:900px){.gal-3{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.gal-2,.gal-3{grid-template-columns:1fr}}
