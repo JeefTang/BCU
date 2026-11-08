@@ -244,6 +244,26 @@ def hydrogen(lang):
 <section>
   <div class="wrap">
     <div class="sec-head">
+      <p class="eyebrow">{L(lang,'Reference units','Unit rujukan','参考机组')}</p>
+      <h2>{L(lang,'Running on site, not in a showroom','Beroperasi di tapak, bukan di bilik pameran','在客户现场跑着的，不是在展厅摆着的')}</h2>
+      <p class="lead">{L(lang,
+        'Manufacturer reference installations in China: a 5 kW city-gas unit at Sinopec’s Dalian research institute and a 10 kW associated-gas unit at the Yakela oilfield in Xinjiang. Both are integrated power-and-hot-water systems, the same architecture we quote for Malaysian sites.',
+        'Pemasangan rujukan pengeluar di China: unit gas bandar 5 kW di institut penyelidikan Sinopec Dalian dan unit gas bersekutu 10 kW di lapangan minyak Yakela, Xinjiang. Kedua-duanya sistem kuasa dan air panas bersepadu, seni bina yang sama kami tawarkan untuk tapak di Malaysia.',
+        '厂家在中国的参考项目：中石化大连院的 5 kW 城市天然气机组、新疆雅克拉油气田的 10 kW 伴生气机组。两台都是电+热水一体化系统，与我们给马来西亚现场报的是同一套架构。')}</p>
+    </div>
+    <div class="gal">
+      <figure><img src="{asset}assets/img/huasen/case-dalian-5kw.jpg" alt="5 kW methane reforming fuel cell CHP unit, Sinopec Dalian Research Institute"><figcaption><b>{L(lang,'5 kW · Sinopec Dalian Research Institute','5 kW · Institut Penyelidikan Sinopec Dalian','5 kW · 中石化大连院')}</b><span>{L(lang,'City gas reformed on site; 5 kWh per m³ of gas, plus 300 L/h of 50–70 °C hot water for a 200 m² office.','Gas bandar dibentuk semula di tapak; 5 kWh per m³ gas, serta 300 L/j air panas 50–70 °C untuk pejabat 200 m².','城市天然气就地重整，1 m³ 气发 5 kWh，联产 50–70 °C 热水 300 L/h，供 200 m² 办公区。')}</span></figcaption></figure>
+      <figure><img src="{asset}assets/img/huasen/case-xinjiang-10kw.jpg" alt="10 kW associated gas reforming fuel cell CHP unit, Yakela oilfield Xinjiang"><figcaption><b>{L(lang,'10 kW · Yakela oilfield, Xinjiang','10 kW · Lapangan minyak Yakela, Xinjiang','10 kW · 新疆雅克拉油气田')}</b><span>{L(lang,'First unit of its kind in China on oilfield associated gas; hot water covers 400 m² of office heating.','Unit pertama seumpamanya di China menggunakan gas bersekutu lapangan minyak; air panas meliputi pemanasan pejabat 400 m².','全国首台套油气田伴生气机组，联产热水可供 400 m² 办公区供暖。')}</span></figcaption></figure>
+      <figure><img src="{asset}assets/img/huasen/unit-02.jpg" alt="Reformer and fuel cell module"><figcaption><b>{L(lang,'Reformer + fuel-cell module','Modul reformer + sel bahan api','重整器 + 燃料电池模块')}</b><span>{L(lang,'Methane is reformed to hydrogen on site, then converted electrochemically — no burner, no flue.','Metana dibentuk semula kepada hidrogen di tapak, kemudian ditukar secara elektrokimia — tiada pembakar, tiada cerobong.','甲烷就地重整成氢，再电化学转换——没有燃烧器，没有烟囱。')}</span></figcaption></figure>
+      <figure><img src="{asset}assets/img/huasen/unit-03.jpg" alt="Integrated skid configuration"><figcaption><b>{L(lang,'Integrated skid','Skid bersepadu','一体化撬块')}</b><span>{L(lang,'Reforming, purification, fuel cell and heat recovery on one skid — 7.5 to 100 kW.','Pembentukan semula, penulenan, sel bahan api dan pemulihan haba pada satu skid — 7.5 hingga 100 kW.','重整、净化、燃料电池与余热回收集成在一个撬块上——7.5 至 100 kW。')}</span></figcaption></figure>
+    </div>
+    <p class="small" style="margin-top:16px">{L(lang,'Photos: Huasen Hydrogen (Anhui) company brochure V1.4. Replacement with high-resolution originals or Malaysian site photos is in progress.','Foto: risalah syarikat Huasen Hydrogen (Anhui) V1.4. Penggantian dengan imej asal beresolusi tinggi atau foto tapak Malaysia sedang dijalankan.','照片来源：安徽华森氢能公司样册 V1.4。高清原图或马来西亚现场实拍图更换中。')}</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
       <p class="eyebrow">{L(lang,'Engineering tools','Alat kejuruteraan','工程测算')}</p>
       <h2>{L(lang,'Three calculators — same formulas we quote from','Tiga kalkulator — formula yang sama kami gunakan','三个计算器，与报价同口径')}</h2>
       <p class="lead">{L(lang,
