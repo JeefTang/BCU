@@ -241,23 +241,60 @@ def hydrogen(lang):
   </div>
 </section>
 
+<section class="alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">{L(lang,'The unit','Unit','整机')}</p>
+      <h2>{L(lang,'One cabinet: reformer, purification, fuel cell, heat recovery','Satu kabinet: reformer, penulenan, sel bahan api, pemulihan haba','一个柜子：重整、净化、燃料电池、余热回收')}</h2>
+      <p class="lead">{L(lang,
+        'Skid-mounted and factory-tested. Arrives as one enclosure, connects to gas, water and the distribution board — no separate reformer building, no flue, no engine room.',
+        'Dipasang pada skid dan diuji di kilang. Tiba sebagai satu kandang, disambung ke gas, air dan papan agihan — tiada bangunan reformer berasingan, tiada cerobong, tiada bilik enjin.',
+        '整机蹬装、出厂前完成测试。到场就是一个柜体，接燃气、接水、接配电箱就能用——不需要单独的重整房间、不需要烟囱、不需要机房。')}</p>
+    </div>
+    <div class="gal gal-3">
+      <figure><img src="{asset}assets/img/huasen/assembly-skid.jpg" alt="Skid-mounted reforming fuel cell CHP cabinet"><figcaption><b>{L(lang,'Skid-mounted cabinet','Kabinet pada skid','蹬装柜')}</b><span>{L(lang,'Reformer, purification, fuel cell and heat recovery in one enclosure.','Reformer, penulenan, sel bahan api dan pemulihan haba dalam satu kandang.','重整、净化、燃料电池与余热回收集成在一个柜体内。')}</span></figcaption></figure>
+      <figure><img src="{asset}assets/img/huasen/inside-01.jpg" alt="Inside the CHP cabinet"><figcaption><b>{L(lang,'Inside the cabinet','Di dalam kabinet','柜内')}</b><span>{L(lang,'Stack, gas manifold and control cabinet on the service side.','Stack, manifold gas dan kabinet kawalan di bahagian servis.','电堆、气路歧管与控制柜，保养侧。')}</span></figcaption></figure>
+      <figure><img src="{asset}assets/img/huasen/inside-02.jpg" alt="Internal arrangement of the reforming fuel cell unit"><figcaption><b>{L(lang,'Internal arrangement','Susunan dalaman','内部布置')}</b><span>{L(lang,'All serviceable from the front; no specialist lifting gear needed on site.','Semua boleh diservis dari hadapan; tiada alat angkat khas diperlukan di tapak.','全面前保养，现场不需要专用起重工具。')}</span></figcaption></figure>
+    </div>
+  </div>
+</section>
+
 <section>
   <div class="wrap">
     <div class="sec-head">
-      <p class="eyebrow">{L(lang,'Reference units','Unit rujukan','参考机组')}</p>
-      <h2>{L(lang,'Running on site, not in a showroom','Beroperasi di tapak, bukan di bilik pameran','在客户现场跑着的，不是在展厅摆着的')}</h2>
+      <p class="eyebrow">{L(lang,'Small units','Unit kecil','小型机组')}</p>
+      <h2>{L(lang,'Home and shop scale, 5 to 10 kW','Skala rumah dan kedai, 5 hingga 10 kW','家庭与商铺规模，5 至 10 kW')}</h2>
       <p class="lead">{L(lang,
-        'Manufacturer reference installations in China: a 5 kW city-gas unit at Sinopec’s Dalian research institute and a 10 kW associated-gas unit at the Yakela oilfield in Xinjiang. Both are integrated power-and-hot-water systems, the same architecture we quote for Malaysian sites.',
-        'Pemasangan rujukan pengeluar di China: unit gas bandar 5 kW di institut penyelidikan Sinopec Dalian dan unit gas bersekutu 10 kW di lapangan minyak Yakela, Xinjiang. Kedua-duanya sistem kuasa dan air panas bersepadu, seni bina yang sama kami tawarkan untuk tapak di Malaysia.',
-        '厂家在中国的参考项目：中石化大连院的 5 kW 城市天然气机组、新疆雅克拉油气田的 10 kW 伴生气机组。两台都是电+热水一体化系统，与我们给马来西亚现场报的是同一套架构。')}</p>
+        'Compact all-in-one units for a house, a shop lot or a resort block: about 1.8 × 0.6 × 1.4 m for 10 kW, parallelable in blocks for larger loads.',
+        'Unit padat semua-dalam-satu untuk rumah, kedai atau blok resort: kira-kira 1.8 × 0.6 × 1.4 m untuk 10 kW, boleh diparallelkan untuk beban lebih besar.',
+        '家庭、店铺、度假村客房都能用的一体机：10 kW 约 1.8 × 0.6 × 1.4 m，多台可积木式并联扩容。')}</p>
     </div>
-    <div class="gal">
-      <figure><img src="{asset}assets/img/huasen/case-dalian-5kw.jpg" alt="5 kW methane reforming fuel cell CHP unit, Sinopec Dalian Research Institute"><figcaption><b>{L(lang,'5 kW · Sinopec Dalian Research Institute','5 kW · Institut Penyelidikan Sinopec Dalian','5 kW · 中石化大连院')}</b><span>{L(lang,'City gas reformed on site; 5 kWh per m³ of gas, plus 300 L/h of 50–70 °C hot water for a 200 m² office.','Gas bandar dibentuk semula di tapak; 5 kWh per m³ gas, serta 300 L/j air panas 50–70 °C untuk pejabat 200 m².','城市天然气就地重整，1 m³ 气发 5 kWh，联产 50–70 °C 热水 300 L/h，供 200 m² 办公区。')}</span></figcaption></figure>
-      <figure><img src="{asset}assets/img/huasen/case-xinjiang-10kw.jpg" alt="10 kW associated gas reforming fuel cell CHP unit, Yakela oilfield Xinjiang"><figcaption><b>{L(lang,'10 kW · Yakela oilfield, Xinjiang','10 kW · Lapangan minyak Yakela, Xinjiang','10 kW · 新疆雅克拉油气田')}</b><span>{L(lang,'First unit of its kind in China on oilfield associated gas; hot water covers 400 m² of office heating.','Unit pertama seumpamanya di China menggunakan gas bersekutu lapangan minyak; air panas meliputi pemanasan pejabat 400 m².','全国首台套油气田伴生气机组，联产热水可供 400 m² 办公区供暖。')}</span></figcaption></figure>
-      <figure><img src="{asset}assets/img/huasen/unit-02.jpg" alt="Reformer and fuel cell module"><figcaption><b>{L(lang,'Reformer + fuel-cell module','Modul reformer + sel bahan api','重整器 + 燃料电池模块')}</b><span>{L(lang,'Methane is reformed to hydrogen on site, then converted electrochemically — no burner, no flue.','Metana dibentuk semula kepada hidrogen di tapak, kemudian ditukar secara elektrokimia — tiada pembakar, tiada cerobong.','甲烷就地重整成氢，再电化学转换——没有燃烧器，没有烟囱。')}</span></figcaption></figure>
-      <figure><img src="{asset}assets/img/huasen/unit-03.jpg" alt="Integrated skid configuration"><figcaption><b>{L(lang,'Integrated skid','Skid bersepadu','一体化撬块')}</b><span>{L(lang,'Reforming, purification, fuel cell and heat recovery on one skid — 7.5 to 100 kW.','Pembentukan semula, penulenan, sel bahan api dan pemulihan haba pada satu skid — 7.5 hingga 100 kW.','重整、净化、燃料电池与余热回收集成在一个撬块上——7.5 至 100 kW。')}</span></figcaption></figure>
+    <div class="gal gal-2">
+      <figure><img src="{asset}assets/img/huasen/unit-10kw.jpg" alt="10 kW distributed reforming fuel cell unit"><figcaption><b>{L(lang,'10 kW distributed unit','Unit teragih 10 kW','10 kW 分布式供能装置')}</b><span>{L(lang,'About 1800 × 600 × 1400 mm. 1 m³ of gas gives 5 kWh, plus 60–90 °C hot water.','Kira-kira 1800 × 600 × 1400 mm. 1 m³ gas memberi 5 kWh, serta air panas 60–90 °C.','约 1800 × 600 × 1400 mm。1 m³ 气发 5 kWh，并产 60–90 °C 热水。')}</span></figcaption></figure>
+      <figure><img src="{asset}assets/img/huasen/unit-compact.jpg" alt="5 to 10 kW compact all-in-one CHP unit"><figcaption><b>{L(lang,'5–10 kW compact unit','Unit padat 5–10 kW','5–10 kW 一体机')}</b><span>{L(lang,'For a single house or shop; quiet enough to install beside the wall.','Untuk satu rumah atau kedai; cukup senyap untuk dipasang di tepi dinding.','单栋住宅或店铺用，静到可以贴美边墙安装。')}</span></figcaption></figure>
     </div>
-    <p class="small" style="margin-top:16px">{L(lang,'Photos: Huasen Hydrogen (Anhui) company brochure V1.4. Replacement with high-resolution originals or Malaysian site photos is in progress.','Foto: risalah syarikat Huasen Hydrogen (Anhui) V1.4. Penggantian dengan imej asal beresolusi tinggi atau foto tapak Malaysia sedang dijalankan.','照片来源：安徽华森氢能公司样册 V1.4。高清原图或马来西亚现场实拍图更换中。')}</p>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">{L(lang,'How it works','Cara ia berfungsi','工作原理')}</p>
+      <h2>{L(lang,'From methane to electrons, without a flame','Dari metana ke elektron, tanpa api','从甲烷到电子，不靠火焰')}</h2>
+      <p class="lead">{L(lang,
+        'Three drawings: the system composition, the fuel-cell reaction itself, and a household P&ID showing where the power and the heat actually go.',
+        'Tiga lukisan: komposisi sistem, tindak balas sel bahan api itu sendiri, dan P&ID rumah yang menunjukkan ke mana kuasa dan haba pergi.',
+        '三张图：系统组成、燃料电池反应本身、以及家庭热电联供 PI 图——看清楚电和热到底去了哪里。')}</p>
+    </div>
+    <div class="gal gal-3">
+      <figure class="diag"><img src="{asset}assets/img/huasen/principle-system.png" alt="Fuel cell system composition"><figcaption><b>{L(lang,'System composition','Komposisi sistem','系统组成')}</b><span>{L(lang,'Gas in, hydrogen at the stack, DC to an inverter, AC out — heat recovered from the stack.','Gas masuk, hidrogen di stack, DC ke inverter, AC keluar — haba dipulihkan dari stack.','气进、堆端制氢、直流过逆变器出交流，堆端余热回收。')}</span></figcaption></figure>
+      <figure class="diag"><img src="{asset}assets/img/huasen/principle-fuelcell.png" alt="Fuel cell principle: hydrogen and oxygen to electricity and pure water"><figcaption><b>{L(lang,'Fuel-cell principle','Prinsip sel bahan api','燃料电池原理')}</b><span>{L(lang,'Hydrogen and oxygen react electrochemically; the only product is pure water.','Hidrogen dan oksigen bertindak balas secara elektrokimia; satu-satunya produk ialah air tulen.','氢与氧电化学反应，生成物只有纯水。')}</span></figcaption></figure>
+      <figure class="diag"><img src="{asset}assets/img/huasen/diagram-household-pi.png" alt="Household CHP P and ID"><figcaption><b>{L(lang,'Household CHP P&amp;ID','P&amp;ID CHP rumah','家庭热电联供 PI 图')}</b><span>{L(lang,'Power to lighting, fridge, air conditioning, TV and a backup circuit; heat to hot water.','Kuasa ke lampu, peti sejuk, penghawa dingin, TV dan litar sandaran; haba ke air panas.','电供照明、？冰箱、空调、电视与备用回路；热供热水。')}</span></figcaption></figure>
+    </div>
+    <p class="small" style="margin-top:16px">{L(lang,
+      'Photos and drawings: Huasen Hydrogen (Anhui) company brochure V1.4. High-resolution originals to be supplied for print use.',
+      'Foto dan lukisan: risalah syarikat Huasen Hydrogen (Anhui) V1.4. Imej asal beresolusi tinggi akan dibekalkan untuk kegunaan cetak.',
+      '照片与图纸来源：安徽华森氢能公司样册 V1.4。印刷用高清原图待补。')}</p>
   </div>
 </section>
 
