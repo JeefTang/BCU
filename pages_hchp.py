@@ -249,10 +249,10 @@ def hydrogen(lang):
       <p class="lead">{L(lang,
         'Skid-mounted and factory-tested. Arrives as one enclosure, connects to gas, water and the distribution board — no separate reformer building, no flue, no engine room.',
         'Dipasang pada skid dan diuji di kilang. Tiba sebagai satu kandang, disambung ke gas, air dan papan agihan — tiada bangunan reformer berasingan, tiada cerobong, tiada bilik enjin.',
-        '整机蹬装、出厂前完成测试。到场就是一个柜体，接燃气、接水、接配电箱就能用——不需要单独的重整房间、不需要烟囱、不需要机房。')}</p>
+        '整机撬装、出厂前完成测试。到场就是一个柜体，接燃气、接水、接配电箱就能用——不需要单独的重整房间、不需要烟囱、不需要机房。')}</p>
     </div>
     <div class="gal gal-3">
-      <figure><img src="{asset}assets/img/huasen/assembly-skid.jpg" alt="Skid-mounted reforming fuel cell CHP cabinet"><figcaption><b>{L(lang,'Skid-mounted cabinet','Kabinet pada skid','蹬装柜')}</b><span>{L(lang,'Reformer, purification, fuel cell and heat recovery in one enclosure.','Reformer, penulenan, sel bahan api dan pemulihan haba dalam satu kandang.','重整、净化、燃料电池与余热回收集成在一个柜体内。')}</span></figcaption></figure>
+      <figure><img src="{asset}assets/img/huasen/assembly-skid.jpg" alt="Skid-mounted reforming fuel cell CHP cabinet"><figcaption><b>{L(lang,'Skid-mounted cabinet','Kabinet pada skid','撬装柜')}</b><span>{L(lang,'Reformer, purification, fuel cell and heat recovery in one enclosure.','Reformer, penulenan, sel bahan api dan pemulihan haba dalam satu kandang.','重整、净化、燃料电池与余热回收集成在一个柜体内。')}</span></figcaption></figure>
       <figure><img src="{asset}assets/img/huasen/inside-01.jpg" alt="Inside the CHP cabinet"><figcaption><b>{L(lang,'Inside the cabinet','Di dalam kabinet','柜内')}</b><span>{L(lang,'Stack, gas manifold and control cabinet on the service side.','Stack, manifold gas dan kabinet kawalan di bahagian servis.','电堆、气路歧管与控制柜，保养侧。')}</span></figcaption></figure>
       <figure><img src="{asset}assets/img/huasen/inside-02.jpg" alt="Internal arrangement of the reforming fuel cell unit"><figcaption><b>{L(lang,'Internal arrangement','Susunan dalaman','内部布置')}</b><span>{L(lang,'All serviceable from the front; no specialist lifting gear needed on site.','Semua boleh diservis dari hadapan; tiada alat angkat khas diperlukan di tapak.','全面前保养，现场不需要专用起重工具。')}</span></figcaption></figure>
     </div>
