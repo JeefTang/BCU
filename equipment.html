@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Equipment &amp; Scope — Gas Engines, Hydrogen CHP, Upgrading | KSTS</title>
-<meta name="description" content="Biogas gensets 300 kW–2 MW and methane-reforming fuel cell CHP 7.5–100 kW (bottled 97% biomethane or raw 60% biogas with integrated purification), plus desulfurisation, gas conditioning, flares, heat recovery and upgrading skids — with clear scope matrices.">
+<meta name="description" content="Biogas gensets 300 kW–2 MW (brushless doubly-fed generator option for variable gas) and methane-reforming fuel cell CHP 7.5–100 kW (bottled 97% biomethane or raw 60% biogas with integrated purification), plus desulfurisation, gas conditioning, flares, heat recovery and upgrading skids — with clear scope matrices.">
 <link rel="canonical" href="https://jeeftang.github.io/BCU/equipment.html">
 <link rel="alternate" hreflang="en" href="https://jeeftang.github.io/BCU/equipment.html"><link rel="alternate" hreflang="ms" href="https://jeeftang.github.io/BCU/ms/equipment.html"><link rel="alternate" hreflang="zh" href="https://jeeftang.github.io/BCU/zh/equipment.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="KSTS K. S. Technical Services — Biogas &amp; Bioenergy">
 <meta property="og:title" content="Equipment &amp; Scope — Gas Engines, Hydrogen CHP, Upgrading | KSTS">
-<meta property="og:description" content="Biogas gensets 300 kW–2 MW and methane-reforming fuel cell CHP 7.5–100 kW (bottled 97% biomethane or raw 60% biogas with integrated purification), plus desulfurisation, gas conditioning, flares, heat recovery and upgrading skids — with clear scope matrices.">
+<meta property="og:description" content="Biogas gensets 300 kW–2 MW (brushless doubly-fed generator option for variable gas) and methane-reforming fuel cell CHP 7.5–100 kW (bottled 97% biomethane or raw 60% biogas with integrated purification), plus desulfurisation, gas conditioning, flares, heat recovery and upgrading skids — with clear scope matrices.">
 <meta name="theme-color" content="#0c1a26">
 <link rel="stylesheet" href="assets/css/style.css">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 34 34'><rect width='34' height='34' rx='9' fill='%230c1a26'/><path d='M17 6.5c3.6 2.4 6 6.2 6 10.2 0 3.3-2.7 6-6 6s-6-2.7-6-6c0-4 2.4-7.8 6-10.2Z' fill='%230f7a52'/></svg>">
@@ -61,6 +61,35 @@
     </div>
     <p class="small" style="margin-top:14px">Indicative at full load with 60% CH₄. Final selection based on site gas data. Containerised from 300 kW to 1.5 MW.</p>
     <p class="small" style="margin-top:8px">Electrical efficiency is taken from the manufacturer gas consumption data below (≈3.50 kWh per Nm³ CH₄), which is lower than the 38–40% sometimes quoted for Chinese units.</p>
+  </div>
+</section>
+
+<section class="alt" id="bdfg">
+  <div class="wrap">
+    <div class="sec-head"><p class="eyebrow">Generator end · option</p><h2>Brushless doubly-fed generator: let the engine follow the gas</h2>
+      <p class="lead">POME gas output is not steady. It moves with FFB throughput, pond temperature and rainfall, so a fixed-speed set spends much of the year at 50–70% load — the zone where carbon builds up and the overhaul interval shortens. A brushless doubly-fed generator decouples engine speed from grid frequency: the engine can turn slower when gas is short and faster when it is plentiful, while the terminals stay at 415 V / 50 Hz.</p></div>
+    <div class="grid-4">
+      <article class="card"><p class="tag">01 · No wear parts in the rotor</p><h3>No brushes, no slip rings</h3><p>The rotor carries no windings, no slip rings and no carbon brushes. There is nothing to replace on a service interval, no carbon dust in a humid H₂S-bearing atmosphere, and no spark source next to the gas train.</p></article>
+      <article class="card"><p class="tag">02 · Variable speed</p><h3>Follows the gas instead of tripping</h3><p>Speed can swing roughly ±30% while voltage and frequency stay fixed. When gas falls, the set turns slower and holds a healthy load factor instead of dropping into the carbon-building zone, tripping on lean burn or sending gas to the flare.</p></article>
+      <article class="card"><p class="tag">03 · Part-power converter</p><h3>Converter sized for slip power only</h3><p>Only the slip power passes through the converter — typically 25–30% of rating — not the full 100% as with a permanent-magnet set. Smaller converter, lower conversion losses, fewer components carrying full current.</p></article>
+      <article class="card"><p class="tag">04 · Grid behaviour</p><h3>Reactive power and soft synchronising</h3><p>The control winding can supply or absorb reactive power, synchronise with low inrush and ride through voltage dips — useful on weak rural feeders, long 415 V runs and island operation.</p></article>
+    </div>
+    <div class="table-wrap" style="margin-top:34px">
+      <table>
+        <thead><tr><th>Item</th><th>Conventional synchronous + AVR</th><th>PM generator + full-power converter</th><th>Brushless doubly-fed (BDFG)</th></tr></thead>
+        <tbody>
+          <tr><td>Slip rings / brushes</td><td>Carbon brushes, replaced periodically</td><td>None</td><td>None</td></tr>
+          <tr><td>Converter rating</td><td>Not applicable (AVR only)</td><td>100% of generator rating</td><td>25–30% of generator rating</td></tr>
+          <tr><td>Speed</td><td>Fixed by grid frequency</td><td>Variable</td><td>Variable, ≈ ±30%</td></tr>
+          <tr><td>Part-load behaviour</td><td>Below ~70% load, combustion quality and efficiency fall</td><td>Converter losses apply across the whole range</td><td>Engine stays in its efficient band at lower gas flow</td></tr>
+          <tr><td>Routine attention</td><td>Brush and slip-ring inspection, cleaning</td><td>Bearing and converter cooling</td><td>Bearing and converter cooling</td></tr>
+          <tr><td>Reactive power</td><td>Limited by the AVR</td><td>Via converter, good</td><td>Via control winding, good</td></tr>
+          <tr><td>Relative capex</td><td>Baseline</td><td>Higher</td><td>Between the two</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="small" style="margin-top:14px">Indicative comparison, generator side only. BDFG is quoted as an option on 500 kW–2 MW units once the site gas profile is known. The continuous load range is set by the engine maker, not by the generator; the generator only removes the fixed-speed constraint.</p>
+    <div class="callout" style="margin-top:22px"><p><b>Where it pays:</b> mills where gas output is strongly seasonal, plants that spend months below 70% load, and remote sites where a brush change means a two-day outage and a fly-in technician. On a steady 100% base load with clean, stable gas, a conventional synchronous machine is still the cheaper answer — and we will say so.</p></div>
   </div>
 </section>
 
