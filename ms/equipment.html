@@ -67,12 +67,41 @@
 <section class="alt" id="bdfg">
   <div class="wrap">
     <div class="sec-head"><p class="eyebrow">Hujung penjana · pilihan</p><h2>Penjana dua-suapan tanpa berus: biar enjin ikut gas</h2>
-      <p class="lead">Pengeluaran gas POME tidak tetap. Ia berubah mengikut kemampuan FFB, suhu kolam dan hujan, jadi set kelajuan tetap menghabiskan sebahagian besar tahun pada beban 50–70% — zon di mana karbon terkumpul dan selang baik pulih memendek. Penjana dua-suapan tanpa berus memisahkan kelajuan enjin daripada frekuensi grid: enjin boleh berpusing lebih perlahan apabila gas berkurangan dan lebih laju apabila gas banyak, sementara terminal kekal 415 V / 50 Hz.</p></div>
+      <p class="lead">Pengeluaran gas POME tidak tetap. Ia berubah mengikut kemampuan FFB, suhu kolam dan hujan, jadi set kelajuan tetap menghabiskan sebahagian besar tahun pada beban 50–70% — zon di mana karbon terkumpul dan selang baik pulih memendek. Penjana dua-suapan tanpa berus memisahkan kelajuan enjin daripada frekuensi grid: enjin boleh berpusing lebih perlahan apabila gas berkurangan dan lebih laju apabila gas banyak, sementara terminal kekal 415 V / 50 Hz. Mesin yang sama juga beroperasi sebagai motor: ia boleh memusingkan enjin ke kelajuan penyalaan tanpa pemula berasingan.</p></div>
     <div class="grid-4">
       <article class="card"><p class="tag">01 · Tiada bahagian haus pada rotor</p><h3>Tiada berus, tiada gelang gelincir</h3><p>Rotor tidak membawa belitan, gelang gelincir atau berus karbon. Tiada apa untuk diganti pada selang servis, tiada habuk karbon dalam atmosfera lembap bersulfur, dan tiada sumber percikan di sebelah kereta gas.</p></article>
       <article class="card"><p class="tag">02 · Kelajuan berubah</p><h3>Ikut gas, bukan terhenti</h3><p>Kelajuan boleh berubah kira-kira ±30% sementara voltan dan frekuensi kekal tetap. Apabila gas menurun, set berpusing lebih perlahan dan mengekalkan faktor beban yang sihat — bukan jatuh ke zon pembentukan karbon, terhenti kerana pembakaran kurus, atau melepaskan gas ke flare.</p></article>
       <article class="card"><p class="tag">03 · Penukar kuasa separa</p><h3>Penukar hanya untuk kuasa slip</h3><p>Hanya kuasa slip melalui penukar — biasanya 25–30% daripada kadaran — bukan 100% seperti set magnet kekal. Penukar lebih kecil, kehilangan penukaran lebih rendah, komponen yang membawa arus penuh lebih sedikit.</p></article>
       <article class="card"><p class="tag">04 · Tingkah laku grid</p><h3>Kuasa reaktif dan penyegerakan lembut</h3><p>Belitan kawalan boleh membekal atau menyerap kuasa reaktif, menyegerak dengan arus masuk rendah dan menahan penurunan voltan — berguna pada penyuap luar bandar yang lemah, kabel 415 V yang panjang dan operasi pulau.</p></article>
+    </div>
+    <div class="grid-2" style="margin-top:42px;gap:40px;align-items:start">
+      <div>
+        <p class="eyebrow">Motor ⇄ penjana</p>
+        <h3>Mesin yang sama boleh memacu, dan dipacu</h3>
+        <p>Penjana segerak ialah peranti sehala: rotornya terkunci pada frekuensi grid, ia hanya boleh menyalurkan kuasa, dan pemutus hanya boleh ditutup apabila voltan, frekuensi, fasa dan urutan fasa semuanya sepadan. Mesin dua-suapan tanpa berus ialah motor dan penjana dalam rangka yang sama. Kuasa mengalir dua hala melalui belitan kawalan: di bawah kelajuan segerak ia mengambil kuasa slip untuk menjana, di atasnya kuasa slip dikembalikan ke grid, dan apabila tork dibalikkan ia beroperasi sebagai motor dan memacu enjin, bukan dipacu olehnya.</p>
+        <ul class="checks" style="margin-top:6px">
+          <li>Barring dan permulaan: set itu sendiri memusingkan enjin gas ke kelajuan penyalaan — tiada pemula udara, tiada motor barring berasingan, arus masuk rendah.</li>
+          <li>Penyegerakan lembut: pemutus boleh ditutup pada mana-mana kelajuan dalam julat, kemudian pengawal menarik set masuk segerak. Tiada tarian sinkroskop.</li>
+          <li>Pemeluwap segerak semasa enjin berhenti: set terus membekal kuasa reaktif sepanjang penyelenggaraan.</li>
+          <li>Mula gelap: ia membina voltan tanpa penguja luar dan tanpa memulakan set diesel dahulu.</li>
+        </ul>
+        <p class="small" style="margin-top:12px">Sempadan, dinyatakan terus: penukar disaiz untuk kuasa slip, jadi operasi motor ialah tugas permulaan, barring dan pemacuan ringan — bukan pemacuan tork penuh berterusan. Tugas motor berterusan pada slip besar memerlukan penukar lebih besar; kami saizkan mengikut projek dan letakkan angka dalam sebut harga.</p>
+      </div>
+      <div>
+        <p class="eyebrow">Empat keadaan operasi</p>
+        <div class="table-wrap">
+          <table style="min-width:0">
+            <thead><tr><th>Keadaan</th><th>Mod</th><th>Aliran kuasa</th></tr></thead>
+            <tbody>
+              <tr><td>Bawah kelajuan segerak, tork memacu</td><td>Motor</td><td>Grid → stator; kuasa slip → belitan kawalan</td></tr>
+              <tr><td>Bawah kelajuan segerak, tork membrek</td><td>Penjana, sub-segerak</td><td>Enjin → stator; kuasa slip diambil daripada grid</td></tr>
+              <tr><td>Di atas kelajuan segerak</td><td>Penjana, super-segerak</td><td>Enjin → stator, kuasa slip kembali ke grid</td></tr>
+              <tr><td>Berhenti, enjin tidak berputar</td><td>Pemeluwap segerak</td><td>Kuasa reaktif sahaja</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="small" style="margin-top:12px">Melintasi kelajuan segerak membalikkan arah kuasa slip. Perubahan tanda tunggal itulah yang menjadikan mesin sebagai motor di satu sisi dan penjana di sisi lain — mesin segerak tiada titik sedemikian kerana kelajuannya tetap.</p>
+      </div>
     </div>
     <div class="table-wrap" style="margin-top:34px">
       <table>
@@ -81,6 +110,8 @@
           <tr><td>Gelang gelincir / berus</td><td>Berus karbon, diganti berkala</td><td>Tiada</td><td>Tiada</td></tr>
           <tr><td>Kadaran penukar</td><td>Tidak berkenaan (AVR sahaja)</td><td>100% kadaran penjana</td><td>25–30% kadaran penjana</td></tr>
           <tr><td>Kelajuan</td><td>Tetap mengikut frekuensi grid</td><td>Berubah-ubah</td><td>Berubah-ubah, ≈ ±30%</td></tr>
+          <tr><td>Operasi motor</td><td>Tiada — menjana sahaja</td><td>Ya, tork penuh melalui penukar</td><td>Ya — permulaan, barring dan pemacuan ringan</td></tr>
+          <tr><td>Penyegerakan</td><td>Segerak tepat diperlukan</td><td>Lembut, melalui penukar</td><td>Lembut; pemutus menutup pada mana-mana kelajuan dalam julat</td></tr>
           <tr><td>Tingkah laku beban separa</td><td>Bawah ~70% beban, kualiti pembakaran dan kecekapan menurun</td><td>Kehilangan penukar berlaku sepanjang julat</td><td>Enjin kekal dalam jalur cekap pada aliran gas rendah</td></tr>
           <tr><td>Perhatian rutin</td><td>Pemeriksaan dan pembersihan berus serta gelang gelincir</td><td>Bearing dan penyejukan penukar</td><td>Bearing dan penyejukan penukar</td></tr>
           <tr><td>Kuasa reaktif</td><td>Terhad oleh AVR</td><td>Melalui penukar, baik</td><td>Melalui belitan kawalan, baik</td></tr>

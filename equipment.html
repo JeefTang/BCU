@@ -67,12 +67,41 @@
 <section class="alt" id="bdfg">
   <div class="wrap">
     <div class="sec-head"><p class="eyebrow">Generator end · option</p><h2>Brushless doubly-fed generator: let the engine follow the gas</h2>
-      <p class="lead">POME gas output is not steady. It moves with FFB throughput, pond temperature and rainfall, so a fixed-speed set spends much of the year at 50–70% load — the zone where carbon builds up and the overhaul interval shortens. A brushless doubly-fed generator decouples engine speed from grid frequency: the engine can turn slower when gas is short and faster when it is plentiful, while the terminals stay at 415 V / 50 Hz.</p></div>
+      <p class="lead">POME gas output is not steady. It moves with FFB throughput, pond temperature and rainfall, so a fixed-speed set spends much of the year at 50–70% load — the zone where carbon builds up and the overhaul interval shortens. A brushless doubly-fed generator decouples engine speed from grid frequency: the engine can turn slower when gas is short and faster when it is plentiful, while the terminals stay at 415 V / 50 Hz. The same machine also motors: it can roll the engine up to ignition speed instead of being driven by a separate starter.</p></div>
     <div class="grid-4">
       <article class="card"><p class="tag">01 · No wear parts in the rotor</p><h3>No brushes, no slip rings</h3><p>The rotor carries no windings, no slip rings and no carbon brushes. There is nothing to replace on a service interval, no carbon dust in a humid H₂S-bearing atmosphere, and no spark source next to the gas train.</p></article>
       <article class="card"><p class="tag">02 · Variable speed</p><h3>Follows the gas instead of tripping</h3><p>Speed can swing roughly ±30% while voltage and frequency stay fixed. When gas falls, the set turns slower and holds a healthy load factor instead of dropping into the carbon-building zone, tripping on lean burn or sending gas to the flare.</p></article>
       <article class="card"><p class="tag">03 · Part-power converter</p><h3>Converter sized for slip power only</h3><p>Only the slip power passes through the converter — typically 25–30% of rating — not the full 100% as with a permanent-magnet set. Smaller converter, lower conversion losses, fewer components carrying full current.</p></article>
       <article class="card"><p class="tag">04 · Grid behaviour</p><h3>Reactive power and soft synchronising</h3><p>The control winding can supply or absorb reactive power, synchronise with low inrush and ride through voltage dips — useful on weak rural feeders, long 415 V runs and island operation.</p></article>
+    </div>
+    <div class="grid-2" style="margin-top:42px;gap:40px;align-items:start">
+      <div>
+        <p class="eyebrow">Motor ⇄ generator</p>
+        <h3>The same machine can drive, and be driven</h3>
+        <p>A synchronous generator is a one-way device: its rotor is locked to grid frequency, it can only deliver power, and the breaker may only close when voltage, frequency, phase and phase sequence all match. A brushless doubly-fed machine is a motor and a generator in the same frame. Power flows both ways through the control winding: below synchronous speed it draws slip power to generate, above it the slip power is returned to the grid, and when the torque reverses it runs as a motor and drives the engine instead of being driven by it.</p>
+        <ul class="checks" style="margin-top:6px">
+          <li>Barring and starting: the set itself rolls the gas engine to ignition speed — no air starter, no separate barring motor, low inrush.</li>
+          <li>Soft synchronising: the breaker may close at any speed inside the range, then the controller pulls the set into step. No synchroscope dance.</li>
+          <li>Synchronous condenser when the engine is down: the set keeps supplying reactive power through a maintenance outage.</li>
+          <li>Black start: it builds voltage without an external exciter and without first starting a diesel set.</li>
+        </ul>
+        <p class="small" style="margin-top:12px">Boundary, stated plainly: the converter is sized for slip power, so motoring is a starting, barring and light-drive duty — not continuous full-torque drive. Long motor duty at large slip needs a larger converter; we size it per project and put the number in the quotation.</p>
+      </div>
+      <div>
+        <p class="eyebrow">Four operating states</p>
+        <div class="table-wrap">
+          <table style="min-width:0">
+            <thead><tr><th>Condition</th><th>State</th><th>Power flow</th></tr></thead>
+            <tbody>
+              <tr><td>Below synchronous speed, driving torque</td><td>Motor</td><td>Grid → stator; slip power → control winding</td></tr>
+              <tr><td>Below synchronous speed, braking torque</td><td>Generator, sub-synchronous</td><td>Engine → stator; slip power taken from the grid</td></tr>
+              <tr><td>Above synchronous speed</td><td>Generator, super-synchronous</td><td>Engine → stator, slip power returned to the grid</td></tr>
+              <tr><td>Standing, engine stopped</td><td>Synchronous condenser</td><td>Reactive power only</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="small" style="margin-top:12px">Crossing synchronous speed reverses the slip-power direction. That single change of sign is what makes the machine a motor on one side and a generator on the other — a synchronous machine has no such point because its speed is fixed.</p>
+      </div>
     </div>
     <div class="table-wrap" style="margin-top:34px">
       <table>
@@ -81,6 +110,8 @@
           <tr><td>Slip rings / brushes</td><td>Carbon brushes, replaced periodically</td><td>None</td><td>None</td></tr>
           <tr><td>Converter rating</td><td>Not applicable (AVR only)</td><td>100% of generator rating</td><td>25–30% of generator rating</td></tr>
           <tr><td>Speed</td><td>Fixed by grid frequency</td><td>Variable</td><td>Variable, ≈ ±30%</td></tr>
+          <tr><td>Motor operation</td><td>None — generating only</td><td>Yes, full torque via converter</td><td>Yes — starting, barring and light drive</td></tr>
+          <tr><td>Synchronising</td><td>Precise synchronism required</td><td>Soft, via converter</td><td>Soft; breaker closes at any speed in range</td></tr>
           <tr><td>Part-load behaviour</td><td>Below ~70% load, combustion quality and efficiency fall</td><td>Converter losses apply across the whole range</td><td>Engine stays in its efficient band at lower gas flow</td></tr>
           <tr><td>Routine attention</td><td>Brush and slip-ring inspection, cleaning</td><td>Bearing and converter cooling</td><td>Bearing and converter cooling</td></tr>
           <tr><td>Reactive power</td><td>Limited by the AVR</td><td>Via converter, good</td><td>Via control winding, good</td></tr>
