@@ -1,0 +1,5 @@
+{
+  "endpoint": "",
+  "updated": "2026-11-11T09:10+0800",
+  "note": "Layer-2 LLM endpoint for the BCU site. Empty = local knowledge base only. Written by /root/bcu_chat_sync.py when the tunnel is up."
+}
