@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Engineering Calculators — Biogas to Power, Sizing, Biomethane, Economics | KSTS</title>
-<meta name="description" content="Five free engineering calculators: biogas to electricity and heat, capacity sizing, mill throughput to biogas, upgrading yield and project economics.">
+<title>Engineering Calculators — Biogas, Hydrogen CHP, BHP Air-Con, Economics | KSTS</title>
+<meta name="description" content="Seven free engineering calculators: biogas to electricity and heat, capacity sizing, mill throughput to biogas, upgrading yield, project economics, hydrogen fuel-cell CHP and biogas heat-pump air-conditioning (BHP).">
 <link rel="canonical" href="https://jeeftang.github.io/BCU/m/calculator.html">
 <link rel="alternate" media="only screen and (max-width: 640px)" href="https://jeeftang.github.io/BCU/m/calculator.html">
 <meta name="theme-color" content="#0c1a26">
@@ -20,7 +20,7 @@
   <a class="link" href="../ms/m/calculator.html" hreflang="ms">BM</a><a class="link" href="../zh/m/calculator.html" hreflang="zh">中文</a>
   <a class="link" href="../calculator.html?view=desktop">Desktop</a>
 </div>
-<div class="mhero"><p class="eyebrow">Engineering tools</p><h1>Five calculators, no sign-up</h1><p class="lead">These are the formulas we use in pre-feasibility work. They are deliberately transparent: every assumption is shown and you can change it. Use them to challenge a supplier’s numbers — including ours.</p></div><section class="m-sec"><p class="eyebrow">Selection at a glance</p><h2>Pick the model from the gas you measured</h2><p class="lead">Enter the raw biogas flow and methane content from your own measurement. The selector returns the largest unit that runs on that gas at full load, plus the gas it needs and what it generates in a year.</p><div class="m-form"><div class="calc">
+<div class="mhero"><p class="eyebrow">Engineering tools</p><h1>Seven calculators, no sign-up</h1><p class="lead">These are the formulas we use in pre-feasibility work. They are deliberately transparent: every assumption is shown and you can change it. Use them to challenge a supplier’s numbers — including ours.</p></div><section class="m-sec"><p class="eyebrow">Selection at a glance</p><h2>Pick the model from the gas you measured</h2><p class="lead">Enter the raw biogas flow and methane content from your own measurement. The selector returns the largest unit that runs on that gas at full load, plus the gas it needs and what it generates in a year.</p><div class="m-form"><div class="calc">
       <div class="calc-form">
         <div class="field"><label for="q_flow">Measured raw biogas (Nm³/h)</label><input id="q_flow" type="number" value="400" step="10" min="0"><div class="hint">Average over one to two weeks, not a peak reading.</div></div>
         <div class="field"><label for="q_ch4">Methane content (%)</label><input id="q_ch4" type="number" value="60" step="0.5" min="40" max="99"><div class="hint">Engine limit is 45% minimum.</div></div>
@@ -52,6 +52,8 @@
       <button class="tab-btn" data-tab="tool3">3 · Mill to biogas</button>
       <button class="tab-btn" data-tab="tool4">4 · Upgrading yield</button>
       <button class="tab-btn" data-tab="tool5">5 · Project economics</button>
+      <button class="tab-btn" data-tab="tool6">6 · H₂ fuel-cell CHP</button>
+      <button class="tab-btn" data-tab="tool7">7 · Biogas heat-pump A/C (BHP)</button>
     </div>
 
     </div><div class="m-form"><div class="tab-panel active" id="tool1">
@@ -208,6 +210,109 @@
           </div>
           <div class="warn" id="t5_warn"></div>
           <p class="note">Revenue assumes the stated value for each valued kWh. Excludes financing, land and utility grid upgrades. Screening model, not bankable.</p>
+        </div>
+      </div>
+    </div>
+
+    </div><div class="m-form"><div class="tab-panel" id="tool6">
+      <div class="tool-head">
+        <div><p class="eyebrow">Tool 06</p><h2>Hydrogen fuel-cell CHP → power, heat and gas demand</h2></div>
+        <div class="tool-actions"><button class="btn ghost sm" onclick="window.print()">Print / save as PDF</button><button class="btn sm" onclick="copySummary('tool6')">Copy summary</button></div>
+      </div>
+      <div class="calc">
+        <div class="calc-form">
+          <div class="field"><label for="t6_kw">Electrical output required (kW)</label><input id="t6_kw" type="number" value="50" step="2.5" min="0"><div class="hint">Range 7.5–100 kW per unit; parallel units above that.</div></div>
+          <div class="field"><label for="t6_ch4pct">Methane in fuel gas (%)</label><input id="t6_ch4pct" type="number" value="97" step="1" min="50" max="99"><div class="hint">97% for bottled biomethane; 60% if raw biogas with the integrated purification front end.</div></div>
+          <div class="field"><label for="t6_eff">Electrical efficiency (%)</label><input id="t6_eff" type="number" value="42" step="0.5" min="25" max="60"><div class="hint">Manufacturer guarantee 42% at rated output (LHV).</div></div>
+          <div class="field"><label for="t6_heat">Recoverable heat (% of fuel)</label><input id="t6_heat" type="number" value="43" step="1" min="0" max="60"><div class="hint">50 K rise, 20 → 70 °C hot water.</div></div>
+          <div class="field"><label for="t6_load">Average load factor (%)</label><input id="t6_load" type="number" value="85" step="1" min="10" max="100"><div class="hint">Long-term output for a reformer + fuel cell: 85–100%.</div></div>
+          <div class="field"><label for="t6_hours">Operating hours per year</label><input id="t6_hours" type="number" value="8000" step="100" min="0" max="8760"></div>
+          <div class="field"><label for="t6_capex">Unit price (RM per kW)</label><input id="t6_capex" type="number" value="10000" step="500" min="0"><div class="hint">FOB RM 10,000/kW for bottled 97% gas; RM 19,500/kW for raw 60% biogas with integrated purification.</div></div>
+          <div class="field"><label for="t6_gas">Fuel gas price (RM/Nm³)</label><input id="t6_gas" type="number" value="1.20" step="0.05" min="0"><div class="hint">Bottled biomethane RM 1.00–1.40. Own upgraded biogas ≈ RM 0.60 plus upgrading capex.</div></div>
+          <div class="field"><label for="t6_tariff">Avoided electricity cost (RM/kWh)</label><input id="t6_tariff" type="number" value="0.45" step="0.05" min="0"><div class="hint">Grid 0.40–0.50; off-grid diesel 0.90–1.30. Enter the cost you actually avoid.</div></div>
+          <div class="field"><label for="t6_heatp">Value of heat (RM/kWh)</label><input id="t6_heatp" type="number" value="0.10" step="0.01" min="0"><div class="hint">Set 0 if there is no year-round hot-water demand.</div></div>
+          <div class="field"><label for="t6_om">O&amp;M (% of capex per year)</label><input id="t6_om" type="number" value="3" step="0.5" min="0" max="20"><div class="hint">Stack replacement and service contract: 3–4% typical.</div></div>
+        </div>
+        <div class="calc-out">
+          <h3>Sizing and annual performance</h3>
+          <div class="out-grid">
+            <div class="kv hl"><span>Recommended model</span><b id="t6_model">—</b></div>
+            <div class="kv hl"><span>Fuel energy input</span><b id="t6_fuel">—</b></div>
+            <div class="kv"><span>Methane required (Nm³/h)</span><b id="t6_ch4">—</b></div>
+            <div class="kv"><span>Fuel gas at your CH₄ (Nm³/h)</span><b id="t6_raw">—</b></div>
+            <div class="kv"><span>Cylinders per day (50 L @ 200 bar ≈ 10 Nm³)</span><b id="t6_cyl">—</b></div>
+            <div class="kv hl"><span>Recoverable heat</span><b id="t6_heatkw">—</b></div>
+            <div class="kv"><span>Hot water at 50 K rise</span><b id="t6_hot">—</b></div>
+            <div class="kv"><span>Combined efficiency</span><b id="t6_total">—</b></div>
+            <div class="kv"><span>Annual generation</span><b id="t6_gen">—</b></div>
+            <div class="kv"><span>Annual heat delivered</span><b id="t6_heatyr">—</b></div>
+          </div>
+          <h3>Economics</h3>
+          <div class="out-grid">
+            <div class="kv"><span>Equipment cost (RM)</span><b id="t6_capexout">—</b></div>
+            <div class="kv"><span>Annual fuel cost</span><b id="t6_gascost">—</b></div>
+            <div class="kv"><span>Annual O&amp;M</span><b id="t6_omcost">—</b></div>
+            <div class="kv"><span>Annual value of power + heat</span><b id="t6_rev">—</b></div>
+            <div class="kv hl"><span>Net annual benefit</span><b id="t6_net">—</b></div>
+            <div class="kv hl"><span>Simple payback</span><b id="t6_payback">—</b></div>
+            <div class="kv"><span>10-year NPV at 8%</span><b id="t6_npv">—</b></div>
+            <div class="kv"><span>IRR (10 years)</span><b id="t6_irr">—</b></div>
+            <div class="kv"><span>Cost per kWh generated</span><b id="t6_lcoe">—</b></div>
+            <div class="kv"><span>CO₂ avoided</span><b id="t6_co2">—</b></div>
+          </div>
+          <div class="warn" id="t6_warn"></div>
+          <p class="note">Methane LHV 9.94 kWh/Nm³. Fuel input = output ÷ electrical efficiency; CH₄ flow = fuel input ÷ 9.94. Heat at 43% of fuel input, hot water at ΔT 50 K. CO₂ at 0.60 t/MWh of avoided grid power, biomethane carbon treated as short-cycle. FOB price, installation, civils, cylinder store and manifold excluded. Screening only.</p>
+        </div>
+      </div>
+    </div>
+
+    </div><div class="m-form"><div class="tab-panel" id="tool7">
+      <div class="tool-head">
+        <div><p class="eyebrow">Tool 07</p><h2>Biogas heat-pump air-conditioning (BHP) → cooling without the grid</h2></div>
+        <div class="tool-actions"><button class="btn ghost sm" onclick="window.print()">Print / save as PDF</button><button class="btn sm" onclick="copySummary('tool7')">Copy summary</button></div>
+      </div>
+      <div class="calc">
+        <div class="calc-form">
+          <div class="field"><label for="t7_cool">Cooling load required (kW)</label><input id="t7_cool" type="number" value="120" step="10" min="0"><div class="hint">Offices, laboratory and worker housing; exclude process cooling.</div></div>
+          <div class="field"><label for="t7_cop">Cooling COP on fuel LHV</label><input id="t7_cop" type="number" value="1.0" step="0.05" min="0.5" max="1.6"><div class="hint">Engine-driven class: 0.95–1.15 depending on ambient and part load.</div></div>
+          <div class="field"><label for="t7_ch4pct">Methane in fuel gas (%)</label><input id="t7_ch4pct" type="number" value="97" step="1" min="50" max="99"><div class="hint">97% biomethane is the standard fuel; raw biogas needs derating and shorter service intervals.</div></div>
+          <div class="field"><label for="t7_load">Average load factor (%)</label><input id="t7_load" type="number" value="85" step="1" min="10" max="100"></div>
+          <div class="field"><label for="t7_hours">Operating hours per year</label><input id="t7_hours" type="number" value="8000" step="100" min="0" max="8760"></div>
+          <div class="field"><label for="t7_capex">Equipment price (RM per kW cooling)</label><input id="t7_capex" type="number" value="2500" step="100" min="0"><div class="hint">Indicative RM 2,500/kW cooling, installation excluded.</div></div>
+          <div class="field"><label for="t7_gas">Fuel gas price (RM/Nm³)</label><input id="t7_gas" type="number" value="0.60" step="0.05" min="0"><div class="hint">Own upgraded biogas ≈ RM 0.60/Nm³; bottled biomethane RM 1.00–1.40.</div></div>
+          <div class="field"><label for="t7_alt">Cooling it replaces</label><select id="t7_alt"><option value="grid">Grid electricity + electric A/C</option><option value="diesel">Diesel genset + electric A/C</option></select></div>
+          <div class="field"><label for="t7_tariff">Cost of that electricity (RM/kWh)</label><input id="t7_tariff" type="number" value="0.45" step="0.05" min="0"><div class="hint">Grid 0.35–0.50; diesel-generated 0.90–1.60 once fuel logistics and downtime are counted.</div></div>
+          <div class="field"><label for="t7_eercop">Electric A/C COP</label><input id="t7_eercop" type="number" value="3.0" step="0.1" min="1.5" max="6"><div class="hint">VRF/chiller 2.8–3.5 in tropical conditions.</div></div>
+          <div class="field"><label for="t7_heatp">Value of recoverable heat (RM/kWh)</label><input id="t7_heatp" type="number" value="0.10" step="0.01" min="0"><div class="hint">25% of fuel input is available as 60–90 °C water in cooling mode. Set 0 if unused.</div></div>
+          <div class="field"><label for="t7_om">O&amp;M (% of capex per year)</label><input id="t7_om" type="number" value="3" step="0.5" min="0" max="20"><div class="hint">Engine service, oil and filters: 3–4% typical.</div></div>
+        </div>
+        <div class="calc-out">
+          <h3>Sizing and fuel demand</h3>
+          <div class="out-grid">
+            <div class="kv hl"><span>Recommended model</span><b id="t7_model">—</b></div>
+            <div class="kv hl"><span>Fuel energy input</span><b id="t7_fuel">—</b></div>
+            <div class="kv"><span>Methane required (Nm³/h)</span><b id="t7_ch4">—</b></div>
+            <div class="kv"><span>Fuel gas at your CH₄ (Nm³/h)</span><b id="t7_raw">—</b></div>
+            <div class="kv"><span>Recoverable heat</span><b id="t7_heatkw">—</b></div>
+            <div class="kv"><span>Hot water at 50 K rise</span><b id="t7_hot">—</b></div>
+            <div class="kv"><span>Cooling delivered per year</span><b id="t7_coolyr">—</b></div>
+            <div class="kv"><span>Fuel used per year</span><b id="t7_fuelyr">—</b></div>
+          </div>
+          <h3>Economics against the cooling it replaces</h3>
+          <div class="out-grid">
+            <div class="kv"><span>Equipment cost (RM)</span><b id="t7_capexout">—</b></div>
+            <div class="kv"><span>Annual fuel cost</span><b id="t7_gascost">—</b></div>
+            <div class="kv"><span>Annual O&amp;M</span><b id="t7_omcost">—</b></div>
+            <div class="kv"><span>Electricity the old system would buy (kWh/yr)</span><b id="t7_altkwh">—</b></div>
+            <div class="kv"><span>Cost of the old system</span><b id="t7_altcost">—</b></div>
+            <div class="kv hl"><span>Net annual saving</span><b id="t7_saving">—</b></div>
+            <div class="kv hl"><span>Simple payback</span><b id="t7_payback">—</b></div>
+            <div class="kv"><span>Cost per kWh of cooling</span><b id="t7_cost">—</b></div>
+            <div class="kv"><span>Cost of the old system per kWh</span><b id="t7_altunit">—</b></div>
+            <div class="kv"><span>CO₂ avoided</span><b id="t7_co2">—</b></div>
+          </div>
+          <div class="warn" id="t7_warn"></div>
+          <p class="note">Methane LHV 9.94 kWh/Nm³. Fuel input = cooling ÷ COP; heat = 25% of fuel input in cooling mode; hot water at ΔT 50 K. The comparison system buys kWh from the grid or a diesel genset and makes cooling at the stated electric COP. CO₂ at 0.60 t/MWh. Indicative only — confirm COP and heat recovery against the model guarantee sheet.</p>
         </div>
       </div>
     </div>
