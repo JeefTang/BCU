@@ -85,6 +85,27 @@
     <changefreq>monthly</changefreq><priority>0.8</priority>
   </url>
   <url>
+    <loc>https://jeeftang.github.io/BCU/bhp.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jeeftang.github.io/BCU/bhp.html"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://jeeftang.github.io/BCU/ms/bhp.html"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://jeeftang.github.io/BCU/zh/bhp.html"/>
+    <changefreq>monthly</changefreq><priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://jeeftang.github.io/BCU/ms/bhp.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jeeftang.github.io/BCU/bhp.html"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://jeeftang.github.io/BCU/ms/bhp.html"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://jeeftang.github.io/BCU/zh/bhp.html"/>
+    <changefreq>monthly</changefreq><priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://jeeftang.github.io/BCU/zh/bhp.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jeeftang.github.io/BCU/bhp.html"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://jeeftang.github.io/BCU/ms/bhp.html"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://jeeftang.github.io/BCU/zh/bhp.html"/>
+    <changefreq>monthly</changefreq><priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://jeeftang.github.io/BCU/equipment.html</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://jeeftang.github.io/BCU/equipment.html"/>
     <xhtml:link rel="alternate" hreflang="ms" href="https://jeeftang.github.io/BCU/ms/equipment.html"/>
