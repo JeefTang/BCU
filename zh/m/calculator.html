@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>工程计算器 — 沼气发电、选型、提纯与项目经济性 | KSTS</title>
-<meta name="description" content="五个免费工程计算器：沼气发电与余热、容量选型、压榨量产气、提纯收率、项目经济性。">
+<title>工程测算工具 — 沼气发电、选型、提纯、氢燃料电池 CHP、沼气热泵空调与项目经济性 | KSTS</title>
+<meta name="description" content="七个免费工程计算器：沼气发电与余热、容量选型、压榨量产气、提纯收率、项目经济性、氢燃料电池 CHP、沼气热泵空调 BHP。">
 <link rel="canonical" href="https://jeeftang.github.io/BCU/zh/m/calculator.html">
 <link rel="alternate" media="only screen and (max-width: 640px)" href="https://jeeftang.github.io/BCU/zh/m/calculator.html">
 <meta name="theme-color" content="#0c1a26">
@@ -20,7 +20,7 @@
   <a class="link" href="../../m/calculator.html" hreflang="en">EN</a><a class="link" href="../../ms/m/calculator.html" hreflang="ms">BM</a>
   <a class="link" href="../calculator.html?view=desktop">电脑版</a>
 </div>
-<div class="mhero"><p class="eyebrow">工程测算工具</p><h1>五个计算器，不用注册</h1><p class="lead">这些公式与我们的预可研一致，所有假设都摊开、可改。用它去质疑供应商的数字——包括我们的。</p></div><section class="m-sec"><p class="eyebrow">选型速查</p><h2>用实测气量直接定机型</h2><p class="lead">输入你现场实测的原沼气流量与甲烷含量，直接给出能满负荷运行的最大机型、对应需气量与年发电量。</p><div class="m-form"><div class="calc">
+<div class="mhero"><p class="eyebrow">工程测算工具</p><h1>七个计算器，不用注册</h1><p class="lead">这些公式与我们的预可研一致，所有假设都摊开、可改。用它去质疑供应商的数字——包括我们的。</p></div><section class="m-sec"><p class="eyebrow">选型速查</p><h2>用实测气量直接定机型</h2><p class="lead">输入你现场实测的原沼气流量与甲烷含量，直接给出能满负荷运行的最大机型、对应需气量与年发电量。</p><div class="m-form"><div class="calc">
       <div class="calc-form">
         <div class="field"><label for="q_flow">实测原沼气量（Nm³/h）</label><input id="q_flow" type="number" value="400" step="10" min="0"><div class="hint">取一到两周平均值，不要用峰值。</div></div>
         <div class="field"><label for="q_ch4">甲烷含量（%）</label><input id="q_ch4" type="number" value="60" step="0.5" min="40" max="99"><div class="hint">机组下限 45%。</div></div>
@@ -52,6 +52,8 @@
       <button class="tab-btn" data-tab="tool3">3 · 压榨量→沼气</button>
       <button class="tab-btn" data-tab="tool4">4 · 提纯收率</button>
       <button class="tab-btn" data-tab="tool5">5 · 项目经济性</button>
+      <button class="tab-btn" data-tab="tool6">6 · 氢燃料电池 CHP</button>
+      <button class="tab-btn" data-tab="tool7">7 · 沼气热泵空调 BHP</button>
     </div>
 
     </div><div class="m-form"><div class="tab-panel active" id="tool1">
@@ -208,6 +210,109 @@
           </div>
           <div class="warn" id="t5_warn"></div>
           <p class="note">收入按可计价电量与给定电价计算。不含融资、土地与电网改造费用。仅作筛选，不可用于融资。</p>
+        </div>
+      </div>
+    </div>
+
+    </div><div class="m-form"><div class="tab-panel" id="tool6">
+      <div class="tool-head">
+        <div><p class="eyebrow">工具 06</p><h2>氢燃料电池 CHP：电、热与需气量</h2></div>
+        <div class="tool-actions"><button class="btn ghost sm" onclick="window.print()">打印 / 存为 PDF</button><button class="btn sm" onclick="copySummary('tool6')">复制结果</button></div>
+      </div>
+      <div class="calc">
+        <div class="calc-form">
+          <div class="field"><label for="t6_kw">目标发电功率（kW）</label><input id="t6_kw" type="number" value="50" step="2.5" min="0"><div class="hint">单机 7.5–100 kW；更大负荷多台并联。</div></div>
+          <div class="field"><label for="t6_ch4pct">燃料气甲烷含量（%）</label><input id="t6_ch4pct" type="number" value="97" step="1" min="50" max="99"><div class="hint">瓶装生物天然气填 97；配一体化净化的原沼气填 60。</div></div>
+          <div class="field"><label for="t6_eff">发电效率（%）</label><input id="t6_eff" type="number" value="42" step="0.5" min="25" max="60"><div class="hint">厂家保证值 42%（额定出力、低热值口径）。</div></div>
+          <div class="field"><label for="t6_heat">可回收余热（占燃料）</label><input id="t6_heat" type="number" value="43" step="1" min="0" max="60"><div class="hint">温升 50 K，20 → 70 ℃ 热水。</div></div>
+          <div class="field"><label for="t6_load">平均负荷率（%）</label><input id="t6_load" type="number" value="85" step="1" min="10" max="100"><div class="hint">重整器＋燃料电池长期出力 85–100%。</div></div>
+          <div class="field"><label for="t6_hours">年运行小时</label><input id="t6_hours" type="number" value="8000" step="100" min="0" max="8760"></div>
+          <div class="field"><label for="t6_capex">单价（马币/kW）</label><input id="t6_capex" type="number" value="10000" step="500" min="0"><div class="hint">瓶装 97% 气 FOB RM 10,000/kW；60% 原沼气带一体化净化 RM 19,500/kW。</div></div>
+          <div class="field"><label for="t6_gas">燃气价格（马币/Nm³）</label><input id="t6_gas" type="number" value="1.20" step="0.05" min="0"><div class="hint">瓶装生物天然气 RM 1.00–1.40；自产提纯气约 RM 0.60（另计提纯投资）。</div></div>
+          <div class="field"><label for="t6_tariff">替代电价（马币/kWh）</label><input id="t6_tariff" type="number" value="0.45" step="0.05" min="0"><div class="hint">电网 0.40–0.50；离网柴油 0.90–1.30。填真实可省下的成本。</div></div>
+          <div class="field"><label for="t6_heatp">热价（马币/kWh）</label><input id="t6_heatp" type="number" value="0.10" step="0.01" min="0"><div class="hint">没有全年热水负荷就填 0。</div></div>
+          <div class="field"><label for="t6_om">年运维（占投资 %）</label><input id="t6_om" type="number" value="3" step="0.5" min="0" max="20"><div class="hint">电堆更换与保养合同：通常 3–4%。</div></div>
+        </div>
+        <div class="calc-out">
+          <h3>选型与年度表现</h3>
+          <div class="out-grid">
+            <div class="kv hl"><span>推荐机型</span><b id="t6_model">—</b></div>
+            <div class="kv hl"><span>输入燃料能量</span><b id="t6_fuel">—</b></div>
+            <div class="kv"><span>需甲烷（Nm³/h）</span><b id="t6_ch4">—</b></div>
+            <div class="kv"><span>对应燃料气量（Nm³/h）</span><b id="t6_raw">—</b></div>
+            <div class="kv"><span>日耗钢瓶（50 L/200 bar ≈ 10 Nm³）</span><b id="t6_cyl">—</b></div>
+            <div class="kv hl"><span>可回收余热</span><b id="t6_heatkw">—</b></div>
+            <div class="kv"><span>50 K 温升热水量</span><b id="t6_hot">—</b></div>
+            <div class="kv"><span>综合效率</span><b id="t6_total">—</b></div>
+            <div class="kv"><span>年发电量</span><b id="t6_gen">—</b></div>
+            <div class="kv"><span>年供热量</span><b id="t6_heatyr">—</b></div>
+          </div>
+          <h3>经济性</h3>
+          <div class="out-grid">
+            <div class="kv"><span>设备投资（马币）</span><b id="t6_capexout">—</b></div>
+            <div class="kv"><span>年燃料费</span><b id="t6_gascost">—</b></div>
+            <div class="kv"><span>年运维费</span><b id="t6_omcost">—</b></div>
+            <div class="kv"><span>年电＋热收益</span><b id="t6_rev">—</b></div>
+            <div class="kv hl"><span>年净收益</span><b id="t6_net">—</b></div>
+            <div class="kv hl"><span>静态回收期</span><b id="t6_payback">—</b></div>
+            <div class="kv"><span>10 年 NPV（8%）</span><b id="t6_npv">—</b></div>
+            <div class="kv"><span>IRR (10 年)</span><b id="t6_irr">—</b></div>
+            <div class="kv"><span>每度电成本</span><b id="t6_lcoe">—</b></div>
+            <div class="kv"><span>减排 CO₂</span><b id="t6_co2">—</b></div>
+          </div>
+          <div class="warn" id="t6_warn"></div>
+          <p class="note">甲烷低热值 9.94 kWh/Nm³。燃料输入 = 出力 ÷ 发电效率；甲烷流量 = 燃料输入 ÷ 9.94。余热按燃料 43%，热水按 ΔT 50 K。减排按替代电网 0.60 t/MWh，生物天然气碳按短周期。FOB 价，不含安装、土建、气瓶间与汇流排。仅作筛选。</p>
+        </div>
+      </div>
+    </div>
+
+    </div><div class="m-form"><div class="tab-panel" id="tool7">
+      <div class="tool-head">
+        <div><p class="eyebrow">工具 07</p><h2>沼气热泵空调 BHP：不靠电网的制冷</h2></div>
+        <div class="tool-actions"><button class="btn ghost sm" onclick="window.print()">打印 / 存为 PDF</button><button class="btn sm" onclick="copySummary('tool7')">复制结果</button></div>
+      </div>
+      <div class="calc">
+        <div class="calc-form">
+          <div class="field"><label for="t7_cool">所需制冷负荷（kW）</label><input id="t7_cool" type="number" value="120" step="10" min="0"><div class="hint">办公、化验与员工宿舍；不含工艺冷却。</div></div>
+          <div class="field"><label for="t7_cop">制冷 COP（燃气低热值口径）</label><input id="t7_cop" type="number" value="1.0" step="0.05" min="0.5" max="1.6"><div class="hint">发动机直驱类：0.95–1.15，随环温与部分负荷变化。</div></div>
+          <div class="field"><label for="t7_ch4pct">燃料气甲烷含量（%）</label><input id="t7_ch4pct" type="number" value="97" step="1" min="50" max="99"><div class="hint">标准燃料为 97% 生物天然气；原沼气要折减功率并缩短保养间隔。</div></div>
+          <div class="field"><label for="t7_load">平均负荷率（%）</label><input id="t7_load" type="number" value="85" step="1" min="10" max="100"></div>
+          <div class="field"><label for="t7_hours">年运行小时</label><input id="t7_hours" type="number" value="8000" step="100" min="0" max="8760"></div>
+          <div class="field"><label for="t7_capex">设备单价（马币/kW 冷量）</label><input id="t7_capex" type="number" value="2500" step="100" min="0"><div class="hint">参考 RM 2,500/kW 冷量，不含安装。</div></div>
+          <div class="field"><label for="t7_gas">燃气价格（马币/Nm³）</label><input id="t7_gas" type="number" value="0.60" step="0.05" min="0"><div class="hint">自产提纯气约 RM 0.60/Nm³；瓶装气 RM 1.00–1.40。</div></div>
+          <div class="field"><label for="t7_alt">被替代的制冷方式</label><select id="t7_alt"><option value="grid">市电 + 电空调</option><option value="diesel">柴油发电 + 电空调</option></select></div>
+          <div class="field"><label for="t7_tariff">该电力的成本（马币/kWh）</label><input id="t7_tariff" type="number" value="0.45" step="0.05" min="0"><div class="hint">市电 0.35–0.50；柴油发电 0.90–1.60（含运油与停机）。</div></div>
+          <div class="field"><label for="t7_eercop">电空调 COP</label><input id="t7_eercop" type="number" value="3.0" step="0.1" min="1.5" max="6"><div class="hint">热带的 VRF/冷水机 2.8–3.5。</div></div>
+          <div class="field"><label for="t7_heatp">可回收余热价值（马币/kWh）</label><input id="t7_heatp" type="number" value="0.10" step="0.01" min="0"><div class="hint">制冷模式下燃料输入的 25% 可产 60–90 ℃ 热水。不用就填 0。</div></div>
+          <div class="field"><label for="t7_om">年运维（占投资 %）</label><input id="t7_om" type="number" value="3" step="0.5" min="0" max="20"><div class="hint">发动机保养、机油与滤芯：通常 3–4%。</div></div>
+        </div>
+        <div class="calc-out">
+          <h3>选型与燃料需求</h3>
+          <div class="out-grid">
+            <div class="kv hl"><span>推荐机型</span><b id="t7_model">—</b></div>
+            <div class="kv hl"><span>输入燃料能量</span><b id="t7_fuel">—</b></div>
+            <div class="kv"><span>需甲烷（Nm³/h）</span><b id="t7_ch4">—</b></div>
+            <div class="kv"><span>对应燃料气量（Nm³/h）</span><b id="t7_raw">—</b></div>
+            <div class="kv"><span>可回收余热</span><b id="t7_heatkw">—</b></div>
+            <div class="kv"><span>50 K 温升热水量</span><b id="t7_hot">—</b></div>
+            <div class="kv"><span>年制冷量</span><b id="t7_coolyr">—</b></div>
+            <div class="kv"><span>年耗气量</span><b id="t7_fuelyr">—</b></div>
+          </div>
+          <h3>对比被替代方案的账</h3>
+          <div class="out-grid">
+            <div class="kv"><span>设备投资（马币）</span><b id="t7_capexout">—</b></div>
+            <div class="kv"><span>年燃料费</span><b id="t7_gascost">—</b></div>
+            <div class="kv"><span>年运维费</span><b id="t7_omcost">—</b></div>
+            <div class="kv"><span>原方案年耗电（kWh）</span><b id="t7_altkwh">—</b></div>
+            <div class="kv"><span>原方案年成本</span><b id="t7_altcost">—</b></div>
+            <div class="kv hl"><span>年净节省</span><b id="t7_saving">—</b></div>
+            <div class="kv hl"><span>静态回收期</span><b id="t7_payback">—</b></div>
+            <div class="kv"><span>每度冷量成本</span><b id="t7_cost">—</b></div>
+            <div class="kv"><span>原方案每度冷量成本</span><b id="t7_altunit">—</b></div>
+            <div class="kv"><span>减排 CO₂</span><b id="t7_co2">—</b></div>
+          </div>
+          <div class="warn" id="t7_warn"></div>
+          <p class="note">甲烷低热值 9.94 kWh/Nm³。燃料输入 = 制冷量 ÷ COP；制冷模式下余热为燃料输入的 25%；热水按 ΔT 50 K。对比方案按给定电价从电网或柴油机买电、按给定电 COP 制冷。减排按 0.60 t/MWh。仅为参考，COP 与余热以机型保证书为准。</p>
         </div>
       </div>
     </div>
