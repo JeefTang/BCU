@@ -3,6 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script>/* default view = mobile edition (/m/, /ms/m/, /zh/m/); ?view=desktop opts out */
+(function(){try{var K="bcu_view",p=new URLSearchParams(location.search),f=p.get("view");
+if(f==="mobile"||f==="desktop"){document.cookie=K+"="+f+";path=/;max-age=31536000;SameSite=Lax";}
+var m=document.cookie.match(/(?:^|;\s*)bcu_view=(mobile|desktop)/),pref=f||(m&&m[1])||"mobile";
+var path=location.pathname;if(!(/\/m\//.test(path)||/\/m$/.test(path))&&pref!=="desktop"){
+var t=/\/$/.test(path)?path+"m/":path.replace(/\/([^\/]+)$/,"/m/$1");
+if(t!==path){var q=location.search.replace(/([?&])view=[^&]*/g,"$1").replace(/[?&]+$/,"");location.replace(t+q+location.hash);}}}catch(e){}})();</script>
 <title>Peralatan &amp; Skop — Enjin Gas, CHP Hidrogen, Peningkatan | KSTS</title>
 <meta name="description" content="Genset biogas 300 kW–2 MW (pilihan penjana dua-suapan tanpa berus untuk gas berubah-ubah) dan CHP sel bahan api pembentukan semula metana 7.5–100 kW (biometana 97% dalam botol atau biogas mentah 60% dengan penulenan bersepadu), serta nyahsulfur, pengkondisian gas, flare, pemulihan haba dan skid peningkatan — dengan matriks skop yang jelas.">
 <link rel="canonical" href="https://jeeftang.github.io/BCU/ms/equipment.html">
@@ -31,6 +38,7 @@
     <button class="menu-toggle" id="menuToggle" aria-label="Menu" aria-expanded="false">&#9776;</button>
     <ul id="navList"><li><a href="index.html">Utama</a></li><li><a href="biogas-to-power.html">Kuasa Biogas</a></li><li><a href="biomethane.html">Biometana</a></li><li><a href="hydrogen-chp.html">CHP H₂</a></li><li><a href="bhp.html">Penghawa BHP</a></li><li><a href="equipment.html" aria-current="page">Peralatan</a></li><li><a href="calculator.html">Alat</a></li><li><a href="about.html">Tentang</a></li></ul>
     <a class="btn cta" href="contact.html">Minta kajian</a>
+    <a class="view-switch" href="m/equipment.html?view=mobile" title="Mobile / 手机版">Mudah alih</a>
   </div>
 </header>
 
@@ -271,6 +279,32 @@
         </tbody>
       </table>
     </div>
+  </div>
+</section>
+
+<section class="alt" id="bhp">
+  <div class="wrap">
+    <div class="sec-head"><p class="eyebrow">Penghawa dingin BHP</p><h2>Penyejuk pam haba enjin gas, 30 kW hingga 480 kW</h2>
+      <p class="lead">Tiada motor elektrik dalam pemacu. Enjin gas kecil memusingkan pemampat pemacu terbuka secara terus, dan bahan apinya biometana 97% daripada biogas kilang sendiri — jadi pejabat, makmal dan perumahan pekerja kekal sejuk walaupun dandang, turbin dan grid semuanya berhenti. Haba jaket dan ekzos enjin dipulihkan serentak sebagai air panas 60–90 °C. Asal teknologi: pam haba enjin gas dibangunkan dan diindustrikan oleh bekas bahagian penyaman udara Sanyo di Jepun; mesin kelas yang sama dibina di China oleh Dalian Sino-Tech Precision (Sino-Tech). BHP ialah seni bina mekanikal itu dengan sistem bahan api disesuaikan semula kepada biogas kilang.</p></div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Model</th><th>Penyejukan (kW)</th><th>Input bahan api (kW)</th><th>CH₄ (Nm³/j)</th><th>Pemulihan haba (kW)</th><th>Air panas, kenaikan 50 K (L/j)</th><th>Harga indikatif</th></tr></thead>
+        <tbody>
+          <tr><td class="num">BHP-30</td><td class="num">30</td><td class="num">30.0</td><td class="num">3.0</td><td class="num">7.5</td><td class="num">129</td><td class="num">RM 75,000</td></tr>
+          <tr><td class="num">BHP-60</td><td class="num">60</td><td class="num">60.0</td><td class="num">6.0</td><td class="num">15.0</td><td class="num">258</td><td class="num">RM 150,000</td></tr>
+          <tr><td class="num">BHP-120</td><td class="num">120</td><td class="num">120.0</td><td class="num">12.1</td><td class="num">30.0</td><td class="num">517</td><td class="num">RM 300,000</td></tr>
+          <tr><td class="num">BHP-240</td><td class="num">240</td><td class="num">240.0</td><td class="num">24.1</td><td class="num">60.0</td><td class="num">1,033</td><td class="num">RM 600,000</td></tr>
+          <tr><td class="num">BHP-480</td><td class="num">480</td><td class="num">480.0</td><td class="num">48.3</td><td class="num">120.0</td><td class="num">2,067</td><td class="num">RM 1,200,000</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="small" style="margin-top:14px">Asas: COP penyejukan 1.0 atas LHV bahan api (lazim 0.95–1.15; 1 Nm³ CH₄ ≈ 10 kWh penyejukan); haba jaket + ekzos boleh pulih 25% daripada input bahan api; bahan api 97% CH₄, H₂S &lt; 10 ppm, 5–20 kPa di salur masuk. Harga peralatan indikatif RM 2,500/kW, tidak termasuk pemasangan, kerja awam, saluran dan litar air penyejuk. Unit boleh diselarikan hingga skala megawatt.</p>
+    <div class="grid-3" style="margin-top:26px">
+      <article class="card"><p class="tag">Termasuk</p><h3>Pakej lengkap</h3><p>Enjin gas, pemampat pemacu terbuka, penyejat dan pemeluwap, pemulihan haba enjin, panel kawalan dan selongsong kalis cuaca.</p></article>
+      <article class="card"><p class="tag">Tidak termasuk</p><h3>Bahagian tapak</h3><p>Asas awam, pengagihan air sejuk dan saluran, talian gas melebihi flan masuk, pemasangan, SST dan permit.</p></article>
+      <article class="card"><p class="tag">Bahan api</p><h3>Biogas kilang, bukan diesel</h3><p>Biometana 97% ditingkatkan daripada gas pencerna kilang sendiri. Tiada sambungan grid, tiada tangki diesel, tiada penyejuk elektrik dalam laluan penyejukan kritikal.</p></article>
+    </div>
+    <p style="margin-top:22px"><a class="btn" href="bhp.html">Halaman sistem BHP</a></p>
   </div>
 </section>
 <footer class="site">

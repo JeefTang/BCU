@@ -3,6 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script>/* default view = mobile edition (/m/, /ms/m/, /zh/m/); ?view=desktop opts out */
+(function(){try{var K="bcu_view",p=new URLSearchParams(location.search),f=p.get("view");
+if(f==="mobile"||f==="desktop"){document.cookie=K+"="+f+";path=/;max-age=31536000;SameSite=Lax";}
+var m=document.cookie.match(/(?:^|;\s*)bcu_view=(mobile|desktop)/),pref=f||(m&&m[1])||"mobile";
+var path=location.pathname;if(!(/\/m\//.test(path)||/\/m$/.test(path))&&pref!=="desktop"){
+var t=/\/$/.test(path)?path+"m/":path.replace(/\/([^\/]+)$/,"/m/$1");
+if(t!==path){var q=location.search.replace(/([?&])view=[^&]*/g,"$1").replace(/[?&]+$/,"");location.replace(t+q+location.hash);}}}catch(e){}})();</script>
 <title>设备与供货范围 — 燃气机组、氢能热电联供、提纯 | KSTS</title>
 <meta name="description" content="300 kW–2 MW 沼气机组（气量波动可选无刷双馈发电机）与 7.5–100 kW 甲烷重整燃料电池热电联供（瓶装 97% 生物天然气，或 60% 原沼气配一体化净化），以及脱硫、净化、火炬、余热回收与提纯撬，附清晰的供货范围矩阵。">
 <link rel="canonical" href="https://jeeftang.github.io/BCU/zh/equipment.html">
@@ -31,6 +38,7 @@
     <button class="menu-toggle" id="menuToggle" aria-label="Menu" aria-expanded="false">&#9776;</button>
     <ul id="navList"><li><a href="index.html">首页</a></li><li><a href="biogas-to-power.html">沼气发电</a></li><li><a href="biomethane.html">生物天然气</a></li><li><a href="hydrogen-chp.html">氢能 CHP</a></li><li><a href="bhp.html">沼气空调</a></li><li><a href="equipment.html" aria-current="page">设备与范围</a></li><li><a href="calculator.html">测算工具</a></li><li><a href="about.html">关于</a></li></ul>
     <a class="btn cta" href="contact.html">申请可行性评估</a>
+    <a class="view-switch" href="m/equipment.html?view=mobile" title="Mobile / 手机版">手机版</a>
   </div>
 </header>
 
@@ -271,6 +279,32 @@
         </tbody>
       </table>
     </div>
+  </div>
+</section>
+
+<section class="alt" id="bhp">
+  <div class="wrap">
+    <div class="sec-head"><p class="eyebrow">沼气热泵空调（BHP）</p><h2>燃气发动机热泵冷水机组 30–480 kW</h2>
+      <p class="lead">传动链里没有电机。小型燃气发动机直接带动开式压缩机，燃料是油厂自己沼气提纯的 97% 甲烷——锅炉、汽轮机、市电全停的时候，办公室、化验室、员工宿舍照样凉快。缸套与烟气余热同步回收成 60–90 ℃ 热水。技术来源：燃气发动机热泵由原日本三洋空调事业部开发并产业化，中国同类机型由大连中智精工（Sino-Tech）制造；BHP 沿用这套机械架构，把燃料系统重新适配到油厂沼气。</p></div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>机型</th><th>制冷量（kW）</th><th>燃料输入（kW）</th><th>甲烷（Nm³/h）</th><th>余热（kW）</th><th>热水 50 K（L/h）</th><th>参考价</th></tr></thead>
+        <tbody>
+          <tr><td class="num">BHP-30</td><td class="num">30</td><td class="num">30.0</td><td class="num">3.0</td><td class="num">7.5</td><td class="num">129</td><td class="num">RM 75,000</td></tr>
+          <tr><td class="num">BHP-60</td><td class="num">60</td><td class="num">60.0</td><td class="num">6.0</td><td class="num">15.0</td><td class="num">258</td><td class="num">RM 150,000</td></tr>
+          <tr><td class="num">BHP-120</td><td class="num">120</td><td class="num">120.0</td><td class="num">12.1</td><td class="num">30.0</td><td class="num">517</td><td class="num">RM 300,000</td></tr>
+          <tr><td class="num">BHP-240</td><td class="num">240</td><td class="num">240.0</td><td class="num">24.1</td><td class="num">60.0</td><td class="num">1,033</td><td class="num">RM 600,000</td></tr>
+          <tr><td class="num">BHP-480</td><td class="num">480</td><td class="num">480.0</td><td class="num">48.3</td><td class="num">120.0</td><td class="num">2,067</td><td class="num">RM 1,200,000</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="small" style="margin-top:14px">口径：制冷 COP 1.0（按燃气低热值，典型 0.95–1.15；1 Nm³ 甲烷 ≈ 10 kWh 冷量）；缸套＋烟气可回收余热为燃料输入的 25%；燃料 97% 甲烷、H₂S &lt; 10 ppm、进口压力 5–20 kPa。参考设备价 RM 2,500/kW，不含安装、土建、风管与冷却水系统。机组可并联至 MW 级。</p>
+    <div class="grid-3" style="margin-top:26px">
+      <article class="card"><p class="tag">包含</p><h3>成套供货</h3><p>燃气机、开式压缩机、蒸发器与冷凝器、发动机余热回收、控制柜、防雨机柜。</p></article>
+      <article class="card"><p class="tag">不含</p><h3>现场部分</h3><p>土建基础、冷冻水与风管、入口法兰以外的燃气管线、安装、SST 与许可。</p></article>
+      <article class="card"><p class="tag">燃料</p><h3>用厂内沼气，不烧柴油</h3><p>用厂内厌氧气提纯的 97% 生物天然气。不接电网、不设柴油罐，关键制冷路径上没有电空调。</p></article>
+    </div>
+    <p style="margin-top:22px"><a class="btn" href="bhp.html">BHP 系统页</a></p>
   </div>
 </section>
 <footer class="site">

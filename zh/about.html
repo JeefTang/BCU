@@ -3,6 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script>/* default view = mobile edition (/m/, /ms/m/, /zh/m/); ?view=desktop opts out */
+(function(){try{var K="bcu_view",p=new URLSearchParams(location.search),f=p.get("view");
+if(f==="mobile"||f==="desktop"){document.cookie=K+"="+f+";path=/;max-age=31536000;SameSite=Lax";}
+var m=document.cookie.match(/(?:^|;\s*)bcu_view=(mobile|desktop)/),pref=f||(m&&m[1])||"mobile";
+var path=location.pathname;if(!(/\/m\//.test(path)||/\/m$/.test(path))&&pref!=="desktop"){
+var t=/\/$/.test(path)?path+"m/":path.replace(/\/([^\/]+)$/,"/m/$1");
+if(t!==path){var q=location.search.replace(/([?&])view=[^&]*/g,"$1").replace(/[?&]+$/,"");location.replace(t+q+location.hash);}}}catch(e){}})();</script>
 <title>关于 KSTS — 沙巴沼气承包商与本地伙伴</title>
 <meta name="description" content="KSTS K. S. Technical Services：CIDB 注册、沙巴土著企业，持 DOSH 与 ECOS 资质。">
 <link rel="canonical" href="https://jeeftang.github.io/BCU/zh/about.html">
@@ -31,6 +38,7 @@
     <button class="menu-toggle" id="menuToggle" aria-label="Menu" aria-expanded="false">&#9776;</button>
     <ul id="navList"><li><a href="index.html">首页</a></li><li><a href="biogas-to-power.html">沼气发电</a></li><li><a href="biomethane.html">生物天然气</a></li><li><a href="hydrogen-chp.html">氢能 CHP</a></li><li><a href="bhp.html">沼气空调</a></li><li><a href="equipment.html">设备与范围</a></li><li><a href="calculator.html">测算工具</a></li><li><a href="about.html" aria-current="page">关于</a></li></ul>
     <a class="btn cta" href="contact.html">申请可行性评估</a>
+    <a class="view-switch" href="m/about.html?view=mobile" title="Mobile / 手机版">手机版</a>
   </div>
 </header>
 

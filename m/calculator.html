@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Engineering Calculators — Biogas to Power, Sizing, Biomethane, Economics | KSTS</title>
+<meta name="description" content="Five free engineering calculators: biogas to electricity and heat, capacity sizing, mill throughput to biogas, upgrading yield and project economics.">
+<link rel="canonical" href="https://jeeftang.github.io/BCU/m/calculator.html">
+<link rel="alternate" media="only screen and (max-width: 640px)" href="https://jeeftang.github.io/BCU/m/calculator.html">
+<meta name="theme-color" content="#0c1a26">
+<meta name="format-detection" content="telephone=no">
+<link rel="stylesheet" href="../assets/css/chat.css">
+<link rel="stylesheet" href="../assets/css/m.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 34 34'><rect width='34' height='34' rx='9' fill='%230c1a26'/><path d='M17 6.5c3.6 2.4 6 6.2 6 10.2 0 3.3-2.7 6-6 6s-6-2.7-6-6c0-4 2.4-7.8 6-10.2Z' fill='%230f7a52'/></svg>">
+</head>
+<body>
+<div class="mhead">
+  <a class="brand" href="index.html"><svg viewBox="0 0 34 34" fill="none" aria-hidden="true"><rect width="34" height="34" rx="9" fill="#0f7a52"/><path d="M17 6.5c3.6 2.4 6 6.2 6 10.2 0 3.3-2.7 6-6 6s-6-2.7-6-6c0-4 2.4-7.8 6-10.2Z" fill="#fff"/><path d="M17 22.7v4.8M11 14.5h12" stroke="#0c1a26" stroke-width="1.6" stroke-linecap="round" opacity=".85"/></svg><span>KSTS<small>Biogas &amp; Bioenergy</small></span></a>
+  <span class="sp"></span>
+  <a class="link" href="../ms/m/calculator.html" hreflang="ms">BM</a><a class="link" href="../zh/m/calculator.html" hreflang="zh">中文</a>
+  <a class="link" href="../calculator.html?view=desktop">Desktop</a>
+</div>
+<div class="mhero"><p class="eyebrow">Engineering tools</p><h1>Five calculators, no sign-up</h1><p class="lead">These are the formulas we use in pre-feasibility work. They are deliberately transparent: every assumption is shown and you can change it. Use them to challenge a supplier’s numbers — including ours.</p></div><section class="m-sec"><p class="eyebrow">Selection at a glance</p><h2>Pick the model from the gas you measured</h2><p class="lead">Enter the raw biogas flow and methane content from your own measurement. The selector returns the largest unit that runs on that gas at full load, plus the gas it needs and what it generates in a year.</p><div class="m-form"><div class="calc">
+      <div class="calc-form">
+        <div class="field"><label for="q_flow">Measured raw biogas (Nm³/h)</label><input id="q_flow" type="number" value="400" step="10" min="0"><div class="hint">Average over one to two weeks, not a peak reading.</div></div>
+        <div class="field"><label for="q_ch4">Methane content (%)</label><input id="q_ch4" type="number" value="60" step="0.5" min="40" max="99"><div class="hint">Engine limit is 45% minimum.</div></div>
+        <div class="field"><label for="q_load">Average load factor (%)</label><input id="q_load" type="number" value="90" step="1" min="50" max="100"><div class="hint">Long-term output on variable biogas is 90–100%.</div></div>
+      </div>
+      <div class="calc-out">
+        <div class="kv hl"><span>Recommended model</span><b id="q_model">—</b></div>
+        <div class="kv hl"><span>Output at full load</span><b id="q_out">—</b></div>
+        <div class="kv"><span>Pure methane required</span><b id="q_ch4">—</b></div>
+        <div class="kv"><span>Raw biogas required at your CH₄</span><b id="q_need">—</b></div>
+        <div class="kv"><span>Share of measured gas used</span><b id="q_util">—</b></div>
+        <div class="kv"><span>Annual generation (8,000 h × load)</span><b id="q_ann">—</b></div>
+        <div class="kv"><span>Recoverable heat</span><b id="q_heat">—</b></div>
+      </div>
+    </div>
+    </div><div class="m-table-hint">← 左右滑动查看完整表格 / swipe to see all columns</div><div class="m-table"><table>
+        <thead><tr><th>Model</th><th>CH₄ needed (Nm³/h)</th><th>Raw gas @45%</th><th>@55%</th><th>@60%</th><th>MWh/yr @90% load</th><th>Heat (kW)</th></tr></thead>
+        
+          <tr><td>500 kW</td><td>142</td><td>316</td><td>258</td><td>237</td><td>3,600</td><td>593</td></tr>
+          <tr><td>600 kW</td><td>172</td><td>382</td><td>313</td><td>287</td><td>4,320</td><td>718</td></tr>
+          <tr><td>700 kW</td><td>200</td><td>444</td><td>364</td><td>333</td><td>5,040</td><td>835</td></tr>
+          <tr><td>800 kW</td><td>229</td><td>508</td><td>416</td><td>381</td><td>5,760</td><td>954</td></tr>
+          <tr><td>1,000 kW</td><td>286</td><td>636</td><td>520</td><td>477</td><td>7,200</td><td>1,194</td></tr>
+        
+      </table>
+    </div><p>Based on manufacturer gas consumption (≈3.50 kWh per Nm³ CH₄), 8,000 operating hours and 90% load. Size on the 45% methane column when gas quality is uncertain — running out of gas costs more than buying one size larger.</p></section><section class="m-sec"><div class="m-form"><div class="tabs" id="tabs">
+      <button class="tab-btn active" data-tab="tool1">1 · Gas to power &amp; heat</button>
+      <button class="tab-btn" data-tab="tool2">2 · Capacity sizing</button>
+      <button class="tab-btn" data-tab="tool3">3 · Mill to biogas</button>
+      <button class="tab-btn" data-tab="tool4">4 · Upgrading yield</button>
+      <button class="tab-btn" data-tab="tool5">5 · Project economics</button>
+    </div>
+
+    </div><div class="m-form"><div class="tab-panel active" id="tool1">
+      <div class="tool-head">
+        <div><p class="eyebrow">Tool 01</p><h2>Biogas flow → electricity and heat</h2></div>
+        <div class="tool-actions"><button class="btn ghost sm" onclick="window.print()">Print / save as PDF</button><button class="btn sm" onclick="copySummary('tool1')">Copy summary</button></div>
+      </div>
+      <div class="calc">
+        <div class="calc-form">
+          <div class="field"><label for="t1_flow">Biogas flow available (Nm³/h)</label><input id="t1_flow" type="number" value="300" step="1" min="0"><div class="hint">Normal cubic metres per hour at 0 °C, 101.3 kPa.</div></div>
+          <div class="field"><label for="t1_ch4">Methane content (%)</label><input id="t1_ch4" type="number" value="60" step="0.5" min="40" max="99"><div class="hint">POME biogas is typically 55–65%.</div></div>
+          <div class="field"><label for="t1_eff">Electrical efficiency (%)</label><input id="t1_eff" type="number" value="35.2" step="0.1" min="20" max="45"><div class="hint">Manufacturer gas data: ≈3.50 kWh per Nm³ CH₄ = 35.2%. Premium European 40–43%.</div></div>
+          <div class="field"><label for="t1_heat">Recoverable heat (% of fuel)</label><input id="t1_heat" type="number" value="43" step="1" min="0" max="60"><div class="hint">Jacket + exhaust, typically 40–45%.</div></div>
+          <div class="field"><label for="t1_hours">Operating hours per year</label><input id="t1_hours" type="number" value="8000" step="100" min="0" max="8760"></div>
+          <div class="field"><label for="t1_load">Average load factor (%)</label><input id="t1_load" type="number" value="90" step="1" min="10" max="100"><div class="hint">On variable biogas, long-term output is 90–100% of rating.</div></div>
+        </div>
+        <div class="calc-out">
+          <h3>Results</h3>
+          <div class="out-grid">
+            <div class="kv hl"><span>Electrical output at full load</span><b id="t1_kw">—</b></div>
+            <div class="kv hl"><span>Recoverable heat</span><b id="t1_heatkw">—</b></div>
+            <div class="kv"><span>Fuel energy input</span><b id="t1_energy">—</b></div>
+            <div class="kv"><span>Total efficiency (power + heat)</span><b id="t1_total">—</b></div>
+            <div class="kv"><span>Biogas per kWh generated</span><b id="t1_gas_kwh">—</b></div>
+            <div class="kv"><span>Annual generation</span><b id="t1_year_kwh">—</b></div>
+            <div class="kv"><span>Annual heat delivered</span><b id="t1_year_heat">—</b></div>
+            <div class="kv"><span>Diesel avoided</span><b id="t1_diesel">—</b></div>
+          </div>
+          <div class="warn" id="t1_warn"></div>
+          <p class="note">Methane LHV 9.94 kWh/Nm³ (35.8 MJ/Nm³). Diesel genset at 35% efficiency and 2.68 kg CO₂/litre for the avoided-fuel figure.</p>
+        </div>
+      </div>
+    </div>
+
+    </div><div class="m-form"><div class="tab-panel" id="tool2">
+      <div class="tool-head">
+        <div><p class="eyebrow">Tool 02</p><h2>Target output → gas demand</h2></div>
+        <div class="tool-actions"><button class="btn ghost sm" onclick="window.print()">Print / save as PDF</button><button class="btn sm" onclick="copySummary('tool2')">Copy summary</button></div>
+      </div>
+      <div class="calc">
+        <div class="calc-form">
+          <div class="field"><label for="t2_kw">Target electrical output (kW)</label><input id="t2_kw" type="number" value="600" step="10" min="0"></div>
+          <div class="field"><label for="t2_ch4">Methane content (%)</label><input id="t2_ch4" type="number" value="60" step="0.5" min="40" max="99"></div>
+          <div class="field"><label for="t2_eff">Electrical efficiency (%)</label><input id="t2_eff" type="number" value="35.2" step="0.1" min="20" max="45"><div class="hint">≈3.50 kWh per Nm³ CH₄ from manufacturer data.</div></div>
+          <div class="field"><label for="t2_load">Average load factor (%)</label><input id="t2_load" type="number" value="85" step="1" min="10" max="100"><div class="hint">Demand is calculated at full load; average scales with load.</div></div>
+        </div>
+        <div class="calc-out">
+          <h3>Gas demand</h3>
+          <div class="out-grid">
+            <div class="kv hl"><span>Biogas at full load</span><b id="t2_flow">—</b></div>
+            <div class="kv hl"><span>Biogas per day at full load</span><b id="t2_day">—</b></div>
+            <div class="kv"><span>Average at load factor</span><b id="t2_avg">—</b></div>
+            <div class="kv"><span>Methane flow</span><b id="t2_ch4flow">—</b></div>
+            <div class="kv"><span>Fuel energy input</span><b id="t2_energy">—</b></div>
+            <div class="kv"><span>Annual biogas</span><b id="t2_year">—</b></div>
+          </div>
+          <div class="warn" id="t2_warn"></div>
+          <p class="note">Use this to test whether an offered engine matches your measured gas flow.</p>
+        </div>
+      </div>
+    </div>
+
+    </div><div class="m-form"><div class="tab-panel" id="tool3">
+      <div class="tool-head">
+        <div><p class="eyebrow">Tool 03</p><h2>Mill throughput → biogas potential</h2></div>
+        <div class="tool-actions"><button class="btn ghost sm" onclick="window.print()">Print / save as PDF</button><button class="btn sm" onclick="copySummary('tool3')">Copy summary</button></div>
+      </div>
+      <div class="calc">
+        <div class="calc-form">
+          <div class="field"><label for="t3_ffb">FFB throughput (t/h)</label><input id="t3_ffb" type="number" value="60" step="1" min="0"></div>
+          <div class="field"><label for="t3_pome">POME generated (m³ per t FFB)</label><input id="t3_pome" type="number" value="0.65" step="0.05" min="0.2" max="1.2"></div>
+          <div class="field"><label for="t3_yield">Biogas yield (Nm³ per m³ POME)</label><input id="t3_yield" type="number" value="24" step="1" min="5" max="40"><div class="hint">Covered lagoon 20–28; well-mixed CSTR can reach 30+.</div></div>
+          <div class="field"><label for="t3_ch4">Methane content (%)</label><input id="t3_ch4" type="number" value="60" step="0.5" min="40" max="99"></div>
+          <div class="field"><label for="t3_capture">Capture efficiency (%)</label><input id="t3_capture" type="number" value="85" step="1" min="30" max="100"><div class="hint">Share of generated gas actually delivered.</div></div>
+          <div class="field"><label for="t3_eff">Electrical efficiency (%)</label><input id="t3_eff" type="number" value="35.2" step="0.1" min="20" max="45"></div>
+        </div>
+        <div class="calc-out">
+          <h3>Biogas &amp; power potential</h3>
+          <div class="out-grid">
+            <div class="kv"><span>POME produced</span><b id="t3_pome_day">—</b></div>
+            <div class="kv hl"><span>Biogas generated</span><b id="t3_gas_day">—</b></div>
+            <div class="kv hl"><span>Biogas to engine</span><b id="t3_gas_h">—</b></div>
+            <div class="kv"><span>Methane available</span><b id="t3_ch4_h">—</b></div>
+            <div class="kv"><span>Electrical potential</span><b id="t3_kw">—</b></div>
+            <div class="kv"><span>Annual generation (8,000 h)</span><b id="t3_mwh">—</b></div>
+          </div>
+          <div class="warn" id="t3_warn"></div>
+          <p class="note">Assumes continuous 24-hour POME production. Real mills have shifts and stoppages — use measured inflow where available. Screening only, not a design basis.</p>
+        </div>
+      </div>
+    </div>
+
+    </div><div class="m-form"><div class="tab-panel" id="tool4">
+      <div class="tool-head">
+        <div><p class="eyebrow">Tool 04</p><h2>Raw biogas → biomethane yield</h2></div>
+        <div class="tool-actions"><button class="btn ghost sm" onclick="window.print()">Print / save as PDF</button><button class="btn sm" onclick="copySummary('tool4')">Copy summary</button></div>
+      </div>
+      <div class="calc">
+        <div class="calc-form">
+          <div class="field"><label for="t4_flow">Raw biogas flow (Nm³/h)</label><input id="t4_flow" type="number" value="500" step="10" min="0"></div>
+          <div class="field"><label for="t4_ch4">Methane content in (%)</label><input id="t4_ch4" type="number" value="60" step="0.5" min="40" max="80"></div>
+          <div class="field"><label for="t4_rec">Methane recovery (%)</label><input id="t4_rec" type="number" value="97" step="0.5" min="80" max="100"><div class="hint">PSA 95–98, membrane 96–99, water scrubber 98–99.</div></div>
+          <div class="field"><label for="t4_purity">Product purity (% CH₄)</label><input id="t4_purity" type="number" value="97" step="0.5" min="90" max="99.9"></div>
+          <div class="field"><label for="t4_power">Upgrading power (kWh/Nm³ raw)</label><input id="t4_power" type="number" value="0.27" step="0.01" min="0.05" max="0.6"></div>
+        </div>
+        <div class="calc-out">
+          <h3>Upgrading output</h3>
+          <div class="out-grid">
+            <div class="kv"><span>Methane entering</span><b id="t4_ch4in">—</b></div>
+            <div class="kv hl"><span>Biomethane product</span><b id="t4_product">—</b></div>
+            <div class="kv"><span>Methane in product</span><b id="t4_ch4out">—</b></div>
+            <div class="kv"><span>Methane loss</span><b id="t4_loss">—</b></div>
+            <div class="kv"><span>CO₂ removed</span><b id="t4_co2">—</b></div>
+            <div class="kv hl"><span>Product energy (LHV)</span><b id="t4_mw">—</b></div>
+            <div class="kv"><span>Upgrading power demand</span><b id="t4_kw">—</b></div>
+            <div class="kv"><span>Diesel equivalent</span><b id="t4_diesel">—</b></div>
+          </div>
+          <p class="note">Product = CH₄ in × recovery ÷ purity. Diesel equivalent at 35.8 MJ/L LHV.</p>
+        </div>
+      </div>
+    </div>
+
+    </div><div class="m-form"><div class="tab-panel" id="tool5">
+      <div class="tool-head">
+        <div><p class="eyebrow">Tool 05</p><h2>Project economics</h2></div>
+        <div class="tool-actions"><button class="btn ghost sm" onclick="window.print()">Print / save as PDF</button><button class="btn sm" onclick="copySummary('tool5')">Copy summary</button></div>
+      </div>
+      <div class="calc">
+        <div class="calc-form">
+          <div class="field"><label for="t5_kw">Plant capacity (kW)</label><input id="t5_kw" type="number" value="600" step="10" min="0"></div>
+          <div class="field"><label for="t5_capex">Turnkey capex (USD per kW)</label><input id="t5_capex" type="number" value="2200" step="50" min="0"><div class="hint">Engine package FOB ≈ USD 580–630/kW (600–800 kW); complete plant typically USD 1,800–2,600/kW.</div></div>
+          <div class="field"><label for="t5_cur">Currency</label><select id="t5_cur"><option value="MYR">MYR (Malaysia)</option><option value="IDR">IDR (Indonesia)</option><option value="USD">USD</option></select></div>
+          <div class="field"><label for="t5_tariff">Value of electricity (local/kWh)</label><input id="t5_tariff" type="number" value="0.65" step="0.01" min="0"><div class="hint">Inland Sabah diesel: RM 0.55–0.75. Grid import RM 0.40–0.50. Indonesia USD 0.07–0.10.</div></div>
+          <div class="field"><label for="t5_use">Share of output displacing bought power (%)</label><input id="t5_use" type="number" value="75" step="5" min="0" max="100"><div class="hint">Only self-consumed kWh carry the full displaced-fuel value.</div></div>
+          <div class="field"><label for="t5_fx">Exchange rate (local per USD)</label><input id="t5_fx" type="number" value="4.2" step="0.01" min="1"></div>
+          <div class="field"><label for="t5_hours">Operating hours per year</label><input id="t5_hours" type="number" value="8000" step="100" min="0" max="8760"></div>
+          <div class="field"><label for="t5_om">Variable O&amp;M (USD/kWh)</label><input id="t5_om" type="number" value="0.0169" step="0.0001" min="0"><div class="hint">Full-service O&amp;M incl. overhauls ≈ USD 0.017/kWh.</div></div>
+          <div class="field"><label for="t5_omfix">Fixed O&amp;M (USD/year)</label><input id="t5_omfix" type="number" value="0" step="1000" min="0"></div>
+          <div class="field"><label for="t5_disc">Discount rate (%)</label><input id="t5_disc" type="number" value="8" step="0.5" min="0" max="30"></div>
+        </div>
+        <div class="calc-out">
+          <h3>Financial summary</h3>
+          <div class="out-grid">
+            <div class="kv"><span>Total capex</span><b id="t5_total_capex">—</b></div>
+            <div class="kv"><span>Annual generation</span><b id="t5_gen">—</b></div>
+            <div class="kv hl"><span>Annual revenue</span><b id="t5_rev">—</b></div>
+            <div class="kv"><span>Annual O&amp;M</span><b id="t5_opex">—</b></div>
+            <div class="kv hl"><span>Net annual cash flow</span><b id="t5_net">—</b></div>
+            <div class="kv hl"><span>Simple payback</span><b id="t5_payback">—</b></div>
+            <div class="kv"><span>10-year net (undiscounted)</span><b id="t5_cum10">—</b></div>
+            <div class="kv"><span>NPV</span><b id="t5_npv">—</b></div>
+            <div class="kv"><span>IRR (10 years)</span><b id="t5_irr">—</b></div>
+            <div class="kv"><span>LCOE</span><b id="t5_lcoe">—</b></div>
+          </div>
+          <div class="warn" id="t5_warn"></div>
+          <p class="note">Revenue assumes the stated value for each valued kWh. Excludes financing, land and utility grid upgrades. Screening model, not bankable.</p>
+        </div>
+      </div>
+    </div>
+
+    </div><p>Method &amp; constants. Methane LHV 35.8 MJ/Nm³ = 9.94 kWh/Nm³. Biogas energy = flow × CH₄ fraction × 9.94. Electrical output = fuel energy × electrical efficiency. Recoverable heat = fuel energy × heat fraction. All results are indicative; guarantees are issued only against measured site data. Why we publish the formulas. Most supplier calculators hide their assumptions. A biogas project is decided on gas quality and operating hours, not on a polished number.</p></section>
+<div class="mfoot">
+  <div class="fnav"><a class="fnavlink" href="biogas-to-power.html">Biogas power plant</a><a class="fnavlink" href="biomethane.html">Biomethane &amp; bio-CNG</a><a class="fnavlink" href="hydrogen-chp.html">Hydrogen CHP</a><a class="fnavlink" href="bhp.html">BHP air-conditioning</a><a class="fnavlink" href="equipment.html">Equipment &amp; scope</a></div>
+  <p style="margin:0 0 8px">KSTS K. S. Technical Services · Sabah, Malaysia</p>
+  <p style="margin:0"><a href="mailto:k.s.t.s_sabah@hotmail.com">k.s.t.s_sabah@hotmail.com</a> · <a href="tel:+60138833833">+60 13-883 3833</a></p>
+  <p style="margin:8px 0 0;color:#6f8794">© 2026 · Mobile edition</p>
+</div>
+<div class="m-sheet" id="mSheet" hidden>
+  <button type="button" class="m-sheet-bd" data-close aria-label="Close"></button>
+  <div class="m-sheet-panel" role="dialog" aria-modal="true" aria-label="Solutions">
+    <div class="m-sheet-hd"><strong>Solutions</strong>
+      <button type="button" class="m-sheet-x" data-close aria-label="Close">✕</button>
+    </div>
+    <div class="m-sheet-list">
+<a class="m-sheet-item" href="biogas-to-power.html"><span class="t"><strong>Biogas power plant</strong><small>300 kW – 2 MW · POME biogas</small></span><span class="chev">›</span></a><a class="m-sheet-item" href="biomethane.html"><span class="t"><strong>Biomethane &amp; bio-CNG</strong><small>Upgrading to 97% CH₄</small></span><span class="chev">›</span></a><a class="m-sheet-item" href="hydrogen-chp.html"><span class="t"><strong>Hydrogen CHP</strong><small>7.5 – 100 kW · fuel cell</small></span><span class="chev">›</span></a><a class="m-sheet-item" href="bhp.html"><span class="t"><strong>BHP air-conditioning</strong><small>30 – 480 kW · gas-engine driven</small></span><span class="chev">›</span></a><a class="m-sheet-item" href="equipment.html"><span class="t"><strong>Equipment &amp; scope</strong><small>Battery limits · who does what</small></span><span class="chev">›</span></a><a class="m-sheet-item is-cur" href="calculator.html"><span class="t"><strong>Engineering tools</strong><small>Gas, power and load sizing</small></span><span class="chev">›</span></a><a class="m-sheet-item" href="about.html"><span class="t"><strong>About KSTS</strong><small>Sabah · since 2009</small></span><span class="chev">›</span></a><a class="m-sheet-item" href="contact.html"><span class="t"><strong>Contact</strong><small>Pre-feasibility in 3 days</small></span><span class="chev">›</span></a>
+    </div>
+  </div>
+</div>
+<div class="mbar">
+  <a href="index.html"><span class="ic">⌂</span>Home</a>
+  <button type="button" class="mbar-prod" id="mProdBtn" aria-expanded="false" aria-controls="mSheet"><span class="ic">▤</span>Solutions</button>
+  <a class="cta" href="contact.html"><span class="ic">✉</span>Get a study</a>
+</div>
+<script src="../assets/js/site.js" defer></script>
+<script src="../assets/js/chat.js" defer></script>
+<script src="../assets/js/calc.js"></script>
+<script>
+(function(){
+  var b=document.getElementById('mProdBtn'),s=document.getElementById('mSheet');
+  if(!b||!s)return;
+  function open(){s.hidden=false;document.body.classList.add('m-lock');b.setAttribute('aria-expanded','true');}
+  function close(){s.hidden=true;document.body.classList.remove('m-lock');b.setAttribute('aria-expanded','false');}
+  b.addEventListener('click',function(){s.hidden?open():close();});
+  s.addEventListener('click',function(e){if(e.target.closest('[data-close]'))close();});
+  s.addEventListener('click',function(e){var a=e.target.closest('a');if(a)close();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+}());
+</script>
+</body>
+</html>

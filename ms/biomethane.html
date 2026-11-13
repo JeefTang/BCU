@@ -3,6 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script>/* default view = mobile edition (/m/, /ms/m/, /zh/m/); ?view=desktop opts out */
+(function(){try{var K="bcu_view",p=new URLSearchParams(location.search),f=p.get("view");
+if(f==="mobile"||f==="desktop"){document.cookie=K+"="+f+";path=/;max-age=31536000;SameSite=Lax";}
+var m=document.cookie.match(/(?:^|;\s*)bcu_view=(mobile|desktop)/),pref=f||(m&&m[1])||"mobile";
+var path=location.pathname;if(!(/\/m\//.test(path)||/\/m$/.test(path))&&pref!=="desktop"){
+var t=/\/$/.test(path)?path+"m/":path.replace(/\/([^\/]+)$/,"/m/$1");
+if(t!==path){var q=location.search.replace(/([?&])view=[^&]*/g,"$1").replace(/[?&]+$/,"");location.replace(t+q+location.hash);}}}catch(e){}})();</script>
 <title>Peningkatan Biometana &amp; Bio-CNG ke 97% CH4 | KSTS</title>
 <meta name="description" content="Tingkatkan biogas POME ke ≥97% metana untuk bahan api dandang atau bio-CNG. Perbandingan PSA, scrubber air dan membran.">
 <link rel="canonical" href="https://jeeftang.github.io/BCU/ms/biomethane.html">
@@ -31,6 +38,7 @@
     <button class="menu-toggle" id="menuToggle" aria-label="Menu" aria-expanded="false">&#9776;</button>
     <ul id="navList"><li><a href="index.html">Utama</a></li><li><a href="biogas-to-power.html">Kuasa Biogas</a></li><li><a href="biomethane.html" aria-current="page">Biometana</a></li><li><a href="hydrogen-chp.html">CHP H₂</a></li><li><a href="bhp.html">Penghawa BHP</a></li><li><a href="equipment.html">Peralatan</a></li><li><a href="calculator.html">Alat</a></li><li><a href="about.html">Tentang</a></li></ul>
     <a class="btn cta" href="contact.html">Minta kajian</a>
+    <a class="view-switch" href="m/biomethane.html?view=mobile" title="Mobile / 手机版">Mudah alih</a>
   </div>
 </header>
 

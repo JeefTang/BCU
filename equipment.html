@@ -3,6 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script>/* default view = mobile edition (/m/, /ms/m/, /zh/m/); ?view=desktop opts out */
+(function(){try{var K="bcu_view",p=new URLSearchParams(location.search),f=p.get("view");
+if(f==="mobile"||f==="desktop"){document.cookie=K+"="+f+";path=/;max-age=31536000;SameSite=Lax";}
+var m=document.cookie.match(/(?:^|;\s*)bcu_view=(mobile|desktop)/),pref=f||(m&&m[1])||"mobile";
+var path=location.pathname;if(!(/\/m\//.test(path)||/\/m$/.test(path))&&pref!=="desktop"){
+var t=/\/$/.test(path)?path+"m/":path.replace(/\/([^\/]+)$/,"/m/$1");
+if(t!==path){var q=location.search.replace(/([?&])view=[^&]*/g,"$1").replace(/[?&]+$/,"");location.replace(t+q+location.hash);}}}catch(e){}})();</script>
 <title>Equipment &amp; Scope — Gas Engines, Hydrogen CHP, Upgrading | KSTS</title>
 <meta name="description" content="Biogas gensets 300 kW–2 MW (brushless doubly-fed generator option for variable gas) and methane-reforming fuel cell CHP 7.5–100 kW (bottled 97% biomethane or raw 60% biogas with integrated purification), plus desulfurisation, gas conditioning, flares, heat recovery and upgrading skids — with clear scope matrices.">
 <link rel="canonical" href="https://jeeftang.github.io/BCU/equipment.html">
@@ -31,6 +38,7 @@
     <button class="menu-toggle" id="menuToggle" aria-label="Menu" aria-expanded="false">&#9776;</button>
     <ul id="navList"><li><a href="index.html">Home</a></li><li><a href="biogas-to-power.html">Biogas Power</a></li><li><a href="biomethane.html">Biomethane</a></li><li><a href="hydrogen-chp.html">H₂ CHP</a></li><li><a href="bhp.html">BHP Air-Con</a></li><li><a href="equipment.html" aria-current="page">Equipment</a></li><li><a href="calculator.html">Tools</a></li><li><a href="about.html">About</a></li></ul>
     <a class="btn cta" href="contact.html">Request a study</a>
+    <a class="view-switch" href="m/equipment.html?view=mobile" title="Mobile / 手机版">Mobile</a>
   </div>
 </header>
 
@@ -271,6 +279,32 @@
         </tbody>
       </table>
     </div>
+  </div>
+</section>
+
+<section class="alt" id="bhp">
+  <div class="wrap">
+    <div class="sec-head"><p class="eyebrow">BHP air-conditioning</p><h2>Gas-engine heat pump chillers, 30 kW to 480 kW</h2>
+      <p class="lead">There is no electric motor in the drive train. A small gas engine turns an open-drive compressor directly, and the fuel is 97% biomethane from the mill’s own biogas — so the offices, laboratory and worker housing stay cool when the boiler, the turbine and the grid are all down. Engine jacket and exhaust heat is recovered at the same time as 60–90 °C hot water. Technology origin: gas-engine heat pumps were developed and industrialised by the former Sanyo air-conditioning division in Japan; the same class of machine is built in China by Dalian Sino-Tech Precision (Sino-Tech). BHP is that mechanical architecture with the fuel system re-adapted to mill biogas.</p></div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Model</th><th>Cooling (kW)</th><th>Fuel input (kW)</th><th>CH₄ (Nm³/h)</th><th>Heat recovery (kW)</th><th>Hot water, 50 K rise (L/h)</th><th>Indicative price</th></tr></thead>
+        <tbody>
+          <tr><td class="num">BHP-30</td><td class="num">30</td><td class="num">30.0</td><td class="num">3.0</td><td class="num">7.5</td><td class="num">129</td><td class="num">RM 75,000</td></tr>
+          <tr><td class="num">BHP-60</td><td class="num">60</td><td class="num">60.0</td><td class="num">6.0</td><td class="num">15.0</td><td class="num">258</td><td class="num">RM 150,000</td></tr>
+          <tr><td class="num">BHP-120</td><td class="num">120</td><td class="num">120.0</td><td class="num">12.1</td><td class="num">30.0</td><td class="num">517</td><td class="num">RM 300,000</td></tr>
+          <tr><td class="num">BHP-240</td><td class="num">240</td><td class="num">240.0</td><td class="num">24.1</td><td class="num">60.0</td><td class="num">1,033</td><td class="num">RM 600,000</td></tr>
+          <tr><td class="num">BHP-480</td><td class="num">480</td><td class="num">480.0</td><td class="num">48.3</td><td class="num">120.0</td><td class="num">2,067</td><td class="num">RM 1,200,000</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="small" style="margin-top:14px">Basis: cooling COP 1.0 on fuel LHV (typical 0.95–1.15; 1 Nm³ CH₄ ≈ 10 kWh of cooling); recoverable jacket + exhaust heat 25% of fuel input; fuel 97% CH₄, H₂S &lt; 10 ppm, 5–20 kPa at the inlet. Indicative equipment price at RM 2,500/kW, excluding installation, civil works, ducts and cooling-water circuit. Units parallel to megawatt scale.</p>
+    <div class="grid-3" style="margin-top:26px">
+      <article class="card"><p class="tag">Included</p><h3>The complete package</h3><p>Gas engine, open-drive compressor, evaporator and condenser, engine heat recovery, control panel and weatherproof enclosure.</p></article>
+      <article class="card"><p class="tag">Excluded</p><h3>Site side</h3><p>Civil foundation, chilled-water and duct distribution, gas line beyond the inlet flange, installation, SST and permits.</p></article>
+      <article class="card"><p class="tag">Fuel</p><h3>Mill biogas, not diesel</h3><p>Upgraded 97% biomethane from the mill’s own digester gas. No grid connection, no diesel tank, no electric chiller in the critical cooling path.</p></article>
+    </div>
+    <p style="margin-top:22px"><a class="btn" href="bhp.html">BHP system page</a></p>
   </div>
 </section>
 <footer class="site">

@@ -3,6 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script>/* default view = mobile edition (/m/, /ms/m/, /zh/m/); ?view=desktop opts out */
+(function(){try{var K="bcu_view",p=new URLSearchParams(location.search),f=p.get("view");
+if(f==="mobile"||f==="desktop"){document.cookie=K+"="+f+";path=/;max-age=31536000;SameSite=Lax";}
+var m=document.cookie.match(/(?:^|;\s*)bcu_view=(mobile|desktop)/),pref=f||(m&&m[1])||"mobile";
+var path=location.pathname;if(!(/\/m\//.test(path)||/\/m$/.test(path))&&pref!=="desktop"){
+var t=/\/$/.test(path)?path+"m/":path.replace(/\/([^\/]+)$/,"/m/$1");
+if(t!==path){var q=location.search.replace(/([?&])view=[^&]*/g,"$1").replace(/[?&]+$/,"");location.replace(t+q+location.hash);}}}catch(e){}})();</script>
 <title>Contact KSTS — Biogas Project Enquiry, Sabah</title>
 <meta name="description" content="Send mill throughput, pond volume and gas data for a pre-feasibility. KSTS, Telupid, Sabah. Reply within three working days.">
 <link rel="canonical" href="https://jeeftang.github.io/BCU/contact.html">
@@ -31,6 +38,7 @@
     <button class="menu-toggle" id="menuToggle" aria-label="Menu" aria-expanded="false">&#9776;</button>
     <ul id="navList"><li><a href="index.html">Home</a></li><li><a href="biogas-to-power.html">Biogas Power</a></li><li><a href="biomethane.html">Biomethane</a></li><li><a href="hydrogen-chp.html">H₂ CHP</a></li><li><a href="bhp.html">BHP Air-Con</a></li><li><a href="equipment.html">Equipment</a></li><li><a href="calculator.html">Tools</a></li><li><a href="about.html">About</a></li></ul>
     <a class="btn cta" href="contact.html">Request a study</a>
+    <a class="view-switch" href="m/contact.html?view=mobile" title="Mobile / 手机版">Mobile</a>
   </div>
 </header>
 
