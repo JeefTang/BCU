@@ -39,11 +39,11 @@ header.site{
   position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);
   backdrop-filter:blur(10px);border-bottom:1px solid var(--line);
 }
-.nav{display:flex;align-items:center;gap:20px;height:70px}
+.nav{display:flex;align-items:center;gap:16px;height:70px}
 .brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:18px;letter-spacing:-.02em}
 .brand svg{flex:0 0 auto}
 .brand small{display:block;font-weight:600;font-size:10px;letter-spacing:.18em;color:var(--steel);text-transform:uppercase}
-.nav ul{display:flex;gap:18px;list-style:none;margin:0 0 0 auto;padding:0}
+.nav ul{display:flex;gap:15px;list-style:none;margin:0 0 0 auto;padding:0}
 .nav a{font-size:14.5px;font-weight:600;color:var(--ink-2);white-space:nowrap}
 .nav a:hover{color:var(--accent)}
 .nav .cta{margin-left:8px}
@@ -259,8 +259,8 @@ form.enquiry input,form.enquiry textarea,form.enquiry select{
 .lang a:hover{color:var(--ink);background:#eef3f6}
 .lang a.on{color:#fff;background:var(--accent)}
 @media(min-width:1340px){
-  .lang a .lg-full{display:inline}
-  .lang a .lg-short{display:none}
+  .lang a .lg-full{display:none}
+  .lang a .lg-short{display:inline}
   .lang a{font-size:13px;padding:6px 9px}
 }
 @media(max-width:1200px){
