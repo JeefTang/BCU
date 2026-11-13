@@ -188,6 +188,146 @@
     warn("t5_warn", msgs.join(" "));
   }
 
+  /* ---------------------------------------------------------- tool 6 · H2 fuel-cell CHP */
+  var H2_MODELS = [7.5, 10, 15, 20, 30, 50, 75, 100];
+
+  function tool6() {
+    var kw = val("t6_kw"), ch4pct = val("t6_ch4pct", 97), eff = val("t6_eff", 42),
+        heat = val("t6_heat", 43), load = val("t6_load", 85), hours = val("t6_hours", 8000),
+        capexKW = val("t6_capex", 10000), gasP = val("t6_gas"), tariff = val("t6_tariff"),
+        heatP = val("t6_heatp"), omPct = val("t6_om", 3);
+
+    var pick = H2_MODELS[H2_MODELS.length - 1];
+    for (var i = 0; i < H2_MODELS.length; i++) {
+      if (H2_MODELS[i] >= kw) { pick = H2_MODELS[i]; break; }
+    }
+    var share = kw > 0 ? pick / kw : 0;
+
+    var fuel = eff > 0 ? pick / (eff / 100) : 0;
+    var ch4 = fuel / CH4_KWH_PER_NM3;
+    var raw = ch4pct > 0 ? ch4 / (ch4pct / 100) : 0;
+    var heatKW = fuel * heat / 100;
+    var hot = heatKW * 3600 / (4.18 * 50);
+    var gen = pick * hours * load / 100;
+    var heatYr = heatKW * hours * load / 100;
+    var ch4yr = ch4 * hours * load / 100;
+
+    var capex = pick * capexKW;
+    var gasCost = ch4yr * gasP;
+    var omCost = capex * omPct / 100;
+    var revE = gen * tariff;
+    var revH = heatYr * heatP;
+    var net = revE + revH - gasCost - omCost;
+    var payback = net > 0 ? capex / net : Infinity;
+    var disc = 0.08;
+    var npv = -capex;
+    for (var t = 1; t <= 10; t++) npv += net / Math.pow(1 + disc, t);
+    var r = net > 0 ? irr(capex, net, 10) : NaN;
+    var crf = (disc * Math.pow(1 + disc, 10)) / (Math.pow(1 + disc, 10) - 1);
+    var costKWh = gen > 0 ? (capex * crf + omCost + gasCost) / gen : 0;
+    var co2 = gen / 1000 * 0.60;
+
+    set("t6_model", (pick === 7.5 ? "7.5" : nf(pick, 0)) + " kW" + (share > 1.05 ? " × " + Math.ceil(share) + " units" : ""));
+    set("t6_fuel", nf(fuel, 1) + " kW");
+    set("t6_ch4", nf(ch4, 2) + " Nm³/h");
+    set("t6_raw", nf(raw, 1) + " Nm³/h");
+    set("t6_cyl", nf(ch4 * 24 / 10, 1) + " /day");
+    set("t6_heatkw", nf(heatKW, 1) + " kW");
+    set("t6_hot", nf(hot, 0) + " L/h");
+    set("t6_total", nf(eff + heat, 0) + "%");
+    set("t6_gen", nf(gen / 1000, 0) + " MWh/yr");
+    set("t6_heatyr", nf(heatYr / 1000, 0) + " MWh/yr");
+    set("t6_capexout", "RM " + nf(capex, 0));
+    set("t6_gascost", "RM " + nf(gasCost, 0) + "/yr");
+    set("t6_omcost", "RM " + nf(omCost, 0) + "/yr");
+    set("t6_rev", "RM " + nf(revE + revH, 0) + "/yr");
+    set("t6_net", "RM " + nf(net, 0) + "/yr");
+    set("t6_payback", isFinite(payback) ? nf(payback, 1) + " years" : "never");
+    set("t6_npv", "RM " + nf(npv, 0));
+    set("t6_irr", isFinite(r) ? nf(r * 100, 1) + "%" : "n/a");
+    set("t6_lcoe", "RM " + nf(costKWh, 3) + "/kWh");
+    set("t6_co2", nf(co2, 0) + " t/yr");
+
+    var msgs = [];
+    if (eff + heat > 90) msgs.push("Combined efficiency above 90% is not achievable for a reformer + fuel cell: check both assumptions.");
+    if (eff > 48) msgs.push("Electrical efficiency above 48% assumes a large SOFC; a reformer + PEM/PAFC unit is 40–45%.");
+    if (kw > 100) msgs.push("Above 100 kW this range stops — " + Math.ceil(share) + " units in parallel, or a gas-engine CHP.");
+    if (kw > 0 && kw < 7.5) msgs.push("Below 7.5 kW the fixed balance-of-plant dominates the price — one shared unit for several houses is usually cheaper.");
+    if (ch4pct < 90) msgs.push("Fuel gas below 90% methane needs the integrated purification front end: price at RM 19,500/kW, not RM 10,000/kW.");
+    if (net <= 0) msgs.push("Negative annual benefit: fuel plus O&M costs more than the power and heat it replaces. Change the fuel cost or the avoided cost — nothing else in the model fixes it.");
+    if (heatP === 0 && heatKW > 0) msgs.push("Heat is valued at zero: the 43% heat output is being thrown away, which is half the reason to buy a CHP.");
+    if (tariff < 0.6 && gasP >= 1.0) msgs.push("Grid-connected at a subsidised tariff with bought gas: the economics rarely close. This product is for off-grid or high-cost power.");
+    warn("t6_warn", msgs.join(" "));
+  }
+
+  /* ---------------------------------------------------------- tool 7 · BHP air-conditioning */
+  var BHP_MODELS = [30, 60, 120, 240, 480];
+
+  function tool7() {
+    var cool = val("t7_cool"), cop = val("t7_cop", 1.0), ch4pct = val("t7_ch4pct", 97),
+        load = val("t7_load", 85), hours = val("t7_hours", 8000),
+        capexKW = val("t7_capex", 2500), gasP = val("t7_gas"),
+        altType = ($("t7_alt") || {}).value || "grid",
+        tariff = val("t7_tariff"), eerCop = val("t7_eercop", 3.0),
+        heatP = val("t7_heatp"), omPct = val("t7_om", 3);
+
+    var pick = BHP_MODELS[BHP_MODELS.length - 1];
+    for (var i = 0; i < BHP_MODELS.length; i++) {
+      if (BHP_MODELS[i] >= cool) { pick = BHP_MODELS[i]; break; }
+    }
+    var units = cool > 0 ? Math.ceil(cool / 480) : 1;
+    var label = "BHP-" + pick;
+    if (cool > 480) label = "BHP-480 × " + units;
+
+    var fuel = cop > 0 ? cool / cop : 0;
+    var ch4 = fuel / CH4_KWH_PER_NM3;
+    var raw = ch4pct > 0 ? ch4 / (ch4pct / 100) : 0;
+    var heatKW = fuel * 0.25;
+    var hot = heatKW * 3600 / (4.18 * 50);
+    var coolYr = cool * hours * load / 100;
+    var fuelYr = ch4 * hours * load / 100;
+    var heatYr = heatKW * hours * load / 100;
+
+    var capex = cool * capexKW;
+    var gasCost = fuelYr * gasP;
+    var omCost = capex * omPct / 100;
+    var altKWh = eerCop > 0 ? coolYr / eerCop : 0;
+    var altCost = altKWh * tariff;
+    var revH = heatYr * heatP;
+    var saving = altCost + revH - gasCost - omCost;
+    var payback = saving > 0 ? capex / saving : Infinity;
+    var costKWh = coolYr > 0 ? (gasCost + omCost) / coolYr : 0;
+    var altUnit = coolYr > 0 ? altCost / coolYr : 0;
+    var co2 = altKWh / 1000 * 0.60;
+
+    set("t7_model", label);
+    set("t7_fuel", nf(fuel, 1) + " kW");
+    set("t7_ch4", nf(ch4, 2) + " Nm³/h");
+    set("t7_raw", nf(raw, 1) + " Nm³/h");
+    set("t7_heatkw", nf(heatKW, 1) + " kW");
+    set("t7_hot", nf(hot, 0) + " L/h");
+    set("t7_coolyr", nf(coolYr / 1000, 0) + " MWh/yr");
+    set("t7_fuelyr", nf(fuelYr, 0) + " Nm³/yr CH₄");
+    set("t7_capexout", "RM " + nf(capex, 0));
+    set("t7_gascost", "RM " + nf(gasCost, 0) + "/yr");
+    set("t7_omcost", "RM " + nf(omCost, 0) + "/yr");
+    set("t7_altkwh", nf(altKWh, 0) + " kWh/yr");
+    set("t7_altcost", "RM " + nf(altCost, 0) + "/yr");
+    set("t7_saving", "RM " + nf(saving, 0) + "/yr");
+    set("t7_payback", isFinite(payback) ? nf(payback, 1) + " years" : "never");
+    set("t7_cost", "RM " + nf(costKWh, 3) + "/kWh");
+    set("t7_altunit", "RM " + nf(altUnit, 3) + "/kWh");
+    set("t7_co2", nf(co2, 0) + " t/yr");
+
+    var msgs = [];
+    if (cop > 1.2) msgs.push("Cooling COP above 1.2 on fuel LHV is optimistic for an engine-driven unit — check the guarantee sheet before quoting it.");
+    if (altType === "grid" && tariff < 0.35) msgs.push("Grid power at under RM 0.35/kWh with a reliable supply: an electric VRF system is cheaper to buy and to run. BHP earns its place where the grid is absent, unreliable, or the turbine stops.");
+    if (altType === "grid" && tariff <= 0.50) msgs.push("Grid tariff 0.35–0.50 is the honest borderline case: the case rests on cooling availability when the boiler and turbine are down, not on fuel savings alone.");
+    if (ch4pct < 90) msgs.push("Fuel gas below 90% methane: the engine must be derated and service intervals shorten. Price that in before comparing with a 97% biomethane case.");
+    if (saving <= 0) msgs.push("No annual saving: at this fuel price the heat-pump cooling costs more to run than the system it replaces. Only availability (cooling with the grid down) justifies it.");
+    warn("t7_warn", msgs.join(" "));
+  }
+
   /* ---------------------------------------------------------- quick selector */
   var MODELS = [
     { kw: 500, ch4: 142 },
@@ -235,7 +375,7 @@
   }
 
   /* ---------------------------------------------------------- wiring */
-  var CALCS = { quick: quick, tool1: tool1, tool2: tool2, tool3: tool3, tool4: tool4, tool5: tool5 };
+  var CALCS = { quick: quick, tool1: tool1, tool2: tool2, tool3: tool3, tool4: tool4, tool5: tool5, tool6: tool6, tool7: tool7 };
 
   function runAll() { Object.keys(CALCS).forEach(function (k) { CALCS[k](); }); }
 
@@ -243,6 +383,13 @@
     document.querySelectorAll(".calc-form input, .calc-form select").forEach(function (el) {
       el.addEventListener("input", runAll);
       el.addEventListener("change", runAll);
+    });
+
+    var altSel = $("t7_alt");
+    if (altSel) altSel.addEventListener("change", function () {
+      var t = $("t7_tariff");
+      if (t) t.value = altSel.value === "diesel" ? "1.20" : "0.45";
+      runAll();
     });
 
     var curSel = $("t5_cur");
