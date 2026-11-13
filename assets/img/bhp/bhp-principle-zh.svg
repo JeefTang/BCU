@@ -73,7 +73,7 @@
 <!-- compressor -->
 <circle cx="910" cy="450" r="48" fill="#dfe9ef" stroke="#1f3a4a" stroke-width="3"/>
 <path d="M910 450 m0 -26 a26 26 0 1 1 -18 44 a18 18 0 1 0 18 -44" fill="none" stroke="#2563eb" stroke-width="5"/>
-<text x="910" y="528" text-anchor="middle" class="t h">压缩机</text>
+<text x="906" y="542" text-anchor="middle" class="t h">压缩机</text>
 
 <!-- hot gas to condenser -->
 <path d="M910 402 L910 300 L1070 300" fill="none" stroke="#d97706" stroke-width="9" marker-end="url(#ao)"/>
@@ -102,7 +102,7 @@
 <path d="M1290 560 L1235 560" stroke="#2563eb" stroke-width="9"/>
 <path d="M1258 538 L1272 582 L1244 582 Z" fill="#dbeafe" stroke="#2563eb" stroke-width="3"/>
 <path d="M1258 582 L1272 538 L1286 582 Z" fill="#dbeafe" stroke="#2563eb" stroke-width="3"/>
-<text x="1265" y="612" text-anchor="middle" class="t h">膨胀阀</text>
+<text x="1265" y="652" text-anchor="middle" class="t h">膨胀阀</text>
 <!-- evaporator -->
 <rect x="980" y="520" width="240" height="110" rx="14" fill="#eff6ff" stroke="#2563eb" stroke-width="3"/>
 <text x="1100" y="550" text-anchor="middle" class="t h">蒸发器 / 室内换热器</text>
@@ -111,7 +111,7 @@
   <path d="M1000 588 H1200"/><path d="M1000 604 H1200"/>
 </g>
 <!-- back to compressor -->
-<path d="M980 575 L930 575 L930 498" fill="none" stroke="#2563eb" stroke-width="9" marker-end="url(#ab)"/>
+<path d="M980 575 L958 575 L958 498" fill="none" stroke="#2563eb" stroke-width="9" marker-end="url(#ab)"/>
 <!-- to rooms -->
 <path d="M1100 630 L1100 690" stroke="#2563eb" stroke-width="9" marker-end="url(#ab)"/>
 <rect x="1010" y="698" width="180" height="58" rx="10" fill="#ffffff" stroke="#2563eb" stroke-width="3"/>

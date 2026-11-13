@@ -60,7 +60,7 @@
   <!-- front: brand band -->
   <rect x="268" y="348" width="330" height="78" rx="8" fill="url(#panel)"/>
   <text x="292" y="402" font-family="'Noto Sans CJK SC','PingFang SC','Microsoft YaHei',Arial,sans-serif" font-size="46" font-weight="800" fill="#ffffff" letter-spacing="2">BHP</text>
-  <text x="430" y="383" font-family="'Noto Sans CJK SC','PingFang SC','Microsoft YaHei',Arial,sans-serif" font-size="15" font-weight="700" fill="#8fe3c0">BIOGAS HEAT PUMP</text>
+  <text x="428" y="383" font-family="'Noto Sans CJK SC','PingFang SC','Microsoft YaHei',Arial,sans-serif" font-size="16" font-weight="700" fill="#ffffff">BIOGAS HEAT PUMP</text>
   <text x="430" y="405" font-family="'Noto Sans CJK SC','PingFang SC','Microsoft YaHei',Arial,sans-serif" font-size="13" fill="#c6d6df">GAS ENGINE DRIVEN</text>
   <!-- front louvers -->
   <g stroke="#b7c6d0" stroke-width="3">
