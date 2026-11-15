@@ -198,7 +198,11 @@
     return bestScore >= 1 ? best : null;
   }
   var HUMAN_RE = /human|engineer|sales|person|call me|contact me|工程师|人工|销售|联系我|转人工|真人|jurutera|manusia|hubungi saya/i;
-  function textOf(hit) { return ZH ? hit.zh : (MS ? hit.ms : hit.en); }
+  function textOf(hit) {
+    // 2026-11-15 定：官网咨询回复一律中英文对照（中文在前，英文紧随）
+    if (hit.zh && hit.en) return hit.zh + "\n" + hit.en;
+    return ZH ? hit.zh : (MS ? hit.ms : hit.en);
+  }
 
   /* ---------------------------------------------------------------- DOM */
   var root = document.createElement("div");
