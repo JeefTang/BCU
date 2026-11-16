@@ -79,9 +79,10 @@ def index(lang):
         <p class="tag">02 · {L(lang,'Equipment','Peralatan','设备')}</p>
         <h3>{L(lang,'Gas engines 300 kW – 2 MW','Enjin gas 300 kW – 2 MW','燃气发电机组 300 kW – 2 MW')}</h3>
         <p>{L(lang,
-          'Containerised or skid-mounted biogas gensets, 415 V / 50 Hz, island or parallel operation, with jacket-water and exhaust heat recovery.',
-          'Genset biogas dalam kontena atau skid, 415 V / 50 Hz, mod pulau atau selari, dengan pemulihan haba air jaket dan ekzos.',
-          '集装箱式或撬装沼气机组，415V/50Hz，孤岛或并网运行，带缸套水与烟气余热回收。')}</p>
+          'Containerised or skid-mounted biogas gensets, 415 V / 50 Hz, island or parallel operation, with jacket-water and exhaust heat recovery. Brushless doubly-fed generator available as an option for gas that swings.',
+          'Genset biogas dalam kontena atau skid, 415 V / 50 Hz, mod pulau atau selari, dengan pemulihan haba air jaket dan ekzos. Penjana dua-suapan tanpa berus tersedia sebagai pilihan untuk gas yang berubah-ubah.',
+          '集装箱式或撬装沼气机组，415V/50Hz，孤岛或并网运行，带缸套水与烟气余热回收。气量波动大时可选无刷双馈发电机。')}</p>
+        <a class="more" href="equipment.html#bdfg" style="color:var(--accent);font-weight:700">{L(lang,'Brushless doubly-fed option →','Pilihan dua-suapan tanpa berus →','无刷双馈选配 →')}</a>
       </div></article>
       <article class="card prod-card"><div>
         <p class="tag">03 · {L(lang,'Delivery','Pelaksanaan','交付')}</p>
@@ -164,9 +165,9 @@ def index(lang):
       <p class="eyebrow">{L(lang,'Engineering tools','Alat kejuruteraan','工程测算工具')}</p>
       <h2>{L(lang,'Check the numbers before you talk to a supplier','Semak angka sebelum berjumpa pembekal','和供应商谈之前，先自己算一遍')}</h2>
       <p class="lead">{L(lang,
-        'Five calculators built on the formulas we use in proposals. No sign-up, no email capture.',
-        'Lima kalkulator berdasarkan formula yang kami gunakan dalam cadangan. Tanpa pendaftaran, tanpa tangkapan e-mel.',
-        '五个计算器，公式与我们的方案一致。无需注册，不留邮箱。')}</p>
+        'Seven calculators built on the formulas we use in proposals. No sign-up, no email capture.',
+        'Tujuh kalkulator berdasarkan formula yang kami gunakan dalam cadangan. Tanpa pendaftaran, tanpa tangkapan e-mel.',
+        '七个计算器，公式与我们的方案一致。无需注册，不留邮箱。')}</p>
     </div>
     <div class="grid-4">
       <article class="card"><p class="tag">{L(lang,'Tool 01','Alat 01','工具 01')}</p><h3>{L(lang,'Gas to power &amp; heat','Gas ke kuasa &amp; haba','气量 → 电与热')}</h3><p>{L(lang,'Biogas flow in, electrical and thermal output out.','Aliran biogas masuk, output elektrik dan haba keluar.','输入沼气流量，输出电功率与热功率。')}</p><a class="more" href="calculator.html#tool1" style="color:var(--accent);font-weight:700">{L(lang,'Open →','Buka →','打开 →')}</a></article>
@@ -294,6 +295,8 @@ REFS = [
 
 
 def _refs(lang):
+    # root-level pages (en) live at site root; ms/ and zh/ sit one directory deep
+    pre = "" if lang == "en" else "../"
     inst = L(lang, "under installation", "dalam pemasangan", "在建")
     may = L(lang, "delivered May", "dihantar Mei", "5 月交付")
     unit = L(lang, "unit", "unit", "台")
@@ -301,11 +304,11 @@ def _refs(lang):
     for page, name, model, kw, qty, com in REFS:
         status = inst if com == "inst" else (may if com == "may" else com)
         out.append(
-            '<figure><img src="../assets/img/shengdong/site-%02d.jpg" alt="%s biogas genset">'
+            '<figure><img src="%sassets/img/shengdong/site-%02d.jpg" alt="%s biogas genset">'
             '<figcaption><b>%s</b>'
             '<span>%s \u00b7 %d kW \u00d7 %d %s</span>'
             '<span class="ref-yr">%s</span></figcaption></figure>'
-            % (page, name, name, model, kw, qty, unit, status))
+            % (pre, page, name, name, model, kw, qty, unit, status))
     return "\n".join(out)
 
 
@@ -331,7 +334,7 @@ def power(lang):
       <div class="step"><b>{L(lang,'Buffer','Penampan','缓冲')}</b><span>{L(lang,'Gas holder to absorb mill load swings.','Penyimpan gas untuk menyerap turun naik beban kilang.','储气柜吸收油厂负荷波动。')}</span></div>
       <div class="step"><b>{L(lang,'Desulfurise','Nyahsulfur','脱硫')}</b><span>{L(lang,'Biological scrubber plus iron-oxide polishing.','Scrubber biologi serta penggilap oksida besi.','生物脱硫塔 ＋ 氧化铁精脱。')}</span></div>
       <div class="step"><b>{L(lang,'Condition','Kondisi','净化')}</b><span>{L(lang,'Chilling, coalescing, blower to engine pressure.','Penyejukan, penggabungan, blower ke tekanan enjin.','降温、除水除油，风机送至机组压力。')}</span></div>
-      <div class="step"><b>{L(lang,'Generate','Jana','发电')}</b><span>{L(lang,'Gas engine and alternator, island or parallel.','Enjin gas dan penjana, pulau atau selari.','燃气机与发电机，孤岛或并网。')}</span></div>
+      <div class="step"><b>{L(lang,'Generate','Jana','发电')}</b><span>{L(lang,'Gas engine and alternator, island or parallel. Brushless doubly-fed generator optional — see the','Enjin gas dan penjana, pulau atau selari. Penjana dua-suapan tanpa berus sebagai pilihan — lihat','燃气机与发电机，孤岛或并网。可选无刷双馈发电机——见')} <a href="equipment.html#bdfg">{L(lang,'generator comparison','perbandingan penjana','发电机对比')}</a>.</span></div>
       <div class="step"><b>{L(lang,'Recover heat','Pulih haba','余热回收')}</b><span>{L(lang,'Jacket water ~90 °C and exhaust to hot water or steam.','Air jaket ~90 °C dan ekzos ke air panas atau stim.','缸套水约 90°C 与烟气，产热水或蒸汽。')}</span></div>
     </div>
   </div>
@@ -621,6 +624,96 @@ def equipment(lang):
   </div>
 </section>
 
+<section class="alt" id="bdfg">
+  <div class="wrap">
+    <div class="sec-head"><p class="eyebrow">{L(lang,'Generator end · option','Hujung penjana · pilihan','发电机侧 · 选配')}</p><h2>{L(lang,'Brushless doubly-fed generator: let the engine follow the gas','Penjana dua-suapan tanpa berus: biar enjin ikut gas','无刷双馈发电机：让机组跟着气量走')}</h2>
+      <p class="lead">{L(lang,
+        'POME gas output is not steady. It moves with FFB throughput, pond temperature and rainfall, so a fixed-speed set spends much of the year at 50–70% load — the zone where carbon builds up and the overhaul interval shortens. A brushless doubly-fed generator decouples engine speed from grid frequency: the engine can turn slower when gas is short and faster when it is plentiful, while the terminals stay at 415 V / 50 Hz. The same machine also motors: it can roll the engine up to ignition speed instead of being driven by a separate starter.',
+        'Pengeluaran gas POME tidak tetap. Ia berubah mengikut kemampuan FFB, suhu kolam dan hujan, jadi set kelajuan tetap menghabiskan sebahagian besar tahun pada beban 50–70% — zon di mana karbon terkumpul dan selang baik pulih memendek. Penjana dua-suapan tanpa berus memisahkan kelajuan enjin daripada frekuensi grid: enjin boleh berpusing lebih perlahan apabila gas berkurangan dan lebih laju apabila gas banyak, sementara terminal kekal 415 V / 50 Hz. Mesin yang sama juga beroperasi sebagai motor: ia boleh memusingkan enjin ke kelajuan penyalaan tanpa pemula berasingan.',
+        'POME 沼气产量并不稳定，随压榨量、池温与降雨起伏。定速机组长年有一大半时间落在 50–70% 负荷——正是积碳、效率下滑、大修周期缩短的区间。无刷双馈发电机把机组转速与电网频率解耦：气少时转慢一点，气多时转快一点，出口始终保持 415V/50Hz。同一台机器还能电动：它可以把燃气机拖到点火转速，不必另设启动装置。')}</p></div>
+    <div class="grid-4">
+      <article class="card"><p class="tag">{L(lang,'01 · No wear parts in the rotor','01 · Tiada bahagian haus pada rotor','01 · 转子无磨损件')}</p><h3>{L(lang,'No brushes, no slip rings','Tiada berus, tiada gelang gelincir','没有电刷，没有滑环')}</h3><p>{L(lang,
+        'The rotor carries no windings, no slip rings and no carbon brushes. There is nothing to replace on a service interval, no carbon dust in a humid H₂S-bearing atmosphere, and no spark source next to the gas train.',
+        'Rotor tidak membawa belitan, gelang gelincir atau berus karbon. Tiada apa untuk diganti pada selang servis, tiada habuk karbon dalam atmosfera lembap bersulfur, dan tiada sumber percikan di sebelah kereta gas.',
+        '转子既无绕组，也无滑环与碳刷。没有定期更换件，没有碳粉污染（沼气站本就潮湿含硫），燃气区旁也不存在打火源。')}</p></article>
+      <article class="card"><p class="tag">{L(lang,'02 · Variable speed','02 · Kelajuan berubah','02 · 变速运行')}</p><h3>{L(lang,'Follows the gas instead of tripping','Ikut gas, bukan terhenti','跟着气量走，而不是跳机')}</h3><p>{L(lang,
+        'Speed can swing roughly ±30% while voltage and frequency stay fixed. When gas falls, the set turns slower and holds a healthy load factor instead of dropping into the carbon-building zone, tripping on lean burn or sending gas to the flare.',
+        'Kelajuan boleh berubah kira-kira ±30% sementara voltan dan frekuensi kekal tetap. Apabila gas menurun, set berpusing lebih perlahan dan mengekalkan faktor beban yang sihat — bukan jatuh ke zon pembentukan karbon, terhenti kerana pembakaran kurus, atau melepaskan gas ke flare.',
+        '转速可在约 ±30% 范围内变化，电压与频率保持不变。气量下降时机组降速运行、维持健康负荷率，而不是掉进积碳区、稀薄燃烧跳机或把气放火炬。')}</p></article>
+      <article class="card"><p class="tag">{L(lang,'03 · Part-power converter','03 · Penukar kuasa separa','03 · 部分功率变流')}</p><h3>{L(lang,'Converter sized for slip power only','Penukar hanya untuk kuasa slip','变流器只走转差功率')}</h3><p>{L(lang,
+        'Only the slip power passes through the converter — typically 25–30% of rating — not the full 100% as with a permanent-magnet set. Smaller converter, lower conversion losses, fewer components carrying full current.',
+        'Hanya kuasa slip melalui penukar — biasanya 25–30% daripada kadaran — bukan 100% seperti set magnet kekal. Penukar lebih kecil, kehilangan penukaran lebih rendah, komponen yang membawa arus penuh lebih sedikit.',
+        '只有转差功率经过变流器——通常为额定功率的 25–30%，而不是永磁全功率方案的 100%。变流器更小、变换损耗更低、承载全电流的器件更少。')}</p></article>
+      <article class="card"><p class="tag">{L(lang,'04 · Grid behaviour','04 · Tingkah laku grid','04 · 电网性能')}</p><h3>{L(lang,'Reactive power and soft synchronising','Kuasa reaktif dan penyegerakan lembut','可发无功，可软同期')}</h3><p>{L(lang,
+        'The control winding can supply or absorb reactive power, synchronise with low inrush and ride through voltage dips — useful on weak rural feeders, long 415 V runs and island operation.',
+        'Belitan kawalan boleh membekal atau menyerap kuasa reaktif, menyegerak dengan arus masuk rendah dan menahan penurunan voltan — berguna pada penyuap luar bandar yang lemah, kabel 415 V yang panjang dan operasi pulau.',
+        '控制绕组可发无功也可吸收无功，同期冲击小，具备低电压穿越能力——对薄弱的农村馈线、长距离 415V 线路和孤岛运行都有用。')}</p></article>
+    </div>
+    <div class="grid-2" style="margin-top:42px;gap:40px;align-items:start">
+      <div>
+        <p class="eyebrow">{L(lang,'Motor ⇄ generator','Motor ⇄ penjana','电动 ⇄ 发电')}</p>
+        <h3>{L(lang,'The same machine can drive, and be driven','Mesin yang sama boleh memacu, dan dipacu','同一台机器，既能拖动，也能被拖动')}</h3>
+        <p>{L(lang,
+          'A synchronous generator is a one-way device: its rotor is locked to grid frequency, it can only deliver power, and the breaker may only close when voltage, frequency, phase and phase sequence all match. A brushless doubly-fed machine is a motor and a generator in the same frame. Power flows both ways through the control winding: below synchronous speed it draws slip power to generate, above it the slip power is returned to the grid, and when the torque reverses it runs as a motor and drives the engine instead of being driven by it.',
+          'Penjana segerak ialah peranti sehala: rotornya terkunci pada frekuensi grid, ia hanya boleh menyalurkan kuasa, dan pemutus hanya boleh ditutup apabila voltan, frekuensi, fasa dan urutan fasa semuanya sepadan. Mesin dua-suapan tanpa berus ialah motor dan penjana dalam rangka yang sama. Kuasa mengalir dua hala melalui belitan kawalan: di bawah kelajuan segerak ia mengambil kuasa slip untuk menjana, di atasnya kuasa slip dikembalikan ke grid, dan apabila tork dibalikkan ia beroperasi sebagai motor dan memacu enjin, bukan dipacu olehnya.',
+          '同步发电机是单向设备：转子被电网频率锁死，只能输出功率，合闸前必须电压、频率、相位、相序四项完全对上。无刷双馈电机则是同一机座里的电动机＋发电机，功率经控制绕组双向流动：低于同步速时从电网取转差功率发电，高于同步速时把转差功率回馈电网；转矩反向时它就变成电动机，反过来拖动燃气机。')}</p>
+        <ul class="checks" style="margin-top:6px">
+          <li>{L(lang,'Barring and starting: the set itself rolls the gas engine to ignition speed — no air starter, no separate barring motor, low inrush.','Barring dan permulaan: set itu sendiri memusingkan enjin gas ke kelajuan penyalaan — tiada pemula udara, tiada motor barring berasingan, arus masuk rendah.','盘车与启动：机组自己把燃气机拖到点火转速——不需要气马达、不需要单独盘车装置，启动电流小。')}</li>
+          <li>{L(lang,'Soft synchronising: the breaker may close at any speed inside the range, then the controller pulls the set into step. No synchroscope dance.','Penyegerakan lembut: pemutus boleh ditutup pada mana-mana kelajuan dalam julat, kemudian pengawal menarik set masuk segerak. Tiada tarian sinkroskop.','软同期：调速范围内任意转速都可合闸，再由控制器牵入同步——不用盯着同期表对相位。')}</li>
+          <li>{L(lang,'Synchronous condenser when the engine is down: the set keeps supplying reactive power through a maintenance outage.','Pemeluwap segerak semasa enjin berhenti: set terus membekal kuasa reaktif sepanjang penyelenggaraan.','停机时可当调相机：机组检修期间仍能发无功，支撑厂内功率因数。')}</li>
+          <li>{L(lang,'Black start: it builds voltage without an external exciter and without first starting a diesel set.','Mula gelap: ia membina voltan tanpa penguja luar dan tanpa memulakan set diesel dahulu.','黑启动：不需要外部励磁机，也不必先启动一台柴油机来建压。')}</li>
+        </ul>
+        <p class="small" style="margin-top:12px">{L(lang,
+          'Boundary, stated plainly: the converter is sized for slip power, so motoring is a starting, barring and light-drive duty — not continuous full-torque drive. Long motor duty at large slip needs a larger converter; we size it per project and put the number in the quotation.',
+          'Sempadan, dinyatakan terus: penukar disaiz untuk kuasa slip, jadi operasi motor ialah tugas permulaan, barring dan pemacuan ringan — bukan pemacuan tork penuh berterusan. Tugas motor berterusan pada slip besar memerlukan penukar lebih besar; kami saizkan mengikut projek dan letakkan angka dalam sebut harga.',
+          '边界说清楚：变流器按转差功率配置，所以电动运行定位在启动、盘车与轻载拖动，不是满转矩长期驱动。大转差下长期电动需要加大变流器——按项目单独核算，报价里写明白。')}</p>
+      </div>
+      <div>
+        <p class="eyebrow">{L(lang,'Four operating states','Empat keadaan operasi','四种运行状态')}</p>
+        <div class="table-wrap">
+          <table style="min-width:0">
+            <thead><tr><th>{L(lang,'Condition','Keadaan','工况')}</th><th>{L(lang,'State','Mod','运行状态')}</th><th>{L(lang,'Power flow','Aliran kuasa','功率流向')}</th></tr></thead>
+            <tbody>
+              <tr><td>{L(lang,'Below synchronous speed, driving torque','Bawah kelajuan segerak, tork memacu','低于同步速，转矩为驱动')}</td><td>{L(lang,'Motor','Motor','电动机')}</td><td>{L(lang,'Grid → stator; slip power → control winding','Grid → stator; kuasa slip → belitan kawalan','电网 → 定子；转差功率 → 控制绕组')}</td></tr>
+              <tr><td>{L(lang,'Below synchronous speed, braking torque','Bawah kelajuan segerak, tork membrek','低于同步速，转矩为制动')}</td><td>{L(lang,'Generator, sub-synchronous','Penjana, sub-segerak','发电机（亚同步）')}</td><td>{L(lang,'Engine → stator; slip power taken from the grid','Enjin → stator; kuasa slip diambil daripada grid','燃气机 → 定子；转差功率取自电网')}</td></tr>
+              <tr><td>{L(lang,'Above synchronous speed','Di atas kelajuan segerak','高于同步速')}</td><td>{L(lang,'Generator, super-synchronous','Penjana, super-segerak','发电机（超同步）')}</td><td>{L(lang,'Engine → stator, slip power returned to the grid','Enjin → stator, kuasa slip kembali ke grid','燃气机 → 定子，转差功率回馈电网')}</td></tr>
+              <tr><td>{L(lang,'Standing, engine stopped','Berhenti, enjin tidak berputar','停机静止，燃气机不转')}</td><td>{L(lang,'Synchronous condenser','Pemeluwap segerak','同步调相机')}</td><td>{L(lang,'Reactive power only','Kuasa reaktif sahaja','只交换无功')}</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="small" style="margin-top:12px">{L(lang,
+          'Crossing synchronous speed reverses the slip-power direction. That single change of sign is what makes the machine a motor on one side and a generator on the other — a synchronous machine has no such point because its speed is fixed.',
+          'Melintasi kelajuan segerak membalikkan arah kuasa slip. Perubahan tanda tunggal itulah yang menjadikan mesin sebagai motor di satu sisi dan penjana di sisi lain — mesin segerak tiada titik sedemikian kerana kelajuannya tetap.',
+          '跨越同步速时，转差功率方向反转。就是这一个符号变化，让机器在一侧是电动机、另一侧是发电机——同步机没有这个点，因为它的转速是固定的。')}</p>
+      </div>
+    </div>
+    <div class="table-wrap" style="margin-top:34px">
+      <table>
+        <thead><tr><th>{L(lang,'Item','Item','项目')}</th><th>{L(lang,'Conventional synchronous + AVR','Segerak konvensional + AVR','常规同步机 + AVR')}</th><th>{L(lang,'PM generator + full-power converter','Penjana PM + penukar kuasa penuh','永磁机 + 全功率变流')}</th><th>{L(lang,'Brushless doubly-fed (BDFG)','Dua-suapan tanpa berus (BDFG)','无刷双馈（BDFG）')}</th></tr></thead>
+        <tbody>
+          <tr><td>{L(lang,'Slip rings / brushes','Gelang gelincir / berus','滑环 / 电刷')}</td><td>{L(lang,'Carbon brushes, replaced periodically','Berus karbon, diganti berkala','有碳刷，需定期更换')}</td><td>{L(lang,'None','Tiada','无')}</td><td>{L(lang,'None','Tiada','无')}</td></tr>
+          <tr><td>{L(lang,'Converter rating','Kadaran penukar','变流器容量')}</td><td>{L(lang,'Not applicable (AVR only)','Tidak berkenaan (AVR sahaja)','不适用（仅 AVR 励磁）')}</td><td>{L(lang,'100% of generator rating','100% kadaran penjana','额定功率 100%')}</td><td>{L(lang,'25–30% of generator rating','25–30% kadaran penjana','额定功率 25–30%')}</td></tr>
+          <tr><td>{L(lang,'Speed','Kelajuan','转速')}</td><td>{L(lang,'Fixed by grid frequency','Tetap mengikut frekuensi grid','受电网频率锁定，定速')}</td><td>{L(lang,'Variable','Berubah-ubah','可变速')}</td><td>{L(lang,'Variable, ≈ ±30%','Berubah-ubah, ≈ ±30%','可变速，约 ±30%')}</td></tr>
+          <tr><td>{L(lang,'Motor operation','Operasi motor','电动运行')}</td><td>{L(lang,'None — generating only','Tiada — menjana sahaja','不具备——只能发电')}</td><td>{L(lang,'Yes, full torque via converter','Ya, tork penuh melalui penukar','可，经变流器满转矩')}</td><td>{L(lang,'Yes — starting, barring and light drive','Ya — permulaan, barring dan pemacuan ringan','可——启动、盘车与轻载拖动')}</td></tr>
+          <tr><td>{L(lang,'Synchronising','Penyegerakan','并网方式')}</td><td>{L(lang,'Precise synchronism required','Segerak tepat diperlukan','必须精确同期')}</td><td>{L(lang,'Soft, via converter','Lembut, melalui penukar','经变流器软并网')}</td><td>{L(lang,'Soft; breaker closes at any speed in range','Lembut; pemutus menutup pada mana-mana kelajuan dalam julat','软并网；范围内任意转速可合闸')}</td></tr>
+          <tr><td>{L(lang,'Part-load behaviour','Tingkah laku beban separa','部分负荷表现')}</td><td>{L(lang,'Below ~70% load, combustion quality and efficiency fall','Bawah ~70% beban, kualiti pembakaran dan kecekapan menurun','低于约 70% 负荷，燃烧质量与效率下降')}</td><td>{L(lang,'Converter losses apply across the whole range','Kehilangan penukar berlaku sepanjang julat','全工况承担变流损耗')}</td><td>{L(lang,'Engine stays in its efficient band at lower gas flow','Enjin kekal dalam jalur cekap pada aliran gas rendah','气量低时仍可保持在高效负荷带')}</td></tr>
+          <tr><td>{L(lang,'Routine attention','Perhatian rutin','日常维护')}</td><td>{L(lang,'Brush and slip-ring inspection, cleaning','Pemeriksaan dan pembersihan berus serta gelang gelincir','电刷与滑环检查、清扫')}</td><td>{L(lang,'Bearing and converter cooling','Bearing dan penyejukan penukar','轴承、变流器冷却')}</td><td>{L(lang,'Bearing and converter cooling','Bearing dan penyejukan penukar','轴承、变流器冷却')}</td></tr>
+          <tr><td>{L(lang,'Reactive power','Kuasa reaktif','无功能力')}</td><td>{L(lang,'Limited by the AVR','Terhad oleh AVR','受 AVR 限制')}</td><td>{L(lang,'Via converter, good','Melalui penukar, baik','经变流器，较好')}</td><td>{L(lang,'Via control winding, good','Melalui belitan kawalan, baik','经控制绕组，较好')}</td></tr>
+          <tr><td>{L(lang,'Relative capex','Capex relatif','相对投资')}</td><td>{L(lang,'Baseline','Asas','基准')}</td><td>{L(lang,'Higher','Lebih tinggi','较高')}</td><td>{L(lang,'Between the two','Antara kedua-duanya','介于两者之间')}</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="small" style="margin-top:14px">{L(lang,
+      'Indicative comparison, generator side only. BDFG is quoted as an option on 500 kW–2 MW units once the site gas profile is known. The continuous load range is set by the engine maker, not by the generator; the generator only removes the fixed-speed constraint.',
+      'Perbandingan indikatif, sebelah penjana sahaja. BDFG disebut sebagai pilihan pada unit 500 kW–2 MW setelah profil gas tapak diketahui. Julat beban berterusan ditetapkan oleh pengeluar enjin, bukan penjana; penjana hanya menghapuskan kekangan kelajuan tetap.',
+      '以上为发电机侧的参考对比。BDFG 在 500 kW–2 MW 机型上作为选配，待现场气量曲线明确后单独报价。连续运行负荷范围由机组厂按发动机定，不由发电机决定；发电机只解除“定速”这一约束。')}</p>
+    <div class="callout" style="margin-top:22px"><p><b>{L(lang,'Where it pays:','Di mana ia berbaloi:','什么情况下划算：')}</b> {L(lang,
+      'mills where gas output is strongly seasonal, plants that spend months below 70% load, and remote sites where a brush change means a two-day outage and a fly-in technician. On a steady 100% base load with clean, stable gas, a conventional synchronous machine is still the cheaper answer — and we will say so.',
+      'kilang yang pengeluaran gasnya sangat bermusim, loji yang berbulan-bulan di bawah 70% beban, dan tapak terpencil di mana menukar berus bermakna henti dua hari dan juruteknik terbang masuk. Pada beban asas 100% yang stabil dengan gas bersih dan tetap, mesin segerak konvensional masih lebih murah — dan kami akan kata begitu.',
+      '气量季节性强、一年中有数月低于 70% 负荷、以及偏远到“换一次电刷＝停机两天＋工程师飞进来”的站点。如果常年 100% 基荷、气质干净稳定，常规同步机仍然更便宜——这一点我们会直说。')}</p></div>
+  </div>
+</section>
+
 <section>
   <div class="wrap">
     <div class="sec-head"><p class="eyebrow">{L(lang,'Fuel gas','Gas bahan api','气质与气耗')}</p><h2>{L(lang,'What the engine needs at the inlet flange','Apa yang enjin perlukan di flan masuk','机组进口法兰需要什么')}</h2>
@@ -780,6 +873,38 @@ def equipment(lang):
     </div>
   </div>
 </section>
+
+<section class="alt" id="bhp">
+  <div class="wrap">
+    <div class="sec-head"><p class="eyebrow">{L(lang,'BHP air-conditioning','Penghawa dingin BHP','沼气热泵空调（BHP）')}</p><h2>{L(lang,'Gas-engine heat pump chillers, 30 kW to 480 kW','Penyejuk pam haba enjin gas, 30 kW hingga 480 kW','燃气发动机热泵冷水机组 30–480 kW')}</h2>
+      <p class="lead">{L(lang,
+        'There is no electric motor in the drive train. A small gas engine turns an open-drive compressor directly, and the fuel is 97% biomethane from the mill’s own biogas — so the offices, laboratory and worker housing stay cool when the boiler, the turbine and the grid are all down. Engine jacket and exhaust heat is recovered at the same time as 60–90 °C hot water. Technology origin: gas-engine heat pumps were developed and industrialised by the former Sanyo air-conditioning division in Japan; the same class of machine is built in China by Dalian Sino-Tech Precision (Sino-Tech). BHP is that mechanical architecture with the fuel system re-adapted to mill biogas.',
+        'Tiada motor elektrik dalam pemacu. Enjin gas kecil memusingkan pemampat pemacu terbuka secara terus, dan bahan apinya biometana 97% daripada biogas kilang sendiri — jadi pejabat, makmal dan perumahan pekerja kekal sejuk walaupun dandang, turbin dan grid semuanya berhenti. Haba jaket dan ekzos enjin dipulihkan serentak sebagai air panas 60–90 °C. Asal teknologi: pam haba enjin gas dibangunkan dan diindustrikan oleh bekas bahagian penyaman udara Sanyo di Jepun; mesin kelas yang sama dibina di China oleh Dalian Sino-Tech Precision (Sino-Tech). BHP ialah seni bina mekanikal itu dengan sistem bahan api disesuaikan semula kepada biogas kilang.',
+        '传动链里没有电机。小型燃气发动机直接带动开式压缩机，燃料是油厂自己沼气提纯的 97% 甲烷——锅炉、汽轮机、市电全停的时候，办公室、化验室、员工宿舍照样凉快。缸套与烟气余热同步回收成 60–90 ℃ 热水。技术来源：燃气发动机热泵由原日本三洋空调事业部开发并产业化，中国同类机型由大连中智精工（Sino-Tech）制造；BHP 沿用这套机械架构，把燃料系统重新适配到油厂沼气。')}</p></div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>{L(lang,'Model','Model','机型')}</th><th>{L(lang,'Cooling (kW)','Penyejukan (kW)','制冷量（kW）')}</th><th>{L(lang,'Fuel input (kW)','Input bahan api (kW)','燃料输入（kW）')}</th><th>{L(lang,'CH₄ (Nm³/h)','CH₄ (Nm³/j)','甲烷（Nm³/h）')}</th><th>{L(lang,'Heat recovery (kW)','Pemulihan haba (kW)','余热（kW）')}</th><th>{L(lang,'Hot water, 50 K rise (L/h)','Air panas, kenaikan 50 K (L/j)','热水 50 K（L/h）')}</th><th>{L(lang,'Indicative price','Harga indikatif','参考价')}</th></tr></thead>
+        <tbody>
+          <tr><td class="num">BHP-30</td><td class="num">30</td><td class="num">30.0</td><td class="num">3.0</td><td class="num">7.5</td><td class="num">129</td><td class="num">RM 75,000</td></tr>
+          <tr><td class="num">BHP-60</td><td class="num">60</td><td class="num">60.0</td><td class="num">6.0</td><td class="num">15.0</td><td class="num">258</td><td class="num">RM 150,000</td></tr>
+          <tr><td class="num">BHP-120</td><td class="num">120</td><td class="num">120.0</td><td class="num">12.1</td><td class="num">30.0</td><td class="num">517</td><td class="num">RM 300,000</td></tr>
+          <tr><td class="num">BHP-240</td><td class="num">240</td><td class="num">240.0</td><td class="num">24.1</td><td class="num">60.0</td><td class="num">1,033</td><td class="num">RM 600,000</td></tr>
+          <tr><td class="num">BHP-480</td><td class="num">480</td><td class="num">480.0</td><td class="num">48.3</td><td class="num">120.0</td><td class="num">2,067</td><td class="num">RM 1,200,000</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="small" style="margin-top:14px">{L(lang,
+      'Basis: cooling COP 1.0 on fuel LHV (typical 0.95–1.15; 1 Nm³ CH₄ ≈ 10 kWh of cooling); recoverable jacket + exhaust heat 25% of fuel input; fuel 97% CH₄, H₂S &lt; 10 ppm, 5–20 kPa at the inlet. Indicative equipment price at RM 2,500/kW, excluding installation, civil works, ducts and cooling-water circuit. Units parallel to megawatt scale.',
+      'Asas: COP penyejukan 1.0 atas LHV bahan api (lazim 0.95–1.15; 1 Nm³ CH₄ ≈ 10 kWh penyejukan); haba jaket + ekzos boleh pulih 25% daripada input bahan api; bahan api 97% CH₄, H₂S &lt; 10 ppm, 5–20 kPa di salur masuk. Harga peralatan indikatif RM 2,500/kW, tidak termasuk pemasangan, kerja awam, saluran dan litar air penyejuk. Unit boleh diselarikan hingga skala megawatt.',
+      '口径：制冷 COP 1.0（按燃气低热值，典型 0.95–1.15；1 Nm³ 甲烷 ≈ 10 kWh 冷量）；缸套＋烟气可回收余热为燃料输入的 25%；燃料 97% 甲烷、H₂S &lt; 10 ppm、进口压力 5–20 kPa。参考设备价 RM 2,500/kW，不含安装、土建、风管与冷却水系统。机组可并联至 MW 级。')}</p>
+    <div class="grid-3" style="margin-top:26px">
+      <article class="card"><p class="tag">{L(lang,'Included','Termasuk','包含')}</p><h3>{L(lang,'The complete package','Pakej lengkap','成套供货')}</h3><p>{L(lang,'Gas engine, open-drive compressor, evaporator and condenser, engine heat recovery, control panel and weatherproof enclosure.','Enjin gas, pemampat pemacu terbuka, penyejat dan pemeluwap, pemulihan haba enjin, panel kawalan dan selongsong kalis cuaca.','燃气机、开式压缩机、蒸发器与冷凝器、发动机余热回收、控制柜、防雨机柜。')}</p></article>
+      <article class="card"><p class="tag">{L(lang,'Excluded','Tidak termasuk','不含')}</p><h3>{L(lang,'Site side','Bahagian tapak','现场部分')}</h3><p>{L(lang,'Civil foundation, chilled-water and duct distribution, gas line beyond the inlet flange, installation, SST and permits.','Asas awam, pengagihan air sejuk dan saluran, talian gas melebihi flan masuk, pemasangan, SST dan permit.','土建基础、冷冻水与风管、入口法兰以外的燃气管线、安装、SST 与许可。')}</p></article>
+      <article class="card"><p class="tag">{L(lang,'Fuel','Bahan api','燃料')}</p><h3>{L(lang,'Mill biogas, not diesel','Biogas kilang, bukan diesel','用厂内沼气，不烧柴油')}</h3><p>{L(lang,'Upgraded 97% biomethane from the mill’s own digester gas. No grid connection, no diesel tank, no electric chiller in the critical cooling path.','Biometana 97% ditingkatkan daripada gas pencerna kilang sendiri. Tiada sambungan grid, tiada tangki diesel, tiada penyejuk elektrik dalam laluan penyejukan kritikal.','用厂内厌氧气提纯的 97% 生物天然气。不接电网、不设柴油罐，关键制冷路径上没有电空调。')}</p></article>
+    </div>
+    <p style="margin-top:22px"><a class="btn" href="bhp.html">{L(lang,'BHP system page','Halaman sistem BHP','BHP 系统页')}</a></p>
+  </div>
+</section>
 """
 
 
@@ -791,7 +916,7 @@ def calculator(lang):
 <section class="page-head">
   <div class="wrap">
     <p class="eyebrow">{L(lang,'Engineering tools','Alat kejuruteraan','工程测算工具')}</p>
-    <h1>{L(lang,'Five calculators, no sign-up','Lima kalkulator, tanpa pendaftaran','五个计算器，不用注册')}</h1>
+    <h1>{L(lang,'Seven calculators, no sign-up','Tujuh kalkulator, tanpa pendaftaran','七个计算器，不用注册')}</h1>
     <p class="lead">{L(lang,
       'These are the formulas we use in pre-feasibility work. They are deliberately transparent: every assumption is shown and you can change it. Use them to challenge a supplier’s numbers — including ours.',
       'Ini formula yang kami gunakan dalam kerja pra-kelayakan. Ia sengaja telus: setiap andaian dipaparkan dan boleh diubah. Gunakan untuk menyemak angka pembekal — termasuk kami.',
@@ -850,6 +975,8 @@ def calculator(lang):
       <button class="tab-btn" data-tab="tool3">3 · {L(lang,'Mill to biogas','Kilang ke biogas','压榨量→沼气')}</button>
       <button class="tab-btn" data-tab="tool4">4 · {L(lang,'Upgrading yield','Hasil peningkatan','提纯收率')}</button>
       <button class="tab-btn" data-tab="tool5">5 · {L(lang,'Project economics','Ekonomi projek','项目经济性')}</button>
+      <button class="tab-btn" data-tab="tool6">6 · {L(lang,'H₂ fuel-cell CHP','CHP sel bahan api H₂','氢燃料电池 CHP')}</button>
+      <button class="tab-btn" data-tab="tool7">7 · {L(lang,'Biogas heat-pump A/C (BHP)','Penghawa pam haba biogas','沼气热泵空调 BHP')}</button>
     </div>
 
     <div class="tab-panel active" id="tool1">
@@ -1006,6 +1133,109 @@ def calculator(lang):
           </div>
           <div class="warn" id="t5_warn"></div>
           <p class="note">{L(lang,'Revenue assumes the stated value for each valued kWh. Excludes financing, land and utility grid upgrades. Screening model, not bankable.','Hasil menganggap nilai dinyatakan bagi setiap kWh dinilai. Tidak termasuk pembiayaan, tanah dan naik taraf grid. Model saringan, bukan bankable.','收入按可计价电量与给定电价计算。不含融资、土地与电网改造费用。仅作筛选，不可用于融资。')}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-panel" id="tool6">
+      <div class="tool-head">
+        <div><p class="eyebrow">{L(lang,'Tool 06','Alat 06','工具 06')}</p><h2>{L(lang,'Hydrogen fuel-cell CHP → power, heat and gas demand','CHP sel bahan api hidrogen → kuasa, haba dan keperluan gas','氢燃料电池 CHP：电、热与需气量')}</h2></div>
+        <div class="tool-actions"><button class="btn ghost sm" onclick="window.print()">{print_btn}</button><button class="btn sm" onclick="copySummary('tool6')">{copy_btn}</button></div>
+      </div>
+      <div class="calc">
+        <div class="calc-form">
+          <div class="field"><label for="t6_kw">{L(lang,'Electrical output required (kW)','Output elektrik diperlukan (kW)','目标发电功率（kW）')}</label><input id="t6_kw" type="number" value="50" step="2.5" min="0"><div class="hint">{L(lang,'Range 7.5–100 kW per unit; parallel units above that.','Julat 7.5–100 kW per unit; selari untuk lebih besar.','单机 7.5–100 kW；更大负荷多台并联。')}</div></div>
+          <div class="field"><label for="t6_ch4pct">{L(lang,'Methane in fuel gas (%)','Metana dalam gas bahan api (%)','燃料气甲烷含量（%）')}</label><input id="t6_ch4pct" type="number" value="97" step="1" min="50" max="99"><div class="hint">{L(lang,'97% for bottled biomethane; 60% if raw biogas with the integrated purification front end.','97% untuk biometana botol; 60% jika biogas mentah dengan penulenan bersepadu.','瓶装生物天然气填 97；配一体化净化的原沼气填 60。')}</div></div>
+          <div class="field"><label for="t6_eff">{L(lang,'Electrical efficiency (%)','Kecekapan elektrik (%)','发电效率（%）')}</label><input id="t6_eff" type="number" value="42" step="0.5" min="25" max="60"><div class="hint">{L(lang,'Manufacturer guarantee 42% at rated output (LHV).','Jaminan pengeluar 42% pada output terkadar (LHV).','厂家保证值 42%（额定出力、低热值口径）。')}</div></div>
+          <div class="field"><label for="t6_heat">{L(lang,'Recoverable heat (% of fuel)','Haba boleh pulih (% bahan api)','可回收余热（占燃料）')}</label><input id="t6_heat" type="number" value="43" step="1" min="0" max="60"><div class="hint">{L(lang,'50 K rise, 20 → 70 °C hot water.','Kenaikan 50 K, air panas 20 → 70 °C.','温升 50 K，20 → 70 ℃ 热水。')}</div></div>
+          <div class="field"><label for="t6_load">{L(lang,'Average load factor (%)','Faktor beban purata (%)','平均负荷率（%）')}</label><input id="t6_load" type="number" value="85" step="1" min="10" max="100"><div class="hint">{L(lang,'Long-term output for a reformer + fuel cell: 85–100%.','Output jangka panjang reformer + sel bahan api: 85–100%.','重整器＋燃料电池长期出力 85–100%。')}</div></div>
+          <div class="field"><label for="t6_hours">{L(lang,'Operating hours per year','Jam operasi setahun','年运行小时')}</label><input id="t6_hours" type="number" value="8000" step="100" min="0" max="8760"></div>
+          <div class="field"><label for="t6_capex">{L(lang,'Unit price (RM per kW)','Harga unit (RM per kW)','单价（马币/kW）')}</label><input id="t6_capex" type="number" value="10000" step="500" min="0"><div class="hint">{L(lang,'FOB RM 10,000/kW for bottled 97% gas; RM 19,500/kW for raw 60% biogas with integrated purification.','FOB RM 10,000/kW gas botol 97%; RM 19,500/kW biogas mentah 60% dengan penulenan bersepadu.','瓶装 97% 气 FOB RM 10,000/kW；60% 原沼气带一体化净化 RM 19,500/kW。')}</div></div>
+          <div class="field"><label for="t6_gas">{L(lang,'Fuel gas price (RM/Nm³)','Harga gas bahan api (RM/Nm³)','燃气价格（马币/Nm³）')}</label><input id="t6_gas" type="number" value="1.20" step="0.05" min="0"><div class="hint">{L(lang,'Bottled biomethane RM 1.00–1.40. Own upgraded biogas ≈ RM 0.60 plus upgrading capex.','Biometana botol RM 1.00–1.40. Biogas sendiri ≈ RM 0.60 serta capex peningkatan.','瓶装生物天然气 RM 1.00–1.40；自产提纯气约 RM 0.60（另计提纯投资）。')}</div></div>
+          <div class="field"><label for="t6_tariff">{L(lang,'Avoided electricity cost (RM/kWh)','Kos elektrik dielakkan (RM/kWh)','替代电价（马币/kWh）')}</label><input id="t6_tariff" type="number" value="0.45" step="0.05" min="0"><div class="hint">{L(lang,'Grid 0.40–0.50; off-grid diesel 0.90–1.30. Enter the cost you actually avoid.','Grid 0.40–0.50; diesel luar grid 0.90–1.30. Masukkan kos yang benar-benar dielakkan.','电网 0.40–0.50；离网柴油 0.90–1.30。填真实可省下的成本。')}</div></div>
+          <div class="field"><label for="t6_heatp">{L(lang,'Value of heat (RM/kWh)','Nilai haba (RM/kWh)','热价（马币/kWh）')}</label><input id="t6_heatp" type="number" value="0.10" step="0.01" min="0"><div class="hint">{L(lang,'Set 0 if there is no year-round hot-water demand.','Tetapkan 0 jika tiada permintaan air panas sepanjang tahun.','没有全年热水负荷就填 0。')}</div></div>
+          <div class="field"><label for="t6_om">{L(lang,'O&amp;M (% of capex per year)','O&amp;M (% capex setahun)','年运维（占投资 %）')}</label><input id="t6_om" type="number" value="3" step="0.5" min="0" max="20"><div class="hint">{L(lang,'Stack replacement and service contract: 3–4% typical.','Penggantian stack dan kontrak servis: 3–4% lazim.','电堆更换与保养合同：通常 3–4%。')}</div></div>
+        </div>
+        <div class="calc-out">
+          <h3>{L(lang,'Sizing and annual performance','Saiz dan prestasi tahunan','选型与年度表现')}</h3>
+          <div class="out-grid">
+            <div class="kv hl"><span>{L(lang,'Recommended model','Model disyorkan','推荐机型')}</span><b id="t6_model">—</b></div>
+            <div class="kv hl"><span>{L(lang,'Fuel energy input','Tenaga bahan api masuk','输入燃料能量')}</span><b id="t6_fuel">—</b></div>
+            <div class="kv"><span>{L(lang,'Methane required (Nm³/h)','Metana diperlukan (Nm³/j)','需甲烷（Nm³/h）')}</span><b id="t6_ch4">—</b></div>
+            <div class="kv"><span>{L(lang,'Fuel gas at your CH₄ (Nm³/h)','Gas bahan api pada CH₄ anda (Nm³/j)','对应燃料气量（Nm³/h）')}</span><b id="t6_raw">—</b></div>
+            <div class="kv"><span>{L(lang,'Cylinders per day (50 L @ 200 bar ≈ 10 Nm³)','Silinder sehari (50 L @ 200 bar ≈ 10 Nm³)','日耗钢瓶（50 L/200 bar ≈ 10 Nm³）')}</span><b id="t6_cyl">—</b></div>
+            <div class="kv hl"><span>{L(lang,'Recoverable heat','Haba boleh pulih','可回收余热')}</span><b id="t6_heatkw">—</b></div>
+            <div class="kv"><span>{L(lang,'Hot water at 50 K rise','Air panas pada kenaikan 50 K','50 K 温升热水量')}</span><b id="t6_hot">—</b></div>
+            <div class="kv"><span>{L(lang,'Combined efficiency','Jumlah kecekapan','综合效率')}</span><b id="t6_total">—</b></div>
+            <div class="kv"><span>{L(lang,'Annual generation','Penjanaan tahunan','年发电量')}</span><b id="t6_gen">—</b></div>
+            <div class="kv"><span>{L(lang,'Annual heat delivered','Haba tahunan','年供热量')}</span><b id="t6_heatyr">—</b></div>
+          </div>
+          <h3 style="margin-top:22px">{L(lang,'Economics','Ekonomi','经济性')}</h3>
+          <div class="out-grid">
+            <div class="kv"><span>{L(lang,'Equipment cost (RM)','Kos peralatan (RM)','设备投资（马币）')}</span><b id="t6_capexout">—</b></div>
+            <div class="kv"><span>{L(lang,'Annual fuel cost','Kos bahan api tahunan','年燃料费')}</span><b id="t6_gascost">—</b></div>
+            <div class="kv"><span>{L(lang,'Annual O&amp;M','O&amp;M tahunan','年运维费')}</span><b id="t6_omcost">—</b></div>
+            <div class="kv"><span>{L(lang,'Annual value of power + heat','Nilai kuasa + haba tahunan','年电＋热收益')}</span><b id="t6_rev">—</b></div>
+            <div class="kv hl"><span>{L(lang,'Net annual benefit','Faedah bersih tahunan','年净收益')}</span><b id="t6_net">—</b></div>
+            <div class="kv hl"><span>{L(lang,'Simple payback','Tempoh pulang mudah','静态回收期')}</span><b id="t6_payback">—</b></div>
+            <div class="kv"><span>{L(lang,'10-year NPV at 8%','NPV 10 tahun @ 8%','10 年 NPV（8%）')}</span><b id="t6_npv">—</b></div>
+            <div class="kv"><span>IRR (10 {L(lang,'years','tahun','年')})</span><b id="t6_irr">—</b></div>
+            <div class="kv"><span>{L(lang,'Cost per kWh generated','Kos per kWh dijana','每度电成本')}</span><b id="t6_lcoe">—</b></div>
+            <div class="kv"><span>{L(lang,'CO₂ avoided','CO₂ dielak','减排 CO₂')}</span><b id="t6_co2">—</b></div>
+          </div>
+          <div class="warn" id="t6_warn"></div>
+          <p class="note">{L(lang,'Methane LHV 9.94 kWh/Nm³. Fuel input = output ÷ electrical efficiency; CH₄ flow = fuel input ÷ 9.94. Heat at 43% of fuel input, hot water at ΔT 50 K. CO₂ at 0.60 t/MWh of avoided grid power, biomethane carbon treated as short-cycle. FOB price, installation, civils, cylinder store and manifold excluded. Screening only.','LHV metana 9.94 kWh/Nm³. Input bahan api = output ÷ kecekapan; aliran CH₄ = input ÷ 9.94. Haba 43% input, air panas ΔT 50 K. CO₂ pada 0.60 t/MWh kuasa grid dielak. Harga FOB, pemasangan dan kerja awam tidak termasuk. Saringan sahaja.','甲烷低热值 9.94 kWh/Nm³。燃料输入 = 出力 ÷ 发电效率；甲烷流量 = 燃料输入 ÷ 9.94。余热按燃料 43%，热水按 ΔT 50 K。减排按替代电网 0.60 t/MWh，生物天然气碳按短周期。FOB 价，不含安装、土建、气瓶间与汇流排。仅作筛选。')}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-panel" id="tool7">
+      <div class="tool-head">
+        <div><p class="eyebrow">{L(lang,'Tool 07','Alat 07','工具 07')}</p><h2>{L(lang,'Biogas heat-pump air-conditioning (BHP) → cooling without the grid','Penghawa pam haba biogas (BHP) → penyejukan tanpa grid','沼气热泵空调 BHP：不靠电网的制冷')}</h2></div>
+        <div class="tool-actions"><button class="btn ghost sm" onclick="window.print()">{print_btn}</button><button class="btn sm" onclick="copySummary('tool7')">{copy_btn}</button></div>
+      </div>
+      <div class="calc">
+        <div class="calc-form">
+          <div class="field"><label for="t7_cool">{L(lang,'Cooling load required (kW)','Beban penyejukan diperlukan (kW)','所需制冷负荷（kW）')}</label><input id="t7_cool" type="number" value="120" step="10" min="0"><div class="hint">{L(lang,'Offices, laboratory and worker housing; exclude process cooling.','Pejabat, makmal dan perumahan pekerja; kecuali penyejukan proses.','办公、化验与员工宿舍；不含工艺冷却。')}</div></div>
+          <div class="field"><label for="t7_cop">{L(lang,'Cooling COP on fuel LHV','COP penyejukan atas LHV bahan api','制冷 COP（燃气低热值口径）')}</label><input id="t7_cop" type="number" value="1.0" step="0.05" min="0.5" max="1.6"><div class="hint">{L(lang,'Engine-driven class: 0.95–1.15 depending on ambient and part load.','Kelas dipacu enjin: 0.95–1.15 bergantung ambien dan beban separa.','发动机直驱类：0.95–1.15，随环温与部分负荷变化。')}</div></div>
+          <div class="field"><label for="t7_ch4pct">{L(lang,'Methane in fuel gas (%)','Metana dalam gas bahan api (%)','燃料气甲烷含量（%）')}</label><input id="t7_ch4pct" type="number" value="97" step="1" min="50" max="99"><div class="hint">{L(lang,'97% biomethane is the standard fuel; raw biogas needs derating and shorter service intervals.','Biometana 97% ialah bahan api standard; biogas mentah perlu penurunan kuasa dan selang servis lebih pendek.','标准燃料为 97% 生物天然气；原沼气要折减功率并缩短保养间隔。')}</div></div>
+          <div class="field"><label for="t7_load">{L(lang,'Average load factor (%)','Faktor beban purata (%)','平均负荷率（%）')}</label><input id="t7_load" type="number" value="85" step="1" min="10" max="100"></div>
+          <div class="field"><label for="t7_hours">{L(lang,'Operating hours per year','Jam operasi setahun','年运行小时')}</label><input id="t7_hours" type="number" value="8000" step="100" min="0" max="8760"></div>
+          <div class="field"><label for="t7_capex">{L(lang,'Equipment price (RM per kW cooling)','Harga peralatan (RM per kW penyejukan)','设备单价（马币/kW 冷量）')}</label><input id="t7_capex" type="number" value="2500" step="100" min="0"><div class="hint">{L(lang,'Indicative RM 2,500/kW cooling, installation excluded.','Indikatif RM 2,500/kW penyejukan, pemasangan tidak termasuk.','参考 RM 2,500/kW 冷量，不含安装。')}</div></div>
+          <div class="field"><label for="t7_gas">{L(lang,'Fuel gas price (RM/Nm³)','Harga gas bahan api (RM/Nm³)','燃气价格（马币/Nm³）')}</label><input id="t7_gas" type="number" value="0.60" step="0.05" min="0"><div class="hint">{L(lang,'Own upgraded biogas ≈ RM 0.60/Nm³; bottled biomethane RM 1.00–1.40.','Biogas sendiri ≈ RM 0.60/Nm³; biometana botol RM 1.00–1.40.','自产提纯气约 RM 0.60/Nm³；瓶装气 RM 1.00–1.40。')}</div></div>
+          <div class="field"><label for="t7_alt">{L(lang,'Cooling it replaces','Penyejukan yang diganti','被替代的制冷方式')}</label><select id="t7_alt"><option value="grid">{L(lang,'Grid electricity + electric A/C','Elektrik grid + A/C elektrik','市电 + 电空调')}</option><option value="diesel">{L(lang,'Diesel genset + electric A/C','Genset diesel + A/C elektrik','柴油发电 + 电空调')}</option></select></div>
+          <div class="field"><label for="t7_tariff">{L(lang,'Cost of that electricity (RM/kWh)','Kos elektrik itu (RM/kWh)','该电力的成本（马币/kWh）')}</label><input id="t7_tariff" type="number" value="0.45" step="0.05" min="0"><div class="hint">{L(lang,'Grid 0.35–0.50; diesel-generated 0.90–1.60 once fuel logistics and downtime are counted.','Grid 0.35–0.50; dijana diesel 0.90–1.60 setelah logistik dan masa henti dikira.','市电 0.35–0.50；柴油发电 0.90–1.60（含运油与停机）。')}</div></div>
+          <div class="field"><label for="t7_eercop">{L(lang,'Electric A/C COP','COP A/C elektrik','电空调 COP')}</label><input id="t7_eercop" type="number" value="3.0" step="0.1" min="1.5" max="6"><div class="hint">{L(lang,'VRF/chiller 2.8–3.5 in tropical conditions.','VRF/chiller 2.8–3.5 dalam keadaan tropika.','热带的 VRF/冷水机 2.8–3.5。')}</div></div>
+          <div class="field"><label for="t7_heatp">{L(lang,'Value of recoverable heat (RM/kWh)','Nilai haba boleh pulih (RM/kWh)','可回收余热价值（马币/kWh）')}</label><input id="t7_heatp" type="number" value="0.10" step="0.01" min="0"><div class="hint">{L(lang,'25% of fuel input is available as 60–90 °C water in cooling mode. Set 0 if unused.','25% input bahan api tersedia sebagai air 60–90 °C dalam mod penyejukan. Set 0 jika tidak digunakan.','制冷模式下燃料输入的 25% 可产 60–90 ℃ 热水。不用就填 0。')}</div></div>
+          <div class="field"><label for="t7_om">{L(lang,'O&amp;M (% of capex per year)','O&amp;M (% capex setahun)','年运维（占投资 %）')}</label><input id="t7_om" type="number" value="3" step="0.5" min="0" max="20"><div class="hint">{L(lang,'Engine service, oil and filters: 3–4% typical.','Servis enjin, minyak dan penapis: 3–4% lazim.','发动机保养、机油与滤芯：通常 3–4%。')}</div></div>
+        </div>
+        <div class="calc-out">
+          <h3>{L(lang,'Sizing and fuel demand','Saiz dan keperluan bahan api','选型与燃料需求')}</h3>
+          <div class="out-grid">
+            <div class="kv hl"><span>{L(lang,'Recommended model','Model disyorkan','推荐机型')}</span><b id="t7_model">—</b></div>
+            <div class="kv hl"><span>{L(lang,'Fuel energy input','Tenaga bahan api masuk','输入燃料能量')}</span><b id="t7_fuel">—</b></div>
+            <div class="kv"><span>{L(lang,'Methane required (Nm³/h)','Metana diperlukan (Nm³/j)','需甲烷（Nm³/h）')}</span><b id="t7_ch4">—</b></div>
+            <div class="kv"><span>{L(lang,'Fuel gas at your CH₄ (Nm³/h)','Gas bahan api pada CH₄ anda (Nm³/j)','对应燃料气量（Nm³/h）')}</span><b id="t7_raw">—</b></div>
+            <div class="kv"><span>{L(lang,'Recoverable heat','Haba boleh pulih','可回收余热')}</span><b id="t7_heatkw">—</b></div>
+            <div class="kv"><span>{L(lang,'Hot water at 50 K rise','Air panas pada kenaikan 50 K','50 K 温升热水量')}</span><b id="t7_hot">—</b></div>
+            <div class="kv"><span>{L(lang,'Cooling delivered per year','Penyejukan setahun','年制冷量')}</span><b id="t7_coolyr">—</b></div>
+            <div class="kv"><span>{L(lang,'Fuel used per year','Bahan api setahun','年耗气量')}</span><b id="t7_fuelyr">—</b></div>
+          </div>
+          <h3 style="margin-top:22px">{L(lang,'Economics against the cooling it replaces','Ekonomi berbanding penyejukan diganti','对比被替代方案的账')}</h3>
+          <div class="out-grid">
+            <div class="kv"><span>{L(lang,'Equipment cost (RM)','Kos peralatan (RM)','设备投资（马币）')}</span><b id="t7_capexout">—</b></div>
+            <div class="kv"><span>{L(lang,'Annual fuel cost','Kos bahan api tahunan','年燃料费')}</span><b id="t7_gascost">—</b></div>
+            <div class="kv"><span>{L(lang,'Annual O&amp;M','O&amp;M tahunan','年运维费')}</span><b id="t7_omcost">—</b></div>
+            <div class="kv"><span>{L(lang,'Electricity the old system would buy (kWh/yr)','Elektrik sistem lama (kWh/tahun)','原方案年耗电（kWh）')}</span><b id="t7_altkwh">—</b></div>
+            <div class="kv"><span>{L(lang,'Cost of the old system','Kos sistem lama','原方案年成本')}</span><b id="t7_altcost">—</b></div>
+            <div class="kv hl"><span>{L(lang,'Net annual saving','Penjimatan bersih tahunan','年净节省')}</span><b id="t7_saving">—</b></div>
+            <div class="kv hl"><span>{L(lang,'Simple payback','Tempoh pulang mudah','静态回收期')}</span><b id="t7_payback">—</b></div>
+            <div class="kv"><span>{L(lang,'Cost per kWh of cooling','Kos per kWh penyejukan','每度冷量成本')}</span><b id="t7_cost">—</b></div>
+            <div class="kv"><span>{L(lang,'Cost of the old system per kWh','Kos sistem lama per kWh','原方案每度冷量成本')}</span><b id="t7_altunit">—</b></div>
+            <div class="kv"><span>{L(lang,'CO₂ avoided','CO₂ dielak','减排 CO₂')}</span><b id="t7_co2">—</b></div>
+          </div>
+          <div class="warn" id="t7_warn"></div>
+          <p class="note">{L(lang,'Methane LHV 9.94 kWh/Nm³. Fuel input = cooling ÷ COP; heat = 25% of fuel input in cooling mode; hot water at ΔT 50 K. The comparison system buys kWh from the grid or a diesel genset and makes cooling at the stated electric COP. CO₂ at 0.60 t/MWh. Indicative only — confirm COP and heat recovery against the model guarantee sheet.','LHV metana 9.94 kWh/Nm³. Input bahan api = penyejukan ÷ COP; haba = 25% input dalam mod penyejukan; air panas ΔT 50 K. Sistem pembanding membeli kWh dari grid atau genset diesel dan membuat penyejukan pada COP elektrik dinyatakan. CO₂ pada 0.60 t/MWh. Indikatif sahaja.','甲烷低热值 9.94 kWh/Nm³。燃料输入 = 制冷量 ÷ COP；制冷模式下余热为燃料输入的 25%；热水按 ΔT 50 K。对比方案按给定电价从电网或柴油机买电、按给定电 COP 制冷。减排按 0.60 t/MWh。仅为参考，COP 与余热以机型保证书为准。')}</p>
         </div>
       </div>
     </div>
