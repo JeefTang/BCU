@@ -12,18 +12,18 @@ LANGS = [("en", "", "English"), ("ms", "ms/", "Bahasa Melayu"), ("zh", "zh/", "�
 SHORT = {"en": "EN", "ms": "BM", "zh": "中文"}
 
 NAV = {
-    "en": [("index.html", "Home"), ("biogas-to-power.html", "Biogas to Power"),
-           ("biomethane.html", "Biomethane"), ("hydrogen-chp.html", "Hydrogen CHP"),
-           ("equipment.html", "Equipment"),
-           ("calculator.html", "Engineering Tools"), ("about.html", "About KSTS")],
-    "ms": [("index.html", "Utama"), ("biogas-to-power.html", "Biogas ke Kuasa"),
-           ("biomethane.html", "Biometana"), ("hydrogen-chp.html", "CHP Hidrogen"),
-           ("equipment.html", "Peralatan"),
-           ("calculator.html", "Alat Kejuruteraan"), ("about.html", "Tentang KSTS")],
-    "zh": [("index.html", "首页"), ("biogas-to-power.html", "沼气发电"),
-           ("biomethane.html", "生物天然气"), ("hydrogen-chp.html", "氢能热电联供"),
-           ("equipment.html", "设备与范围"),
-           ("calculator.html", "工程测算工具"), ("about.html", "关于 KSTS")],
+    "en": [("index.html", "Home"), ("biomethane.html", "Biomethane"),
+           ("hydrogen-chp.html", "H₂ CHP"), ("bhp.html", "BHP Air-Con"),
+           ("biogas-to-power.html", "Biogas Power"), ("equipment.html", "Equipment"),
+           ("calculator.html", "Tools"), ("about.html", "About")],
+    "ms": [("index.html", "Utama"), ("biomethane.html", "Biometana"),
+           ("hydrogen-chp.html", "CHP H₂"), ("bhp.html", "Penghawa BHP"),
+           ("biogas-to-power.html", "Kuasa Biogas"), ("equipment.html", "Peralatan"),
+           ("calculator.html", "Alat"), ("about.html", "Tentang")],
+    "zh": [("index.html", "首页"), ("biomethane.html", "生物天然气"),
+           ("hydrogen-chp.html", "氢能 CHP"), ("bhp.html", "沼气空调"),
+           ("biogas-to-power.html", "沼气发电"), ("equipment.html", "设备与范围"),
+           ("calculator.html", "测算工具"), ("about.html", "关于")],
 }
 
 CTA = {"en": "Request a study", "ms": "Minta kajian", "zh": "申请可行性评估"}
@@ -75,6 +75,13 @@ def head(lang, page, title, desc):
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script>/* default view = mobile edition (/m/, /ms/m/, /zh/m/); ?view=desktop opts out */
+(function(){try{var K="bcu_view",p=new URLSearchParams(location.search),f=p.get("view");
+if(f==="mobile"||f==="desktop"){document.cookie=K+"="+f+";path=/;max-age=31536000;SameSite=Lax";}
+var m=document.cookie.match(/(?:^|;\\s*)bcu_view=(mobile|desktop)/),pref=f||(m&&m[1])||"mobile";
+var path=location.pathname;if(!(/\\/m\\//.test(path)||/\\/m$/.test(path))&&pref!=="desktop"){
+var t=/\\/$/.test(path)?path+"m/":path.replace(/\\/([^\\/]+)$/,"/m/$1");
+if(t!==path){var q=location.search.replace(/([?&])view=[^&]*/g,"$1").replace(/[?&]+$/,"");location.replace(t+q+location.hash);}}}catch(e){}})();</script>
 <title>%s</title>
 <meta name="description" content="%s">
 <link rel="canonical" href="%s/%s%s">
@@ -85,8 +92,10 @@ def head(lang, page, title, desc):
 <meta property="og:description" content="%s">
 <meta name="theme-color" content="#0c1a26">
 <link rel="stylesheet" href="%sassets/css/style.css">
+<link rel="stylesheet" href="%sassets/css/chat.css">
 <link rel="icon" href="%s">
 <script src="%sassets/js/site.js" defer></script>
+<script src="%sassets/js/chat.js" defer></script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"KSTS K. S. Technical Services","url":"%s/","address":{"@type":"PostalAddress","streetAddress":"Kg. Nangoh, NT 083017181 (Lot 2), 34 km Off Jalan Simpang Sapi Nangoh, Labuk-Sugut","addressLocality":"Telupid","addressRegion":"Sabah","addressCountry":"MY"},"contactPoint":{"@type":"ContactPoint","telephone":"+60 13-883 3833","email":"k.s.t.s_sabah@hotmail.com","contactType":"sales"}}</script>
 </head>
 <body>
@@ -97,11 +106,14 @@ def head(lang, page, title, desc):
     <button class="menu-toggle" id="menuToggle" aria-label="Menu" aria-expanded="false">&#9776;</button>
     <ul id="navList">%s</ul>
     <a class="btn cta" href="contact.html">%s</a>
+    <a class="view-switch" href="m/%s?view=mobile" title="Mobile / 手机版">%s</a>
   </div>
 </header>
 """ % ({"en": "en", "ms": "ms", "zh": "zh"}[lang], title, desc, SITE, prefix,
-       page if page != "index.html" else "", alts, title, desc, asset, FAVICON, asset,
-       SITE, LOGO, BRAND_SUB[lang], langs_html, nav, CTA[lang])
+       page if page != "index.html" else "", alts, title, desc, asset, asset, FAVICON, asset, asset,
+       SITE, LOGO, BRAND_SUB[lang], langs_html, nav, CTA[lang],
+       page if page != "index.html" else "index.html",
+       {"en": "Mobile", "ms": "Mudah alih", "zh": "手机版"}[lang])
 
 
 def footer(lang):
@@ -113,9 +125,12 @@ def footer(lang):
             "h_sol": "Solutions", "h_co": "Company", "h_ct": "Contact",
             "l1": "POME biogas to power", "l2": "Biomethane &amp; bio-CNG",
             "l3": "Equipment &amp; scope", "l4": "Engineering tools",
-            "l5": "Hydrogen CHP",
+            "l5": "Hydrogen CHP", "l6": "BHP air-conditioning",
             "c1": "About KSTS", "c2": "Local partner profile", "c3": "Contact",
             "copy": "&copy; 2026 KSTS K. S. Technical Services. All rights reserved.",
+            "rel_h": "Related sites",
+            "rel_1": "Fluid machinery energy-saving calculator",
+            "rel_2": "HONGSHI &mdash; industrial pumps (export)",
             "disc": "Figures on this site are indicative and subject to site data and formal quotation.",
         },
         "ms": {
@@ -123,9 +138,12 @@ def footer(lang):
             "h_sol": "Penyelesaian", "h_co": "Syarikat", "h_ct": "Hubungi",
             "l1": "Biogas POME ke kuasa", "l2": "Biometana &amp; bio-CNG",
             "l3": "Peralatan &amp; skop", "l4": "Alat kejuruteraan",
-            "l5": "CHP hidrogen",
+            "l5": "CHP hidrogen", "l6": "Penghawa dingin BHP",
             "c1": "Tentang KSTS", "c2": "Profil rakan tempatan", "c3": "Hubungi",
             "copy": "&copy; 2026 KSTS K. S. Technical Services. Hak cipta terpelihara.",
+            "rel_h": "Laman berkaitan",
+            "rel_1": "Kalkulator penjimatan tenaga jentera bendalir",
+            "rel_2": "HONGSHI &mdash; pam industri (eksport)",
             "disc": "Angka di laman ini adalah indikatif dan tertakluk kepada data tapak dan sebut harga rasmi.",
         },
         "zh": {
@@ -133,9 +151,12 @@ def footer(lang):
             "h_sol": "解决方案", "h_co": "公司", "h_ct": "联系",
             "l1": "POME 沼气发电", "l2": "生物天然气 / Bio-CNG",
             "l3": "设备与供货范围", "l4": "工程测算工具",
-            "l5": "氢能热电联供",
+            "l5": "氢能热电联供", "l6": "沼气热泵空调",
             "c1": "关于 KSTS", "c2": "本地伙伴简介", "c3": "联系我们",
             "copy": "&copy; 2026 KSTS K. S. Technical Services. 版权所有。",
+            "rel_h": "关联站点",
+            "rel_1": "流体机械节能测算工具",
+            "rel_2": "HONGSHI 工业泵出口站",
             "disc": "本页数据均为测算参考值，实际以现场实测数据与正式报价为准。",
         },
     }[lang]
@@ -150,6 +171,7 @@ def footer(lang):
         <li><a href="biogas-to-power.html">%s</a></li>
         <li><a href="biomethane.html">%s</a></li>
         <li><a href="hydrogen-chp.html">%s</a></li>
+        <li><a href="bhp.html">%s</a></li>
         <li><a href="equipment.html">%s</a></li>
         <li><a href="calculator.html">%s</a></li>
       </ul></div>
@@ -165,13 +187,20 @@ def footer(lang):
         <li><a href="tel:+60138833833">+60 13-883 3833</a></li>
       </ul></div>
     </div>
+    <div class="related">
+      <h4>%s</h4>
+      <p><a href="https://jeeftang.github.io/energy-calc-platform/%s" hreflang="en">%s</a><span class="sep">&middot;</span><a href="https://jeeftang.github.io/hongshi/%s" hreflang="en">%s</a></p>
+    </div>
     <div class="copy"><span>%s</span><span>%s</span></div>
   </div>
 </footer>
 </body>
 </html>
-""" % (LOGO, BRAND_SUB[lang], f["blurb"], f["h_sol"], f["l1"], f["l2"], f["l5"], f["l3"], f["l4"],
-       f["h_co"], f["c1"], f["c2"], f["c3"], f["h_ct"], f["copy"], f["disc"])
+""" % (LOGO, BRAND_SUB[lang], f["blurb"], f["h_sol"], f["l1"], f["l2"], f["l5"], f["l6"], f["l3"], f["l4"],
+       f["h_co"], f["c1"], f["c2"], f["c3"], f["h_ct"],
+       f["rel_h"], "en/" if lang == "en" else "", f["rel_1"],
+       "zh/" if lang == "zh" else "", f["rel_2"],
+       f["copy"], f["disc"])
 
 
 def write_page(lang, page, title, desc, body):
