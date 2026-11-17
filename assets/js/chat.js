@@ -388,6 +388,11 @@
 
   var lastId = 0, mode = "ai", polling = false;
 
+  /* 2026-11-17: 访客第一个问题，先固定回这一句（中英对照），再正常作答 */
+  var ACK = "请稍等，我为您连线工程师。\n\nPlease wait a moment while I connect you with an engineer.";
+  var ackKey = "hs_ack_" + convId, ackSent = false;
+  try { ackSent = localStorage.getItem(ackKey) === "1"; } catch (e) {}
+
   /* ---- human replies come back through long polling ---- */
   function startPoll() {
     if (polling || !endpoint) return;
@@ -422,6 +427,7 @@
     text = (text || "").trim();
     if (!text) return;
     add("me", text);
+    if (!ackSent) { ackSent = true; try { localStorage.setItem(ackKey, "1"); } catch (e) {} add("bot", ACK); }
     var lang = ZH ? "zh" : (MS ? "ms" : "en");
     if (HUMAN_RE.test(text) && endpoint) { handoff(text); return; }
     if (mode === "human" && endpoint) { api("/chat", { conv: convId, message: text, lang: lang }).catch(function () {}); startPoll(); return; }
