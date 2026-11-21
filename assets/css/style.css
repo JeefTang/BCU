@@ -303,7 +303,14 @@ form.enquiry input,form.enquiry textarea,form.enquiry select{
 /* view switch (desktop ↔ mobile edition) */
 .view-switch{margin-left:10px;font-size:12.5px;font-weight:700;color:var(--steel);border:1px solid var(--line);padding:7px 11px;border-radius:8px;white-space:nowrap;flex:0 0 auto}
 .view-switch:hover{color:#fff;background:var(--accent);border-color:var(--accent)}
-@media(max-width:960px){.view-switch{display:none}}
+@media(max-width:960px){
+  /* 手机/窄屏也要能切回手机版：以前这里 display:none，导致误入桌面版后无路可退 */
+  .view-switch{display:inline-flex;align-items:center;order:1;margin-left:6px;
+    padding:6px 9px;font-size:12px;border-radius:7px}
+}
+@media(max-width:400px){
+  .view-switch{padding:5px 7px;font-size:11.5px;margin-left:4px}
+}
 
 /* related group sites (2026-11-14) */
 .related{border-top:1px solid rgba(255,255,255,.1);margin-top:36px;padding-top:22px}
