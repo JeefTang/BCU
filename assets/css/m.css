@@ -137,6 +137,10 @@ details.m-fold>.fold-body{padding:0 0 14px}
 .mfoot .fnav{display:flex;flex-wrap:wrap;gap:8px 16px;margin:0 0 16px}
 .mfoot .fnav a{font-size:13px}
 .mfoot .fnavlink{color:#cfe0ea;font-size:13px;display:inline-block;margin:0 0 4px}
+.mfoot .mrel{margin:0 0 18px;padding:14px 0 0;border-top:1px solid rgba(255,255,255,.14)}
+.mfoot .mrel .h{margin:0 0 8px;color:#8fa6b2;font-size:12px;letter-spacing:.06em;text-transform:uppercase}
+.mfoot .mrel a{display:block;padding:4px 0;color:#cfe0ea;font-size:13px;line-height:1.5}
+.mfoot .mrel a:after{content:" \203A";color:#5c7280}
 
 /* ---------- sticky action bar ---------- */
 .mbar{
