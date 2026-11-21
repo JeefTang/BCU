@@ -3,6 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<script>/* persist the mobile choice so desktop URLs keep redirecting to m/ */
+(function(){try{var K="bcu_view",p=new URLSearchParams(location.search),f=p.get("view");
+if(f==="mobile"||f==="desktop"){document.cookie=K+"="+f+";path=/;max-age=31536000;SameSite=Lax";}}catch(e){}})();</script>
 <title>工程测算工具 — 沼气发电、选型、提纯、氢燃料电池 CHP、沼气热泵空调与项目经济性 | KSTS</title>
 <meta name="description" content="七个免费工程计算器：沼气发电与余热、容量选型、压榨量产气、提纯收率、项目经济性、氢燃料电池 CHP、沼气热泵空调 BHP。">
 <link rel="canonical" href="https://jeeftang.github.io/BCU/zh/m/calculator.html">
