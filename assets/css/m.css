@@ -94,6 +94,20 @@ a{color:#0b5c3e;text-decoration:none}
 .m-form .calc-tabs{display:flex;gap:8px;margin:0 0 6px}
 .m-form .calc-tabs button{background:#eef2f6;color:#33454f;font-weight:600;margin:0}
 .m-form .calc-tabs button.active{background:#0c1a26;color:#fff}
+/* calculator tabs — added 2026-11-20: the m/ pages used class "tabs"/"tab-btn"
+   but this stylesheet only had .calc-tabs, so every tab rendered as a full-width
+   green button and all seven panels were visible at once (clicks appeared dead). */
+.m-form .tabs{display:flex;gap:8px;overflow-x:auto;-webkit-overflow-scrolling:touch;
+  margin:0 0 12px;padding:2px 2px 8px;scrollbar-width:none}
+.m-form .tabs::-webkit-scrollbar{display:none}
+.m-form .tabs .tab-btn{flex:0 0 auto;width:auto;background:#eef2f6;color:#33454f;
+  border:1px solid #dbe4ea;border-radius:999px;font-size:13.5px;font-weight:700;
+  padding:9px 14px;margin:0;cursor:pointer;white-space:nowrap;line-height:1.25;
+  -webkit-appearance:none;appearance:none}
+.m-form .tabs .tab-btn.active{background:#0c1a26;border-color:#0c1a26;color:#fff}
+.tab-panel{display:none}
+.tab-panel.active{display:block}
+@media print{.tabs{display:none!important}}
 .m-form .kv,.m-form .hint,.m-form .formula,.m-form .calc-out{font-size:14px;line-height:1.7;color:#33454f;margin:8px 0}
 .m-form .calc-out strong{color:#0c1a26}
 
