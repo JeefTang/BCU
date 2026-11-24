@@ -148,6 +148,8 @@
     return (lo + hi) / 2;
   }
 
+  var MYR_PER_USD = 4.2;   /* O&M is quoted in RM/kWh and converted at a fixed 4.20 */
+
   function tool5() {
     var kw = val("t5_kw"), capexPerKW = val("t5_capex");
     var cur = ($("t5_cur") || {}).value || "MYR";
@@ -159,7 +161,7 @@
     var tariffUSD = tariff / fx;
     var gen = kw * hours;
     var revUSD = gen * (use / 100) * tariffUSD;
-    var opexUSD = gen * om + omfix;
+    var opexUSD = gen * (om / MYR_PER_USD) + omfix;
     var netUSD = revUSD - opexUSD;
     var payback = netUSD > 0 ? capex / netUSD : Infinity;
 
