@@ -151,13 +151,15 @@
   var MYR_PER_USD = 4.2;   /* O&M is quoted in RM/kWh and converted at a fixed 4.20 */
 
   function tool5() {
-    var kw = val("t5_kw"), capexPerKW = val("t5_capex");
+    var kw = val("t5_kw"), capexEng = val("t5_capex"), capexBop = val("t5_bop");
+    var capexPerKW = capexEng + capexBop;
     var cur = ($("t5_cur") || {}).value || "MYR";
     var tariff = val("t5_tariff"), fx = val("t5_fx") || 1;
     var hours = val("t5_hours"), om = val("t5_om"), omfix = val("t5_omfix"), use = val("t5_use");
     var disc = val("t5_disc") / 100;
 
     var capex = kw * capexPerKW;
+    var engUSD = kw * capexEng, bopUSD = kw * capexBop;
     var tariffUSD = tariff / fx;
     var gen = kw * hours;
     var revUSD = gen * (use / 100) * tariffUSD;
@@ -173,6 +175,8 @@
     var lcoe = gen > 0 ? (capex * crf + opexUSD) / gen : 0;
 
     set("t5_total_capex", "US$ " + nf(capex, 0) + " · " + money(capex * fx, cur));
+    set("t5_capex_eng", "US$ " + nf(engUSD, 0) + " · " + money(engUSD * fx, cur));
+    set("t5_capex_bop", "US$ " + nf(bopUSD, 0) + " · " + money(bopUSD * fx, cur));
     set("t5_gen", nf(gen / 1000, 0) + " MWh/yr");
     set("t5_rev", "US$ " + nf(revUSD, 0) + " · " + money(revUSD * fx, cur));
     set("t5_opex", "US$ " + nf(opexUSD, 0) + " · " + money(opexUSD * fx, cur));
@@ -185,7 +189,8 @@
 
     var msgs = [];
     if (use > 90) msgs.push("Assuming almost all output displaces bought power is optimistic unless the mill runs a steady 24-hour load.");
-    if (capexPerKW < 600) msgs.push("Capex below US$600/kW is likely engine-only, not a complete plant — civils, gas treatment and grid connection are usually excluded.");
+    if (capexEng < 350) msgs.push("Engine package below US$350/kW looks like an FOB engine price — freight, duties, civils and erection supervision are usually still to be added.");
+    if (capexPerKW < 900) msgs.push("Total capex below US$900/kW usually counts equipment only — pond cover, gas treatment, civils, installation and grid connection are what push a complete plant past that level.");
     if (payback < 2) msgs.push("Payback under 2 years is unusual for a complete plant — check that capex includes pond cover, gas treatment, civils and grid connection.");
     warn("t5_warn", msgs.join(" "));
   }

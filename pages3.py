@@ -407,9 +407,9 @@ def power(lang):
           <tr><td><b>{L(lang,'Total','Jumlah','合计')}</b></td><td class="num"><b>0.055</b></td></tr>
         </tbody></table></div>
       <p class="small" style="margin-top:12px">{L(lang,
-        'Range RM 0.048–0.058/kWh (≈ USD 0.011–0.014/kWh). Full-service O&M incl. overhauls: RM 0.065–0.085/kWh. Excludes pond O&M and upgrading.',
-        'Julat RM 0.048–0.058/kWh (≈ USD 0.011–0.014/kWh). Kontrak O&M penuh termasuk baik pulih: RM 0.065–0.085/kWh. Tidak termasuk O&M kolam dan peningkatan gas.',
-        '区间 RM 0.048–0.058/kWh（约 USD 0.011–0.014/kWh）。全包运维（含大修）RM 0.065–0.085/kWh。不含池塘运维与提纯段。')}</p>
+        'O&M including overhauls: RM 0.065/kWh (≈ USD 0.015/kWh) for a 600 kW set at 8,000 h/yr. Third-party full-service contracts in the region run RM 0.065–0.085/kWh. Excludes pond O&M and upgrading.',
+        'O&M termasuk baik pulih: RM 0.065/kWh (≈ USD 0.015/kWh) untuk set 600 kW pada 8,000 j/tahun. Kontrak pihak ketiga di rantau ini RM 0.065–0.085/kWh. Tidak termasuk O&M kolam dan peningkatan gas.',
+        '含大修运维 RM 0.065/kWh（约 USD 0.015/kWh），按 600 kW、年运行 8,000 h 计。本区域第三方全包合同为 RM 0.065–0.085/kWh。不含池塘运维与提纯段。')}</p>
     </div>
   </div>
 </section>
@@ -1107,13 +1107,14 @@ def calculator(lang):
       <div class="calc">
         <div class="calc-form">
           <div class="field"><label for="t5_kw">{L(lang,'Plant capacity (kW)','Kapasiti loji (kW)','电站容量（kW）')}</label><input id="t5_kw" type="number" value="600" step="10" min="0"></div>
-          <div class="field"><label for="t5_capex">{L(lang,'Turnkey capex (USD per kW)','Capex turnkey (USD per kW)','交钥匙投资（美元/kW）')}</label><input id="t5_capex" type="number" value="2200" step="50" min="0"><div class="hint">{L(lang,'Engine package FOB ≈ USD 580–630/kW (600–800 kW); complete plant typically USD 1,800–2,600/kW.','Pakej enjin FOB ≈ USD 580–630/kW (600–800 kW); loji lengkap biasanya USD 1,800–2,600/kW.','机组成套 FOB 约 580–630 美元/kW（600–800 kW）；完整电站通常 1,800–2,600 美元/kW。')}</div></div>
+          <div class="field"><label for="t5_capex">{L(lang,'Engine package (USD per kW)','Pakej enjin (USD per kW)','机组成套（美元/kW）')}</label><input id="t5_capex" type="number" value="560" step="10" min="0"><div class="hint">{L(lang,'Indicative budget for the engine set with its standard supply scope and erection supervision. The project price is quoted item by item from the BOM and is normally below this figure.','Bajet indikatif untuk set enjin dengan skop bekalan standard dan penyeliaan pemasangan. Harga projek disebut item demi item daripada BOM dan biasanya lebih rendah daripada angka ini.','机组＋标准供货范围＋安装指导的预算数。项目价按 BOM 逐项报价，通常低于此数。')}</div></div>
+          <div class="field"><label for="t5_bop">{L(lang,'Balance of plant (USD per kW)','Imbangan loji (USD per kW)','配套工程（美元/kW）')}</label><input id="t5_bop" type="number" value="1640" step="50" min="0"><div class="hint">{L(lang,'Pond cover and gas collection, desulphurisation and gas conditioning, flare, civil works, installation, cabling, grid connection and engineering. Engine plus balance of plant = turnkey capex, about USD 2,200/kW for 600 kW.','Penutup kolam dan pengumpulan gas, penyahsulfuran dan penyaman gas, flare, kerja awam, pemasangan, kabel, sambungan grid dan kejuruteraan. Enjin + imbangan loji = capex turnkey, kira-kira USD 2,200/kW untuk 600 kW.','塘覆盖集气、脱硫与气体净化、火炬、土建、安装、电缆并网与设计管理。机组＋配套＝整厂交钥匙投资，600 kW 约 2,200 美元/kW。')}</div></div>
           <div class="field"><label for="t5_cur">{L(lang,'Currency','Mata wang','币种')}</label><select id="t5_cur"><option value="MYR">MYR (Malaysia)</option><option value="IDR">IDR (Indonesia)</option><option value="USD">USD</option></select></div>
           <div class="field"><label for="t5_tariff">{L(lang,'Value of electricity (local/kWh)','Nilai elektrik (tempatan/kWh)','电价价值（当地币/kWh）')}</label><input id="t5_tariff" type="number" value="0.65" step="0.01" min="0"><div class="hint">{L(lang,'Inland Sabah diesel: RM 0.55–0.75. Grid import RM 0.40–0.50. Indonesia USD 0.07–0.10.','Diesel pedalaman Sabah: RM 0.55–0.75. Import grid RM 0.40–0.50. Indonesia USD 0.07–0.10.','沙巴内陆柴油 RM 0.55–0.75；市电 RM 0.40–0.50；印尼 USD 0.07–0.10。')}</div></div>
           <div class="field"><label for="t5_use">{L(lang,'Share of output displacing bought power (%)','Bahagian output mengganti kuasa beli (%)','替代外购电的比例（%）')}</label><input id="t5_use" type="number" value="75" step="5" min="0" max="100"><div class="hint">{L(lang,'Only self-consumed kWh carry the full displaced-fuel value.','Hanya kWh digunakan sendiri membawa nilai penuh.','只有自用的电量才享受完整的替代价值。')}</div></div>
           <div class="field"><label for="t5_fx">{L(lang,'Exchange rate (local per USD)','Kadar tukaran (tempatan per USD)','汇率（当地币/美元）')}</label><input id="t5_fx" type="number" value="4.2" step="0.01" min="1"></div>
           <div class="field"><label for="t5_hours">{L(lang,'Operating hours per year','Jam operasi setahun','年运行小时')}</label><input id="t5_hours" type="number" value="8000" step="100" min="0" max="8760"></div>
-          <div class="field"><label for="t5_om">{L(lang,'Variable O&amp;M (USD/kWh)','O&amp;M berubah (USD/kWh)','可变运维（美元/kWh）')}</label><input id="t5_om" type="number" value="0.0169" step="0.0001" min="0"><div class="hint">{L(lang,'Full-service O&amp;M incl. overhauls ≈ USD 0.017/kWh.','O&amp;M perkhidmatan penuh termasuk baik pulih ≈ USD 0.017/kWh.','全包运维（含大修）约 0.017 美元/kWh。')}</div></div>
+          <div class="field"><label for="t5_om">{L(lang,'Variable O&amp;M (RM/kWh)','O&amp;M berubah (RM/kWh)','可变运维（马币 RM/kWh）')}</label><input id="t5_om" type="number" value="0.065" step="0.001" min="0"><div class="hint">{L(lang,'RM 0.065/kWh for a 600 kW biogas engine at 8,000 h/yr, overhauls included. Converted at RM 4.20/USD.','RM 0.065/kWh untuk enjin biogas 600 kW pada 8,000 j/tahun, termasuk baik pulih. Ditukar pada RM 4.20/USD.','600 kW 沼气机组、年运行 8,000 h、含大修的运维口径 RM 0.065/kWh。按 4.20 马币/美元折算。')}</div></div>
           <div class="field"><label for="t5_omfix">{L(lang,'Fixed O&amp;M (USD/year)','O&amp;M tetap (USD/tahun)','固定运维（美元/年）')}</label><input id="t5_omfix" type="number" value="0" step="1000" min="0"></div>
           <div class="field"><label for="t5_disc">{L(lang,'Discount rate (%)','Kadar diskaun (%)','折现率（%）')}</label><input id="t5_disc" type="number" value="8" step="0.5" min="0" max="30"></div>
         </div>
@@ -1121,6 +1122,8 @@ def calculator(lang):
           <h3>{L(lang,'Financial summary','Ringkasan kewangan','财务摘要')}</h3>
           <div class="out-grid">
             <div class="kv"><span>{L(lang,'Total capex','Jumlah capex','总投资')}</span><b id="t5_total_capex">—</b></div>
+            <div class="kv sub"><span>{L(lang,'of which engine package','antaranya pakej enjin','其中机组成套')}</span><b id="t5_capex_eng">—</b></div>
+            <div class="kv sub"><span>{L(lang,'of which balance of plant','antaranya imbangan loji','其中配套工程')}</span><b id="t5_capex_bop">—</b></div>
             <div class="kv"><span>{L(lang,'Annual generation','Penjanaan tahunan','年发电量')}</span><b id="t5_gen">—</b></div>
             <div class="kv hl"><span>{L(lang,'Annual revenue','Hasil tahunan','年收入')}</span><b id="t5_rev">—</b></div>
             <div class="kv"><span>{L(lang,'Annual O&amp;M','O&amp;M tahunan','年运维成本')}</span><b id="t5_opex">—</b></div>
@@ -1132,7 +1135,7 @@ def calculator(lang):
             <div class="kv"><span>LCOE</span><b id="t5_lcoe">—</b></div>
           </div>
           <div class="warn" id="t5_warn"></div>
-          <p class="note">{L(lang,'Revenue assumes the stated value for each valued kWh. Excludes financing, land and utility grid upgrades. Screening model, not bankable.','Hasil menganggap nilai dinyatakan bagi setiap kWh dinilai. Tidak termasuk pembiayaan, tanah dan naik taraf grid. Model saringan, bukan bankable.','收入按可计价电量与给定电价计算。不含融资、土地与电网改造费用。仅作筛选，不可用于融资。')}</p>
+          <p class="note">{L(lang,'Capex figures are indicative budgets for screening; a project quotation is built item by item from the BOM and varies with site conditions. Revenue assumes the stated value for each valued kWh. Excludes financing, land and utility grid upgrades. Screening model, not bankable.','Angka capex ialah bajet indikatif untuk saringan; sebut harga projek dibina item demi item daripada BOM dan berubah mengikut keadaan tapak. Hasil menganggap nilai dinyatakan bagi setiap kWh dinilai. Tidak termasuk pembiayaan, tanah dan naik taraf grid. Model saringan, bukan bankable.','投资额仅为筛选用的预算数；项目报价按 BOM 逐项编制，随现场条件浮动。收入按可计价电量与给定电价计算。不含融资、土地与电网改造费用。仅作筛选，不可用于融资。')}</p>
         </div>
       </div>
     </div>

@@ -136,6 +136,9 @@ td.num{font-variant-numeric:tabular-nums}
 .kv span{color:#a9bfca}
 .kv b{font-variant-numeric:tabular-nums;text-align:right}
 .kv.hl b{color:#8fe3c0;font-size:19px}
+.kv.sub{padding:8px 0 8px 14px;font-size:13px;border-bottom-style:dotted}
+.kv.sub span{color:#8aa2b0}
+.kv.sub b{color:#cfe0e9;font-weight:600}
 .note{font-size:13px;color:#93aab6;margin-top:16px;line-height:1.5}
 
 /* cta band */
@@ -236,6 +239,7 @@ form.enquiry input,form.enquiry textarea,form.enquiry select{
   .calc{display:block}
   .calc-out{background:#fff;color:#000;border:1px solid #999}
   .calc-out h3{color:#000}.kv span{color:#444}.kv b{color:#000}.kv.hl b{color:#000}
+  .kv.sub b{color:#000}.kv.sub span{color:#555}
   .note{color:#444}
   a{color:#000}
 }
